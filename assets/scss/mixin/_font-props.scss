@@ -1,0 +1,30 @@
+@charset "utf-8";
+
+@import "font-size";
+
+@mixin font-props($size, $color: false, $family: false, $weight: false, $style: false, $variant: false) {
+    @if $size
+    {
+        @include font-size($size);
+    }
+    @if $color
+    {
+        color: $color;
+    }
+    @if $family
+    {
+        font-family: $family;
+    }
+    @if $weight
+    {
+        font-weight: $weight;
+    }
+    @if $style
+    {
+        font-style: $style;
+    }
+    @if $variant
+    {
+        font-variant: $variant;
+    }
+}

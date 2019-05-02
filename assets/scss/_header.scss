@@ -1,0 +1,142 @@
+@charset "utf-8";
+
+@import "variables/colors";
+@import "variables/size";
+@import "mixin/block-middle";
+
+header {
+    position: fixed;
+    background: $color-white;
+    top: 0;
+    left: 0;
+    right: 0;
+    border-top: 1px solid $color-black30;
+    border-bottom: 1px solid $color-black30;
+    z-index: 100;
+    .top-hidden {
+        display: none;
+        border-top: 1px solid $color-black30;
+        border-bottom: 1px solid $color-black30;
+        padding: 55px 0;
+        background: $color-black5;
+        .top-hidden-menu {
+            @include inline-block(top);
+            width: 72%;
+            > ul {
+                > li {
+                    @include inline-block(top);
+                    width: 31%;
+                    > a {
+                        @include font-props(4, $color-black90, $font-roboto);
+                        text-decoration: none;
+                    }
+                    > ul {
+                        padding-top: 15px;
+                        > li {
+                            display: block;
+                            padding-bottom: 15px;
+                            a {
+                                @include font-props(3.5, $color-black90, $font-roboto);
+                                text-decoration: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .socials {
+            @include inline-block(top);
+            width: 20%;
+            .sheader {
+                @include font-props(4, $color-black90, $font-roboto);
+            }
+            ul {
+                padding: 25px 0;
+                li {
+                    @include inline-block(middle);
+                    padding-right: 15px;
+                    a {
+                        display: block;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+    .top-fixed {
+        top: 0;
+        height: $header-height;
+        position: relative;
+        @include block-middle-inner();
+        .logo {
+            @include inline-block(middle);
+            a {
+                display: block;
+            }
+        }
+        .himenu {
+            @include inline-block(middle);
+            margin-left: 64px;
+            margin-right: 22px;
+            a {
+                @include font-props(4, $color-black);
+                text-decoration: none;
+                &:hover {
+                    text-decoration: underline;
+                }
+                img {
+                    @include inline-block(middle);
+                }
+                span {
+                    @include inline-block(middle);
+                    padding-left: 10px;
+                }
+            }
+        }
+        .main-menu {
+            @include inline-block(middle);
+            ul {
+                li {
+                    @include inline-block(middle);
+                    a {
+                        display: block;
+                        padding: 10px 8px;
+                        @include font-props(4, $color-black);
+                        text-decoration: none;
+                        &:hover {
+                            text-decoration: none;
+                            color: $color-dodgerblue3;
+                        }
+                    }
+                    &.active {
+                        a {
+                            color: $color-dodgerblue3;
+                        }
+                    }
+                }
+            }
+        }
+        .top-phone {
+            @include stretch(45px, 0, false, false);
+            .num {
+                padding-bottom: 5px;
+                a {
+                    @include font-props(5, $color-dodgerblue3, $font-roboto);
+                    text-decoration: none;
+                    &:hover {
+                        text-decoration: none;
+                    }
+                }
+            }
+            .foz {
+                a {
+                    @include font-props(3.5, $color-black60);
+                    text-decoration: none;
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+}

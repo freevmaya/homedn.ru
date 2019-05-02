@@ -1,0 +1,153 @@
+@charset "utf-8";
+
+@mixin video-impulse($sizefrom, $sizeto, $icon, $top: 30%, $color: $color-venetianred2) {
+    .videoimpulse-big {
+        background: url($path-image+$icon) no-repeat center center;
+        background-size: cover;
+        width: $sizefrom * 3;
+        height: $sizefrom * 1.74;
+        position: relative;
+        margin: 0 auto;
+        a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+    }
+    .circlephone {
+        @include box-sizing(content-box);
+        border: 1px solid $color;
+        width: $sizeto;
+        height: $sizeto;
+        @include stretch($top, false, false, 50%);
+        @include border-radius(100%);
+        opacity: .5;
+        @include animation(circle-anim 2.4s infinite ease-in-out !important);
+        @include transition(all .5s);
+        margin-left: -($sizeto / 2 - 1);
+        margin-top: -($sizeto / 2 - 1);
+        @include respond-to(middle) {
+            width: $sizeto - 30px;
+            height: $sizeto - 30px;
+            margin-left: -(($sizeto - 30px) / 2 - 1);
+            margin-top: -(($sizeto - 30px) / 2 - 1);
+        }
+    }
+    .circle-fill {
+        @include box-sizing(content-box);
+        width: ($sizeto * 1.1);
+        height: ($sizeto * 1.1);
+        @include stretch($top, false, false, 50%);
+        @include border-radius(100%);
+        border: 3px solid $color;
+        opacity: .8;
+        @include animation(circle-anim 1.7s infinite ease-in-out !important);
+        @include transition(all .3s);
+        margin-left: -($sizeto * 1.1 / 2);
+        margin-top: -($sizeto * 1.1 / 2);
+        @include respond-to(middle) {
+            width: $sizeto - 30px;
+            height: $sizeto - 30px;
+            margin-left: -(($sizeto - 30px) / 2);
+            margin-top: -(($sizeto - 30px) / 2);
+        }
+    }
+    .img-circle {
+        @include box-sizing(content-box);
+        width: $sizefrom;
+        height: $sizefrom;
+        @include stretch($top, false, false, 50%);
+        @include border-radius(100%);
+        border: 3px solid transparent;
+        opacity: .7;
+        margin-left: -($sizefrom / 2);
+        margin-top: -($sizefrom / 2);
+        @include respond-to(middle) {
+            width: $sizefrom - 20px;
+            height: $sizefrom - 20px;
+            margin-left: -(($sizefrom - 20px) / 2);
+            margin-top: -(($sizefrom - 20px) / 2);
+        }
+    }
+    .img-circleblock {
+        @include box-sizing(content-box);
+        width: $sizefrom;
+        height: $sizefrom;
+        background-image: url($path-image+$icon);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin: 0;
+        display: block;
+        @include respond-to(middle) {
+            width: $sizefrom - 20px;
+            height: $sizefrom - 20px;
+            background-size: cover;
+        }
+    }
+    .img-circle:hover {
+        opacity: 1;
+    }
+    @include keyframes(pulse) {
+        0% {
+            transform: scale(0.9);
+            opacity: 1;
+        }
+
+        50% {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        100% {
+            transform: scale(0.9);
+            opacity: 1;
+        }
+    }
+    @include keyframes(tossing) {
+        0% {
+            transform: rotate(-8deg);
+        }
+
+        50% {
+            transform: rotate(8deg);
+        }
+
+        100% {
+            transform: rotate(-8deg);
+        }
+    }
+    @include keyframes(circle-anim) {
+        0% {
+            transform: rotate(0deg) scale(0.5) skew(1deg);
+            opacity: .1;
+        }
+
+        30% {
+            transform: rotate(0deg) scale(0.7) skew(1deg);
+            opacity: .5;
+        }
+
+        100% {
+            transform: rotate(0deg) scale(1) skew(1deg);
+            opacity: .6;
+        }
+    }
+    @include keyframes(circle-fill-anim) {
+        0% {
+            transform: rotate(0deg) scale(0.7) skew(1deg);
+            opacity: .2;
+        }
+
+        50% {
+            transform: rotate(0deg) -moz-scale(1) skew(1deg);
+            opacity: .2;
+        }
+
+        100% {
+            transform: rotate(0deg) scale(0.7) skew(1deg);
+            opacity: .2;
+        }
+    }
+}

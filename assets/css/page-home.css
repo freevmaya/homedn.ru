@@ -1,0 +1,17 @@
+/*@import url('//fonts.googleapis.com/css?family=Roboto+Condensed:400,700|Roboto:400,700|Exo+2:400,700&subset=cyrillic');*/
+/*$font-os: 'Open Sans', sans-serif;*/
+/*$font-cn: 'Roboto Condensed', sans-serif;*/
+/*$font-exo: 'Exo 2', sans-serif;*/
+.section-1 {
+  height: 673px;
+  margin-top: 114px; }
+  .section-1 .header-1 {
+    padding-top: 118px;
+    line-height: 1.4;
+    font-size: 37px; }
+  .section-1 .header-2 {
+    padding-top: 34px;
+    font-size: 21px;
+    line-height: 1.4; }
+
+/*# sourceMappingURL=page-home.css.map */

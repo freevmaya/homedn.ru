@@ -1,0 +1,29 @@
+@charset "utf-8";
+
+@include global-reset();
+
+@include nested-reset();
+
+a, input, button, select {
+    &:focus, &:hover, &:active {
+        @include reset-focus;
+    }
+}
+
+* {
+    @include box-sizing(border-box);
+}
+
+html, body {
+    @include font-props(4, $color-black, $font-normal);
+}
+
+.wrapper {
+    width: 100%;
+    margin: 0 auto;
+    max-width: $size-width-max;
+    position: relative;
+    @include respond-to(middle) {
+        padding: 0 20px;
+    }
+}

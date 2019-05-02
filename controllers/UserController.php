@@ -16,6 +16,8 @@ use app\models\UserForm;
 class UserController extends Controller
 {
 
+    public $layout = 'admin';
+
     /**
      * {@inheritdoc}
      */

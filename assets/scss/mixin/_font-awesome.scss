@@ -1,0 +1,35 @@
+@charset "utf-8";
+
+$fa-icon-angle-down: '\f107';
+$fa-icon-angle-up: '\f106';
+$fa-icon-angle-right: '\f105';
+$fa-icon-angle-left: '\f104';
+$fa-icon-times: '\f00d';
+$fa-bars: '\f0c9';
+$fa-rub: '\f158';
+$fa-search: '\f002';
+$fa-caret-down: '\f0d7';
+$fa-check: '\f00c';
+
+@mixin font-awesome($icon: '\f107') {
+    font-family: "Font Awesome 5 Free", 'fontAwesome';
+    display: inline-block;
+    text-decoration: none;
+    line-height: 1;
+    content: $icon;
+}
+
+@mixin font-awesome-after($icon: '\f107') {
+    &:after {
+        @include font_awesome($icon);
+        margin-left: 5px;
+    }
+}
+
+@mixin fa($content){
+    @include font_awesome($content);
+}
+
+@mixin fa-content($content) {
+    content: $content;
+}

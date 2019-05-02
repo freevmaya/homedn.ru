@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @link http://www.yiiframework.com/
  * @copyright Copyright (c) 2008 Yii Software LLC
@@ -17,15 +18,34 @@ use yii\web\AssetBundle;
  */
 class AppAsset extends AssetBundle
 {
-    public $basePath = '@webroot';
-    public $baseUrl = '@web';
-    public $css = [
-        'css/site.css',
+
+//    public $basePath = '@webroot';
+//    public $baseUrl = '@web';
+    public $sourcePath = '@app/assets';
+    public $css        = [
+        'css/style.css',
     ];
-    public $js = [
+    public $js         = [
+        'js/script.js',
     ];
-    public $depends = [
-        'yii\web\YiiAsset',
-        'yii\bootstrap\BootstrapAsset',
+    public $depends    = [
+//        'yii\web\YiiAsset',
+        'yii\web\JqueryAsset',
+        'yii\jui\JuiAsset',
     ];
+//
+//    public static function register ($view)
+//    {
+//        $bundle   = parent::register($view);
+//        $template = pathinfo($view->getViewFile(), PATHINFO_FILENAME);
+//        echo $template;
+//        if (file_exists(\Yii::getAlias('@app/assets/css/' . basename($template) . '.css'))) {
+//            $bundle->css[] = 'css/' . basename($template) . '.css';
+//        }
+//        if (file_exists(\Yii::getAlias('@app/assets/js/' . $template . '.js'))) {
+//            $bundle->js[] = 'js/' . $template . '.js';
+//        }
+//        return $bundle;
+//    }
+
 }

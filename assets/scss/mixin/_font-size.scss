@@ -1,0 +1,10 @@
+@charset "utf-8";
+
+@mixin font-size($sizeValue: 3.5) {
+    @if length($sizeValue) > 1 {
+        font-size: set-nth($sizeValue, 1, (nth($sizeValue, 1) * 4 + 1) * 1px);
+    }
+    @else {
+        font-size: ($sizeValue * 4 + 1) * 1px;
+    }
+}

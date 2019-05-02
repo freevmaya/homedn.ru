@@ -1,0 +1,27 @@
+@charset "utf-8";
+
+// .example {
+//     font-size: 1.6rem;
+//     @include respond-to(small) {
+//        font-size: 2rem;
+//    }
+// }
+@mixin respond-to($media) {
+    @if $media == x-small {
+        @media print, screen and (max-width: $break-xs) {
+            @content;
+        }
+    } @else if $media == small {
+        @media print, screen and (max-width: $break-s) {
+            @content;
+        }
+    } @else if $media == middle {
+        @media print, screen and (max-width: $break-m) {
+            @content;
+        }
+    } @else if $media == large {
+        @media print, screen and (min-width: $break-l) {
+            @content;
+        }
+    }
+}

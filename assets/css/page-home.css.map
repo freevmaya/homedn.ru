@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AACA,2HAA2H;AAI3H,sCAAsC;AACtC,6CAA6C;AAC7C,mCAAmC;ACKnC,UAAW;EACP,MAAM,EAAE,KAAK;EACb,UAAU,ECLE,KAAK;EDMjB,oBAAU;IACN,WAAW,EAAE,KAAK;IAClB,WAAW,EAAE,GAAG;IEVhB,SAAS,EAAE,IAA0B;EFazC,oBAAU;IACN,WAAW,EAAE,IAAI;IEdjB,SAAS,EAAE,IAA0B;IFgBrC,WAAW,EAAE,GAAG",
+"sources": ["../scss/variables/_typography.scss","../scss/page-home.scss","../scss/variables/_size.scss","../scss/mixin/_font-size.scss"],
+"names": [],
+"file": "page-home.css"
+}

@@ -1,0 +1,20 @@
+@font-face {
+    font-family: 'Helvetica';
+    src: url('../fonts/helvetica.eot');
+    src: url('../fonts/helvetica.eot') format('embedded-opentype'),
+         url('../fonts/helvetica.woff2') format('woff2'),
+         url('../fonts/helvetica.woff') format('woff'),
+         url('../fonts/helvetica.ttf') format('truetype'),
+         url('../fonts/helvetica.svg#helvetica') format('svg');
+}
+
+@font-face {
+    font-family: 'Roboto';
+    font-weight: 400;
+    src: url('../fonts/RobotoRegular.eot');
+    src: url('../fonts/RobotoRegular.eot') format('embedded-opentype'),
+         url('../fonts/RobotoRegular.woff2') format('woff2'),
+         url('../fonts/RobotoRegular.woff') format('woff'),
+         url('../fonts/RobotoRegular.ttf') format('truetype'),
+         url('../fonts/RobotoRegular.svg#RobotoRegular') format('svg');
+}
