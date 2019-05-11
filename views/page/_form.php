@@ -133,6 +133,37 @@ use app\models\OptionType;
                         'rows'  => 6,
                     ]);
                     break;
+
+                case OptionType::FIELD_FILE:
+                    echo InputFile::widget([
+                        'id'            => $option->code,
+                        'language'      => 'ru',
+                        'controller'    => 'elfinder',
+                        'name'          => $option->code,
+                        'value'         => isset($option->values[$model->id]) ? $option->values[$model->id] : '',
+                        'template'      => '<div class="input-group">{input}<span class="input-group-btn">{button}</span></div>',
+                        'buttonName'    => 'Обзор',
+                        'buttonOptions' => [ 'class' => 'btn btn-default' ],
+                        'options'       => [ 'class' => 'form-control' ],
+                    ]);
+                    break;
+
+                case OptionType::FIELD_WYSIWYG:
+                    echo CKEditor::widget([
+                        'id'            => $option->code,
+                        'name'          => $option->code,
+                        'value'         => isset($option->values[$model->id]) ? $option->values[$model->id] : '',
+                        'editorOptions' => ElFinder::ckeditorOptions('elfinder', [
+                            'preset' => 'full',
+                            'inline' => false,
+                        ])
+                    ]);
+                    break;
+
+                case OptionType::FIELD_BUTTON:
+                    echo Html::a($option->name, $option->default_value, [ 'class' => 'btn btn-default', 'target' => '_blank' ]);
+                    echo '<br>';
+                    break;
             }
             echo '<br>';
         }

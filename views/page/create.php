@@ -8,11 +8,11 @@ use yii\helpers\Html;
 
 $this->title                   = 'Новый - ' . ($pageType ? $pageType->name : 'Записи') . ' - Администрирование - ' . Yii::$app->name;
 $this->params['breadcrumbs'][] = [ 'label' => $pageType ? $pageType->name : 'Записи', 'url' => [ 'index', 'page_type' => $pageType->code ] ];
-$this->params['breadcrumbs'][] = $pageType ? $pageType->name : 'Записи';
+$this->params['breadcrumbs'][] = 'Создание';
 ?>
 <div class="page-create">
 
-    <h1>Создание</h1>
+    <h1>Новый</h1>
 
     <?=
     $this->render('_form', [

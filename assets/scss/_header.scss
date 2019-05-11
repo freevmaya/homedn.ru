@@ -81,15 +81,17 @@ header {
             a {
                 @include font-props(4, $color-black);
                 text-decoration: none;
-                &:hover {
-                    text-decoration: underline;
-                }
                 img {
                     @include inline-block(middle);
                 }
                 span {
                     @include inline-block(middle);
                     padding-left: 10px;
+                }
+                &:hover {
+                    span {
+                        text-decoration: underline;
+                    }
                 }
             }
         }

@@ -13,6 +13,7 @@ use app\widgets\MenuWidget;
 use app\widgets\FormViewWidget;
 use app\widgets\SocialsWidget;
 use app\models\CallorderForm;
+use app\models\MeasureForm;
 
 AppAsset::register($this);
 ?>
@@ -77,24 +78,70 @@ AppAsset::register($this);
 
         <?= $content ?>
 
+        <footer>
+            <div class="wrapper">
+                <div class="top">
+                    <div class="h"><?= nl2br(SiteProperty::getValue('footercta')) ?></div>
+                    <a href="<?= SiteProperty::getValue('footerlinkurl') ?>" class="popup-inline"><?= SiteProperty::getValue('footerlinktext') ?></a>
+                </div>
+
+                <div class="footer-menu">
+                    <div class="left">
+                        <?= MenuWidget::widget([ 'menuPosition' => 'footermain' ]) ?>
+                    </div>
+                    <div class="center">
+                        <div class="h"><?= SiteProperty::getValue('footermenu2header') ?></div>
+                        <?= MenuWidget::widget([ 'menuPosition' => 'footerrepair' ]) ?>
+                    </div>
+                    <div class="right">
+                        <div class="h"><?= SiteProperty::getValue('footermenu3header') ?></div>
+                        <?= MenuWidget::widget([ 'menuPosition' => 'footerworks' ]) ?>
+                    </div>
+                </div>
+
+                <div class="bottom">
+                    <div class="left">
+                        <div class="social-header">
+                            <img src="<?= Yii::$app->params['image_dir_url'] ?>social-gift.png">
+                            <span><?= SiteProperty::getValue('footersocialheader') ?></span>
+                        </div>
+                        <?=
+                        SocialsWidget::widget([
+                            'position' => 'footer',
+                        ])
+                        ?>
+                    </div>
+                    <div class="right">
+                        <?= nl2br(SiteProperty::getValue('footerwork')) ?>
+                    </div>
+                </div>
+
+
+                <div class="copyright">
+                    <div class="sitemap"><?= Html::a('Карта сайта', SiteProperty::getValue('sitemaplink')) ?></div>
+                    <?= SiteProperty::getValue('copyright') ?>
+                </div>
+            </div>
+        </footer>
+
         <div class="mfp-hide popup-window wrapper" id="foz-callback">
             <?=
             FormViewWidget::widget([
-                'header'        => 'Укажите номер телефона',
-                'subheader'     => 'Мы позвоним вам и ответим на все ваши вопросы',
+                'header'        => nl2br(SiteProperty::getValue('fozcallheader')),
+                'subheader'     => nl2br(SiteProperty::getValue('fozcallsubheader')),
                 'formClass'     => CallorderForm::class,
-                'submitMessage' => 'Заказать звонок',
+                'submitMessage' => SiteProperty::getValue('fozcallcta'),
             ])
             ?>
         </div>
-        
+
         <div class="mfp-hide popup-window wrapper" id="foz-measure">
             <?=
             FormViewWidget::widget([
-                'header'        => 'Закажите бесплатный выезд замерщика',
-                'subheader'     => 'и узнайте точную стоимость ремонта квартиры',
+                'header'        => nl2br(SiteProperty::getValue('fozmeasureheader')),
+                'subheader'     => nl2br(SiteProperty::getValue('fozmeasuresubheader')),
                 'formClass'     => MeasureForm::class,
-                'submitMessage' => 'Заказать звонок',
+                'submitMessage' => SiteProperty::getValue('fozmeasurecta'),
             ])
             ?>
         </div>
@@ -107,6 +154,17 @@ AppAsset::register($this);
             ],
         ])
         ?>
+
+        <?=
+        MagnificPopup::widget([
+            'target'  => '.popup-video',
+            'options' => [
+                'type' => 'iframe',
+            ],
+        ])
+        ?>
+
+        <div id="top"><span class="image"><?= Html::img(Yii::$app->params['image_dir_url'] . 'top.png') ?></span></div>
 
         <?php $this->endBody() ?>
     </body>

@@ -23,6 +23,8 @@ class OptionType extends \yii\db\ActiveRecord
     const FIELD_IMAGE    = 'image';
     const FIELD_TEXT     = 'text';
     const FIELD_WYSIWYG  = 'wysiwyg';
+    const FIELD_FILE     = 'file';
+    const FIELD_BUTTON   = 'button';
     const FIELD_TYPE     = [
         1 => self::FIELD_INPUT,
         2 => self::FIELD_TEXTAREA,
@@ -30,6 +32,8 @@ class OptionType extends \yii\db\ActiveRecord
         4 => self::FIELD_IMAGE,
         5 => self::FIELD_TEXT,
         6 => self::FIELD_WYSIWYG,
+        7 => self::FIELD_FILE,
+        8 => self::FIELD_BUTTON,
     ];
 
     /**

@@ -7,6 +7,7 @@ use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\Response;
 use yii\filters\VerbFilter;
+use yii\web\NotFoundHttpException;
 use app\models\LoginForm;
 use app\models\Page;
 

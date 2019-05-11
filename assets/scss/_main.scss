@@ -36,6 +36,7 @@
                 @include font-props(4, $color-nero2);
                 height: 49px;
                 width: 275px;
+                padding: 0 15px;
                 @include input-placeholder {
                     color: $color-nero2;
                 }
@@ -64,7 +65,7 @@
                 }
                 &.checked {
                     &:after {
-                        @include stretch(2px, false, false, 3px);
+                        @include stretch(3px, false, false, 3px);
                         content: url($path-image+"ch.png");
                     }
                 }
@@ -80,6 +81,283 @@
             cursor: pointer;
             @include border-radius(2px);
             @include font-props(4);
+        }
+    }
+}
+
+.section-content {
+    padding: 86px 0;
+    border-top: 1px solid $color-black20;
+    h1 {
+        @include font-props(8, $color-black90);
+        padding-bottom: 70px;
+    }
+    .page-content {
+        @include font-props(4, $color-black90);
+        p {
+            margin-bottom: 15px;
+        }
+        ul {
+            list-style: disc;
+            padding: 10px 0 10px 30px;
+        }
+        h2 {
+            @include font-props(7, $color-black90);
+            padding-bottom: 30px;
+            padding-top: 40px;
+        }
+        h3 {
+            @include font-props(6, $color-black90);
+            padding-bottom: 30px;
+            padding-top: 40px;
+        }
+        h4, h5, h6 {
+            @include font-props(5, $color-black90);
+            padding-bottom: 30px;
+            padding-top: 40px;
+        }
+        b, strong {
+            font-weight: bold;
+        }
+        i {
+            font-style: italic;
+        }
+        img {
+            max-width: 100%;
+        }
+    }
+}
+
+#top {
+    position: fixed;
+    right: 30px;
+    bottom: 50px;
+    display: none;
+    text-align: center;
+    cursor: pointer;
+    opacity: 0.8;
+    .image, .text {
+        display: block;
+    }
+    &:hover {
+        opacity: 1;
+    }
+}
+
+footer {
+    background: $color-nero3;
+    padding-bottom: 50px;
+    clear: both;
+    border-top: 3px solid $color-black30;
+    .top {
+        padding: 40px 0;
+        border-bottom: 1px solid $color-nightrider;
+        .h {
+            @include inline-block(middle);
+            width: 72%;
+            @include font-props(6, $color-white);
+        }
+        a {
+            @include inline-block(middle);
+            margin-left: 5px;
+            background: $color-black90;
+            border: 1px solid $color-greychateau;
+            @include border-radius(3px);
+            text-align: center;
+            @include font-props(6, $color-greychateau);
+            padding-top: 18px;
+            width: 254px;
+            height: 69px;
+            text-decoration: none;
+        }
+    }
+    .footer-menu {
+        padding-top: 40px;
+        border-bottom: 1px solid $color-nightrider;
+        padding-bottom: 40px;
+        .left, .center, .right {
+            @include inline-block(top);
+            width: 30%;
+            .h {
+                @include font-props(4, $color-greychateau);
+            }
+            ul {
+                li {
+                    display: block;
+                    margin-top: 15px;
+                    a {
+                        text-decoration: none;
+                        @include font-props(3.5, $color-black5);
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+        }
+        .left {
+            ul {
+                li {
+                    &:first-child {
+                        margin-top: 0;
+                        a {
+                            @include font-props(4);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .bottom {
+        padding-top: 40px;
+        .left {
+            @include inline-block(top);
+            width: 600px;
+            .social-header {
+                @include font-props(5, $color-white);
+                padding-bottom: 40px;
+                span {
+                    @include inline-block(middle);
+                    padding-left: 10px;
+                }
+                img {
+                    vertical-align: middle;
+                }
+            }
+            ul {
+                li {
+                    @include inline-block(middle);
+                    margin-right: 24px;
+                    a {
+                        display: block;
+                        width: 60px;
+                        height: 60px;
+                        border: 1px solid $color-greychateau;
+                        @include border-radius(50%);
+                        text-align: center;
+                        @include block-middle-inner(img);
+                        &:hover {
+                            background-color: $color-greychateau;
+                        }
+                    }
+                }
+            }
+        }
+        .right {
+            @include inline-block(top);
+            width: 350px;
+            @include font-props(4, $color-black5);
+        }
+    }
+    .copyright {
+        padding-top: 40px;
+        color: $color-black20;
+        line-height: 1;
+        p {
+            margin: 0 0 15px;
+        }
+        .sitemap {
+            float: right;
+            width: 350px;
+            padding-top: 80px;
+            a {
+                @include font-props(4, $color-black20);
+                text-decoration: none;
+            }
+        }
+    }
+    @include respond-to(middle) {
+        .col-left {
+            display: none;
+        }
+        .col-menu {
+            display: block;
+            width: auto;
+            margin: 0 20px 20px;
+        }
+        .col-work {
+            float: right;
+            padding-right: 10px;
+        }
+        .copyright {
+            padding-top: 0;
+            padding-left: 10px;
+            padding-right: 10px;
+            .sitemap {
+                padding-bottom: 20px;
+                float: none;
+                padding-top: 0;
+                &.product {
+                    float: right;
+                }
+            }
+        }
+        .top {
+            .h {
+                width: 55%;
+            }
+        }
+        .bottom {
+            right {
+                display: block;
+                margin: 30px 20px;
+            }
+        }
+    }
+    @include respond-to(small) {
+        .col-menu {
+            > ul {
+                &:last-child {
+                    @include column-count(auto);
+                }
+            }
+        }
+        .col-work {
+            float: none;            
+            padding: 20px;
+        }
+        .top {
+            .h {
+                width: auto;
+                text-align: center;
+                margin-bottom: 10px;
+                @include font-props(3.5);
+            }
+            a {
+                display: block;
+                margin: 10px auto;
+            }
+        }
+        .footer-menu {
+            .menu {
+                > li {
+                    width: auto;
+                }
+            }
+        }
+        .bottom {
+            .left {
+                width: auto;
+                text-align: center;
+                .soc {
+                    a {
+                        margin-bottom: 5px;
+                        margin-right: 12px;
+                        margin-left: 12px;
+                    }
+                }
+            }
+            .right {
+                width: auto;
+                margin-top: 10px;
+            }
+        }
+        .copyright {
+            padding: 0;
+            .sitemap {
+                width: auto;
+                padding-top: 10px;
+            }
         }
     }
 }

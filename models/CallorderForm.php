@@ -6,6 +6,7 @@ use Yii;
 use yii\base\Model;
 use yii\helpers\Html;
 use app\helpers\SiteProperty;
+use app\models\Callorder;
 
 /**
  *
@@ -47,6 +48,10 @@ class CallorderForm extends Model
     public function send ()
     {
         if ($this->validate()) {
+            $model=new Callorder();
+            $model->setAttributes($this->getAttributes());
+            $model->save();
+            
             Yii::$app->mailer->compose([ 'html' => 'callorder' ], [ 'model' => $this ])
                     ->setTo(explode(',', SiteProperty::getValue('email')))
                     ->setFrom([ 'noreply@' . str_replace('www.', '', Yii::$app->request->hostName) => Yii::$app->name ])

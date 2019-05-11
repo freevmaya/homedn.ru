@@ -5,8 +5,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Page */
 
-$this->title                   = 'Изменить - ' . $model->name . ' - Страницы - Администрирование - ' . Yii::$app->name;
-$this->params['breadcrumbs'][] = [ 'label' => 'Страницы', 'url' => [ 'index', 'page_type' => $pageType->code ] ];
+$this->title                   = 'Изменить - ' . $model->name;
+$this->params['breadcrumbs'][] = [ 'label' => $model->pageType->name, 'url' => [ 'index', 'page_type' => $pageType->code ] ];
 $this->params['breadcrumbs'][] = [ 'label' => $model->name, 'url' => [ 'view', 'id' => $model->id ] ];
 $this->params['breadcrumbs'][] = 'Изменить';
 ?>

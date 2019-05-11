@@ -6,8 +6,8 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model app\models\Page */
 
-$this->title                   = $model->name . ' - Страницы - Администрирование - ' . Yii::$app->name;
-$this->params['breadcrumbs'][] = [ 'label' => 'Страницы', 'url' => [ 'index', 'page_type' => $model->pageType->code ] ];
+$this->title                   = $model->name;
+$this->params['breadcrumbs'][] = [ 'label' => $model->pageType->name, 'url' => [ 'index', 'page_type' => $model->pageType->code ] ];
 $this->params['breadcrumbs'][] = $model->name;
 \yii\web\YiiAsset::register($this);
 ?>

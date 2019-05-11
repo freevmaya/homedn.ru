@@ -47,6 +47,22 @@ AdminAsset::register($this);
                             [ 'label' => 'Страницы', 'url' => [ '/page/index', 'page_type' => 'page' ] ],
                             [ 'label' => 'Меню', 'url' => [ '/menu/index' ] ],
                             [ 'label' => 'Социальные сети', 'url' => [ '/social/index' ] ],
+                            [ 'label' => 'Команда', 'url' => [ '/employee/index' ] ],
+                            [ 'label' => 'Цены', 'url' => [ '/price-caption/index' ] ],
+                            [ 'label'       => 'Портфолио >', 'items'       => [
+                                    [ 'label' => 'Разделы', 'url' => [ '/page/index', 'page_type' => 'portfolio-section' ] ],
+                                    [ 'label' => 'Объекты', 'url' => [ '/page/index', 'page_type' => 'portfolio-element' ] ],
+                                    [ 'label' => 'Отзывы', 'url' => [ '/portfolio-review/index' ] ],
+                                ],
+                                'options'     => [
+                                    'class' => 'dropdown',
+                                    'role'  => 'navigation',
+                                ],
+                                'linkOptions' => [
+                                    'class'       => 'dropdown-toggle',
+                                    'data-toggle' => 'dropdown'
+                                ],
+                            ],
                         ],
                     ],
                     [

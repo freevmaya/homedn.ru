@@ -3,6 +3,8 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use mihaildev\elfinder\InputFile;
+use mihaildev\ckeditor\CKEditor;
+use mihaildev\elfinder\ElFinder;
 use app\models\OptionType;
 
 /* @var $this yii\web\View */
@@ -44,6 +46,31 @@ $this->params['breadcrumbs'][] = 'Общий контент';
                 echo Html::textInput($model->code, $model->value, [
                     'id'    => $model->code,
                     'class' => 'form-control',
+                ]);
+                break;
+
+            case OptionType::FIELD_TEXTAREA:
+                echo Html::textarea($model->code, $model->value, [
+                    'id'    => $model->code,
+                    'class' => 'form-control',
+                    'rows'  => 6,
+                ]);
+                break;
+
+            case OptionType::FIELD_BUTTON:
+                echo Html::a($model->name, $model->value, [ 'class' => 'btn btn-default', 'target' => '_blank' ]);
+                echo '<br>';
+                break;
+
+            case OptionType::FIELD_WYSIWYG:
+                echo CKEditor::widget([
+                    'id'            => $model->code,
+                    'name'          => $model->code,
+                    'value'         => $model->value,
+                    'editorOptions' => ElFinder::ckeditorOptions('elfinder', [
+                        'preset' => 'full',
+                        'inline' => false,
+                    ])
                 ]);
                 break;
         }

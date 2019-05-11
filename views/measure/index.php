@@ -26,9 +26,12 @@ $this->params['breadcrumbs'][] = $this->title;
 //            'id',
             'name',
             'phone',
-            'created_at',
+            'created_at:datetime',
 //            'updated_at',
-//            [ 'class' => 'yii\grid\ActionColumn' ],
+            [
+                'class'    => 'yii\grid\ActionColumn',
+                'template' => '{delete}',
+            ],
         ],
     ]);
     ?>

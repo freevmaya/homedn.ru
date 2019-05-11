@@ -16,6 +16,11 @@ a, input, button, select {
 
 html, body {
     @include font-props(4, $color-black, $font-normal);
+    line-height: 1.3;
+}
+
+section {
+    overflow: hidden;
 }
 
 .wrapper {

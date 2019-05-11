@@ -50,7 +50,7 @@ class CallorderController extends Controller
     public function actionIndex ()
     {
         $dataProvider = new ActiveDataProvider([
-            'query' => Callorder::find(),
+            'query' => Callorder::find()->orderBy([ 'created_at' => SORT_DESC ]),
         ]);
 
         return $this->render('index', [
