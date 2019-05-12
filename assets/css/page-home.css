@@ -4,7 +4,8 @@
 /*$font-exo: 'Exo 2', sans-serif;*/
 .section-1 {
   height: 673px;
-  margin-top: 114px; }
+  margin-top: 114px;
+  background-position: center top; }
   .section-1 .header-1 {
     padding-top: 118px;
     line-height: 1.4;

@@ -16,11 +16,7 @@ use app\widgets\PageSeoWidget;
 
 TemplateAsset::register($this);
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+/* @var $model app\models\Page */
 ?>
 
 <section class="section-1" data-back="<?= PageProperty::getValue($model->id, 'back1') ?>">
@@ -199,14 +195,10 @@ if ($h || ($v && $b)) {
     </div>
 </section>
 
-<section class="section-content">
-    <div class="wrapper">
-        <?=
-        PageSeoWidget::widget([
-            'pageId'   => $model->id,
-            'pageSeo'  => $model->pageSeo,
-            'pageView' => $this,
-        ])
-        ?>
-    </div>
-</section>
+<?=
+PageSeoWidget::widget([
+    'pageId'   => $model->id,
+    'pageSeo'  => $model->pageSeo,
+    'pageView' => $this,
+])
+?>

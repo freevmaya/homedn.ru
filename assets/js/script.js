@@ -18,13 +18,14 @@ $(function () {
     $('[data-back]').each(function () {
         $(this).css('background-image', 'url(\'' + $(this).data('back') + '\')');
     });
-    
-    $('.video-impulse').each(function(){
+
+    $('.video-impulse').each(function () {
         $(this).prepend('<span class="circlephone" style="transform-origin: center;"></span><span class="circle-fill" style="transform-origin: center;"></span><span class="img-circle" style="transform-origin: center;"><span class="img-circleblock" style="transform-origin: center;"></span></span>');
     });
-    
+
     var top_show = 200;
     var delay = 500;
+    var headerHeight = 114;
     $(window).scroll(function () {
         if ($(this).scrollTop() > top_show)
             $("#top").fadeIn();
@@ -36,6 +37,13 @@ $(function () {
         $("body, html").animate({
             scrollTop: 0
         }, delay);
+    });
+
+    $('body').on('click', '.scroll-link', function () {
+        $("body, html").animate({
+            scrollTop: $($(this).attr('href')).position().top - headerHeight
+        }, delay);
+        return false;
     });
 
 });

@@ -27,6 +27,7 @@ AppAsset::register($this);
         <?php $this->registerCsrfMetaTags() ?>
         <title><?= Html::encode($this->title) ?></title>
         <?php $this->head() ?>
+        <?= SiteProperty::getValue('headcode') ?>
     </head>
     <body>
         <?php $this->beginBody() ?>
@@ -163,8 +164,19 @@ AppAsset::register($this);
             ],
         ])
         ?>
+        
+        <?=
+        MagnificPopup::widget([
+            'target'  => '.popup-image',
+            'options' => [
+                'type' => 'image',
+            ],
+        ])
+        ?>
 
         <div id="top"><span class="image"><?= Html::img(Yii::$app->params['image_dir_url'] . 'top.png') ?></span></div>
+
+        <?= SiteProperty::getValue('bodycode') ?>
 
         <?php $this->endBody() ?>
     </body>
