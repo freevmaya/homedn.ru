@@ -45,8 +45,8 @@ class PageSeoWidget extends Widget
     public function run ()
     {
         if ($this->pageSeo && ($this->pageSeo->h1 || $this->pageSeo->content)) {
-            echo Html::tag('section',['class'=>'section-content']);
-            echo Html::beginTag('div',['class'=>'wrapper']);
+            echo Html::beginTag('section', [ 'class' => 'section-content' ]);
+            echo Html::beginTag('div', [ 'class' => 'wrapper' ]);
             if ($this->pageSeo->h1) {
                 echo Html::tag('h1', $this->pageSeo->h1);
             }

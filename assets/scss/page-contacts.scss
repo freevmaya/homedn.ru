@@ -1,0 +1,202 @@
+@charset "utf-8";
+
+@import "compass";
+@import "compass/layout/stretching";
+
+@import "variables/typography";
+@import "variables/colors";
+@import "variables/size";
+@import "variables/images";
+@import "mixin/font-props";
+@import "mixin/respond-to";
+@import "mixin/video-impulse";
+@import "mixin/block-middle";
+
+.section-1 {
+    padding: 45px 0;
+    .header {
+        @include font-props(9);
+        padding-bottom: 35px;
+    }
+    .map {
+        @include inline-block(top);
+        width: 511px;
+    }
+    .connect {
+        @include inline-block(top);
+        padding-left: 28px;
+        width: 420px;
+        .item {
+            padding-bottom: 43px;
+            .icon {
+                @include inline-block(top);
+                width: 76px;
+                text-align: center;
+            }
+            .cont {
+                @include inline-block(top);
+                width: 75%;
+                .name {
+                    display: block;
+                    @include font-props(3.5, $color-black60);
+                }
+                .val {
+                    display: block;
+                    @include font-props(6, $color-black90);
+                    a {
+                        @include font-props(6, $color-black90);
+                    }
+                    &.socials {
+                        ul {
+                            padding: 10px 0;
+                            li {
+                                @include inline-block(middle);
+                                a {
+                                    display: block;
+                                    width: 43px;
+                                    height: 43px;
+                                    border: 3px solid $color-white;
+                                    @include block-middle-inner(img);
+                                    text-align: center;
+                                    img {
+                                        @include filter(grayscale(90%));
+                                        opacity: 0.6;
+                                    }
+                                    &:hover {
+                                        border-color: $color-dodgerblue3;
+                                        img {
+                                            @include filter(none);
+                                            opacity: 1;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.section-2 {
+    padding: 45px 0;
+    .header {
+        @include font-props(9);
+        padding-bottom: 35px;
+    }
+    .details {
+        table {
+            width: 100%;
+            tr {
+                cursor: pointer;
+                td {
+                    border: 1px solid $color-silver2;
+                    padding: 12px 15px;
+                    @include font-props(3.5, $color-black);
+                    &:first-child {
+                        width: 28%;
+                    }
+                    &:last-child {
+                        width: 72%;
+                    }
+                }
+                &:hover {
+                    background: $color-solitude6;
+                }
+            }
+        }
+    }
+}
+
+.section-3 {
+    padding: 113px 0;
+    border-top: 1px solid $color-black20;
+    border-bottom: 1px solid $color-black20;
+    .cont {
+        background: $color-white;
+        border: 1px solid $color-black20;
+        @include border-radius(4px);
+        @include box-shadow(21px 21px 45px $color-black20);
+        padding: 60px;
+        .header {
+            @include font-props(6);
+            text-align: center;
+        }
+        .subheader {
+            @include font-props(5);
+            text-align: center;
+            padding-top: 10px;
+        }
+        .success-message {
+            text-align: center;
+            @include font-props(5);
+            line-height: 1.45;
+        }
+        .error-message {
+            text-align: center;
+            @include font-props(5, $color-alizarin);
+            line-height: 1.45;
+        }
+        .form-container {
+            padding-top: 45px;
+            text-align: center;
+            .form-group {
+                @include inline-block(middle);
+                padding: 20px 12px;
+                input[type=text] {
+                    background: $color-solitude3;
+                    @include border-radius(2px);
+                    border: 1px solid $color-pattensblue;
+                    @include font-props(4, $color-nero2);
+                    height: 49px;
+                    width: 275px;
+                    padding: 0 15px;
+                    @include input-placeholder {
+                        color: $color-nero2;
+                    }
+                }
+                .help-block {
+                    @include stretch(false, false, false, false);
+                    font-size: 80%;
+                }
+                .checkbox-label {
+                    @include font-props(2.5);
+                    position: relative;
+                    cursor: pointer;
+                    input[type=checkbox] {
+                        display: none;
+                    }
+                    span {
+                        @include inline-block(middle);
+                    }
+                    &:before {
+                        @include inline-block(top);
+                        width: 17px;
+                        height: 17px;
+                        content: '';
+                        border: 1px solid $color-black30;
+                        margin-right: 5px;
+                    }
+                    &.checked {
+                        &:after {
+                            @include stretch(3px, false, false, 3px);
+                            content: url($path-image+"ch.png");
+                        }
+                    }
+                }
+            }
+            button[type=submit] {
+                @include inline-block();
+                margin: 20px 20px 0;
+                border: none;
+                background: $color-gorse;
+                padding: 0 67px;
+                height: 57px;
+                cursor: pointer;
+                @include border-radius(2px);
+                @include font-props(4);
+            }
+        }
+    }
+}

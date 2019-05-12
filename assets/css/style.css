@@ -468,6 +468,21 @@ footer {
         width: auto;
         padding-top: 10px; } }
 
+.breadcrumb {
+  background: none;
+  padding: 129px 0 0; }
+  .breadcrumb li a {
+    font-size: 13px;
+    color: #000000; }
+  .breadcrumb li.active {
+    font-size: 13px;
+    color: #727271; }
+    .breadcrumb li.active a {
+      font-size: 13px;
+      color: #727271; }
+  .breadcrumb > li + li:before {
+    color: #000000; }
+
 header {
   position: fixed;
   background: #ffffff;

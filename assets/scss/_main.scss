@@ -361,3 +361,26 @@ footer {
         }
     }
 }
+
+.breadcrumb {
+    background: none;
+    padding: ($header-height+15px) 0 0;
+    li {
+        a {
+            @include font-props(3, $color-black);
+        }
+        &.active {
+            @include font-props(3, $color-black70);
+            a {
+                @include font-props(3, $color-black70);
+            }
+        }
+    }
+    > li {
+        + li {
+            &:before {
+                color: $color-black;
+            }
+        }
+    }
+}
