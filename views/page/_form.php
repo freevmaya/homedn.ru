@@ -93,13 +93,13 @@ use app\models\OptionType;
 
     <?= $form->field($modelSeo, 'noindex')->checkbox([ 'uncheck' => 0 ]) ?>
 
-    <? if ($model->template_id) { ?>
+    <? if (($template = $model->template) || ($template = $model->pageType->template)) { ?>
         <br>
         <h2>Свойства</h2>
 
         <?
 //        ArrayHelper::multisort($model->template->pageOptions, 'sort', SORT_ASC, SORT_NUMERIC);
-        foreach ($model->template->pageOptions as $option) {
+        foreach ($template->pageOptions as $option) {
             echo Html::label($option->name, $option->code, [ 'class' => 'control-label' ]);
             echo '<br>';
 

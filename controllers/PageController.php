@@ -135,8 +135,8 @@ class PageController extends Controller
 
         if ($model->load(Yii::$app->request->post()) && $model->save() && $modelSeo->load(Yii::$app->request->post()) && $modelSeo->save()) {
 
-            if ($model->template && $model->template->pageOptions) {
-                foreach ($model->template->pageOptions as $opt) {
+            if (($model->template && ($pageOptions = $model->template->pageOptions)) || ($model->pageType->template && ($pageOptions = $model->pageType->template->pageOptions))) {
+                foreach ($pageOptions as $opt) {
                     if (isset(Yii::$app->request->post()[$opt->code])) {
                         if (!($pageOptionValue = PageOptionValue::find()->where([ 'page_option_id' => $opt->id, 'page_id' => $id ])->one())) {
                             $pageOptionValue                 = new PageOptionValue();

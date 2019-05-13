@@ -41,7 +41,7 @@ class MainPortfolioReviewWidget extends Widget
             $ul1 = [];
             $ul2 = [];
             foreach ($this->reviewList as $k => $review) {
-                $html = Html::tag('span', Html::a(Html::img($review->cover, [ 'class' => 'cover' ]), $review->video, [ 'class' => 'video-impulse popup-inline' ]), [
+                $html = Html::tag('span', Html::a(Html::img($review->cover, [ 'class' => 'cover' ]), $review->video, [ 'class' => 'video-impulse popup-video' ]), [
                             'class' => 'video' ])
                         . Html::tag('span', nl2br($review->header), [ 'class' => 'name' ])
                         . Html::tag('span', Html::a('Смотреть объект', [ '/site/frontend', 'id' => $review->page_id ]), [ 'class' => 'link' ]);

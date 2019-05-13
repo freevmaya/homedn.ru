@@ -8,7 +8,7 @@
 
 namespace app\helpers;
 
-use app\models\PageOption;
+use app\models\PageOptionValue;
 
 /**
  * Description of PageProperty
@@ -20,8 +20,8 @@ class PageProperty
 
     public static function getValue ($pageId, $code)
     {
-        if ($property = PageOption::find()->joinWith('pageOptionValues pov', true, 'INNER JOIN')->where([ 'code' => $code, 'pov.page_id' => $pageId ])->one()) {
-            return $property->pageOptionValues[0]->value;
+        if ($property = PageOptionValue::find()->joinWith('pageOption po', true, 'INNER JOIN')->where([ 'po.code' => $code, 'page_id' => $pageId ])->one()) {
+            return $property->value;
         }
         return '';
     }
