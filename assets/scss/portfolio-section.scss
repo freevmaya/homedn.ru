@@ -1,0 +1,308 @@
+@charset "utf-8";
+
+@import "compass";
+@import "compass/layout/stretching";
+
+@import "variables/typography";
+@import "variables/colors";
+@import "variables/size";
+@import "variables/images";
+@import "mixin/font-props";
+@import "mixin/respond-to";
+@import "mixin/video-impulse";
+@import "mixin/block-middle";
+
+.section-1 {
+    margin-top: $header-height;
+    .header {
+        @include font-props(6);
+        padding: 43px 0;
+        @include inline-block(middle);
+        width: 260px;
+    }
+    .section-menu {
+        @include inline-block(middle);
+        width: 690px;
+        text-align: right;
+        ul {
+            li {
+                @include inline-block(middle);
+                a, &.active span {
+                    display: block;
+                    text-align: center;
+                    padding: 10px 10px 0;
+                    height: 45px;
+                    border: 1px solid $color-white;
+                    @include border-radius(44px);
+                    text-decoration: none;
+                    @include font-props(4, $color-black);
+                    @include transition(all 0.3s ease);
+                    &:hover {
+                        border-color: $color-cardinal3;
+                        color: $color-cardinal3;
+                    }
+                }
+                &.active {
+                    span {
+                        border-color: $color-cardinal3;
+                        color: $color-cardinal3;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.section-2 {
+    .section-list {
+        .section {
+            border-top: 1px solid $color-black30;
+            padding-top: 45px;
+            .head {
+                height: 310px;
+                position: relative;
+                margin-bottom: 45px;
+                .header-1 {
+                    @include stretch(78px, 0, false, 0);
+                    @include font-props(7, $color-snow3, $font-roboto, 300);
+                    text-align: center;
+                }
+                .line {
+                    @include stretch(117px, false, false, 50%);
+                    width: 168px;
+                    height: 1px;
+                    margin-left: -84px;
+                    background: $color-white;
+                }
+                .header-2 {
+                    @include stretch(134px, 0, false, 0);
+                    @include font-props(3.2, $color-snow3, $font-roboto);
+                    text-align: center;
+                }
+                .cta {
+                    @include stretch(187px, 0, false, 0);
+                    text-align: center;
+                    a {
+                        @include inline-block;
+                        padding: 10px 31px 0;
+                        height: 45px;
+                        cursor: pointer;
+                        @include font-props(4, $color-black);
+                        text-decoration: none;
+                        background: $color-goldenyellow;
+                        border: 1px solid $color-goldenyellow;
+                        @include border-radius(58px);
+                        &:hover {
+                            background: $color-gorse2;
+                        }
+                    }
+                }
+            }
+            .section-element-list {
+                border-top: 1px solid $color-black30;
+                ul {
+                    text-align: center;
+                    padding-bottom: 33px;
+                    li {
+                        @include inline-block(top);
+                        width: 467px;
+                        height: 464px;
+                        margin: 44px 10px;
+                        border: 1px solid $color-black40;
+                        position: relative;
+                        &:after {
+
+                        }
+                        &:nth-child(odd) {
+                            margin-left: 0;
+                            &:after {
+                                @include stretch(false, -24px, -44px, 0);
+                            }
+                        }
+                        &:nth-child(even) {
+                            margin-right: 0;
+                            &:after {
+                                @include stretch(false, 0, -44px, -493px);
+                                display: block;                                
+                                height: 1px;
+                                background: $color-black30;
+                                content: '';
+                            }
+                        }
+                        .image {
+                            display: block;
+                            height: 310px;
+                            position: relative;
+                            .review {
+                                @include stretch(8px, 8px, false, false);
+                                width: 110px;
+                                height: 110px;
+                                @include border-radius(50%);
+                                background: $color-venetianred;
+                                text-align: center;
+                                @include font-props(4, $color-white, $font-roboto, 100);
+                                @include block-middle-inner;
+                            }
+                            .info {
+                                padding-top: 114px;
+                                display: block;
+                                .header-1 {
+                                    display: block;
+                                    @include font-props(5, $color-snow3, $font-roboto, 100);
+                                }
+                                .line {
+                                    width: 98px;
+                                    display: block;
+                                    height: 1px;
+                                    margin: 14px auto;
+                                    background: $color-white;
+                                }
+                                .header-2 {
+                                    display: block;
+                                    @include font-props(3.5, $color-snow3);
+                                }
+                            }
+                        }
+                        .desc {
+                            display: block;
+                            padding: 27px 0;
+                            text-align: center;
+                            @include font-props(4, $color-black, $font-roboto, 100);
+                        }
+                        .cta {
+                            @include stretch(false, 0, 21px, 0);
+                            text-align: center;
+                            a {
+                                @include inline-block;
+                                width: 199px;
+                                height: 45px;
+                                border: 1px solid $color-cardinal2;
+                                @include border-radius(30px);
+                                @include font-props(4, $color-cardinal2);
+                                text-decoration: none;
+                                @include transition(all 0.3s ease);
+                                padding-top: 9px;
+                                &:hover {
+                                    background: $color-cardinal2;
+                                    color: $color-white;
+                                }
+                            }
+                        }
+                    }
+                }
+                .more {
+                    padding: 0 0 33px;
+                    text-align: center;
+                    a {
+                        @include inline-block;
+                        width: 230px;
+                        height: 45px;
+                        border: 1px solid $color-black20;
+                        @include border-radius(58px);
+                        @include font-props(4, $color-black);
+                        text-decoration: none;
+                        @include transition(all 0.3s ease);
+                        background: $color-black20;
+                        padding-top: 9px;
+                        &:hover {
+                            background: $color-black60;
+                            color: $color-white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.section-3 {
+    padding: 113px 0;
+    border-top: 1px solid $color-black20;
+    border-bottom: 1px solid $color-black20;
+    .cont {
+        background: $color-white;
+        border: 1px solid $color-black20;
+        @include border-radius(4px);
+        @include box-shadow(21px 21px 45px $color-black20);
+        padding: 60px;
+        .header {
+            @include font-props(6);
+            text-align: center;
+        }
+        .subheader {
+            @include font-props(5);
+            text-align: center;
+            padding-top: 10px;
+        }
+        .success-message {
+            text-align: center;
+            @include font-props(5);
+            line-height: 1.45;
+        }
+        .error-message {
+            text-align: center;
+            @include font-props(5, $color-alizarin);
+            line-height: 1.45;
+        }
+        .form-container {
+            padding-top: 45px;
+            text-align: center;
+            .form-group {
+                @include inline-block(middle);
+                padding: 20px 12px;
+                input[type=text] {
+                    background: $color-solitude3;
+                    @include border-radius(2px);
+                    border: 1px solid $color-pattensblue;
+                    @include font-props(4, $color-nero2);
+                    height: 49px;
+                    width: 275px;
+                    padding: 0 15px;
+                    @include input-placeholder {
+                        color: $color-nero2;
+                    }
+                }
+                .help-block {
+                    @include stretch(false, false, false, false);
+                    font-size: 80%;
+                }
+                .checkbox-label {
+                    @include font-props(2.5);
+                    position: relative;
+                    cursor: pointer;
+                    input[type=checkbox] {
+                        display: none;
+                    }
+                    span {
+                        @include inline-block(middle);
+                    }
+                    &:before {
+                        @include inline-block(top);
+                        width: 17px;
+                        height: 17px;
+                        content: '';
+                        border: 1px solid $color-black30;
+                        margin-right: 5px;
+                    }
+                    &.checked {
+                        &:after {
+                            @include stretch(3px, false, false, 3px);
+                            content: url($path-image+"ch.png");
+                        }
+                    }
+                }
+            }
+            button[type=submit] {
+                @include inline-block();
+                margin: 20px 20px 0;
+                border: none;
+                background: $color-gorse;
+                padding: 0 67px;
+                height: 57px;
+                cursor: pointer;
+                @include border-radius(2px);
+                @include font-props(4);
+            }
+        }
+    }
+}

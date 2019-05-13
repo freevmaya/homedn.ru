@@ -2,9 +2,10 @@
 
 namespace app\components\page;
 
-use app\models\Page;
 use Yii;
 use yii\web\UrlRuleInterface;
+use app\models\Page;
+use app\models\PageSeo;
 
 class PageUrl implements UrlRuleInterface
 {
@@ -193,6 +194,26 @@ class PageUrl implements UrlRuleInterface
                             'id' => $page->id,
                         ],
                     ];
+            }else {
+                $parent  = null;
+                $page_id = false;
+                foreach ($_path as $p) {
+                    if ($page = PageSeo::find()->joinWith('page p', false, 'INNER JOIN')->where([ 'url' => $p, 'p.page_id' => $parent, 'p.status' => 1 ])->one()) {
+                        $page_id = $page->page_id;
+                        $parent  = $page->page_id;
+                    } else {
+                        $page_id = false;
+                        break;
+                    }
+                }
+                if ($page_id) {
+                    return [
+                        'site/frontend',
+                        [
+                            'id' => $page_id,
+                        ],
+                    ];
+                }
             }
         } else {
             return [
