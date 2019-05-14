@@ -27,6 +27,7 @@ use yii\behaviors\TimestampBehavior;
  * @property PageOption[] $pageOptions
  * @property PageSeo $pageSeo
  * @property PortfolioReview[] $portfolioReviews
+ * @property PortfolioGalleries[] $portfolioGalleries 
  */
 class Page extends \yii\db\ActiveRecord
 {
@@ -145,10 +146,15 @@ class Page extends \yii\db\ActiveRecord
     {
         return $this->hasOne(PageSeo::class, [ 'page_id' => 'id' ]);
     }
-    
-    public function getPortfolioReviews()
+
+    public function getPortfolioReviews ()
     {
         return $this->hasMany(PortfolioReview::class, [ 'page_id' => 'id' ]);
+    }
+
+    public function getPortfolioGalleries ()
+    {
+        return $this->hasMany(PortfolioGallery::class, [ 'page_id' => 'id' ]);
     }
 
 }

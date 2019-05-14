@@ -64,7 +64,7 @@
                 margin-bottom: 45px;
                 .header-1 {
                     @include stretch(78px, 0, false, 0);
-                    @include font-props(7, $color-snow3, $font-roboto, 300);
+                    @include font-props(7, $color-snow3, $font-roboto, 100);
                     text-align: center;
                 }
                 .line {

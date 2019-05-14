@@ -118,7 +118,7 @@ class PageUrl implements UrlRuleInterface
                 $parentPage = $model->page_id;
                 while ($parentPage) {
                     $parent     = Page::findOne($parentPage);
-                    $url        .= $parent ? $parent->pageSeo->url . '/' : '';
+                    $url        = $parent ? '/' . $parent->pageSeo->url . $url : $url;
                     $parentPage = $parent ? $parent->page_id : false;
                 }
                 $url .= $model->pageSeo->url . '/';
