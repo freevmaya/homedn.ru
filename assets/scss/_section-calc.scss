@@ -1,0 +1,138 @@
+@charset "utf-8";
+
+@mixin section-calc {
+    padding: 117px 0;
+    .header {
+        @include font-props(9);
+        padding-bottom: 53px;
+    }
+    .calc {
+        padding: 0 15px;
+        width: 350px;
+        @include inline-block();
+        .calc-header {
+            @include font-props(5);
+            padding: 18px 0;
+        }
+        form {
+            .form-group {
+                display: inline;
+            }
+            label {
+                display: block;
+                @include font-props(2.5, $color-black70);
+            }
+            input[type=text] {
+                border: 1px solid $color-black30;
+                @include font-props(2.5, $color-black70);
+                @include input-placeholder {
+                    @include font-props(2.5, $color-black70);
+                }
+            }
+            .field-calcinputdataform-address {
+                input[type=text] {
+                    width: 256px;
+                    height: 26px;
+                    padding: 0 10px;
+                }
+            }
+            .roomcount-group, .doorcount-group, .toiletcount-group {
+                @include inline-block(top);
+                width: 200px;
+                .spin-down, .spin-up {
+                    width: 26px;
+                    height: 26px;
+                    border: 1px solid $color-black30;
+                    cursor: pointer;
+                    background: $color-white;
+                    @include font-props(2.5, $color-black70);
+                    vertical-align: top;
+                }
+                input[type=text] {
+                    width: 88px;
+                    height: 26px;
+                    text-align: center;
+                }
+                .help-block {
+                    margin: 0;
+                }
+            }
+            .doorcount-group {
+                width: 182px;
+                input[type=text] {
+                    width: 40px;
+                }
+            }
+            .toiletcount-group {
+                width: 115px;
+                input[type=text] {
+                    width: 40px;
+                }
+            }
+            .field-calcinputdataform-square {
+                @include inline-block(top);
+                width: 116px;
+                label {
+                    sup {
+                        font-size: 70%;
+                    }
+                }
+                input[type=text] {
+                    width: 76px;
+                    height: 27px;
+                    padding: 0 10px;
+                }
+                .help-block {
+                    margin: 0;
+                }
+            }
+            .field-calcinputdataform-second, .field-calcinputdataform-wall {
+                label {
+                    input[type=checkbox] {
+                        display: none;
+                    }
+                    &:before {
+                        @include inline-block(top);
+                        content: '';
+                        width: 12px;
+                        height: 12px;
+                        border: 1px solid $color-black30;
+                        margin-top: 2px;
+                    }
+                    span {
+                        @include inline-block(top);
+                    }
+                    &.checked {
+                        &:before {
+                            background: url($path-image+"chw.png") no-repeat -1px center;
+                        }
+                    }
+                }
+            }
+            .field-calcinputdataform-second {
+                label {
+                    padding-top: 10px;
+                }
+            }
+            button[type=submit] {
+                margin-top: 25px;
+                width: 275px;
+                height: 57px;
+                background: $color-gorse;
+                border: none;
+                @include border-radius(2px);
+                @include font-props(4);
+                img {
+                    margin-left: 10px;
+                    vertical-align: middle;
+                }
+            }
+            .help-block {
+                @include font-props(2.5);
+            }
+        }
+    }
+    .image {
+        @include stretch(false, 0, -20px, false);
+    }
+}

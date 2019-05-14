@@ -1,0 +1,94 @@
+@charset "utf-8";
+
+@import "compass";
+@import "compass/layout/stretching";
+
+@import "variables/typography";
+@import "variables/colors";
+@import "variables/size";
+@import "variables/images";
+@import "mixin/font-props";
+@import "mixin/respond-to";
+@import "mixin/video-impulse";
+@import "mixin/block-middle";
+
+@import "section-price";
+@import "section-calc";
+@import "section-video";
+@import "section-foz";
+@import "section-socials-foz";
+
+.section-1 {
+    margin-top: $header-height;
+    .header {
+        text-align: center;
+        @include font-props(9);
+        padding: 43px 0;
+        border-bottom: 1px solid $color-black30;
+    }
+}
+
+.section-2 {
+    @include section-price;
+}
+
+.section-3 {
+    @include section-calc;
+    background: $color-solitude6;
+    .calc {
+        background: $color-white;
+        width: 370px;
+        padding: 0px 15px 4px;
+    }
+    .image {
+        bottom: 0;
+        img {
+            display: block;
+        }
+    }
+}
+
+.section-4 {
+    padding: 63px 0;
+    .header {
+        @include font-props(9);
+    }
+    .price-section-list {
+        padding: 68px 0;
+        text-align: center;
+        li {
+            @include inline-block(top);
+            width: 262px;
+            padding: 50px;
+            &:hover {
+                background: $color-aliceblue3;
+            }
+            a {
+                text-decoration: none;
+                .image {
+                    display: block;
+                    @include block-middle-inner(img);
+                    height: 132px;
+                }
+                .name {
+                    display: block;
+                    padding-top: 10px;
+                    @include font-props(4, $color-black);
+                }
+            }
+        }
+    }
+}
+
+.section-5 {
+    @include section-video;
+    .header {
+        text-align: left;
+        @include font-props(9, $color-black, $font-normal, normal);
+    }
+}
+
+.section-6 {
+    @include section-foz;
+    @include section-socials-foz;
+}

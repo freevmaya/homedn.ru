@@ -12,6 +12,7 @@ use yii\base\Widget;
 use yii\helpers\Html;
 use app\models\PriceCaption;
 use rmrevin\yii\fontawesome\FAS;
+use rmrevin\yii\fontawesome\CdnFreeAssetBundle;
 
 /**
  * Description of PriceCaptionWidget
@@ -33,6 +34,7 @@ class PriceCaptionWidget extends Widget
     public function run ()
     {
         if ($this->priceCaption) {
+            CdnFreeAssetBundle::register($this->view);
             echo Html::beginTag('div', [ 'class' => 'price-caption-line' ]);
             $content            = [];
             $ul                 = [];

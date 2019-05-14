@@ -1,0 +1,46 @@
+@charset "utf-8";
+
+@mixin section-socials-foz {
+    .cont {
+        .header-1 {
+            @include font-props(6);
+            text-align: center;
+        }
+        .header-2 {
+            @include font-props(5);
+            text-align: center;
+        }
+        .socials {
+            padding: 44px 0;
+            ul {
+                text-align: center;
+                li {
+                    @include inline-block(top);
+                    margin: 0 10px;
+                    a {
+                        display: block;
+                        width: 60px;
+                        height: 60px;
+                        @include border-radius(50%);
+                        border: 1px solid $color-greychateau;
+                        background: $color-white;
+                        cursor: pointer;
+                        text-align: center;
+                        @include block-middle-inner(img);
+                        @include transition(all 0.2s ease);
+                        &:hover {
+                            background: $color-greychateau;
+                            img {
+                                @include filter(brightness(2));
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .desc {
+            @include font-props(5);
+            text-align: center;
+        }
+    }
+}

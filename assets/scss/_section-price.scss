@@ -1,0 +1,160 @@
+@charset "utf-8";
+
+@mixin section-price {
+    padding: 117px 0;
+    .header {
+        @include font-props(9);
+    }
+    .price-caption-line {
+        margin: 55px 0;
+        ul {
+            background: $color-aliceblue2;
+            @include border-radius(40px);
+            position: relative;
+            @include inline-block;
+            li {
+                padding: 9px 23px;
+                @include inline-block;
+                a {
+                    @include font-props(3.5, $color-black);
+                    text-decoration: none;
+                    /*@include transition(color 0.9s ease);*/
+                    &:hover {
+                        text-decoration: none;
+                    }
+                }
+                &.active {
+                    a {
+                        /*color: $color-white;*/
+                    }
+                }
+                &:last-child {
+                    background: $color-pictonblue3;
+                    @include border-radius(62px);
+                    height: 39px;
+                    @include stretch(0, false, false, 0);
+                    mix-blend-mode: multiply;
+                    @include transition(left 0.7s ease, width 0.7s ease);
+                }
+            }
+        }
+    }
+    .price-caption-contents {
+        .caption-content {
+            display: none;
+            &.active {
+                display: block;
+            }
+            .thead {
+                height: 240px;
+                .header {
+                    padding-top: 16px;
+                    @include font-props(9);
+                }
+                .description {
+                    padding-top: 31px;
+                    @include font-props(3.5);
+                }
+            }
+            .r {
+                height: 72px;
+                padding-top: 35px;
+                @include block-middle-inner(span);
+            }
+            .col-1 {
+                @include inline-block(top);
+                width: 166px;
+                .r {
+                    text-align: left;
+                    @include font-props(4, $color-black);
+                    cursor: pointer;
+                    &:hover {
+                        color: $color-pictonblue2;
+                    }
+                    a {
+                        @include inline-block(middle);
+                        @include font-props(3, $color-solitude4);
+                        text-decoration: none;
+                        width: 15px;
+                        height: 15px;
+                        @include border-radius(50%);
+                        text-align: center;
+                        cursor: pointer;
+                        background: $color-pictonblue2;
+                        margin-left: 3px;
+                    }
+                }
+            }
+            .col-option {
+                @include inline-block(top);
+                width: 264px;
+                border: 1px solid $color-solitude5;
+                background: $color-white;
+                padding-bottom: 30px;
+                &:not(:nth-of-type(2)) {
+                    margin-left: -1px;
+                }
+                &:nth-of-type(3) {
+                    margin-top: -17px;
+                    background: $color-solitude6;
+                    padding-top: 17px;
+                    padding-bottom: 47px;
+                    .thead {
+                        .line {
+                            background: $color-hawkesblue3;
+                        }
+                    }
+                }
+                .r {
+                    text-align: center;
+                    .check {
+                        @include font-props(3.5, $color-pictonblue2);
+                    }
+                    .times {
+                        @include font-props(3.75, $color-black70);
+                    }
+                }
+                .thead {
+                    position: relative;
+                    .name {
+                        text-align: center;
+                        @include font-props(4, $color-black70);
+                        text-transform: uppercase;
+                        padding-top: 30px;
+                    }
+                    .price {
+                        padding-top: 19px;
+                        text-align: center;
+                        @include font-props(8);
+                    }
+                    .remark {
+                        text-align: center;
+                        @include font-props(3, $color-black70);
+                    }
+                    .cta {
+                        @include stretch(false, 0, 25px, 0);
+                        text-align: center;
+                        a {
+                            @include inline-block;
+                            width: 197px;
+                            height: 41px;
+                            background: $color-gorse;
+                            @include border-radius(1px);
+                            padding-top: 12px;
+                            text-decoration: none;
+                            @include font-props(2.75, $color-black);
+                            &:hover {
+                                background: $color-gorse2;
+                            }
+                        }
+                    }
+                    .line {
+                        @include stretch(false, 59px, 0, 59px);
+                        height: 3px;
+                        background: $color-solitude5;
+                    }
+                }
+            }
+        }
+    }
+}

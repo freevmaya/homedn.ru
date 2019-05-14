@@ -12,6 +12,8 @@
 @import "mixin/video-impulse";
 @import "mixin/block-middle";
 
+@import "section-video";
+
 .section-1 {
     margin-top: $header-height;
     .section-menu {
@@ -142,25 +144,7 @@
 }
 
 .section-video {
-    background: $color-whitesmoke3;
-    padding: 45px 0;
-    text-align: center;
-    border-top: 1px solid $color-black30;
-    border-bottom: 1px solid $color-black30;
-    .header {
-        @include font-props(7, $color-black, $font-roboto, 100);
-    }
-    .video {
-        padding: 45px 0;
-        a {
-            display: block;
-            margin: 0 auto;
-            width: 641px;
-            height: 360px;
-            @include video-impulse(119px, 149px, 'video7.png', 50%);
-            background-size: cover;
-        }
-    }
+    @include section-video;
 }
 
 .section-gallery {
