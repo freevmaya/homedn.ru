@@ -488,6 +488,9 @@ footer {
   .breadcrumb > li + li:before {
     color: #000000; }
 
+#kladr_autocomplete ul {
+  width: auto !important; }
+
 header {
   position: fixed;
   background: #ffffff;
