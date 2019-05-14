@@ -1,6 +1,5 @@
 <?php
 
-use yii\widgets\Breadcrumbs;
 use app\helpers\PageProperty;
 use app\helpers\SiteProperty;
 use app\assets\TemplateAsset;
@@ -19,7 +18,7 @@ TemplateAsset::register($this);
 
 <section class="section-1">
     <div class="wrapper">
-        <div class="header"><?= PageProperty::getValue($model->id, 'header37') ?></div>
+        <div class="header"><?= nl2br(PageProperty::getValue($model->id, 'header37')) ?></div>
     </div>
 </section>
 
@@ -81,7 +80,7 @@ TemplateAsset::register($this);
             <div class="header-2"><?= nl2br(PageProperty::getValue($model->id, 'header45')) ?></div>
             <div class="socials">
                 <?=
-                app\widgets\SocialsWidget::widget([
+                SocialsWidget::widget([
                     'position' => 'foz',
                 ])
                 ?>

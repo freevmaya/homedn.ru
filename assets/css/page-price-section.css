@@ -1,0 +1,348 @@
+/*@import url('//fonts.googleapis.com/css?family=Roboto+Condensed:400,700|Roboto:400,700|Exo+2:400,700&subset=cyrillic');*/
+/*$font-os: 'Open Sans', sans-serif;*/
+/*$font-cn: 'Roboto Condensed', sans-serif;*/
+/*$font-exo: 'Exo 2', sans-serif;*/
+.section-1 {
+  margin-top: 114px; }
+  .section-1 .header {
+    text-align: center;
+    font-size: 37px;
+    padding: 43px 0;
+    border-bottom: 1px solid #C5C6C6; }
+
+.section-2 {
+  padding: 55px 0; }
+  .section-2 p {
+    font-size: 29px;
+    padding: 39px 0; }
+  .section-2 table {
+    width: 100%; }
+    .section-2 table thead {
+      background: #4797D3; }
+      .section-2 table thead tr th {
+        padding: 2px 15px;
+        border: 1px solid #4797D3;
+        font-size: 17px;
+        color: #FAFAFA; }
+        .section-2 table thead tr th:first-child {
+          width: 72%; }
+        .section-2 table thead tr th:nth-child(2) {
+          width: 16%;
+          text-align: center; }
+        .section-2 table thead tr th:last-child {
+          width: 12%; }
+    .section-2 table tbody tr {
+      height: 42px;
+      cursor: pointer; }
+      .section-2 table tbody tr:hover {
+        background: #ECF0F4; }
+      .section-2 table tbody tr td {
+        border: 1px solid #C3C3C3;
+        padding: 0 15px;
+        font-size: 19px; }
+      .section-2 table tbody tr:nth-child(2) {
+        text-align: center; }
+      .section-2 table tbody tr:last-child {
+        text-align: center; }
+
+.section-3 {
+  padding: 117px 0;
+  background: #ECF0F4; }
+  .section-3 .header {
+    font-size: 37px;
+    padding-bottom: 53px; }
+  .section-3 .calc {
+    padding: 0 15px;
+    width: 350px;
+    display: inline-block;
+    vertical-align: middle;
+    *vertical-align: auto;
+    *zoom: 1;
+    *display: inline; }
+    .section-3 .calc .calc-header {
+      font-size: 21px;
+      padding: 18px 0; }
+    .section-3 .calc form .form-group {
+      display: inline; }
+    .section-3 .calc form label {
+      display: block;
+      font-size: 11px;
+      color: #727271; }
+    .section-3 .calc form input[type=text] {
+      border: 1px solid #C5C6C6;
+      font-size: 11px;
+      color: #727271; }
+      .section-3 .calc form input[type=text]:-moz-placeholder {
+        font-size: 11px;
+        color: #727271; }
+      .section-3 .calc form input[type=text]::-moz-placeholder {
+        font-size: 11px;
+        color: #727271; }
+      .section-3 .calc form input[type=text]:-ms-input-placeholder {
+        font-size: 11px;
+        color: #727271; }
+      .section-3 .calc form input[type=text]::-webkit-input-placeholder {
+        font-size: 11px;
+        color: #727271; }
+    .section-3 .calc form .field-calcinputdataform-address input[type=text] {
+      width: 256px;
+      height: 26px;
+      padding: 0 10px; }
+    .section-3 .calc form .roomcount-group, .section-3 .calc form .doorcount-group, .section-3 .calc form .toiletcount-group {
+      display: inline-block;
+      vertical-align: top;
+      *vertical-align: auto;
+      *zoom: 1;
+      *display: inline;
+      width: 200px; }
+      .section-3 .calc form .roomcount-group .spin-down, .section-3 .calc form .roomcount-group .spin-up, .section-3 .calc form .doorcount-group .spin-down, .section-3 .calc form .doorcount-group .spin-up, .section-3 .calc form .toiletcount-group .spin-down, .section-3 .calc form .toiletcount-group .spin-up {
+        width: 26px;
+        height: 26px;
+        border: 1px solid #C5C6C6;
+        cursor: pointer;
+        background: #ffffff;
+        font-size: 11px;
+        color: #727271;
+        vertical-align: top; }
+      .section-3 .calc form .roomcount-group input[type=text], .section-3 .calc form .doorcount-group input[type=text], .section-3 .calc form .toiletcount-group input[type=text] {
+        width: 88px;
+        height: 26px;
+        text-align: center; }
+      .section-3 .calc form .roomcount-group .help-block, .section-3 .calc form .doorcount-group .help-block, .section-3 .calc form .toiletcount-group .help-block {
+        margin: 0; }
+    .section-3 .calc form .doorcount-group {
+      width: 182px; }
+      .section-3 .calc form .doorcount-group input[type=text] {
+        width: 40px; }
+    .section-3 .calc form .toiletcount-group {
+      width: 115px; }
+      .section-3 .calc form .toiletcount-group input[type=text] {
+        width: 40px; }
+    .section-3 .calc form .field-calcinputdataform-square {
+      display: inline-block;
+      vertical-align: top;
+      *vertical-align: auto;
+      *zoom: 1;
+      *display: inline;
+      width: 116px; }
+      .section-3 .calc form .field-calcinputdataform-square label sup {
+        font-size: 70%; }
+      .section-3 .calc form .field-calcinputdataform-square input[type=text] {
+        width: 76px;
+        height: 27px;
+        padding: 0 10px; }
+      .section-3 .calc form .field-calcinputdataform-square .help-block {
+        margin: 0; }
+    .section-3 .calc form .field-calcinputdataform-second label input[type=checkbox], .section-3 .calc form .field-calcinputdataform-wall label input[type=checkbox] {
+      display: none; }
+    .section-3 .calc form .field-calcinputdataform-second label:before, .section-3 .calc form .field-calcinputdataform-wall label:before {
+      display: inline-block;
+      vertical-align: top;
+      *vertical-align: auto;
+      *zoom: 1;
+      *display: inline;
+      content: '';
+      width: 12px;
+      height: 12px;
+      border: 1px solid #C5C6C6;
+      margin-top: 2px; }
+    .section-3 .calc form .field-calcinputdataform-second label span, .section-3 .calc form .field-calcinputdataform-wall label span {
+      display: inline-block;
+      vertical-align: top;
+      *vertical-align: auto;
+      *zoom: 1;
+      *display: inline; }
+    .section-3 .calc form .field-calcinputdataform-second label.checked:before, .section-3 .calc form .field-calcinputdataform-wall label.checked:before {
+      background: url("/uploads/images/chw.png") no-repeat -1px center; }
+    .section-3 .calc form .field-calcinputdataform-second label {
+      padding-top: 10px; }
+    .section-3 .calc form button[type=submit] {
+      margin-top: 25px;
+      width: 275px;
+      height: 57px;
+      background: #FFDD2D;
+      border: none;
+      -moz-border-radius: 2px;
+      -webkit-border-radius: 2px;
+      border-radius: 2px;
+      font-size: 17px; }
+      .section-3 .calc form button[type=submit] img {
+        margin-left: 10px;
+        vertical-align: middle; }
+    .section-3 .calc form .help-block {
+      font-size: 11px; }
+  .section-3 .image {
+    position: absolute;
+    bottom: -20px;
+    right: 0; }
+  .section-3 .calc {
+    background: #ffffff;
+    width: 370px;
+    padding: 0px 15px 4px; }
+  .section-3 .image {
+    bottom: 0; }
+    .section-3 .image img {
+      display: block; }
+
+.section-4 {
+  padding: 113px 0;
+  border-top: 1px solid #D9DADA;
+  border-bottom: 1px solid #D9DADA; }
+  .section-4 .cont {
+    background: #ffffff;
+    border: 1px solid #D9DADA;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    -moz-box-shadow: 21px 21px 45px #D9DADA;
+    -webkit-box-shadow: 21px 21px 45px #D9DADA;
+    box-shadow: 21px 21px 45px #D9DADA;
+    padding: 60px; }
+    .section-4 .cont .header {
+      font-size: 25px;
+      text-align: center; }
+    .section-4 .cont .subheader {
+      font-size: 21px;
+      text-align: center;
+      padding-top: 10px; }
+    .section-4 .cont .success-message {
+      text-align: center;
+      font-size: 21px;
+      line-height: 1.45; }
+    .section-4 .cont .error-message {
+      text-align: center;
+      font-size: 21px;
+      color: #E31E24;
+      line-height: 1.45; }
+    .section-4 .cont .form-container {
+      padding-top: 45px;
+      text-align: center; }
+      .section-4 .cont .form-container .form-group {
+        display: inline-block;
+        vertical-align: middle;
+        *vertical-align: auto;
+        *zoom: 1;
+        *display: inline;
+        padding: 20px 12px; }
+        .section-4 .cont .form-container .form-group input[type=text] {
+          background: #EEF2F7;
+          -moz-border-radius: 2px;
+          -webkit-border-radius: 2px;
+          border-radius: 2px;
+          border: 1px solid #DDDFE0;
+          font-size: 17px;
+          color: #1A1A1A;
+          height: 49px;
+          width: 275px;
+          padding: 0 15px; }
+          .section-4 .cont .form-container .form-group input[type=text]:-moz-placeholder {
+            color: #1A1A1A; }
+          .section-4 .cont .form-container .form-group input[type=text]::-moz-placeholder {
+            color: #1A1A1A; }
+          .section-4 .cont .form-container .form-group input[type=text]:-ms-input-placeholder {
+            color: #1A1A1A; }
+          .section-4 .cont .form-container .form-group input[type=text]::-webkit-input-placeholder {
+            color: #1A1A1A; }
+        .section-4 .cont .form-container .form-group .help-block {
+          position: absolute;
+          font-size: 80%; }
+        .section-4 .cont .form-container .form-group .checkbox-label {
+          font-size: 11px;
+          position: relative;
+          cursor: pointer; }
+          .section-4 .cont .form-container .form-group .checkbox-label input[type=checkbox] {
+            display: none; }
+          .section-4 .cont .form-container .form-group .checkbox-label span {
+            display: inline-block;
+            vertical-align: middle;
+            *vertical-align: auto;
+            *zoom: 1;
+            *display: inline; }
+          .section-4 .cont .form-container .form-group .checkbox-label:before {
+            display: inline-block;
+            vertical-align: top;
+            *vertical-align: auto;
+            *zoom: 1;
+            *display: inline;
+            width: 17px;
+            height: 17px;
+            content: '';
+            border: 1px solid #C5C6C6;
+            margin-right: 5px; }
+          .section-4 .cont .form-container .form-group .checkbox-label.checked:after {
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            content: url("/uploads/images/ch.png"); }
+      .section-4 .cont .form-container button[type=submit] {
+        display: inline-block;
+        vertical-align: middle;
+        *vertical-align: auto;
+        *zoom: 1;
+        *display: inline;
+        margin: 20px 20px 0;
+        border: none;
+        background: #FFDD2D;
+        padding: 0 67px;
+        height: 57px;
+        cursor: pointer;
+        -moz-border-radius: 2px;
+        -webkit-border-radius: 2px;
+        border-radius: 2px;
+        font-size: 17px; }
+  .section-4 .cont .header-1 {
+    font-size: 25px;
+    text-align: center; }
+  .section-4 .cont .header-2 {
+    font-size: 21px;
+    text-align: center; }
+  .section-4 .cont .socials {
+    padding: 44px 0; }
+    .section-4 .cont .socials ul {
+      text-align: center; }
+      .section-4 .cont .socials ul li {
+        display: inline-block;
+        vertical-align: top;
+        *vertical-align: auto;
+        *zoom: 1;
+        *display: inline;
+        margin: 0 10px; }
+        .section-4 .cont .socials ul li a {
+          display: block;
+          width: 60px;
+          height: 60px;
+          -moz-border-radius: 50%;
+          -webkit-border-radius: 50%;
+          border-radius: 50%;
+          border: 1px solid #979FAC;
+          background: #ffffff;
+          cursor: pointer;
+          text-align: center;
+          -moz-transition: all 0.2s ease;
+          -o-transition: all 0.2s ease;
+          -webkit-transition: all 0.2s ease;
+          transition: all 0.2s ease; }
+          .section-4 .cont .socials ul li a:after {
+            display: inline-block;
+            vertical-align: middle;
+            *vertical-align: auto;
+            *zoom: 1;
+            *display: inline;
+            height: 100%;
+            content: ''; }
+          .section-4 .cont .socials ul li a img {
+            display: inline-block;
+            vertical-align: middle;
+            *vertical-align: auto;
+            *zoom: 1;
+            *display: inline; }
+          .section-4 .cont .socials ul li a:hover {
+            background: #979FAC; }
+            .section-4 .cont .socials ul li a:hover img {
+              -webkit-filter: brightness(2);
+              filter: brightness(2); }
+  .section-4 .cont .desc {
+    font-size: 21px;
+    text-align: center; }
+
+/*# sourceMappingURL=page-price-section.css.map */
