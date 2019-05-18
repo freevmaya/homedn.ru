@@ -72,6 +72,14 @@ AdminAsset::register($this);
                         ],
                     ],
                     [
+                        'label' => 'Настройки калькулятора', 'items' => [
+                            [ 'label' => 'Базовые параметры', 'url' => [ '/calc-base-price/index' ] ],
+                            [ 'label' => 'Комнаты', 'url' => [ '/calc-room/index' ] ],
+                            [ 'label' => 'Группы элементов', 'url' => [ '/calc-component-group/index' ] ],
+                            [ 'label' => 'Элементы', 'url' => [ '/calc-component-element/index' ] ],
+                        ],
+                    ],
+                    [
                         'label' => 'Настройки', 'items' => [
                             [ 'label' => 'Файловый менеджер', 'url' => [ '/site/file-manager' ] ],
                             [ 'label' => 'Свойства сайта', 'url' => [ '/site-option/index' ] ],

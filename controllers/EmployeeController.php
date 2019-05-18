@@ -15,17 +15,19 @@ use yii\filters\AccessControl;
  */
 class EmployeeController extends Controller
 {
+
     public $layout = 'admin';
+
     /**
      * {@inheritdoc}
      */
-    public function behaviors()
+    public function behaviors ()
     {
         return [
-            'verbs' => [
-                'class' => VerbFilter::className(),
+            'verbs'  => [
+                'class'   => VerbFilter::className(),
                 'actions' => [
-                    'delete' => ['POST'],
+                    'delete' => [ 'POST' ],
                 ],
             ],
             'access' => [
@@ -45,14 +47,14 @@ class EmployeeController extends Controller
      * Lists all Employee models.
      * @return mixed
      */
-    public function actionIndex()
+    public function actionIndex ()
     {
         $dataProvider = new ActiveDataProvider([
             'query' => Employee::find(),
         ]);
 
         return $this->render('index', [
-            'dataProvider' => $dataProvider,
+                    'dataProvider' => $dataProvider,
         ]);
     }
 
@@ -62,10 +64,10 @@ class EmployeeController extends Controller
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionView($id)
+    public function actionView ($id)
     {
         return $this->render('view', [
-            'model' => $this->findModel($id),
+                    'model' => $this->findModel($id),
         ]);
     }
 
@@ -74,16 +76,16 @@ class EmployeeController extends Controller
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
-    public function actionCreate()
+    public function actionCreate ()
     {
         $model = new Employee();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+            return $this->redirect([ 'view', 'id' => $model->id ]);
         }
 
         return $this->render('create', [
-            'model' => $model,
+                    'model' => $model,
         ]);
     }
 
@@ -94,16 +96,16 @@ class EmployeeController extends Controller
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionUpdate($id)
+    public function actionUpdate ($id)
     {
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+            return $this->redirect([ 'view', 'id' => $model->id ]);
         }
 
         return $this->render('update', [
-            'model' => $model,
+                    'model' => $model,
         ]);
     }
 
@@ -114,11 +116,11 @@ class EmployeeController extends Controller
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionDelete($id)
+    public function actionDelete ($id)
     {
         $this->findModel($id)->delete();
 
-        return $this->redirect(['index']);
+        return $this->redirect([ 'index' ]);
     }
 
     /**
@@ -128,7 +130,7 @@ class EmployeeController extends Controller
      * @return Employee the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
-    protected function findModel($id)
+    protected function findModel ($id)
     {
         if (($model = Employee::findOne($id)) !== null) {
             return $model;
@@ -136,4 +138,5 @@ class EmployeeController extends Controller
 
         throw new NotFoundHttpException('The requested page does not exist.');
     }
+
 }

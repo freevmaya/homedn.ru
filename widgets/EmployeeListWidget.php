@@ -37,6 +37,7 @@ class EmployeeListWidget extends Widget
     public function run ()
     {
         if ($this->employeeList) {
+            CdnFreeAssetBundle::register($this->view);
             $items = [];
             echo Html::beginTag('div', [ 'class' => 'employee-list' ]);
             foreach ($this->employeeList as $emp) {

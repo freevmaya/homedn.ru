@@ -13,6 +13,7 @@ use yii\base\Widget;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use valekstepanov\yii2kladr\Kladr;
+use app\models\CalcInputdata;
 use app\models\CalcInputdataForm;
 use app\helpers\SiteProperty;
 use yii\web\JsExpression;
@@ -37,10 +38,16 @@ class CalcInputdataWidget extends Widget
         if ($this->calcForm->load(Yii::$app->request->post()) && ($this->calcKey  = $this->calcForm->send())) {
             $this->view->context->redirect([ 'site/frontend', 'id' => SiteProperty::getValue('calcpageid'), 'k' => $this->calcKey ]);
             Yii::$app->end();
-        } else {
-            $cookies       = Yii::$app->request->cookies;
-            $this->calcKey = $cookies->getValue('calculatorKey', false);
-        }
+        } /* else {
+          $cookies       = Yii::$app->request->cookies;
+          $this->calcKey = $cookies->getValue('calculatorKey', false);
+          if ($this->calcKey) {
+          if ($calcData = CalcInputdata::find()->where([ 'key' => $this->calcKey ])->one()) {
+          $this->calcForm->setAttributes(json_decode($calcData->user_data, true));
+          $this->calcForm->key = $calcData->key;
+          }
+          }
+          } */
     }
 
     public function run ()
@@ -49,10 +56,13 @@ class CalcInputdataWidget extends Widget
             echo Html::tag('div', $this->calcHeader, [ 'class' => 'calc-header' ]);
             $form = ActiveForm::begin();
 
+            echo $form->field($this->calcForm, 'key')->hiddenInput()->label(false);
+            $this->calcForm->address = $this->calcForm->address_name;
             echo $form->field($this->calcForm, 'address')->widget(Kladr::className(), [
                 'oneString'   => true,
                 'parentType'  => Kladr::TYPE_REGION,
                 'parentId'    => '7200000000000',
+                'type'        => Kladr::TYPE_BUILDING,
                 'labelFormat' => new JsExpression("function(obj, query){
                                 if (obj.parents) {
                                         let address = '';

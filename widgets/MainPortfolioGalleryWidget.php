@@ -14,6 +14,7 @@ use app\models\MainPortfolioGallery;
 use yii\helpers\Html;
 use valekstepanov\flexslider\FlexSlider;
 use rmrevin\yii\fontawesome\FAS;
+use rmrevin\yii\fontawesome\CdnFreeAssetBundle;
 
 /**
  * Description of MainPortfolioGalleryWidget
@@ -33,6 +34,7 @@ class MainPortfolioGalleryWidget extends Widget
     public function run ()
     {
         if ($this->gallery) {
+            CdnFreeAssetBundle::register($this->view);
             echo Html::beginTag('div', [ 'class' => 'main-portfolio-gallery' ]);
             $ul1 = [];
             $ul2 = [];

@@ -10,13 +10,46 @@ use Yii;
  * @property int $id
  * @property string $key
  * @property string $user_data
+ * @property string $calc_data
  */
 class CalcInputdata extends \yii\db\ActiveRecord
 {
+
+    const RELATION_SET = [
+        [
+            'id'   => 0,
+            'name' => '',
+        ],
+        [
+            'id'   => 1,
+            'name' => 'Количество комнат',
+        ],
+        [
+            'id'   => 2,
+            'name' => 'Площадь',
+        ],
+        [
+            'id'   => 3,
+            'name' => 'Количество дверей',
+        ],
+        [
+            'id'   => 4,
+            'name' => 'Количество санузлов',
+        ],
+        [
+            'id'   => 5,
+            'name' => 'Демонтаж',
+        ],
+        [
+            'id'   => 6,
+            'name' => 'Возведение стен',
+        ],
+    ];
+
     /**
      * {@inheritdoc}
      */
-    public static function tableName()
+    public static function tableName ()
     {
         return '{{%calc_inputdata}}';
     }
@@ -24,24 +57,26 @@ class CalcInputdata extends \yii\db\ActiveRecord
     /**
      * {@inheritdoc}
      */
-    public function rules()
+    public function rules ()
     {
         return [
-            [['key'], 'required'],
-            [['key'], 'string', 'max' => 32],
-            [['user_data'], 'string', 'max' => 2048],
+            [ [ 'key' ], 'required' ],
+            [ [ 'key' ], 'string', 'max' => 32 ],
+            [ [ 'user_data', 'calc_data' ], 'string', 'max' => 2048 ],
         ];
     }
 
     /**
      * {@inheritdoc}
      */
-    public function attributeLabels()
+    public function attributeLabels ()
     {
         return [
-            'id' => 'ID',
-            'key' => 'Key',
+            'id'        => 'ID',
+            'key'       => 'Key',
             'user_data' => 'User Data',
+            'calc_data' => 'Calc Data',
         ];
     }
+
 }

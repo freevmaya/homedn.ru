@@ -38,7 +38,12 @@
     .calc {
         background: $color-white;
         width: 370px;
-        padding: 0px 15px 4px;
+        padding: 0px 15px 14px;
+        form {
+            button[type=submit] {
+                margin-top: 15px;
+            }
+        }
     }
     .image {
         bottom: 0;

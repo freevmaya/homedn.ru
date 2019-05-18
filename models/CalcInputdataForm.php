@@ -17,6 +17,7 @@ use yii\web\Cookie;
 class CalcInputdataForm extends Model
 {
 
+    public $key;
     public $address;
     public $roomcount;
     public $square;
@@ -24,6 +25,7 @@ class CalcInputdataForm extends Model
     public $toiletcount;
     public $second;
     public $wall;
+    public $address_name;
 
     /**
      * {@inheritdoc}
@@ -33,7 +35,7 @@ class CalcInputdataForm extends Model
         return [
             [ [ 'address' ], 'required', 'message' => 'Укажите адрес' ],
             [ [ 'square' ], 'required', 'message' => 'Укажите площадь квартиры' ],
-            [ [ 'address', 'square' ], 'string' ],
+            [ [ 'key', 'address', 'square', 'address_name' ], 'string' ],
             [ [ 'roomcount', 'doorcount', 'toiletcount' ], 'integer' ],
             [ [ 'second', 'wall' ], 'integer' ],
         ];
@@ -67,8 +69,8 @@ class CalcInputdataForm extends Model
     public function send ()
     {
         if ($this->validate()) {
-            $model            = new CalcInputdata();
-            $model->key       = Yii::$app->security->generateRandomString();
+            $model            = $this->key ? CalcInputdata::find()->where([ 'key' => $this->key ])->one() : new CalcInputdata();
+            $model->key       = $this->key ?: Yii::$app->security->generateRandomString();
             $model->user_data = json_encode($this->attributes);
             $model->save();
 
@@ -97,7 +99,8 @@ class CalcInputdataForm extends Model
         $this->toiletcount = 1;
         if ($key               = $cookies->getValue('calculatorKey')) {
             if ($model = CalcInputdata::find()->where([ 'key' => $key ])->one()) {
-                $this->setAttributes(json_decode($model->user_data));
+                $this->setAttributes(json_decode($model->user_data, true));
+                $this->key = $key;
             }
         }
     }

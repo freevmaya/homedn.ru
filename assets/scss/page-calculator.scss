@@ -1,0 +1,258 @@
+@charset "utf-8";
+
+@import "compass";
+@import "compass/layout/stretching";
+
+@import "variables/typography";
+@import "variables/colors";
+@import "variables/size";
+@import "variables/images";
+@import "mixin/font-props";
+@import "mixin/respond-to";
+@import "mixin/video-impulse";
+@import "mixin/block-middle";
+
+@import "section-calc";
+
+body {
+    background: $color-solitude6;
+}
+
+header {
+    position: relative;
+    background: transparent;
+    border: none;
+    z-index: 1;
+    padding: 20px 0;
+    .logo {
+        @include inline-block(middle);
+    }
+    .breadcrumb {
+        padding: 0 50px;
+        @include inline-block(middle);
+        margin: 0;
+        li {
+            a, &.active, + li:before {
+                @include font-props(2.5, $color-black70);
+            }
+        }
+    }
+}
+
+.section-1 {
+    @include section-calc;
+    background: $color-solitude6;
+    .calc {
+        background: $color-white;
+        width: 370px;
+        padding: 0px 15px 14px;
+        form {
+            button[type=submit] {
+                margin-top: 15px;
+            }
+        }
+    }
+    .image {
+        bottom: 0;
+        img {
+            display: block;
+        }
+    }
+}
+
+.section-2 {
+    padding: 43px 0;
+    .header {
+        @include font-props(5);
+    }
+}
+
+.section-3 {
+    padding: 26px 0;
+    .inputdata-container {
+        width: 490px;
+        background: $color-white;
+        padding: 32px;
+        position: relative;
+        .address {
+            @include font-props(4, $color-black);
+            padding-bottom: 15px;
+        }
+        p {
+            padding-bottom: 10px;
+            @include font-props(3, $color-black70);
+            .val {
+                color: $color-black;
+            }
+        }
+        .change {
+            @include stretch(40px, 32px, false, false);
+            @include font-props(2.5, $color-dodgerblue3);
+        }
+    }
+}
+
+.section-4 {
+
+}
+
+.section-5 {
+    padding-top: 43px;
+    .tab-nav {
+        margin: 0 20px;
+        .tab-element {
+            margin: 0 5px;
+            @include inline-block(top);
+            a {
+                display: block;
+                width: 170px;
+                height: 39px;
+                background: $color-azure4;
+                padding-top: 12px;
+                @include font-props(3, $color-black70);
+                text-decoration: none;
+                text-align: center;
+                &.active {
+                    background: $color-white;
+                    color: $color-black;
+                }
+                &:not(.active):hover {
+                    background: $color-azure3;
+                    color: $color-black90;
+                }
+            }
+        }
+    }
+    .tab-container {
+        background: $color-white;
+        padding: 10px;
+        width: 100%;
+        overflow: hidden;
+        .tab-content {
+            display: none;
+            min-height: 540px;
+            .baseimage {
+                width: 64%;
+                @include inline-block(top);
+                img {
+                    width: 100%;
+                    display: block;
+                }
+                + .element-group-list {
+                    width: 36%;
+                }
+            }
+            .element-group-list {
+                width: 100%;
+                @include inline-block(top);
+                height: 100%;
+                overflow-y: auto;
+                .element-group {
+                    border-bottom: 1px solid $color-whitesmoke8;
+                    &.simple {
+                        .name {
+                            display: none;
+                        }
+                    }
+                    .name {
+                        a {
+                            display: block;
+                            padding: 15px;
+                            @include font-props(3, $color-black80);
+                            text-decoration: none;
+                            span {
+                                @include inline-block(middle);
+                                line-height: 1;
+                            }
+                            i {
+                                @include inline-block(middle);
+                                margin-right: 10px;
+                            }
+                        }
+                    }
+                    .element-list {
+                        display: none;
+                        padding: 10px;
+                        background: $color-whitesmoke8;
+                        .local-group-name {
+                            margin: 10px 5px 5px;
+                            @include font-props(3, $color-charcoal);
+                        }
+                        label {
+                            @include inline-block(top);
+                            width: 142px;
+                            height: 210px;
+                            position: relative;
+                            margin: 5px;
+                            cursor: pointer;
+                            background: $color-white;
+                            .icon {
+                                display: block;
+                                height: 90px;
+                                overflow: hidden;
+                                img {
+                                    width: 100%;
+                                    display: block;
+                                }
+                            }
+                            .name {
+                                display: block;
+                                margin: 5px;
+                                @include font-props(2.75, $color-black, false, bold);
+                            }
+                            .desc {
+                                display: block;
+                                margin: 5px;
+                                @include font-props(2.5, $color-black60);
+                            }
+                            .countable {
+                                padding: 0 5px;
+                                .minus, .plus {
+                                    width: 26px;
+                                    height: 26px;
+                                    border: 1px solid $color-black30;
+                                    cursor: pointer;
+                                    background: $color-white;
+                                    @include font-props(2.5, $color-black70);
+                                    vertical-align: top;
+                                }
+                                input[type=text] {
+                                    width: 48px;
+                                    height: 26px;
+                                    text-align: center;
+                                    @include font-props(2.75, $color-black);
+                                }
+                            }
+                            .price {
+                                display: block;
+                                margin: 10px 5px;
+                                @include font-props(2.75, $color-black);
+                            }
+                            &.big {
+                                width: 217px;
+                                height: 329px;
+                                .icon {
+                                    height: 215px;
+                                }
+                            }
+                            &.checked {
+                                @include box-shadow(0 0 2px $color-black);
+                                &:before {
+                                    content: '';
+                                    @include stretch(10px, 10px, false, false);
+                                    width: 24px;
+                                    height: 24px;
+                                    background: url($path-image+"selected-arrow.svg") no-repeat;
+                                    background-size: cover;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            &.active {
+                display: block;
+            }
+        }
+    }
+}

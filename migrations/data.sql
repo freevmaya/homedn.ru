@@ -10,14 +10,58 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 
-INSERT INTO `yii_calc_inputdata` (`id`, `key`, `user_data`) VALUES
-(1, 'r5Nujeuv0guJ4KizB19yQ_pSwAQMfX5w', '{\"address\":\"7200000100001660016\",\"roomcount\":\"1\",\"square\":\"160\",\"doorcount\":\"1\",\"toiletcount\":\"1\",\"second\":\"0\",\"wall\":\"0\"}');
+INSERT IGNORE INTO `yii_calc_base_price` (`id`, `name`, `price`, `inputdata`) VALUES
+(1, 'Базовая стоимость', 100000, 0),
+(2, 'Стоимость за 1 кв. м', 1000, 2),
+(3, 'Стоимость за 1 санузел', 50000, 4),
+(4, 'Стоимость за 1 комнату', 50000, 1),
+(5, 'Стоимость за демонтаж 1 кв. м', 5000, 5),
+(6, 'Стоимость за возведение стен на 1 кв. м', 20000, 6);
 
-INSERT INTO `yii_callorder` (`id`, `name`, `phone`, `created_at`, `updated_at`) VALUES
+INSERT IGNORE INTO `yii_calc_component_element` (`id`, `name`, `desc`, `sort`, `default`, `group_id`, `local_group`, `price`, `icon`, `image`, `countable`) VALUES
+(1, 'Обои под покраску', 'Флизелиновые обои с нейтральным рельефом', 100, 1, 1, 'Стены', 1000, '/uploads/images/calculator/elements/wallpaper.jpg', '/uploads/images/calculator/elements/wallpaper.png', 0),
+(2, 'Гладкие обои под покраску', 'Плотные обои. Визуально, как стены под покраску.', 200, 0, 1, 'Стены', 2000, '/uploads/images/calculator/elements/wallpaper_smooth.jpg', '/uploads/images/calculator/elements/paint.png', 0),
+(3, 'White', '', 100, 1, 1, 'Оттенок краски', 1000, '/uploads/images/calculator/elements/white.jpg', '/uploads/images/calculator/elements/white.png', 0),
+(4, 'Жасмин', 'F503', 200, 0, 1, 'Оттенок краски', 1000, '/uploads/images/calculator/elements/jasmin.jpg', '/uploads/images/calculator/elements/jasmin.png', 0),
+(5, 'Без декора', 'Ровные стены, окрашенные матовой краской Dulux без декора', 100, 1, 2, '', 1000, '/uploads/images/calculator/elements/no.jpg', '/uploads/images/calculator/elements/no.png', 0),
+(6, 'Грифельная краска', 'Погонных метров:', 200, 0, 2, '', 2700, '/uploads/images/calculator/elements/graphite.jpg', '/uploads/images/calculator/elements/graphite.png', 1);
+
+INSERT IGNORE INTO `yii_calc_component_group` (`id`, `name`, `sort`, `image_order`, `size_element`, `calc_room_id`, `inputdata`) VALUES
+(1, 'стены', 100, 300, 0, 1, 2),
+(2, 'декор стен', 200, 1200, 1, 1, NULL),
+(3, 'пол', 300, 100, 1, 1, 2),
+(4, 'плинтус', 400, 700, 1, 1, 2),
+(5, 'галтели', 500, 800, 1, 1, 2),
+(6, 'двери', 600, 600, 1, 1, 3),
+(7, 'светильники', 700, 1400, 1, 1, 1),
+(8, 'подоконники', 800, 1300, 1, 1, 1),
+(9, 'электрика', 900, 500, 1, 1, 2),
+(10, 'настенная плитка', 100, 100, 1, 2, 4),
+(11, 'напольная плитка', 200, 600, 1, 2, 4),
+(12, 'унитаз', 300, 500, 1, 2, 4),
+(13, 'ванна', 400, 400, 1, 2, 4),
+(14, 'душевая стойка', 500, 300, 1, 2, 4),
+(15, 'тумба под раковину', 600, 200, 1, 2, 4),
+(16, 'Плитка на фартук', 100, NULL, 1, 3, 0);
+
+INSERT IGNORE INTO `yii_calc_inputdata` (`id`, `key`, `user_data`, `calc_data`) VALUES
+(1, 'r5Nujeuv0guJ4KizB19yQ_pSwAQMfX5w', '{\"address\":\"7200000100001660016\",\"roomcount\":\"1\",\"square\":\"160\",\"doorcount\":\"1\",\"toiletcount\":\"1\",\"second\":\"0\",\"wall\":\"0\"}', NULL),
+(2, 'PCA2XLM1uiciUsQWoVsHLwlqZwQqafMy', '{\"address\":\"72000002000313500\",\"roomcount\":\"1\",\"square\":\"160\",\"doorcount\":\"1\",\"toiletcount\":\"1\",\"second\":\"0\",\"wall\":\"0\"}', NULL),
+(3, '3rrWf1APEw-FuikAjI5k_CQnTpql-WMJ', '{\"address\":\"7200000100001660131\",\"roomcount\":\"1\",\"square\":\"160\",\"doorcount\":\"1\",\"toiletcount\":\"1\",\"second\":\"0\",\"wall\":\"0\"}', NULL),
+(4, '1c0DM56WXybnRu9U0UraSuRnS536_ep4', '{\"address\":\"7200000100001660131\",\"roomcount\":\"1\",\"square\":\"160\",\"doorcount\":\"1\",\"toiletcount\":\"1\",\"second\":\"0\",\"wall\":\"0\",\"address_name\":\"\\u0433. \\u0422\\u044e\\u043c\\u0435\\u043d\\u044c, \\u0443\\u043b. \\u0420\\u0435\\u0441\\u043f\\u0443\\u0431\\u043b\\u0438\\u043a\\u0438, \\u0434. 143\\u0430\"}', NULL),
+(5, 'HE2rPJZYdeeMyMa1oZPQewAWxhEk1suo', '{\"key\":\"HE2rPJZYdeeMyMa1oZPQewAWxhEk1suo\",\"address\":\"\\u0433. \\u0422\\u044e\\u043c\\u0435\\u043d\\u044c, \\u0443\\u043b. \\u0420\\u0435\\u0441\\u043f\\u0443\\u0431\\u043b\\u0438\\u043a\\u0438, \\u0434. 143\\u0430\",\"roomcount\":\"1\",\"square\":\"160\",\"doorcount\":\"1\",\"toiletcount\":\"1\",\"second\":\"0\",\"wall\":\"0\",\"address_name\":\"\\u0433. \\u0422\\u044e\\u043c\\u0435\\u043d\\u044c, \\u0443\\u043b. \\u0420\\u0435\\u0441\\u043f\\u0443\\u0431\\u043b\\u0438\\u043a\\u0438, \\u0434. \"}', NULL),
+(6, 'HX2aHFsHeuXgZULe9TbryWMnshs3VniK', '{\"key\":\"HX2aHFsHeuXgZULe9TbryWMnshs3VniK\",\"address\":\"\\u0433. \\u0422\\u044e\\u043c\\u0435\\u043d\\u044c, \\u0443\\u043b. \\u0420\\u0435\\u0441\\u043f\\u0443\\u0431\\u043b\\u0438\\u043a\\u0438, \\u0434. 52\",\"roomcount\":\"1\",\"square\":\"60\",\"doorcount\":\"1\",\"toiletcount\":\"1\",\"second\":\"0\",\"wall\":\"0\",\"address_name\":\"\\u0433. \\u0422\\u044e\\u043c\\u0435\\u043d\\u044c, \\u0443\\u043b. \\u0420\\u0435\\u0441\\u043f\\u0443\\u0431\\u043b\\u0438\\u043a\\u0438, \\u0434. 52\"}', NULL);
+
+INSERT IGNORE INTO `yii_calc_room` (`id`, `name`, `baseimage`, `sort`) VALUES
+(1, 'Комната', '/uploads/images/calculator/rooms/default.png', 100),
+(2, 'Санузел', '/uploads/images/calculator/rooms/kerama_belkanto.png', 200),
+(3, 'Кухня', '', 300);
+
+INSERT IGNORE INTO `yii_callorder` (`id`, `name`, `phone`, `created_at`, `updated_at`) VALUES
 (1, 'sxdcfvgbhnjmk', '1234567890', 1556870891, 1556870891),
 (2, 'sxdcfvgbhnjmk', '1234567890', 1556871404, 1556871404);
 
-INSERT INTO `yii_employee` (`id`, `fio`, `place`, `photo1`, `photo2`, `video`, `sort`, `sort_slide`) VALUES
+INSERT IGNORE INTO `yii_employee` (`id`, `fio`, `place`, `photo1`, `photo2`, `video`, `sort`, `sort_slide`) VALUES
 (1, 'Шокир Шерметов', 'Директор компании «Home»', '/uploads/images/eph11.png', '/uploads/images/eph12.png', 'https://www.youtube.com/watch?v=nFKxH7am16A', 100, 300),
 (2, 'Иванов Иван', 'Мастер компании «Home»', '/uploads/images/eph21.png', '/uploads/images/eph22.png', 'https://www.youtube.com/watch?v=nFKxH7am16A', 200, 400),
 (3, 'Федор Федоров', 'Менеджер компании «Home»', '/uploads/images/eph31.png', '/uploads/images/eph32.png', 'https://www.youtube.com/watch?v=nFKxH7am16A', 300, 500),
@@ -26,7 +70,7 @@ INSERT INTO `yii_employee` (`id`, `fio`, `place`, `photo1`, `photo2`, `video`, `
 (6, 'Любовь Сидорова', 'Бухгалтер компании «Home»', '/uploads/images/eph61.png', '/uploads/images/eph62.png', 'https://www.youtube.com/watch?v=nFKxH7am16A', 600, 700),
 (7, 'Даниил Павлов', 'Прораб компании «Home»', '', '/uploads/images/eph72.png', 'https://www.youtube.com/watch?v=nFKxH7am16A', NULL, 100);
 
-INSERT INTO `yii_main_portfolio_gallery` (`id`, `sort`, `image`) VALUES
+INSERT IGNORE INTO `yii_main_portfolio_gallery` (`id`, `sort`, `image`) VALUES
 (1, 100, '/uploads/images/pgallery/ph1.jpg'),
 (2, 200, '/uploads/images/pgallery/ph2.jpg'),
 (3, 300, '/uploads/images/pgallery/ph3.jpg'),
@@ -38,17 +82,17 @@ INSERT INTO `yii_main_portfolio_gallery` (`id`, `sort`, `image`) VALUES
 (9, 900, '/uploads/images/pgallery/ph4.jpg'),
 (10, 1000, '/uploads/images/pgallery/ph5.jpg');
 
-INSERT INTO `yii_measure` (`id`, `name`, `phone`, `created_at`, `updated_at`) VALUES
+INSERT IGNORE INTO `yii_measure` (`id`, `name`, `phone`, `created_at`, `updated_at`) VALUES
 (1, 'dededede', '1323231312', 1556871471, 1556871471);
 
-INSERT INTO `yii_menu` (`id`, `name`, `position`) VALUES
+INSERT IGNORE INTO `yii_menu` (`id`, `name`, `position`) VALUES
 (1, 'Главное', 'mainmenu'),
 (2, 'Верхнее', 'tophidden'),
 (3, 'Подвал 1', 'footermain'),
 (4, 'Подвал 2', 'footerrepair'),
 (5, 'Подвал 3', 'footerworks');
 
-INSERT INTO `yii_menu_content` (`id`, `menu_id`, `name`, `url`, `page_id`, `sort`, `menu_content_id`) VALUES
+INSERT IGNORE INTO `yii_menu_content` (`id`, `menu_id`, `name`, `url`, `page_id`, `sort`, `menu_content_id`) VALUES
 (1, 1, 'Главная', '/', 1, 100, NULL),
 (2, 1, 'Наши работы', '/portfolio/', 2, 200, NULL),
 (3, 1, 'Цены', '/czeny/', 3, 300, NULL),
@@ -86,7 +130,16 @@ INSERT INTO `yii_menu_content` (`id`, `menu_id`, `name`, `url`, `page_id`, `sort
 (35, 5, 'Окна', '/', NULL, 300, NULL),
 (36, 5, 'Натяжные потолки', '/', NULL, 400, NULL);
 
-INSERT INTO `yii_option_type` (`id`, `name`, `field`) VALUES
+INSERT IGNORE INTO `yii_office_gallery` (`id`, `sort`, `image`, `inwidget`) VALUES
+(1, 100, '/uploads/images/ogallery/go1.jpg', 1),
+(2, 200, '/uploads/images/ogallery/go2.jpg', 1),
+(3, 300, '/uploads/images/ogallery/go3.jpg', 1),
+(4, 400, '/uploads/images/ogallery/go4.jpg', 1),
+(5, 500, '/uploads/images/ogallery/go5.jpg', 1),
+(6, 600, '/uploads/images/ogallery/go6.jpg', 1),
+(7, 700, '/uploads/images/ogallery/go1.jpg', 0);
+
+INSERT IGNORE INTO `yii_option_type` (`id`, `name`, `field`) VALUES
 (1, 'Изображение', '4'),
 (2, 'Строка', '1'),
 (3, 'Текст', '2'),
@@ -94,32 +147,41 @@ INSERT INTO `yii_option_type` (`id`, `name`, `field`) VALUES
 (5, 'Файл', '7'),
 (6, 'Кнопка', '8');
 
-INSERT INTO `yii_page` (`id`, `name`, `sort`, `page_type_id`, `page_id`, `template_id`, `status`, `created_at`, `updated_at`) VALUES
+INSERT IGNORE INTO `yii_page` (`id`, `name`, `sort`, `page_type_id`, `page_id`, `template_id`, `status`, `created_at`, `updated_at`) VALUES
 (1, 'Главная', NULL, 1, NULL, 2, 1, 1555687039, 1557404906),
-(2, 'Портфолио', NULL, 1, NULL, 3, 1, 1556646734, 1556697140),
-(3, 'Цены', NULL, 1, NULL, 4, 1, 1556697344, 1556697344),
-(4, 'Команда', NULL, 1, NULL, 5, 1, 1556697507, 1556697507),
-(5, 'Контакты', NULL, 1, NULL, 6, 1, 1556697605, 1556697605),
+(2, 'Портфолио', NULL, 1, NULL, 3, 1, 1556646734, 1557691071),
+(3, 'Цены', NULL, 1, NULL, 4, 1, 1556697344, 1557822417),
+(4, 'Команда', NULL, 1, NULL, 5, 1, 1556697507, 1557649530),
+(5, 'Контакты', NULL, 1, NULL, 6, 1, 1556697605, 1557659464),
 (6, 'Политика конфиденциальности', NULL, 1, NULL, NULL, 1, 1556709211, 1556709309),
 (7, 'Блог', NULL, 1, NULL, 7, 1, 1556725842, 1556725842),
-(8, 'Ремонты квартир', 100, 2, 2, 8, 1, 1557142959, 1557142959),
-(9, 'Ремонт коттеджей', 200, 2, 2, 8, 1, 1557143056, 1557143056),
-(10, 'Ремонт офисов', 300, 2, 2, 8, 1, 1557143084, 1557143084),
-(11, 'Дизайн интерьера', 400, 2, 2, 8, 1, 1557143117, 1557143117),
-(12, 'Евро ремонт двухкомнатной квартиры', 100, 3, 8, NULL, 1, 1557143404, 1557143404),
-(13, 'Косметический ремонт', 200, 3, 8, NULL, 1, 1557143453, 1557143453),
-(14, 'Евро ремонт двухкомнатной квартиры 2', 300, 3, 8, NULL, 1, 1557143492, 1557143492),
-(15, 'Косметический ремонт 2', 100, 3, 9, NULL, 1, 1557143549, 1557143549),
-(16, 'Евро ремонт двухкомнатной квартиры 3', 200, 3, 9, NULL, 1, 1557143581, 1557143581),
-(17, 'Косметический ремонт 3', 300, 3, 9, NULL, 1, 1557143605, 1557143605),
-(18, 'Евро ремонт двухкомнатной квартиры 4', 100, 3, 10, NULL, 1, 1557143632, 1557143632),
-(19, 'Косметический ремонт 5', 200, 3, 10, NULL, 1, 1557143662, 1557143662),
-(20, 'Евро ремонт двухкомнатной квартиры 5', 100, 3, 11, NULL, 1, 1557143695, 1557143695),
-(21, 'Косметический ремонт 6', 200, 3, 11, NULL, 1, 1557143724, 1557143724),
-(22, 'Калькулятор ремонта', NULL, 1, NULL, 10, 1, 1557254586, 1557254586),
-(23, 'Отзывы', NULL, 1, NULL, NULL, 1, 1557564279, 1557564279);
+(8, 'Ремонты квартир', 100, 2, 2, 8, 1, 1557142959, 1557736134),
+(9, 'Ремонт коттеджей', 200, 2, 2, 8, 1, 1557143056, 1557736167),
+(10, 'Ремонт офисов', 300, 2, 2, 8, 1, 1557143084, 1557736198),
+(11, 'Дизайн интерьера', 400, 2, 2, 8, 1, 1557143117, 1557736224),
+(12, 'Евро ремонт двухкомнатной квартиры', 100, 3, 8, NULL, 1, 1557143404, 1557773286),
+(13, 'Косметический ремонт', 200, 3, 8, NULL, 1, 1557143453, 1557696715),
+(14, 'Евро ремонт двухкомнатной квартиры 2', 300, 3, 8, NULL, 1, 1557143492, 1557696720),
+(15, 'Косметический ремонт 2', 100, 3, 9, NULL, 1, 1557143549, 1557696726),
+(16, 'Евро ремонт двухкомнатной квартиры 3', 200, 3, 9, NULL, 1, 1557143581, 1557696733),
+(17, 'Косметический ремонт 3', 300, 3, 9, NULL, 1, 1557143605, 1557696737),
+(18, 'Евро ремонт двухкомнатной квартиры 4', 100, 3, 10, NULL, 1, 1557143632, 1557696740),
+(19, 'Косметический ремонт 5', 200, 3, 10, NULL, 1, 1557143662, 1557696744),
+(20, 'Евро ремонт двухкомнатной квартиры 5', 100, 3, 11, NULL, 1, 1557143695, 1557696748),
+(21, 'Косметический ремонт 6', 200, 3, 11, NULL, 1, 1557143724, 1557696751),
+(22, 'Калькулятор ремонта', NULL, 1, NULL, 10, 1, 1557254586, 1557860786),
+(23, 'Отзывы', NULL, 1, NULL, NULL, 1, 1557564279, 1557564279),
+(24, 'Цены. Отделка пола', 100, 1, 3, 11, 1, 1557815423, 1557828548),
+(25, 'Цены. Отделка стен', 200, 1, 3, 11, 1, 1557815446, 1557822851),
+(26, 'Цены. Отделка потолка', 300, 1, 3, 11, 1, 1557815467, 1557822858),
+(27, 'Цены. Плиточные работы', 400, 1, 3, 11, 1, 1557815492, 1557822867),
+(28, 'Цены. Сантехнические работы', 500, 1, 3, 11, 1, 1557815513, 1557822875),
+(29, 'Цены. Электрические работы', 600, 1, 3, 11, 1, 1557815532, 1557822883),
+(30, 'Цены. Отделка балконов', 700, 1, 3, 11, 1, 1557815553, 1557822891),
+(31, 'Цены. Натяжные потолки', 800, 1, 3, 11, 1, 1557815577, 1557822897),
+(32, 'Цены. Дизайн-проект', 900, 1, 3, 11, 1, 1557815599, 1557822904);
 
-INSERT INTO `yii_page_option` (`id`, `name`, `code`, `default_value`, `sort`, `template_id`, `option_type_id`) VALUES
+INSERT IGNORE INTO `yii_page_option` (`id`, `name`, `code`, `default_value`, `sort`, `template_id`, `option_type_id`) VALUES
 (1, 'Экран 1. Фон', 'back1', '', 100, 2, 1),
 (2, 'Экран 1. Заголовок 1', 'header1', '', 200, 2, 3),
 (3, 'Экран 1. Заголовок 2', 'header2', '', 300, 2, 3),
@@ -165,9 +227,86 @@ INSERT INTO `yii_page_option` (`id`, `name`, `code`, `default_value`, `sort`, `t
 (43, 'Текст на кнопке перехода на калькулятор', 'cta6text', '', 4300, 2, 2),
 (44, 'Экран 12. Заголовок 1', 'header14', '', 4400, 2, 3),
 (45, 'Экран 12. Заголовок 2', 'header15', '', 4500, 2, 3),
-(46, 'Экран 12. Описание', 'text1desc', '', 4600, 2, 3);
+(46, 'Экран 12. Описание', 'text1desc', '', 4600, 2, 3),
+(47, 'Экран 1. Фон', 'back4', '', 100, 5, 1),
+(48, 'Экран 1. Заголовок', 'header16', '', 200, 5, 3),
+(49, 'Экран 1. Ссылка на видео', 'video4link', '', 300, 5, 2),
+(50, 'Текст на ссылке', 'video4text', '', 400, 5, 2),
+(51, 'Экран 2. Ссылка 1', 'cta7link', '', 500, 5, 2),
+(52, 'Текст на ссылке', 'cta7text', '', 600, 5, 2),
+(53, 'Экран 2. Ссылка 2', 'cta8link', '', 700, 5, 2),
+(54, 'Текст на ссылке', 'cta8text', '', 800, 5, 2),
+(55, 'Экран 3. Заголовок', 'header17', '', 900, 5, 3),
+(56, 'Экран 3. Подзаголовок', 'header18', '', 1000, 5, 3),
+(57, 'Команда', 'button5', '/admin/employee', 1100, 5, 6),
+(58, 'Экран 4. Заголовок', 'header19', '', 1200, 5, 3),
+(59, 'Галерея офиса', 'button6', '/admin/office-gallery', 1300, 5, 6),
+(60, 'Достижения. Заголовок', 'header20', '', 1400, 5, 3),
+(61, 'Достижения', 'button7', '/admin/progress-gallery', 1500, 5, 6),
+(62, 'Экран 1. Заголовок', 'header21', '', 100, 6, 3),
+(63, 'Код карты', 'map1', '', 200, 6, 3),
+(64, 'Телефон', 'contactphone', '', 300, 6, 3),
+(65, 'E-mail', 'contactemail', '', 400, 6, 3),
+(66, 'Адрес', 'contactaddress', '', 500, 6, 3),
+(67, 'Экран 2. Заголовок', 'header22', '', 600, 6, 3),
+(68, 'Реквизиты', 'contactdetails', '', 700, 6, 4),
+(69, 'Заголовок страницы', 'header23', '', 100, 3, 3),
+(70, 'Изображение для страницы Портфолио', 'image4', '', 100, 8, 1),
+(71, 'Заголовок для страницы Портфолио', 'header24', '', 200, 8, 3),
+(72, 'Подзаголовок для страницы Портфолио', 'header25', '', 300, 8, 3),
+(73, 'Надпись на кнопке', 'cta9text', '', 400, 8, 2),
+(74, 'Изображение для списка', 'image5', '', 100, 9, 1),
+(75, 'Заголовок для списка', 'header26', '', 200, 9, 3),
+(76, 'Свойства для списка', 'header27', '', 300, 9, 3),
+(77, 'Описание для списка', 'text2desc', '', 400, 9, 3),
+(78, 'Заголовок у меню', 'header28', '', 500, 8, 3),
+(79, 'Название для меню', 'header29', '', 600, 8, 2),
+(80, 'Основной заголовок', 'header30', '', 500, 9, 3),
+(81, 'Адрес', 'header31', '', 600, 9, 3),
+(82, 'Изображение в шапке', 'image6', '', 700, 9, 1),
+(83, 'Заголовок над отзывами', 'header32', 'Отзыв заказчика', 800, 9, 3),
+(84, 'Галерея', 'button8', '/admin/portfolio-gallery', 900, 9, 6),
+(85, 'Заголовок над галереей выполненной работы', 'header33', 'Фото выполненной работы', 850, 9, 3),
+(86, 'Заголовок над видеообзором', 'header34', 'Обзор объекта после ремонта', 1100, 9, 3),
+(87, 'Ссылка на видео', 'video5link', '', 1200, 9, 2),
+(88, 'Обложка на видео', 'video5image', '', 1300, 9, 1),
+(89, 'Заголовок над галереей до ремонта', 'header35', 'Фото до начала работы', 1400, 9, 3),
+(90, 'Заголовок над обзором до ремонта', 'header36', 'Обзор объекта до начала работы', 1500, 9, 3),
+(91, 'Ссылка на видео', 'video6link', '', 1600, 9, 2),
+(92, 'Обложка на видео', 'video6image', '', 1700, 9, 1),
+(93, 'Галерея', 'button9', '/admin/portfolio-gallery', 1450, 9, 6),
+(94, 'Заголовок страницы', 'header37', '', 100, 4, 3),
+(95, 'Заголовок над ценами', 'header38', 'Виды ремонта и стоимость', 200, 4, 3),
+(96, 'Заголовок над калькулятором', 'header39', '', 300, 4, 3),
+(97, 'Изображение', 'image7', '', 400, 4, 1),
+(98, 'Заголовок калькулятора', 'header40', '', 500, 4, 3),
+(99, 'Текст на кнопке перехода на калькулятор', 'cta10text', '', 600, 4, 2),
+(100, 'Заголовок над видами работ', 'header41', '', 700, 4, 3),
+(101, 'Заголовок для списка', 'header42', '', 100, 11, 2),
+(102, 'Изображение для списка', 'image8', '', 200, 11, 1),
+(103, 'Заголовок над видео', 'header43', '', 800, 4, 3),
+(104, 'Ссылка на видео', 'video7link', '', 900, 4, 2),
+(105, 'Обложка на видео', 'video7image', '', 1000, 4, 1),
+(106, 'Экран 6. Заголовок 1', 'header44', '', 1100, 4, 3),
+(107, 'Экран 6. Заголовок 2', 'header45', '', 1200, 4, 3),
+(108, 'Экран 6. Описание', 'text3desc', '', 1300, 4, 3),
+(109, 'Изображение для списка 2', 'image9', '', 300, 11, 1),
+(110, 'Заголовок страницы', 'header46', '', 400, 11, 3),
+(111, 'Блок с ценами', 'text4desc', '<p>Заголовок</p>\r\n\r\n<table border=\"1\" cellpadding=\"1\" cellspacing=\"1\">\r\n	<thead>\r\n		<tr>\r\n			<th scope=\"col\">Виды работ</th>\r\n			<th scope=\"col\">Единицы изм.</th>\r\n			<th scope=\"col\">Цена</th>\r\n		</tr>\r\n	</thead>\r\n	<tbody>\r\n		<tr>\r\n			<td>&nbsp;</td>\r\n			<td>&nbsp;</td>\r\n			<td>&nbsp;</td>\r\n		</tr>\r\n		<tr>\r\n			<td>&nbsp;</td>\r\n			<td>&nbsp;</td>\r\n			<td>&nbsp;</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Заголовок</p>\r\n\r\n<table border=\"1\" cellpadding=\"1\" cellspacing=\"1\">\r\n	<thead>\r\n		<tr>\r\n			<th scope=\"col\">Виды работ</th>\r\n			<th scope=\"col\">Единицы изм.</th>\r\n			<th scope=\"col\">Цена</th>\r\n		</tr>\r\n	</thead>\r\n	<tbody>\r\n		<tr>\r\n			<td>&nbsp;</td>\r\n			<td>&nbsp;</td>\r\n			<td>&nbsp;</td>\r\n		</tr>\r\n		<tr>\r\n			<td>&nbsp;</td>\r\n			<td>&nbsp;</td>\r\n			<td>&nbsp;</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n\r\n<p>&nbsp;</p>\r\n', 500, 11, 4),
+(112, 'Заголовок над калькулятором', 'header47', '', 600, 11, 3),
+(113, 'Изображение', 'image10', '', 600, 11, 1),
+(114, 'Заголовок калькулятора', 'header48', '', 700, 11, 3),
+(115, 'Текст на кнопке перехода на калькулятор', 'cta11text', '', 800, 11, 2),
+(116, 'Экран 4. Заголовок 1', 'header49', '', 1000, 11, 3),
+(117, 'Экран 4. Заголовок 2', 'header50', '', 1100, 11, 3),
+(118, 'Экран 4. Описание', 'text5desc', '', 1200, 11, 3),
+(119, 'Заголовок над калькулятором', 'header51', '', 100, 10, 3),
+(120, 'Изображение', 'image11', '', 200, 10, 1),
+(121, 'Заголовок калькулятора', 'header52', '', 300, 10, 3),
+(122, 'Текст на кнопке перехода на калькулятор', 'cta12text', '', 400, 10, 2),
+(130, 'Заголовок на странице расчета', 'header53', '', 450, 10, 3);
 
-INSERT INTO `yii_page_option_value` (`id`, `page_option_id`, `page_id`, `value`) VALUES
+INSERT IGNORE INTO `yii_page_option_value` (`id`, `page_option_id`, `page_id`, `value`) VALUES
 (1, 1, 1, '/uploads/images/back1.jpg'),
 (2, 2, 1, 'Качественный ремонт квартир\r\nв Тюмени от 2500 р/м. кв'),
 (3, 3, 1, 'Не выполнили работу в срок? Вернем деньги.\r\nРаботаем без предоплаты!'),
@@ -209,50 +348,223 @@ INSERT INTO `yii_page_option_value` (`id`, `page_option_id`, `page_id`, `value`)
 (39, 43, 1, 'Перейти к конструктору'),
 (40, 44, 1, 'Хочешь получить скидку?'),
 (41, 45, 1, 'Подпишись на наши соц. сети и получи скидку на ремонт.'),
-(42, 46, 1, 'Подробности узнайте у менеджера по телефону: +7 (3452) 901-906');
+(42, 46, 1, 'Подробности узнайте у менеджера по телефону: +7 (3452) 901-906'),
+(43, 47, 4, '/uploads/images/back3.jpg'),
+(44, 48, 4, 'Home - сплоченная команда'),
+(45, 49, 4, 'https://www.youtube.com/watch?v=nFKxH7am16A'),
+(46, 50, 4, 'Посмотреть видео о компании'),
+(47, 51, 4, '#command'),
+(48, 52, 4, 'Команда'),
+(49, 53, 4, '#progress'),
+(50, 54, 4, 'Достижения'),
+(51, 55, 4, 'Наша команда'),
+(52, 56, 4, 'Мы заботимся о качестве вашего ремонта и сроках выполнения работ.'),
+(53, 58, 4, 'Наш офис'),
+(54, 60, 4, 'Достижения компании «Home»'),
+(55, 62, 5, 'Как с нами связаться'),
+(56, 63, 5, '<script type=\"text/javascript\" charset=\"utf-8\" async src=\"https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ad13fab35e1de62c0747345f7d21010f7efb5dbc11950bbe3a83fb25ef31f0280&amp;width=511&amp;height=409&amp;lang=ru_RU&amp;scroll=true\"></script>'),
+(57, 64, 5, '+7 (3452) 901-906'),
+(58, 65, 5, 'homedesign72@mail.ru'),
+(59, 66, 5, '625000, г. Тюмень, \r\nулица 30 лет Победы, \r\n27/1 оф. 201'),
+(60, 67, 5, 'Реквизиты компании'),
+(61, 68, 5, '<table border=\"1\" cellpadding=\"5\" cellspacing=\"1\">\r\n	<tbody>\r\n		<tr>\r\n			<td>Название организации:</td>\r\n			<td>ООО &laquo;Хоум&raquo;</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<div>Директор:</div>\r\n			</td>\r\n			<td>Шерматов Шокир</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<div>ИНН/КПП:</div>\r\n			</td>\r\n			<td>7204186349/720301001</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<div>ОГРНИП:</div>\r\n			</td>\r\n			<td>1127232073760</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<div>Юридический адрес:</div>\r\n			</td>\r\n			<td>625000, г. Тюмень, улица 30 лет Победы, 27/1 оф. 201</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<div>Фактический адрес:</div>\r\n			</td>\r\n			<td>625000, г. Тюмень, улица 30 лет Победы, 27/1 оф. 201</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<div>Телефон:</div>\r\n			</td>\r\n			<td>8 (3452) 901-906</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n			<div>E-mail:</div>\r\n			</td>\r\n			<td>homedesign72@mail.ru</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n\r\n<p>&nbsp;</p>\r\n'),
+(62, 69, 2, 'Наше портфолио'),
+(63, 70, 8, '/uploads/images/portfolio/port1.png'),
+(64, 71, 8, 'Ремонты квартир'),
+(65, 72, 8, 'В портфолио 56 квартир'),
+(66, 73, 8, 'Посмотреть ремонты'),
+(67, 70, 9, '/uploads/images/portfolio/port4.png'),
+(68, 71, 9, 'Ремонты коттеджей'),
+(69, 72, 9, 'В портфолио 6 коттеджей'),
+(70, 73, 9, 'Посмотреть ремонты'),
+(71, 70, 10, '/uploads/images/portfolio/port7.png'),
+(72, 71, 10, 'Ремонт коммерческих помещений'),
+(73, 72, 10, 'В портфолио 3 ремонта'),
+(74, 73, 10, 'Посмотреть ремонты'),
+(75, 70, 11, '/uploads/images/portfolio/port10.png'),
+(76, 71, 11, 'Дизайн интерьеров'),
+(77, 72, 11, 'В портфолио 27 дизайнов'),
+(78, 73, 11, 'Посмотреть ремонты'),
+(79, 74, 12, '/uploads/images/portfolio/port2.png'),
+(80, 75, 12, 'Евро ремонт'),
+(81, 76, 12, 'Общая площадь: 59 кв. м.\r\nСрок выполнения: 2 месяца'),
+(82, 77, 12, 'Ремонт квартиры по адресу:\r\nг. Тюмень, ул. Республики 154'),
+(83, 74, 13, '/uploads/images/portfolio/port3.png'),
+(84, 75, 13, 'Косметический ремонт'),
+(85, 76, 13, 'Общая площадь: 59 кв. м.\r\nСрок выполнения: 1 месяц'),
+(86, 77, 13, 'Ремонт квартиры по адресу:\r\nг. Тюмень, ул. Республики 154'),
+(87, 74, 14, '/uploads/images/portfolio/port2.png'),
+(88, 75, 14, 'Евро ремонт'),
+(89, 76, 14, 'Общая площадь: 59 кв. м.\r\nСрок выполнения: 2 месяца'),
+(90, 77, 14, 'Ремонт квартиры по адресу:\r\nг. Тюмень, ул. Республики 154'),
+(91, 74, 15, '/uploads/images/portfolio/port5.png'),
+(92, 75, 15, 'Евро ремонт'),
+(93, 76, 15, 'Общая площадь: 59 кв. м.\r\nСрок выполнения: 2 месяца'),
+(94, 77, 15, 'Ремонт квартиры по адресу:\r\nг. Тюмень, ул. Республики 154'),
+(95, 74, 16, '/uploads/images/portfolio/port6.png'),
+(96, 75, 16, 'Косметический ремонт'),
+(97, 76, 16, 'Общая площадь: 59 кв. м.\r\nСрок выполнения: 1 месяц'),
+(98, 77, 16, 'Ремонт квартиры по адресу:\r\nг. Тюмень, ул. Республики 154'),
+(99, 74, 17, '/uploads/images/portfolio/port5.png'),
+(100, 75, 17, 'Евро ремонт'),
+(101, 76, 17, 'Общая площадь: 59 кв. м.\r\nСрок выполнения: 2 месяца'),
+(102, 77, 17, 'Ремонт квартиры по адресу:\r\nг. Тюмень, ул. Республики 154'),
+(103, 74, 18, '/uploads/images/portfolio/port8.png'),
+(104, 75, 18, 'Евро ремонт'),
+(105, 76, 18, 'Общая площадь: 59 кв. м.\r\nСрок выполнения: 2 месяца'),
+(106, 77, 18, 'Ремонт квартиры по адресу:\r\nг. Тюмень, ул. Республики 154'),
+(107, 74, 19, '/uploads/images/portfolio/port9.png'),
+(108, 75, 19, 'Косметический ремонт'),
+(109, 76, 19, 'Общая площадь: 59 кв. м.\r\nСрок выполнения: 1 месяц'),
+(110, 77, 19, 'Ремонт квартиры по адресу:\r\nг. Тюмень, ул. Республики 154'),
+(111, 74, 20, '/uploads/images/portfolio/port11.png'),
+(112, 75, 20, 'Евро ремонт'),
+(113, 76, 20, 'Общая площадь: 59 кв. м.\r\nСрок выполнения: 2 месяца'),
+(114, 77, 20, 'Ремонт квартиры по адресу:\r\nг. Тюмень, ул. Республики 154'),
+(115, 74, 21, '/uploads/images/portfolio/port12.png'),
+(116, 75, 21, 'Косметический ремонт'),
+(117, 76, 21, 'Общая площадь: 59 кв. м.\r\nСрок выполнения: 1 месяц'),
+(118, 77, 21, 'Ремонт квартиры по адресу:\r\nг. Тюмень, ул. Республики 154'),
+(119, 78, 8, 'Наше портфолио'),
+(120, 79, 8, 'Ремонты квартир'),
+(121, 78, 9, 'Наше портфолио'),
+(122, 79, 9, 'Ремонт коттеджей'),
+(123, 78, 10, 'Наше портфолио'),
+(124, 79, 10, 'Ремонт офисов'),
+(125, 78, 11, 'Наше портфолио'),
+(126, 79, 11, 'Дизайн интерьера'),
+(127, 80, 12, 'Евро ремонт двухкомнатной квартиры'),
+(128, 81, 12, 'Адрес: г. Тюмень, ул. Монтажников 18'),
+(129, 82, 12, '/uploads/images/portfolio/port13.jpg'),
+(130, 83, 12, ''),
+(131, 85, 12, ''),
+(132, 86, 12, ''),
+(133, 87, 12, 'https://www.youtube.com/watch?v=nFKxH7am16A'),
+(134, 88, 12, '/uploads/images/cover3.png'),
+(135, 89, 12, ''),
+(136, 90, 12, ''),
+(137, 91, 12, 'https://www.youtube.com/watch?v=nFKxH7am16A'),
+(138, 92, 12, '/uploads/images/cover3.png'),
+(139, 94, 3, 'Цены на ремонт квартир в Тюмени'),
+(140, 95, 3, ''),
+(141, 96, 3, 'Рассчитайте стоимость ремонта'),
+(142, 97, 3, '/uploads/images/calcimage.jpg'),
+(143, 98, 3, 'Конструктор ремонта'),
+(144, 99, 3, 'Перейти к конструктору'),
+(145, 101, 24, 'Отделка пола'),
+(146, 102, 24, '/uploads/images/pr1.png'),
+(147, 101, 25, 'Отделка стен'),
+(148, 102, 25, '/uploads/images/pr2.png'),
+(149, 101, 26, 'Отделка потолка'),
+(150, 102, 26, '/uploads/images/pr3.png'),
+(151, 101, 27, 'Плиточные работы'),
+(152, 102, 27, '/uploads/images/pr4.png'),
+(153, 101, 28, 'Сантехнические работы'),
+(154, 102, 28, '/uploads/images/pr5.png'),
+(155, 101, 29, 'Электрические работы'),
+(156, 102, 29, '/uploads/images/pr6.png'),
+(157, 101, 30, 'Отделка балконов'),
+(158, 102, 30, '/uploads/images/pr7.png'),
+(159, 101, 31, 'Натяжные потолки'),
+(160, 102, 31, '/uploads/images/pr8.png'),
+(161, 101, 32, 'Дизайн-проект'),
+(162, 102, 32, '/uploads/images/pr9.png'),
+(163, 100, 3, 'Посмотрите стоимость на виды работ'),
+(164, 103, 3, 'Узнайте от чего зависит стоимость ремонта'),
+(165, 104, 3, 'https://www.youtube.com/watch?v=nFKxH7am16A'),
+(166, 105, 3, '/uploads/images/cover3.png'),
+(167, 106, 3, 'Хочешь получить скидку?'),
+(168, 107, 3, 'Подпишись на наши соц. сети и получи скидку на ремонт.'),
+(169, 108, 3, 'Подробности узнайте у менеджера по телефону: +7 (3452) 901-906'),
+(170, 109, 24, '/uploads/images/pr1h.png'),
+(171, 109, 25, '/uploads/images/pr2h.png'),
+(172, 109, 26, '/uploads/images/pr3h.png'),
+(173, 109, 27, '/uploads/images/pr4h.png'),
+(174, 109, 28, '/uploads/images/pr5h.png'),
+(175, 109, 29, '/uploads/images/pr6h.png'),
+(176, 109, 30, '/uploads/images/pr7h.png'),
+(177, 109, 31, '/uploads/images/pr8h.png'),
+(178, 109, 32, '/uploads/images/pr9h.png'),
+(179, 110, 24, 'Цены на отделку пола в Тюмени'),
+(180, 111, 24, '<p>Заголовок</p>\r\n\r\n<table border=\"1\" cellpadding=\"1\" cellspacing=\"1\">\r\n	<thead>\r\n		<tr>\r\n			<th scope=\"col\">Виды работ</th>\r\n			<th scope=\"col\">Единицы изм.</th>\r\n			<th scope=\"col\">Цена</th>\r\n		</tr>\r\n	</thead>\r\n	<tbody>\r\n		<tr>\r\n			<td>Первый</td>\r\n			<td>упак.</td>\r\n			<td>15 000</td>\r\n		</tr>\r\n		<tr>\r\n			<td>&nbsp;</td>\r\n			<td>&nbsp;</td>\r\n			<td>&nbsp;</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Заголовок</p>\r\n\r\n<table border=\"1\" cellpadding=\"1\" cellspacing=\"1\">\r\n	<thead>\r\n		<tr>\r\n			<th scope=\"col\">Виды работ</th>\r\n			<th scope=\"col\">Единицы изм.</th>\r\n			<th scope=\"col\">Цена</th>\r\n		</tr>\r\n	</thead>\r\n	<tbody>\r\n		<tr>\r\n			<td>&nbsp;</td>\r\n			<td>&nbsp;</td>\r\n			<td>&nbsp;</td>\r\n		</tr>\r\n		<tr>\r\n			<td>&nbsp;</td>\r\n			<td>&nbsp;</td>\r\n			<td>&nbsp;</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n\r\n<p>&nbsp;</p>\r\n'),
+(181, 112, 24, 'Рассчитайте стоимость ремонта'),
+(182, 113, 24, '/uploads/images/calcimage.jpg'),
+(183, 114, 24, 'Конструктор ремонта'),
+(184, 115, 24, 'Перейти к конструктору'),
+(185, 116, 24, 'Хочешь получить скидку?'),
+(186, 117, 24, 'Подпишись на наши соц. сети и получи скидку на ремонт.'),
+(187, 118, 24, 'Подробности узнайте у менеджера по телефону: +7 (3452) 901-906'),
+(188, 119, 22, ''),
+(189, 120, 22, '/uploads/images/calcimage.jpg'),
+(190, 121, 22, 'Конструктор ремонта'),
+(191, 122, 22, 'Конструктор ремонта'),
+(199, 130, 22, 'Калькулятор ремонта');
 
-INSERT INTO `yii_page_seo` (`id`, `page_id`, `url`, `h1`, `title`, `keywords`, `description`, `content`, `noindex`) VALUES
+INSERT IGNORE INTO `yii_page_seo` (`id`, `page_id`, `url`, `h1`, `title`, `keywords`, `description`, `content`, `noindex`) VALUES
 (1, 2, 'portfolio', '', '', '', '', '', 0),
-(2, 3, 'czeny', NULL, NULL, NULL, NULL, NULL, 0),
-(3, 4, 'komanda', NULL, NULL, NULL, NULL, NULL, 0),
-(4, 5, 'kontakty', NULL, NULL, NULL, NULL, NULL, 0),
+(2, 3, 'czeny', '', '', '', '', '', 0),
+(3, 4, 'komanda', '', '', '', '', '', 0),
+(4, 5, 'kontakty', '', '', '', '', '', 0),
 (5, 6, 'politics', '', '', '', '', '', 0),
 (6, 7, 'blog', NULL, NULL, NULL, NULL, NULL, 0),
 (7, 1, 'glavnaya', 'h1', 'ttt', 'kkk', 'ddd', '<p>ccc</p>\r\n', 0),
-(8, 8, 'remonty-kvartir', NULL, NULL, NULL, NULL, NULL, 0),
-(9, 9, 'remont-kottedzhej', NULL, NULL, NULL, NULL, NULL, 0),
-(10, 10, 'remont-ofisov', NULL, NULL, NULL, NULL, NULL, 0),
-(11, 11, 'dizajn-interera', NULL, NULL, NULL, NULL, NULL, 0),
-(12, 12, 'evro-remont-dvuhkomnatnoj-kvartiry', NULL, NULL, NULL, NULL, NULL, 0),
-(13, 13, 'kosmeticheskij-remont', NULL, NULL, NULL, NULL, NULL, 0),
-(14, 14, 'evro-remont-dvuhkomnatnoj-kvartiry-2', NULL, NULL, NULL, NULL, NULL, 0),
-(15, 15, 'kosmeticheskij-remont-2', NULL, NULL, NULL, NULL, NULL, 0),
-(16, 16, 'evro-remont-dvuhkomnatnoj-kvartiry-3', NULL, NULL, NULL, NULL, NULL, 0),
-(17, 17, 'kosmeticheskij-remont-3', NULL, NULL, NULL, NULL, NULL, 0),
-(18, 18, 'evro-remont-dvuhkomnatnoj-kvartiry-4', NULL, NULL, NULL, NULL, NULL, 0),
-(19, 19, 'kosmeticheskij-remont-5', NULL, NULL, NULL, NULL, NULL, 0),
-(20, 20, 'evro-remont-dvuhkomnatnoj-kvartiry-5', NULL, NULL, NULL, NULL, NULL, 0),
-(21, 21, 'kosmeticheskij-remont-6', NULL, NULL, NULL, NULL, NULL, 0),
-(22, 22, 'kalkulyator-remonta', NULL, NULL, NULL, NULL, NULL, 0),
-(23, 23, 'otzyvy', NULL, NULL, NULL, NULL, NULL, 0);
+(8, 8, 'remonty-kvartir', '', '', '', '', '', 0),
+(9, 9, 'remont-kottedzhej', '', '', '', '', '', 0),
+(10, 10, 'remont-ofisov', '', '', '', '', '', 0),
+(11, 11, 'dizajn-interera', '', '', '', '', '', 0),
+(12, 12, 'evro-remont-dvuhkomnatnoj-kvartiry', '', '', '', '', '', 0),
+(13, 13, 'kosmeticheskij-remont', '', '', '', '', '', 0),
+(14, 14, 'evro-remont-dvuhkomnatnoj-kvartiry-2', '', '', '', '', '', 0),
+(15, 15, 'kosmeticheskij-remont-2', '', '', '', '', '', 0),
+(16, 16, 'evro-remont-dvuhkomnatnoj-kvartiry-3', '', '', '', '', '', 0),
+(17, 17, 'kosmeticheskij-remont-3', '', '', '', '', '', 0),
+(18, 18, 'evro-remont-dvuhkomnatnoj-kvartiry-4', '', '', '', '', '', 0),
+(19, 19, 'kosmeticheskij-remont-5', '', '', '', '', '', 0),
+(20, 20, 'evro-remont-dvuhkomnatnoj-kvartiry-5', '', '', '', '', '', 0),
+(21, 21, 'kosmeticheskij-remont-6', '', '', '', '', '', 0),
+(22, 22, 'kalkulyator-remonta', '', '', '', '', '', 0),
+(23, 23, 'otzyvy', NULL, NULL, NULL, NULL, NULL, 0),
+(24, 24, 'czeny-otdelka-pola', '', '', '', '', '', 0),
+(25, 25, 'czeny-otdelka-sten', '', '', '', '', '', 0),
+(26, 26, 'czeny-otdelka-potolka', '', '', '', '', '', 0),
+(27, 27, 'czeny-plitochnye-raboty', '', '', '', '', '', 0),
+(28, 28, 'czeny-santehnicheskie-raboty', '', '', '', '', '', 0),
+(29, 29, 'czeny-elektricheskie-raboty', '', '', '', '', '', 0),
+(30, 30, 'czeny-otdelka-balkonov', '', '', '', '', '', 0),
+(31, 31, 'czeny-natyazhnye-potolki', '', '', '', '', '', 0),
+(32, 32, 'czeny-dizajn-proekt', '', '', '', '', '', 0);
 
-INSERT INTO `yii_page_type` (`id`, `name`, `code`, `template_id`) VALUES
+INSERT IGNORE INTO `yii_page_type` (`id`, `name`, `code`, `template_id`) VALUES
 (1, 'Страницы', 'page', 1),
 (2, 'Разделы портфолио', 'portfolio-section', 8),
 (3, 'Объекты портфолио', 'portfolio-element', 9);
 
-INSERT INTO `yii_portfolio_review` (`id`, `header`, `page_id`, `video`, `cover`, `sort`) VALUES
+INSERT IGNORE INTO `yii_portfolio_gallery` (`id`, `gallery_type`, `page_id`, `sort`, `image`) VALUES
+(1, 1, 12, 100, '/uploads/images/portfolio/port14.jpg'),
+(2, 1, 12, 200, '/uploads/images/portfolio/port14.jpg'),
+(3, 1, 12, 300, '/uploads/images/portfolio/port14.jpg'),
+(4, 1, 12, 400, '/uploads/images/portfolio/port14.jpg'),
+(5, 1, 12, 500, '/uploads/images/portfolio/port14.jpg'),
+(6, 1, 12, 600, '/uploads/images/portfolio/port14.jpg'),
+(7, 2, 12, 100, '/uploads/images/portfolio/port14.jpg'),
+(8, 2, 12, 200, '/uploads/images/portfolio/port14.jpg'),
+(9, 2, 12, 300, '/uploads/images/portfolio/port14.jpg'),
+(10, 2, 12, 400, '/uploads/images/portfolio/port14.jpg'),
+(11, 2, 12, 500, '/uploads/images/portfolio/port14.jpg'),
+(12, 2, 12, 600, '/uploads/images/portfolio/port14.jpg');
+
+INSERT IGNORE INTO `yii_portfolio_review` (`id`, `header`, `page_id`, `video`, `cover`, `sort`) VALUES
 (1, 'Ремонт квартиры по адресу:\r\nг. Тюмень, ул. Республики 154', 12, 'https://www.youtube.com/watch?v=nFKxH7am16A', '/uploads/images/cover1.png', 100),
 (2, 'Ремонт квартиры по адресу:\r\nг. Тюмень, ул. Республики 154', 16, 'https://www.youtube.com/watch?v=nFKxH7am16A', '/uploads/images/cover2.png', 200),
 (4, 'Ремонт квартиры по адресу:\r\nг. Тюмень, ул. Республики 154', 17, 'https://www.youtube.com/watch?v=nFKxH7am16A', '/uploads/images/cover1.png', 300);
 
-INSERT INTO `yii_price_caption` (`id`, `name`, `description`, `sort`) VALUES
+INSERT IGNORE INTO `yii_price_caption` (`id`, `name`, `description`, `sort`) VALUES
 (1, 'Ремонт квартир', 'на ремонтные работы\r\nс материалами и без', 100),
 (2, 'Ремонт коттеджей', 'на ремонтные работы\r\nс материалами и без', 200),
 (3, 'Ремонт офисов', 'на ремонтные работы\r\nс материалами и без', 300),
 (4, 'Дизайн интерьера', 'на ремонтные работы\r\nс материалами и без', 400);
 
-INSERT INTO `yii_price_composit` (`id`, `price_option_id`, `price_element_id`) VALUES
+INSERT IGNORE INTO `yii_price_composit` (`id`, `price_option_id`, `price_element_id`) VALUES
 (1, 1, 1),
 (2, 2, 1),
 (3, 2, 2),
@@ -261,18 +573,24 @@ INSERT INTO `yii_price_composit` (`id`, `price_option_id`, `price_element_id`) V
 (6, 3, 3),
 (7, 3, 4);
 
-INSERT INTO `yii_price_element` (`id`, `name`, `price_caption_id`, `description`, `sort`) VALUES
+INSERT IGNORE INTO `yii_price_element` (`id`, `name`, `price_caption_id`, `description`, `sort`) VALUES
 (1, 'Ремонтные\r\nработы', 1, '<p>Всплывающее окно</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<h1>Можно вставлять заголовки</h1>\r\n\r\n<table border=\"1\" cellpadding=\"1\" cellspacing=\"1\" style=\"width:500px\">\r\n	<tbody>\r\n		<tr>\r\n			<td>таблицы</td>\r\n			<td>разные</td>\r\n		</tr>\r\n		<tr>\r\n			<td>всякие</td>\r\n			<td>&nbsp;</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>картинки</strong></p>\r\n\r\n<p><img alt=\"\" src=\"/uploads/images/logo.png\" style=\"height:38px; width:104px\" /></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><em>и прочее</em></p>\r\n\r\n<p>&nbsp;</p>\r\n', 100),
 (2, 'Черновые материалы', 1, '', 200),
 (3, 'Чистовые материалы', 1, '', 300),
 (4, 'Дизайн\r\nпроект', 1, '', 400);
 
-INSERT INTO `yii_price_option` (`id`, `name`, `price_caption_id`, `min_price`, `sort`) VALUES
+INSERT IGNORE INTO `yii_price_option` (`id`, `name`, `price_caption_id`, `min_price`, `sort`) VALUES
 (1, 'Ремонт\r\nпод ключ', 1, 2500, 100),
 (2, 'Ремонт с черновыми\r\nматериалами', 1, 4000, 200),
 (3, 'Ремонт с чистовыми\r\nматериалами', 1, 6000, 300);
 
-INSERT INTO `yii_site_option` (`id`, `name`, `code`, `value`, `sort`, `option_type_id`) VALUES
+INSERT IGNORE INTO `yii_progress_gallery` (`id`, `year`, `sort`, `header`, `content`, `media`, `video`) VALUES
+(1, '2015', 100, 'Основание компании', '<p>Наша компания, на тот момент молодая и очень амбициозная, активно развивалась. Технологии не стояли на месте, и мы внедряли&nbsp;все самые передовые разработки, стараясь максимально оптимизировать процессы для удобства наших клиентов.&nbsp;Так всех новых клиентов мы начали переводить на ведение учета в 1С. Да, тогда еще оставались компании, которые вели учет&nbsp;&laquo;на коленках&raquo;. Внедрение 1С здорово упростило процесс ведения бухгалтерии.</p>\r\n\r\n<p>Удобство для бухгалтеров + наглядность и простота формы для наших клиентов. Это стало нашей новой формулой успеха, привлекая&nbsp;новых заказчиков, мы переводили их на 1С. Нашим особым преимуществом стала скорость, мы смогли выполнять работу для клиентов&nbsp;намного быстрее. Мы не только сохранили, но и развили эту особенность нашей компании, и сейчас наши клиенты могут получать счета,&nbsp;накладные и акты всего через полчаса после согласования.</p>\r\n', '/uploads/images/progress/pg1.jpg, /uploads/images/progress/pg2.jpg, /uploads/images/progress/pg3.jpg', NULL),
+(2, '2016', 200, 'Сотрудничество с крупными поставщиками', '<p>Наша компания, на тот момент молодая и очень амбициозная, активно развивалась. Технологии не стояли на месте, и мы внедряли&nbsp;все самые передовые разработки, стараясь максимально оптимизировать процессы для удобства наших клиентов.&nbsp;Так всех новых клиентов мы начали переводить на ведение учета в 1С. Да, тогда еще оставались компании, которые вели учет&nbsp;&laquo;на коленках&raquo;. Внедрение 1С здорово упростило процесс ведения бухгалтерии.</p>\r\n\r\n<p>Удобство для бухгалтеров + наглядность и простота формы для наших клиентов. Это стало нашей новой формулой успеха, привлекая&nbsp;новых заказчиков, мы переводили их на 1С. Нашим особым преимуществом стала скорость, мы смогли выполнять работу для клиентов&nbsp;намного быстрее. Мы не только сохранили, но и развили эту особенность нашей компании, и сейчас наши клиенты могут получать счета,&nbsp;накладные и акты всего через полчаса после согласования.</p>\r\n', '/uploads/images/progress/pg4.jpg, /uploads/images/progress/pg5.jpg, /uploads/images/progress/pg6.jpg', NULL),
+(3, '2017', 300, 'Первый построенный дом', '<p>Наша компания, на тот момент молодая и очень амбициозная, активно развивалась. Технологии не стояли на месте, и мы внедряли&nbsp;все самые передовые разработки, стараясь максимально оптимизировать процессы для удобства наших клиентов.&nbsp;Так всех новых клиентов мы начали переводить на ведение учета в 1С. Да, тогда еще оставались компании, которые вели учет&nbsp;&laquo;на коленках&raquo;. Внедрение 1С здорово упростило процесс ведения бухгалтерии.</p>\r\n\r\n<p>Удобство для бухгалтеров + наглядность и простота формы для наших клиентов. Это стало нашей новой формулой успеха, привлекая&nbsp;новых заказчиков, мы переводили их на 1С. Нашим особым преимуществом стала скорость, мы смогли выполнять работу для клиентов&nbsp;намного быстрее. Мы не только сохранили, но и развили эту особенность нашей компании, и сейчас наши клиенты могут получать счета,&nbsp;накладные и акты всего через полчаса после согласования.</p>\r\n', '/uploads/images/progress/pg7.jpg, /uploads/images/progress/pg8.jpg, /uploads/images/progress/pg9.jpg', 'https://www.youtube.com/watch?v=nFKxH7am16A,https://www.youtube.com/watch?v=nFKxH7am16A,https://www.youtube.com/watch?v=nFKxH7am16A'),
+(4, '2018', 400, 'Набор штата дизайнеров и архитекторов', '<p>Наша компания, на тот момент молодая и очень амбициозная, активно развивалась. Технологии не стояли на месте, и мы внедряли&nbsp;все самые передовые разработки, стараясь максимально оптимизировать процессы для удобства наших клиентов.&nbsp;Так всех новых клиентов мы начали переводить на ведение учета в 1С. Да, тогда еще оставались компании, которые вели учет&nbsp;&laquo;на коленках&raquo;. Внедрение 1С здорово упростило процесс ведения бухгалтерии.</p>\r\n\r\n<p>Удобство для бухгалтеров + наглядность и простота формы для наших клиентов. Это стало нашей новой формулой успеха, привлекая&nbsp;новых заказчиков, мы переводили их на 1С. Нашим особым преимуществом стала скорость, мы смогли выполнять работу для клиентов&nbsp;намного быстрее. Мы не только сохранили, но и развили эту особенность нашей компании, и сейчас наши клиенты могут получать счета,&nbsp;накладные и акты всего через полчаса после согласования.</p>\r\n', '/uploads/images/progress/pg10.jpg, /uploads/images/progress/pg11.jpg, /uploads/images/progress/pg12.jpg', 'https://www.youtube.com/watch?v=nFKxH7am16A,https://www.youtube.com/watch?v=nFKxH7am16A,https://www.youtube.com/watch?v=nFKxH7am16A');
+
+INSERT IGNORE INTO `yii_site_option` (`id`, `name`, `code`, `value`, `sort`, `option_type_id`) VALUES
 (1, 'Логотип', 'logo', '/uploads/images/logo.png', 100, 1),
 (2, 'Телефон', 'phone', '+7 (3452) 901-906', 200, 2),
 (3, 'E-mail для уведомлений', 'email', 'mail@v-stepanov.ru', 300, 2),
@@ -294,16 +612,18 @@ INSERT INTO `yii_site_option` (`id`, `name`, `code`, `value`, `sort`, `option_ty
 (19, 'Заголовок над социальными сетями', 'footersocialheader', 'Приятные подарки для наших подписчиков', 1900, 2),
 (20, 'Режим работы', 'footerwork', 'Режим работы: пн. - сб. 9: 00 - 18: 00\r\nВоскресенье выходной.\r\n \r\nАдрес: Россия, Тюмень, \r\nул. 30 лет Победы, 27/1 оф. 201\r\n \r\nПочта\r\nhomedesign72@mail.ru', 2000, 3),
 (21, 'Ссылка на карту сайта', 'sitemaplink', '/sitemap/', 2100, 2),
-(22, 'Копирайт', 'copyright', '<p><img alt=\"\" src=\"/uploads/images/idealogo.png\" style=\"height:51px; width:141px\" /></p>\r\n\r\n<p><span style=\"font-size:12px\">&copy; 2019&nbsp;&laquo;Ремонт квартир&raquo;<br />\r\nРазработка и продвижение сайтов. Веб-студия &laquo;Idea-studio&raquo;</span></p>\r\n', 2200, 4);
+(22, 'Копирайт', 'copyright', '<p><img alt=\"\" src=\"/uploads/images/idealogo.png\" style=\"height:51px; width:141px\" /></p>\r\n\r\n<p><span style=\"font-size:12px\">&copy; 2019&nbsp;&laquo;Ремонт квартир&raquo;<br />\r\nРазработка и продвижение сайтов. Веб-студия &laquo;Idea-studio&raquo;</span></p>\r\n', 2200, 4),
+(23, 'Код в теге HEAD', 'headcode', '\r\n<!-- favicon -->\r\n<link rel=\"apple-touch-icon\" sizes=\"180x180\" href=\"/uploads/apple-touch-icon.png\">\r\n<link rel=\"icon\" type=\"image/png\" sizes=\"32x32\" href=\"/uploads/favicon-32x32.png\">\r\n<link rel=\"icon\" type=\"image/png\" sizes=\"16x16\" href=\"/uploads/favicon-16x16.png\">\r\n<link rel=\"manifest\" href=\"/uploads/site.webmanifest\">\r\n<link rel=\"mask-icon\" href=\"/uploads/safari-pinned-tab.svg\" color=\"#5bbad5\">\r\n<link rel=\"shortcut icon\" href=\"/uploads/favicon.ico\">\r\n<meta name=\"msapplication-TileColor\" content=\"#ffc40d\">\r\n<meta name=\"msapplication-config\" content=\"/uploads/browserconfig.xml\">\r\n<meta name=\"theme-color\" content=\"#ffffff\">\r\n<!-- /favicon -->\r\n', 2300, 3),
+(24, 'Код в теге BODY', 'bodycode', '', 2400, 3);
 
-INSERT INTO `yii_social` (`id`, `name`, `url`, `sort`, `icon_top`, `icon_foz`, `icon_footer`) VALUES
+INSERT IGNORE INTO `yii_social` (`id`, `name`, `url`, `sort`, `icon_top`, `icon_foz`, `icon_footer`) VALUES
 (1, 'VK', 'https://vk.com/', 100, '/uploads/images/socials/vk.png', '/uploads/images/socials/vk2.png', '/uploads/images/socials/vk3.png'),
 (2, 'Facebook', 'https://fb.com/', 200, '/uploads/images/socials/fb.png', '/uploads/images/socials/fb2.png', '/uploads/images/socials/fb3.png'),
 (3, 'Одноклассники', 'https://ok.ru/', 300, '/uploads/images/socials/ok.png', '/uploads/images/socials/ok2.png', ''),
 (4, 'Instagram', 'https://instagram.com/', 400, '/uploads/images/socials/in.png', '/uploads/images/socials/in2.png', ''),
 (5, 'YouTube', 'https://youtube.com/', 500, '/uploads/images/socials/yt.png', '/uploads/images/socials/yt2.png', '/uploads/images/socials/yt3.png');
 
-INSERT INTO `yii_template` (`id`, `path_front`) VALUES
+INSERT IGNORE INTO `yii_template` (`id`, `path_front`) VALUES
 (1, 'page.php'),
 (2, 'page-home.php'),
 (3, 'page-portfolio.php'),
@@ -313,9 +633,13 @@ INSERT INTO `yii_template` (`id`, `path_front`) VALUES
 (7, 'page-blog.php'),
 (8, 'portfolio-section.php'),
 (9, 'portfolio-element.php'),
-(10, 'page-calculator.php');
+(10, 'page-calculator.php'),
+(11, 'page-price-section.php');
 
-INSERT INTO `yii_work_progress` (`id`, `name`, `image`, `text`, `link`, `url`, `sort`) VALUES
+INSERT IGNORE INTO `yii_user` (`id`, `username`, `password_hash`, `password_reset_token`, `email`, `auth_key`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'hradmin', '$2y$13$NjcNM7nsLUfhVrWK7ysEz.bGHW4RvrTWItDCRcfpi.F9L6OSQJaIW', NULL, 'mail@v-stepanov.ru', 'hxVGfHXcxef91MKJ1ltmnUb0_dDV_FQn', 10, 1551645976, 1551645976);
+
+INSERT IGNORE INTO `yii_work_progress` (`id`, `name`, `image`, `text`, `link`, `url`, `sort`) VALUES
 (1, 'Гаратния 2 года', '/uploads/images/l1.png', 'Выдаем гарантийный сертификат на 2 года.', 'Посмотреть пример', '/uploads/sert.pdf', 100),
 (2, 'Фото и видео отчеты', '/uploads/images/l2.png', 'Предоставляем фото и видео отчеты о работе.', 'Посмотреть пример', '/', 200),
 (3, 'Собственный персонал', '/uploads/images/l3.png', 'Все специализированные\r\nработы выполняются \r\nотдельными людьми.', 'Наша команда', '/komanda/', 300),
@@ -323,7 +647,7 @@ INSERT INTO `yii_work_progress` (`id`, `name`, `image`, `text`, `link`, `url`, `
 (5, 'Подбор материалов  с дизайнером', '/uploads/images/l5.png', 'Бесплатно консультируем \r\nи подбираем материал.', '', '', 500),
 (6, 'Смета не вырастет', '/uploads/images/l6.png', 'Цены за работы по смете фиксированы!', '', '', 600);
 
-INSERT INTO `yii_youtube_video` (`id`, `link`, `sort`, `cover`) VALUES
+INSERT IGNORE INTO `yii_youtube_video` (`id`, `link`, `sort`, `cover`) VALUES
 (1, 'https://www.youtube.com/watch?v=nFKxH7am16A', 100, '/uploads/images/cover3.png'),
 (2, 'https://www.youtube.com/watch?v=nFKxH7am16A', 200, '/uploads/images/cover4.png'),
 (3, 'https://www.youtube.com/watch?v=nFKxH7am16A', 300, '/uploads/images/cover5.png'),

@@ -61,7 +61,7 @@
     *display: inline; }
     .section-3 .calc .calc-header {
       font-size: 21px;
-      padding: 18px 0; }
+      padding: 13px 0; }
     .section-3 .calc form .form-group {
       display: inline; }
     .section-3 .calc form label {
@@ -178,7 +178,9 @@
   .section-3 .calc {
     background: #ffffff;
     width: 370px;
-    padding: 0px 15px 4px; }
+    padding: 0px 15px 14px; }
+    .section-3 .calc form button[type=submit] {
+      margin-top: 15px; }
   .section-3 .image {
     bottom: 0; }
     .section-3 .image img {

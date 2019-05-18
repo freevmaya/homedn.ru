@@ -1,0 +1,363 @@
+/*@import url('//fonts.googleapis.com/css?family=Roboto+Condensed:400,700|Roboto:400,700|Exo+2:400,700&subset=cyrillic');*/
+/*$font-os: 'Open Sans', sans-serif;*/
+/*$font-cn: 'Roboto Condensed', sans-serif;*/
+/*$font-exo: 'Exo 2', sans-serif;*/
+body {
+  background: #ECF0F4; }
+
+header {
+  position: relative;
+  background: transparent;
+  border: none;
+  z-index: 1;
+  padding: 20px 0; }
+  header .logo {
+    display: inline-block;
+    vertical-align: middle;
+    *vertical-align: auto;
+    *zoom: 1;
+    *display: inline; }
+  header .breadcrumb {
+    padding: 0 50px;
+    display: inline-block;
+    vertical-align: middle;
+    *vertical-align: auto;
+    *zoom: 1;
+    *display: inline;
+    margin: 0; }
+    header .breadcrumb li a, header .breadcrumb li.active, header .breadcrumb li + li:before {
+      font-size: 11px;
+      color: #727271; }
+
+.section-1 {
+  padding: 117px 0;
+  background: #ECF0F4; }
+  .section-1 .header {
+    font-size: 37px;
+    padding-bottom: 53px; }
+  .section-1 .calc {
+    padding: 0 15px;
+    width: 350px;
+    display: inline-block;
+    vertical-align: middle;
+    *vertical-align: auto;
+    *zoom: 1;
+    *display: inline; }
+    .section-1 .calc .calc-header {
+      font-size: 21px;
+      padding: 13px 0; }
+    .section-1 .calc form .form-group {
+      display: inline; }
+    .section-1 .calc form label {
+      display: block;
+      font-size: 11px;
+      color: #727271; }
+    .section-1 .calc form input[type=text] {
+      border: 1px solid #C5C6C6;
+      font-size: 11px;
+      color: #727271; }
+      .section-1 .calc form input[type=text]:-moz-placeholder {
+        font-size: 11px;
+        color: #727271; }
+      .section-1 .calc form input[type=text]::-moz-placeholder {
+        font-size: 11px;
+        color: #727271; }
+      .section-1 .calc form input[type=text]:-ms-input-placeholder {
+        font-size: 11px;
+        color: #727271; }
+      .section-1 .calc form input[type=text]::-webkit-input-placeholder {
+        font-size: 11px;
+        color: #727271; }
+    .section-1 .calc form .field-calcinputdataform-address input[type=text] {
+      width: 256px;
+      height: 26px;
+      padding: 0 10px; }
+    .section-1 .calc form .roomcount-group, .section-1 .calc form .doorcount-group, .section-1 .calc form .toiletcount-group {
+      display: inline-block;
+      vertical-align: top;
+      *vertical-align: auto;
+      *zoom: 1;
+      *display: inline;
+      width: 200px; }
+      .section-1 .calc form .roomcount-group .spin-down, .section-1 .calc form .roomcount-group .spin-up, .section-1 .calc form .doorcount-group .spin-down, .section-1 .calc form .doorcount-group .spin-up, .section-1 .calc form .toiletcount-group .spin-down, .section-1 .calc form .toiletcount-group .spin-up {
+        width: 26px;
+        height: 26px;
+        border: 1px solid #C5C6C6;
+        cursor: pointer;
+        background: #ffffff;
+        font-size: 11px;
+        color: #727271;
+        vertical-align: top; }
+      .section-1 .calc form .roomcount-group input[type=text], .section-1 .calc form .doorcount-group input[type=text], .section-1 .calc form .toiletcount-group input[type=text] {
+        width: 88px;
+        height: 26px;
+        text-align: center; }
+      .section-1 .calc form .roomcount-group .help-block, .section-1 .calc form .doorcount-group .help-block, .section-1 .calc form .toiletcount-group .help-block {
+        margin: 0; }
+    .section-1 .calc form .doorcount-group {
+      width: 182px; }
+      .section-1 .calc form .doorcount-group input[type=text] {
+        width: 40px; }
+    .section-1 .calc form .toiletcount-group {
+      width: 115px; }
+      .section-1 .calc form .toiletcount-group input[type=text] {
+        width: 40px; }
+    .section-1 .calc form .field-calcinputdataform-square {
+      display: inline-block;
+      vertical-align: top;
+      *vertical-align: auto;
+      *zoom: 1;
+      *display: inline;
+      width: 116px; }
+      .section-1 .calc form .field-calcinputdataform-square label sup {
+        font-size: 70%; }
+      .section-1 .calc form .field-calcinputdataform-square input[type=text] {
+        width: 76px;
+        height: 27px;
+        padding: 0 10px; }
+      .section-1 .calc form .field-calcinputdataform-square .help-block {
+        margin: 0; }
+    .section-1 .calc form .field-calcinputdataform-second label input[type=checkbox], .section-1 .calc form .field-calcinputdataform-wall label input[type=checkbox] {
+      display: none; }
+    .section-1 .calc form .field-calcinputdataform-second label:before, .section-1 .calc form .field-calcinputdataform-wall label:before {
+      display: inline-block;
+      vertical-align: top;
+      *vertical-align: auto;
+      *zoom: 1;
+      *display: inline;
+      content: '';
+      width: 12px;
+      height: 12px;
+      border: 1px solid #C5C6C6;
+      margin-top: 2px; }
+    .section-1 .calc form .field-calcinputdataform-second label span, .section-1 .calc form .field-calcinputdataform-wall label span {
+      display: inline-block;
+      vertical-align: top;
+      *vertical-align: auto;
+      *zoom: 1;
+      *display: inline; }
+    .section-1 .calc form .field-calcinputdataform-second label.checked:before, .section-1 .calc form .field-calcinputdataform-wall label.checked:before {
+      background: url("/uploads/images/chw.png") no-repeat -1px center; }
+    .section-1 .calc form .field-calcinputdataform-second label {
+      padding-top: 10px; }
+    .section-1 .calc form button[type=submit] {
+      margin-top: 25px;
+      width: 275px;
+      height: 57px;
+      background: #FFDD2D;
+      border: none;
+      -moz-border-radius: 2px;
+      -webkit-border-radius: 2px;
+      border-radius: 2px;
+      font-size: 17px; }
+      .section-1 .calc form button[type=submit] img {
+        margin-left: 10px;
+        vertical-align: middle; }
+    .section-1 .calc form .help-block {
+      font-size: 11px; }
+  .section-1 .image {
+    position: absolute;
+    bottom: -20px;
+    right: 0; }
+  .section-1 .calc {
+    background: #ffffff;
+    width: 370px;
+    padding: 0px 15px 14px; }
+    .section-1 .calc form button[type=submit] {
+      margin-top: 15px; }
+  .section-1 .image {
+    bottom: 0; }
+    .section-1 .image img {
+      display: block; }
+
+.section-2 {
+  padding: 43px 0; }
+  .section-2 .header {
+    font-size: 21px; }
+
+.section-3 {
+  padding: 26px 0; }
+  .section-3 .inputdata-container {
+    width: 490px;
+    background: #ffffff;
+    padding: 32px;
+    position: relative; }
+    .section-3 .inputdata-container .address {
+      font-size: 17px;
+      color: #000000;
+      padding-bottom: 15px; }
+    .section-3 .inputdata-container p {
+      padding-bottom: 10px;
+      font-size: 13px;
+      color: #727271; }
+      .section-3 .inputdata-container p .val {
+        color: #000000; }
+    .section-3 .inputdata-container .change {
+      position: absolute;
+      top: 40px;
+      right: 32px;
+      font-size: 11px;
+      color: #1071FF; }
+
+.section-5 {
+  padding-top: 43px; }
+  .section-5 .tab-nav {
+    margin: 0 20px; }
+    .section-5 .tab-nav .tab-element {
+      margin: 0 5px;
+      display: inline-block;
+      vertical-align: top;
+      *vertical-align: auto;
+      *zoom: 1;
+      *display: inline; }
+      .section-5 .tab-nav .tab-element a {
+        display: block;
+        width: 170px;
+        height: 39px;
+        background: #F6F7F7;
+        padding-top: 12px;
+        font-size: 13px;
+        color: #727271;
+        text-decoration: none;
+        text-align: center; }
+        .section-5 .tab-nav .tab-element a.active {
+          background: #ffffff;
+          color: #000000; }
+        .section-5 .tab-nav .tab-element a:not(.active):hover {
+          background: #F7FAFA;
+          color: #434242; }
+  .section-5 .tab-container {
+    background: #ffffff;
+    padding: 10px;
+    width: 100%;
+    overflow: hidden; }
+    .section-5 .tab-container .tab-content {
+      display: none;
+      min-height: 540px; }
+      .section-5 .tab-container .tab-content .baseimage {
+        width: 64%;
+        display: inline-block;
+        vertical-align: top;
+        *vertical-align: auto;
+        *zoom: 1;
+        *display: inline; }
+        .section-5 .tab-container .tab-content .baseimage img {
+          width: 100%;
+          display: block; }
+        .section-5 .tab-container .tab-content .baseimage + .element-group-list {
+          width: 36%; }
+      .section-5 .tab-container .tab-content .element-group-list {
+        width: 100%;
+        display: inline-block;
+        vertical-align: top;
+        *vertical-align: auto;
+        *zoom: 1;
+        *display: inline;
+        height: 100%;
+        overflow-y: auto; }
+        .section-5 .tab-container .tab-content .element-group-list .element-group {
+          border-bottom: 1px solid #F1F1F1; }
+          .section-5 .tab-container .tab-content .element-group-list .element-group.simple .name {
+            display: none; }
+          .section-5 .tab-container .tab-content .element-group-list .element-group .name a {
+            display: block;
+            padding: 15px;
+            font-size: 13px;
+            color: #5B5B5B;
+            text-decoration: none; }
+            .section-5 .tab-container .tab-content .element-group-list .element-group .name a span {
+              display: inline-block;
+              vertical-align: middle;
+              *vertical-align: auto;
+              *zoom: 1;
+              *display: inline;
+              line-height: 1; }
+            .section-5 .tab-container .tab-content .element-group-list .element-group .name a i {
+              display: inline-block;
+              vertical-align: middle;
+              *vertical-align: auto;
+              *zoom: 1;
+              *display: inline;
+              margin-right: 10px; }
+          .section-5 .tab-container .tab-content .element-group-list .element-group .element-list {
+            display: none;
+            padding: 10px;
+            background: #F1F1F1; }
+            .section-5 .tab-container .tab-content .element-group-list .element-group .element-list .local-group-name {
+              margin: 10px 5px 5px;
+              font-size: 13px;
+              color: #424242; }
+            .section-5 .tab-container .tab-content .element-group-list .element-group .element-list label {
+              display: inline-block;
+              vertical-align: top;
+              *vertical-align: auto;
+              *zoom: 1;
+              *display: inline;
+              width: 142px;
+              height: 210px;
+              position: relative;
+              margin: 5px;
+              cursor: pointer;
+              background: #ffffff; }
+              .section-5 .tab-container .tab-content .element-group-list .element-group .element-list label .icon {
+                display: block;
+                height: 90px;
+                overflow: hidden; }
+                .section-5 .tab-container .tab-content .element-group-list .element-group .element-list label .icon img {
+                  width: 100%;
+                  display: block; }
+              .section-5 .tab-container .tab-content .element-group-list .element-group .element-list label .name {
+                display: block;
+                margin: 5px;
+                font-size: 12px;
+                color: #000000;
+                font-weight: bold; }
+              .section-5 .tab-container .tab-content .element-group-list .element-group .element-list label .desc {
+                display: block;
+                margin: 5px;
+                font-size: 11px;
+                color: #898989; }
+              .section-5 .tab-container .tab-content .element-group-list .element-group .element-list label .countable {
+                padding: 0 5px; }
+                .section-5 .tab-container .tab-content .element-group-list .element-group .element-list label .countable .minus, .section-5 .tab-container .tab-content .element-group-list .element-group .element-list label .countable .plus {
+                  width: 26px;
+                  height: 26px;
+                  border: 1px solid #C5C6C6;
+                  cursor: pointer;
+                  background: #ffffff;
+                  font-size: 11px;
+                  color: #727271;
+                  vertical-align: top; }
+                .section-5 .tab-container .tab-content .element-group-list .element-group .element-list label .countable input[type=text] {
+                  width: 48px;
+                  height: 26px;
+                  text-align: center;
+                  font-size: 12px;
+                  color: #000000; }
+              .section-5 .tab-container .tab-content .element-group-list .element-group .element-list label .price {
+                display: block;
+                margin: 10px 5px;
+                font-size: 12px;
+                color: #000000; }
+              .section-5 .tab-container .tab-content .element-group-list .element-group .element-list label.big {
+                width: 217px;
+                height: 329px; }
+                .section-5 .tab-container .tab-content .element-group-list .element-group .element-list label.big .icon {
+                  height: 215px; }
+              .section-5 .tab-container .tab-content .element-group-list .element-group .element-list label.checked {
+                -moz-box-shadow: 0 0 2px #000000;
+                -webkit-box-shadow: 0 0 2px #000000;
+                box-shadow: 0 0 2px #000000; }
+                .section-5 .tab-container .tab-content .element-group-list .element-group .element-list label.checked:before {
+                  content: '';
+                  position: absolute;
+                  top: 10px;
+                  right: 10px;
+                  width: 24px;
+                  height: 24px;
+                  background: url("/uploads/images/selected-arrow.svg") no-repeat;
+                  background-size: cover; }
+      .section-5 .tab-container .tab-content.active {
+        display: block; }
+
+/*# sourceMappingURL=page-calculator.css.map */
