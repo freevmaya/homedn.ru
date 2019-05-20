@@ -5,6 +5,7 @@ namespace app\models;
 use Yii;
 use yii\behaviors\TimestampBehavior;
 use himiklab\sitemap\behaviors\SitemapBehavior;
+use yii\helpers\Url;
 
 /**
  * This is the model class for table "{{%page}}".
