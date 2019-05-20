@@ -3,9 +3,9 @@
 use yii\db\Migration;
 
 /**
- * Class m190520_064846_update_data
+ * Class m190520_133746_update_data
  */
-class m190520_064846_update_data extends Migration
+class m190520_133746_update_data extends Migration
 {
 
     /**
@@ -13,8 +13,8 @@ class m190520_064846_update_data extends Migration
      */
     public function safeUp ()
     {
-//        $sql = file_get_contents(__DIR__ . '/data.sql');
-//        $this->execute($sql);
+        $sql = file_get_contents(__DIR__ . '/data.sql');
+        $this->execute($sql);
     }
 
     /**
@@ -22,7 +22,7 @@ class m190520_064846_update_data extends Migration
      */
     public function safeDown ()
     {
-        echo "m190520_064846_update_data cannot be reverted.\n";
+        echo "m190520_133746_update_data cannot be reverted.\n";
 
         return false;
     }
@@ -36,7 +36,7 @@ class m190520_064846_update_data extends Migration
 
       public function down()
       {
-      echo "m190520_064846_update_data cannot be reverted.\n";
+      echo "m190520_133746_update_data cannot be reverted.\n";
 
       return false;
       }

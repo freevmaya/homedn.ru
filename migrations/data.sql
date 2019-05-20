@@ -224,7 +224,8 @@ INSERT INTO `yii_page` (`id`, `name`, `sort`, `page_type_id`, `page_id`, `templa
 (29, 'Цены. Электрические работы', 600, 1, 3, 11, 1, 1557815532, 1557822883),
 (30, 'Цены. Отделка балконов', 700, 1, 3, 11, 1, 1557815553, 1557822891),
 (31, 'Цены. Натяжные потолки', 800, 1, 3, 11, 1, 1557815577, 1557822897),
-(32, 'Цены. Дизайн-проект', 900, 1, 3, 11, 1, 1557815599, 1557822904);
+(32, 'Цены. Дизайн-проект', 900, 1, 3, 11, 1, 1557815599, 1557822904),
+(33, 'Карта сайта', NULL, 1, NULL, 12, 1, 1558319580, 1558319666);
 
 TRUNCATE TABLE `yii_page_option`;
 INSERT INTO `yii_page_option` (`id`, `name`, `code`, `default_value`, `sort`, `template_id`, `option_type_id`) VALUES
@@ -592,7 +593,8 @@ INSERT INTO `yii_page_seo` (`id`, `page_id`, `url`, `h1`, `title`, `keywords`, `
 (29, 29, 'czeny-elektricheskie-raboty', '', '', '', '', '', 0),
 (30, 30, 'czeny-otdelka-balkonov', '', '', '', '', '', 0),
 (31, 31, 'czeny-natyazhnye-potolki', '', '', '', '', '', 0),
-(32, 32, 'czeny-dizajn-proekt', '', '', '', '', '', 0);
+(32, 32, 'czeny-dizajn-proekt', '', '', '', '', '', 0),
+(33, 33, 'sitemap', '', '', '', '', '', 0);
 
 TRUNCATE TABLE `yii_page_type`;
 INSERT INTO `yii_page_type` (`id`, `name`, `code`, `template_id`) VALUES
@@ -705,7 +707,8 @@ INSERT INTO `yii_template` (`id`, `path_front`) VALUES
 (8, 'portfolio-section.php'),
 (9, 'portfolio-element.php'),
 (10, 'page-calculator.php'),
-(11, 'page-price-section.php');
+(11, 'page-price-section.php'),
+(12, 'page-sitemap.php');
 
 TRUNCATE TABLE `yii_user`;
 INSERT INTO `yii_user` (`id`, `username`, `password_hash`, `password_reset_token`, `email`, `auth_key`, `status`, `created_at`, `updated_at`) VALUES
