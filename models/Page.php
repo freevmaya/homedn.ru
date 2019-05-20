@@ -56,7 +56,7 @@ class Page extends \yii\db\ActiveRecord
                     $model
                             ->select('updated_at')
                             ->joinWith('pageSeo ps', false, 'INNER JOIN')
-                            ->andWhere([ 'status' => 1, 'ps.noindex' => null ]);
+                            ->andWhere([ 'status' => 1, 'ps.noindex' => 0 ]);
                 },
                 'dataClosure' => function ($model)
                 {
