@@ -47,17 +47,12 @@ class Page extends \yii\db\ActiveRecord
     public function behaviors ()
     {
         return [
-            [
-                'class' => TimestampBehavior::class,
-            ],
             'sitemap'     => [
                 'class' => SitemapBehavior::className(),
                 'scope' => function ($model)
                 {
                     /** @var \yii\db\ActiveQuery $model */
-                    $model
-                            ->select([ 'updated_at' ])
-                            ->joinWith('pageSeo ps', false, 'LEFT JOIN')
+                    $model->joinWith('pageSeo ps', false, 'LEFT JOIN')
                             ->andWhere([ 'status' => 1, 'ps.noindex' => null ]);
                 },
                 'dataClosure' => function ($model)
@@ -70,6 +65,9 @@ class Page extends \yii\db\ActiveRecord
                         'priority'   => 0.8,
                     ];
                 }
+            ],
+            [
+                'class' => TimestampBehavior::class,
             ],
         ];
     }
