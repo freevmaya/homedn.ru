@@ -62,7 +62,7 @@ class Page extends \yii\db\ActiveRecord
                 {
                     /** @var self $model */
                     return [
-                        'loc'        => Url::to([ '/site/frontend', 'id' => $model->id ], true),
+                        'loc'        => Url::to([ '/site/frontend', 'id' => $model->id ]),
                         'lastmod'    => $model->updated_at,
                         'changefreq' => SitemapBehavior::CHANGEFREQ_DAILY,
                         'priority'   => 0.8,
