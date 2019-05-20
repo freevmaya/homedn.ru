@@ -96,7 +96,7 @@
                             display: block;
                             text-decoration: none;
                             img {
-
+                                @include inline-block(middle);
                             }
                             .text {
                                 @include inline-block(middle);

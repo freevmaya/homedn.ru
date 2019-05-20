@@ -301,6 +301,12 @@
         .section-2 .employee-slider .slides li .element .video a {
           display: block;
           text-decoration: none; }
+          .section-2 .employee-slider .slides li .element .video a img {
+            display: inline-block;
+            vertical-align: middle;
+            *vertical-align: auto;
+            *zoom: 1;
+            *display: inline; }
           .section-2 .employee-slider .slides li .element .video a .text {
             display: inline-block;
             vertical-align: middle;
