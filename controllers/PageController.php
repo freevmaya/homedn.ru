@@ -97,7 +97,7 @@ class PageController extends Controller
         $pageType            = $page_type ? PageType::find()->where([ 'code' => $page_type ])->one() : null;
         $model->page_type_id = $pageType ? $pageType->id : null;
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($model->load(Yii::$app->request->post()) && $model->save() && $modelSeo->load(Yii::$app->request->post())) {
             $modelSeo->page_id = $model->id;
             $modelSeo->save();
             return $this->redirect([ 'view', 'id' => $model->id ]);

@@ -4,6 +4,7 @@ namespace app\models;
 
 use Yii;
 use yii\behaviors\TimestampBehavior;
+use himiklab\sitemap\behaviors\SitemapBehavior;
 
 /**
  * This is the model class for table "{{%page}}".
@@ -46,7 +47,30 @@ class Page extends \yii\db\ActiveRecord
     public function behaviors ()
     {
         return [
-            TimestampBehavior::class,
+            [
+                'class' => TimestampBehavior::class,
+            ],
+            'sitemap'     => [
+                'class' => SitemapBehavior::className(),
+                'scope' => function ($model)
+                {
+                    /** @var \yii\db\ActiveQuery $model */
+                    $model
+                            ->select([ 'updated_at' ])
+                            ->joinWith('pageSeo ps', false, 'LEFT JOIN')
+                            ->andWhere([ 'status' => 1, 'ps.noindex' => null ]);
+                },
+                'dataClosure' => function ($model)
+                {
+                    /** @var self $model */
+                    return [
+                        'loc'        => Url::to([ 'site/frontend', 'id' => $model->id ], true),
+                        'lastmod'    => $model->updated_at,
+                        'changefreq' => SitemapBehavior::CHANGEFREQ_DAILY,
+                        'priority'   => 0.8,
+                    ];
+                }
+            ],
         ];
     }
 

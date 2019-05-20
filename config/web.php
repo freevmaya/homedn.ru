@@ -1,5 +1,7 @@
 <?php
 
+use himiklab\sitemap\behaviors\SitemapBehavior;
+
 $params = require __DIR__ . '/params.php';
 $db     = require __DIR__ . '/db.php';
 
@@ -56,7 +58,7 @@ $config = [
                   ], */
                 [
                     'pattern' => 'sitemap.xml',
-                    'route'   => '/page/sitemap-xml',
+                    'route'   => 'sitemap/default/index',
                     'suffix'  => ''
                 ],
                 'admin'                                                       => 'site/admin',
@@ -83,6 +85,16 @@ $config = [
         'assetManager' => [
             'linkAssets'      => true,
             'appendTimestamp' => true,
+        ],
+    ],
+    'modules'       => [
+        'sitemap' => [
+            'class'       => 'himiklab\sitemap\Sitemap',
+            'models'      => [
+                'app\models\Page',
+            ],
+            'enableGzip'  => true,
+            'cacheExpire' => 1,
         ],
     ],
     'controllerMap' => [

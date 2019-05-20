@@ -24,7 +24,8 @@
         "porcelanosa/yii2-magnific-popup": "master-dev",
         "valekstepanov/yii2-flexslider": "~1.0.3",
         "rmrevin/yii2-fontawesome": "~3.3",
-        "valekstepanov/yii2kladr": "~1.1.0"
+        "valekstepanov/yii2kladr": "~1.1.0",
+        "himiklab/yii2-sitemap-module": "*"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",

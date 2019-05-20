@@ -1,0 +1,20 @@
+@charset "utf-8";
+
+@import "compass";
+@import "compass/layout/stretching";
+
+@import "variables/typography";
+@import "variables/colors";
+@import "variables/size";
+@import "variables/images";
+@import "mixin/font-props";
+@import "mixin/respond-to";
+@import "mixin/video-impulse";
+@import "mixin/block-middle";
+
+.section-1 {
+    margin-top: $header-height;
+    ul {
+        padding: 20px;
+    }
+}

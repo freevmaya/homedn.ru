@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ac948f826b65741c6c818340b082f6c5",
+    "content-hash": "59dbfea3e9a991fbf608f6aee34169d3",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -250,6 +250,48 @@
                 "html"
             ],
             "time": "2018-02-23T01:58:20+00:00"
+        },
+        {
+            "name": "himiklab/yii2-sitemap-module",
+            "version": "1.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/himiklab/yii2-sitemap-module.git",
+                "reference": "e680cb50049102c47342d27f497f77d8c0e447b3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/himiklab/yii2-sitemap-module/zipball/e680cb50049102c47342d27f497f77d8c0e447b3",
+                "reference": "e680cb50049102c47342d27f497f77d8c0e447b3",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "himiklab\\sitemap\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "HimikLab",
+                    "homepage": "https://github.com/himiklab"
+                }
+            ],
+            "description": "Yii2 module for automatically generation XML Sitemap",
+            "keywords": [
+                "Sitemap",
+                "module",
+                "xml",
+                "yii2"
+            ],
+            "time": "2019-02-11T07:32:40+00:00"
         },
         {
             "name": "imagine/imagine",
