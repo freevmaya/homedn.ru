@@ -91,7 +91,7 @@ $config = [
         'sitemap' => [
             'class'       => 'himiklab\sitemap\Sitemap',
             'models'      => [
-                'app\models\Page',
+                '\app\models\Page',
             ],
             'enableGzip'  => true,
             'cacheExpire' => 1,
