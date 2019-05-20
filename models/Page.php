@@ -54,7 +54,8 @@ class Page extends \yii\db\ActiveRecord
                 {
                     /** @var \yii\db\ActiveQuery $model */
                     $model
-                            ->select([ 'id', 'updated_at' ])
+                            ->alias('p')
+                            ->select([ 'p.id as id', 'updated_at' ])
                             ->joinWith('pageSeo ps', false, 'INNER JOIN')
                             ->andWhere([ 'status' => 1, 'ps.noindex' => 0 ]);
                 },
