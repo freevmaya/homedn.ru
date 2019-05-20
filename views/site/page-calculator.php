@@ -7,6 +7,10 @@ use app\helpers\SiteProperty;
 use app\widgets\CalcInputdataWidget;
 use app\widgets\CalcInputdataShowWidget;
 use app\widgets\CalcRoomShowWidget;
+use app\widgets\FormViewWidget;
+use app\models\CalcRequestForm;
+use app\widgets\CalcCollectWidget;
+use app\widgets\CalcComplectContentWidget;
 
 /* @var $this yii\web\View */
 
@@ -37,7 +41,15 @@ if (isset(Yii::$app->request->get()['k'])) {
     </section>
 
     <section class="section-4">
-
+        <div class="template-styles">
+            <div class="header"><?= nl2br(PageProperty::getValue($model->id, 'header54')) ?></div>
+            <div class="desc"><?= nl2br(PageProperty::getValue($model->id, 'text6desc')) ?></div>
+            <?=
+            CalcCollectWidget::widget([
+                'calcKey' => Yii::$app->request->get()['k'],
+            ])
+            ?>
+        </div>
     </section>
 
     <section class="section-5">
@@ -46,6 +58,33 @@ if (isset(Yii::$app->request->get()['k'])) {
             'calcKey' => Yii::$app->request->get()['k'],
         ])
         ?>
+    </section>
+
+    <section class="section-6">
+        <div class="wrapper">
+            <?=
+            CalcComplectContentWidget::widget([
+                'calcKey' => Yii::$app->request->get()['k'],
+                'header1' => PageProperty::getValue($model->id, 'header55'),
+                'header2' => PageProperty::getValue($model->id, 'header56'),
+            ])
+            ?>
+        </div>
+    </section>
+
+    <section class="section-7">
+        <div class="wrapper">
+            <div class="cont">
+                <div class="header">Итого: <span id="sum-bottom"></span> руб.</div>
+                <div class="subheader"><?= PageProperty::getValue($model->id, 'cta13text') ?></div>
+                <?=
+                FormViewWidget::widget([
+                    'formClass'     => CalcRequestForm::class,
+                    'submitMessage' => PageProperty::getValue($model->id, 'cta13link'),
+                ])
+                ?>
+            </div>
+        </div>
     </section>
 
     <?

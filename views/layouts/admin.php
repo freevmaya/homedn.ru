@@ -69,6 +69,7 @@ AdminAsset::register($this);
                         'label' => 'Заявки', 'items' => [
                             [ 'label' => 'Заказ звонка', 'url' => [ '/callorder/index' ] ],
                             [ 'label' => 'Вызов замерщика', 'url' => [ '/measure/index' ] ],
+                            [ 'label' => 'Вызов замерщика из калькулятора', 'url' => [ '/calc-request/index' ] ],
                         ],
                     ],
                     [
@@ -77,6 +78,8 @@ AdminAsset::register($this);
                             [ 'label' => 'Комнаты', 'url' => [ '/calc-room/index' ] ],
                             [ 'label' => 'Группы элементов', 'url' => [ '/calc-component-group/index' ] ],
                             [ 'label' => 'Элементы', 'url' => [ '/calc-component-element/index' ] ],
+                            [ 'label' => 'Готовые наборы', 'url' => [ '/calc-collect/index' ] ],
+                            [ 'label' => 'Элементы в комплекте', 'url' => [ '/calc-complect-content/index' ] ],
                         ],
                     ],
                     [

@@ -129,7 +129,7 @@ section {
 
 .popup-window {
   position: relative;
-  background: #ffffff;
+  background: #FFFFFF;
   padding: 40px; }
   .popup-window .header {
     font-size: 25px;
@@ -290,7 +290,7 @@ footer {
       *display: inline;
       width: 72%;
       font-size: 25px;
-      color: #ffffff; }
+      color: #FFFFFF; }
     footer .top a {
       display: inline-block;
       vertical-align: middle;
@@ -348,7 +348,7 @@ footer {
       width: 600px; }
       footer .bottom .left .social-header {
         font-size: 21px;
-        color: #ffffff;
+        color: #FFFFFF;
         padding-bottom: 40px; }
         footer .bottom .left .social-header span {
           display: inline-block;
@@ -493,7 +493,7 @@ footer {
 
 header {
   position: fixed;
-  background: #ffffff;
+  background: #FFFFFF;
   top: 0;
   left: 0;
   right: 0;

@@ -8,14 +8,13 @@
 
 namespace app\widgets;
 
+use Yii;
 use yii\base\Widget;
 use app\models\CalcInputdata;
 use app\models\CalcRoom;
 use app\models\CalcBasePrice;
-use app\models\CalcComponentGroup;
 use yii\helpers\Html;
-use app\helpers\SiteProperty;
-use app\helpers\PageProperty;
+use yii\helpers\ArrayHelper;
 use rmrevin\yii\fontawesome\FAS;
 use rmrevin\yii\fontawesome\CdnFreeAssetBundle;
 
@@ -31,13 +30,23 @@ class CalcRoomShowWidget extends Widget
     public $calcInputdata;
     public $calcRooms;
     public $basePrice;
+    public $calcCheckedId;
 
     public function init ()
     {
         $this->calcInputdata = ($c                   = CalcInputdata::find()->where([ 'key' => $this->calcKey ])->one()) ? json_decode($c->user_data, true) : false;
-        $this->calcRooms     = CalcRoom::find()->orderBy([ 'sort' => SORT_ASC ])->all();
-        $basePrice           = CalcBasePrice::find()->all();
-        $this->basePrice     = 0;
+        if (Yii::$app->request->isPost && $this->calcInputdata && isset(Yii::$app->request->post()['data'])) {
+            $c->calc_data     = json_encode(Yii::$app->request->post()['data']);
+            $c->complect_data = json_encode(Yii::$app->request->post()['complect_data']);
+            $c->save();
+            Yii::$app->end();
+        }
+        if ($c && $c->calc_data) {
+            $this->calcCheckedId = ArrayHelper::map(json_decode($c->calc_data, true), 'id', 'count');
+        }
+        $this->calcRooms = CalcRoom::find()->orderBy([ 'sort' => SORT_ASC ])->all();
+        $basePrice       = CalcBasePrice::find()->all();
+        $this->basePrice = 0;
         foreach ($basePrice as $base) {
             $this->basePrice += $base->getCost($this->calcInputdata);
         }
@@ -54,6 +63,7 @@ class CalcRoomShowWidget extends Widget
             echo Html::endTag('div');
 
             echo Html::beginTag('div', [ 'class' => 'tab-container' ]);
+            $baseImage = [];
             foreach ($this->calcRooms as $k => $room) {
 
                 echo Html::beginTag('div', [ 'class' => 'tab-content' . ($k == 0 ? ' active' : ''), 'id' => 'room-' . $room->id ]);
@@ -62,6 +72,7 @@ class CalcRoomShowWidget extends Widget
                     echo Html::img($room->baseimage);
                     echo Html::endTag('div');
                 }
+                $baseImage[] = $room->baseimage;
                 echo Html::beginTag('div', [ 'class' => 'element-group-list' ]);
                 foreach ($room->calcComponentGroups as $group) {
                     echo Html::beginTag('div', [ 'class' => 'element-group' . (count($room->calcComponentGroups) == 1 ? ' simple' : '') ]);
@@ -74,22 +85,26 @@ class CalcRoomShowWidget extends Widget
                     echo Html::beginTag('div', [ 'class' => 'element-list', 'id' => 'element-list-' . $group->id ]);
                     $localGroup = [];
                     foreach ($group->calcComponentElements as $element) {
+                        $checked = ($this->calcCheckedId ? isset($this->calcCheckedId[$element->id]) : $element->default);
+
                         $html = Html::tag('label', Html::tag('span', Html::img($element->icon), [ 'class' => 'icon' ])
                                         . Html::tag('span', $element->name, [ 'class' => 'name' ])
                                         . Html::tag('span', $element->desc, [ 'class' => 'desc' ])
                                         . ($element->countable ? Html::tag('span', Html::button('-', [ 'class' => 'minus', 'onclick' => "if($('input[name=\"countable-element-" . $element->id . "\"]').val()!=1) $('input[name=\"countable-element-" . $element->id . "\"]').val(+$('input[name=\"countable-element-" . $element->id . "\"]').val() - 1).change()" ])
-                                                . Html::textInput('countable-element-' . $element->id, 1)
+                                                . Html::textInput('countable-element-' . $element->id, $this->calcCheckedId && isset($this->calcCheckedId[$element->id]) ? $this->calcCheckedId[$element->id] : 1)
                                                 . Html::button('+', [ 'class' => 'plus', 'onclick' => "if(+$('input[name=\"countable-element-" . $element->id . "\"]').val()<999)  $('input[name=\"countable-element-" . $element->id . "\"]').val(+$('input[name=\"countable-element-" . $element->id . "\"]').val() + 1).change()", ]), [ 'class' => 'countable' ]) : '')
                                         . Html::tag('span', $element->getCost($this->calcInputdata) . ' руб.', [ 'class' => 'price' ]), [
                                     'id'    => 'element-' . $element->id,
-                                    'class' => ($element->default ? 'checked ' : '') . ($group->size_element ? 'big' : ''),
+                                    'class' => ($checked ? 'checked ' : '') . ($group->size_element ? 'big' : ''),
                                     'data'  => [
+                                        'id'        => $element->id,
                                         'image'     => $element->image,
                                         'price'     => $element->getCost($this->calcInputdata),
                                         'count'     => 1,
                                         'group'     => $element->local_group ?: $group->id,
-                                        'checked'   => $element->default ? 1 : 0,
+                                        'checked'   => $checked ? 1 : 0,
                                         'countable' => $element->countable ? 1 : 0,
+                                        'sort'      => $element->group->image_order,
                                     ],
                         ]);
 
@@ -115,9 +130,15 @@ class CalcRoomShowWidget extends Widget
                 echo Html::endTag('div');
             }
             echo Html::endTag('div');
-            $js = <<<JS
-    calcData.basePrice = $this->basePrice;
-JS;
+            $bi = implode('", "', $baseImage);
+
+            echo Html::tag('div', '', [
+                'id'   => 'input-data',
+                'data' => [
+                    'price' => $this->basePrice,
+                    'image' => $baseImage,
+                ]
+            ]);
         }
     }
 

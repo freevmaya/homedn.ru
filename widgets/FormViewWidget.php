@@ -67,6 +67,12 @@ class FormViewWidget extends Widget
 
                 $form = ActiveForm::begin([ 'id' => 'view-form-' . $this->id ]);
 
+                if (method_exists($this->displayForm, 'hiddenFields')) {
+                    foreach ($this->displayForm->hiddenFields() as $field) {
+                        echo $form->field($this->displayForm, $field)->hiddenInput()->label(false);
+                    }
+                }
+
                 foreach ($this->displayForm->fields() as $field) {
                     echo $form->field($this->displayForm, $field)->textInput([
                         'maxlength'   => true,

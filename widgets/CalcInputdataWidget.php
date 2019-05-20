@@ -60,8 +60,8 @@ class CalcInputdataWidget extends Widget
             $this->calcForm->address = $this->calcForm->address_name;
             echo $form->field($this->calcForm, 'address')->widget(Kladr::className(), [
                 'oneString'   => true,
-                'parentType'  => Kladr::TYPE_REGION,
-                'parentId'    => '7200000000000',
+                'parentType'  => Kladr::TYPE_CITY,
+                'parentId'    => '7200000100000',
                 'type'        => Kladr::TYPE_BUILDING,
                 'labelFormat' => new JsExpression("function(obj, query){
                                 if (obj.parents) {

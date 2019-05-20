@@ -53,7 +53,7 @@
         -moz-border-radius: 30px;
         -webkit-border-radius: 30px;
         border-radius: 30px;
-        background: #ffffff;
+        background: #FFFFFF;
         border: 1px solid #C5C6C6;
         font-size: 11px;
         color: #000000;
@@ -154,7 +154,7 @@
         width: 294px;
         height: 1px;
         margin-left: -147px;
-        background: #ffffff;
+        background: #FFFFFF;
         opacity: 0.5; }
       .section-2 .element-top .head .header-2 {
         position: absolute;
@@ -438,7 +438,7 @@
   border-top: 1px solid #D9DADA;
   border-bottom: 1px solid #D9DADA; }
   .section-3 .cont {
-    background: #ffffff;
+    background: #FFFFFF;
     border: 1px solid #D9DADA;
     -moz-border-radius: 4px;
     -webkit-border-radius: 4px;
@@ -574,7 +574,7 @@
         background: #C00027;
         text-align: center;
         font-size: 17px;
-        color: #ffffff;
+        color: #FFFFFF;
         font-family: "Roboto", sans-serif;
         font-weight: 100; }
         .section-4 .section-element-list ul li .image .review:after {
@@ -599,7 +599,7 @@
           display: block;
           height: 1px;
           margin: 14px auto;
-          background: #ffffff; }
+          background: #FFFFFF; }
         .section-4 .section-element-list ul li .image .info .header-2 {
           display: block;
           font-size: 15px;
@@ -640,7 +640,7 @@
         padding-top: 9px; }
         .section-4 .section-element-list ul li .cta a:hover {
           background: #B11635;
-          color: #ffffff; }
+          color: #FFFFFF; }
 .section-4 .section-element-list .more {
   padding: 0 0 33px;
   text-align: center; }
@@ -667,6 +667,6 @@
     padding-top: 9px; }
     .section-4 .section-element-list .more a:hover {
       background: #898989;
-      color: #ffffff; }
+      color: #FFFFFF; }
 
 /*# sourceMappingURL=portfolio-element.css.map */

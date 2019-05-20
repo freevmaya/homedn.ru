@@ -62,7 +62,7 @@
                 display: block;
                 width: 43px;
                 height: 43px;
-                border: 3px solid #ffffff;
+                border: 3px solid #FFFFFF;
                 text-align: center; }
                 .section-1 .connect .item .cont .val.socials ul li a:after {
                   display: inline-block;
@@ -115,7 +115,7 @@
   border-top: 1px solid #D9DADA;
   border-bottom: 1px solid #D9DADA; }
   .section-3 .cont {
-    background: #ffffff;
+    background: #FFFFFF;
     border: 1px solid #D9DADA;
     -moz-border-radius: 4px;
     -webkit-border-radius: 4px;

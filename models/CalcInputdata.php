@@ -11,6 +11,7 @@ use Yii;
  * @property string $key
  * @property string $user_data
  * @property string $calc_data
+ * @property string $complect_data 
  */
 class CalcInputdata extends \yii\db\ActiveRecord
 {
@@ -63,6 +64,7 @@ class CalcInputdata extends \yii\db\ActiveRecord
             [ [ 'key' ], 'required' ],
             [ [ 'key' ], 'string', 'max' => 32 ],
             [ [ 'user_data', 'calc_data' ], 'string', 'max' => 2048 ],
+            [ [ 'complect_data' ], 'string', 'max' => 1024 ],
         ];
     }
 
@@ -72,10 +74,11 @@ class CalcInputdata extends \yii\db\ActiveRecord
     public function attributeLabels ()
     {
         return [
-            'id'        => 'ID',
-            'key'       => 'Key',
-            'user_data' => 'User Data',
-            'calc_data' => 'Calc Data',
+            'id'            => 'ID',
+            'key'           => 'Key',
+            'user_data'     => 'User Data',
+            'calc_data'     => 'Calc Data',
+            'complect_data' => 'Complect Data',
         ];
     }
 

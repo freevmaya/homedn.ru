@@ -6,15 +6,16 @@ use Yii;
 use yii\behaviors\TimestampBehavior;
 
 /**
- * This is the model class for table "{{%callorder}}".
+ * This is the model class for table "{{%calc_request}}".
  *
  * @property int $id
  * @property string $name
  * @property string $phone
+ * @property string $calckey
  * @property int $created_at
  * @property int $updated_at
  */
-class Callorder extends \yii\db\ActiveRecord
+class CalcRequest extends \yii\db\ActiveRecord
 {
 
     /**
@@ -22,7 +23,7 @@ class Callorder extends \yii\db\ActiveRecord
      */
     public static function tableName ()
     {
-        return '{{%callorder}}';
+        return '{{%calc_request}}';
     }
 
     /**
@@ -41,9 +42,8 @@ class Callorder extends \yii\db\ActiveRecord
     public function rules ()
     {
         return [
-            [ [ 'phone' ], 'required' ],
             [ [ 'created_at', 'updated_at' ], 'integer' ],
-            [ [ 'name', 'phone' ], 'string', 'max' => 255 ],
+            [ [ 'name', 'phone', 'calckey' ], 'string', 'max' => 255 ],
         ];
     }
 
@@ -56,6 +56,7 @@ class Callorder extends \yii\db\ActiveRecord
             'id'         => 'ID',
             'name'       => 'Имя',
             'phone'      => 'Телефон',
+            'calckey'    => 'Ключ',
             'created_at' => 'Время заявки',
             'updated_at' => 'Updated At',
         ];

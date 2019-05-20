@@ -309,7 +309,7 @@
             *display: inline;
             padding: 0 13px;
             font-size: 15.488px;
-            color: #ffffff; }
+            color: #FFFFFF; }
       .section-2 .employee-slider .slides li .element .fio {
         display: block;
         text-align: center;
@@ -925,7 +925,7 @@
       *display: inline;
       width: 300px;
       height: 300px;
-      background: #ffffff;
+      background: #FFFFFF;
       padding: 30px;
       -moz-box-shadow: 23px 23px 34px #C9C8CA;
       -webkit-box-shadow: 23px 23px 34px #C9C8CA;
@@ -1106,7 +1106,7 @@
       *display: inline;
       width: 264px;
       border: 1px solid #E7EBF4;
-      background: #ffffff;
+      background: #FFFFFF;
       padding-bottom: 30px; }
       .section-7 .price-caption-contents .caption-content .col-option:not(:nth-of-type(2)) {
         margin-left: -1px; }
@@ -1513,10 +1513,10 @@
           padding-top: 11px;
           width: 199px;
           height: 45px;
-          background: #ffffff;
+          background: #FFFFFF;
           text-decoration: none; }
           .section-9 .portfolio-review-widget .review-list li .link a:hover {
-            color: #ffffff;
+            color: #FFFFFF;
             background: #B11635; }
     .section-9 .portfolio-review-widget .more {
       padding: 15px 0;
@@ -1634,7 +1634,7 @@
         height: 26px;
         border: 1px solid #C5C6C6;
         cursor: pointer;
-        background: #ffffff;
+        background: #FFFFFF;
         font-size: 11px;
         color: #727271;
         vertical-align: top; }
@@ -1715,7 +1715,7 @@
   border-top: 1px solid #D9DADA;
   border-bottom: 1px solid #D9DADA; }
   .section-12 .cont {
-    background: #ffffff;
+    background: #FFFFFF;
     border: 1px solid #D9DADA;
     -moz-border-radius: 4px;
     -webkit-border-radius: 4px;
@@ -1841,7 +1841,7 @@
           -webkit-border-radius: 50%;
           border-radius: 50%;
           border: 1px solid #979FAC;
-          background: #ffffff;
+          background: #FFFFFF;
           cursor: pointer;
           text-align: center;
           -moz-transition: all 0.2s ease;

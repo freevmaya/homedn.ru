@@ -84,7 +84,7 @@ header {
         height: 26px;
         border: 1px solid #C5C6C6;
         cursor: pointer;
-        background: #ffffff;
+        background: #FFFFFF;
         font-size: 11px;
         color: #727271;
         vertical-align: top; }
@@ -160,7 +160,7 @@ header {
     bottom: -20px;
     right: 0; }
   .section-1 .calc {
-    background: #ffffff;
+    background: #FFFFFF;
     width: 370px;
     padding: 0px 15px 14px; }
     .section-1 .calc form button[type=submit] {
@@ -179,7 +179,7 @@ header {
   padding: 26px 0; }
   .section-3 .inputdata-container {
     width: 490px;
-    background: #ffffff;
+    background: #FFFFFF;
     padding: 32px;
     position: relative; }
     .section-3 .inputdata-container .address {
@@ -198,6 +198,51 @@ header {
       right: 32px;
       font-size: 11px;
       color: #1071FF; }
+
+.section-4 {
+  padding: 43px 0; }
+  .section-4 .template-styles {
+    padding: 0 40px; }
+    .section-4 .template-styles .header {
+      font-size: 17px; }
+    .section-4 .template-styles .desc {
+      padding: 15px 0;
+      font-size: 13px;
+      color: #727271; }
+    .section-4 .template-styles .calc-collect-list {
+      overflow: hidden; }
+      .section-4 .template-styles .calc-collect-list ul {
+        width: auto; }
+        .section-4 .template-styles .calc-collect-list ul li {
+          display: inline-block;
+          vertical-align: top;
+          *vertical-align: auto;
+          *zoom: 1;
+          *display: inline;
+          width: 207px;
+          margin-right: 10px;
+          cursor: pointer; }
+          .section-4 .template-styles .calc-collect-list ul li .name {
+            display: block;
+            font-size: 13px;
+            color: #727271;
+            padding-bottom: 5px; }
+          .section-4 .template-styles .calc-collect-list ul li .price {
+            display: block;
+            font-size: 11px;
+            color: #727271;
+            padding-bottom: 5px; }
+          .section-4 .template-styles .calc-collect-list ul li .image {
+            display: block;
+            height: 168px;
+            overflow: hidden;
+            border: 1px solid #FFFFFF; }
+            .section-4 .template-styles .calc-collect-list ul li .image img {
+              width: 100%; }
+          .section-4 .template-styles .calc-collect-list ul li:hover .name, .section-4 .template-styles .calc-collect-list ul li:hover .price {
+            color: #333333; }
+          .section-4 .template-styles .calc-collect-list ul li:hover .image {
+            border-color: #000000; }
 
 .section-5 {
   padding-top: 43px; }
@@ -221,29 +266,35 @@ header {
         text-decoration: none;
         text-align: center; }
         .section-5 .tab-nav .tab-element a.active {
-          background: #ffffff;
+          background: #FFFFFF;
           color: #000000; }
         .section-5 .tab-nav .tab-element a:not(.active):hover {
           background: #F7FAFA;
           color: #434242; }
   .section-5 .tab-container {
-    background: #ffffff;
+    background: #FFFFFF;
     padding: 10px;
     width: 100%;
     overflow: hidden; }
     .section-5 .tab-container .tab-content {
-      display: none;
-      min-height: 540px; }
+      display: none; }
       .section-5 .tab-container .tab-content .baseimage {
         width: 64%;
         display: inline-block;
         vertical-align: top;
         *vertical-align: auto;
         *zoom: 1;
-        *display: inline; }
+        *display: inline;
+        position: relative; }
         .section-5 .tab-container .tab-content .baseimage img {
           width: 100%;
           display: block; }
+          .section-5 .tab-container .tab-content .baseimage img:not(:first-child) {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0; }
         .section-5 .tab-container .tab-content .baseimage + .element-group-list {
           width: 36%; }
       .section-5 .tab-container .tab-content .element-group-list {
@@ -298,7 +349,7 @@ header {
               position: relative;
               margin: 5px;
               cursor: pointer;
-              background: #ffffff; }
+              background: #FFFFFF; }
               .section-5 .tab-container .tab-content .element-group-list .element-group .element-list label .icon {
                 display: block;
                 height: 90px;
@@ -324,7 +375,7 @@ header {
                   height: 26px;
                   border: 1px solid #C5C6C6;
                   cursor: pointer;
-                  background: #ffffff;
+                  background: #FFFFFF;
                   font-size: 11px;
                   color: #727271;
                   vertical-align: top; }
@@ -359,5 +410,216 @@ header {
                   background-size: cover; }
       .section-5 .tab-container .tab-content.active {
         display: block; }
+
+.section-6 {
+  padding: 45px 0; }
+  .section-6 .complect-content-list .header {
+    font-size: 17px;
+    padding: 15px 28px; }
+  .section-6 .complect-content-list ul {
+    padding: 15px 28px;
+    text-align: center;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap; }
+    .section-6 .complect-content-list ul li {
+      /*@include inline-block(top);*/
+      display: -webkit-flex;
+      display: flex;
+      width: 46%;
+      margin: 1%;
+      background: #FFFFFF;
+      border: 1px solid #B2B3B3;
+      cursor: pointer; }
+      .section-6 .complect-content-list ul li.checked {
+        border-color: #333333; }
+        .section-6 .complect-content-list ul li.checked .content .check {
+          display: block; }
+      .section-6 .complect-content-list ul li .image {
+        display: inline-block;
+        vertical-align: top;
+        *vertical-align: auto;
+        *zoom: 1;
+        *display: inline;
+        width: 32%;
+        height: 100%;
+        background: #DBDBDB; }
+        .section-6 .complect-content-list ul li .image img {
+          max-width: 100%; }
+      .section-6 .complect-content-list ul li .content {
+        display: inline-block;
+        vertical-align: top;
+        *vertical-align: auto;
+        *zoom: 1;
+        *display: inline;
+        position: relative;
+        width: 68%;
+        padding: 10px 20px;
+        text-align: left; }
+        .section-6 .complect-content-list ul li .content .name {
+          display: block;
+          padding: 10px 0;
+          font-size: 13px; }
+        .section-6 .complect-content-list ul li .content .desc {
+          font-size: 15px;
+          color: #727271;
+          display: block;
+          padding-bottom: 40px; }
+        .section-6 .complect-content-list ul li .content .mark {
+          position: absolute;
+          bottom: 20px;
+          left: 20px;
+          background: #EEEEEE;
+          padding: 5px;
+          font-size: 11px;
+          color: #5B5B5B; }
+        .section-6 .complect-content-list ul li .content .check {
+          display: none;
+          position: absolute;
+          bottom: 20px;
+          right: 20px; }
+        .section-6 .complect-content-list ul li .content .countable {
+          padding: 0 5px; }
+          .section-6 .complect-content-list ul li .content .countable .minus, .section-6 .complect-content-list ul li .content .countable .plus {
+            width: 26px;
+            height: 26px;
+            border: 1px solid #C5C6C6;
+            cursor: pointer;
+            background: #FFFFFF;
+            font-size: 11px;
+            color: #727271;
+            vertical-align: top; }
+          .section-6 .complect-content-list ul li .content .countable input[type=text] {
+            width: 48px;
+            height: 26px;
+            text-align: center;
+            font-size: 12px;
+            color: #000000; }
+        .section-6 .complect-content-list ul li .content .price {
+          display: block;
+          padding: 10px 0;
+          font-size: 13px; }
+
+.section-7 {
+  padding: 113px 0;
+  border-top: 1px solid #D9DADA;
+  border-bottom: 1px solid #D9DADA; }
+  .section-7 .cont {
+    background: #FFFFFF;
+    border: 1px solid #D9DADA;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    -moz-box-shadow: 21px 21px 45px #D9DADA;
+    -webkit-box-shadow: 21px 21px 45px #D9DADA;
+    box-shadow: 21px 21px 45px #D9DADA;
+    padding: 60px; }
+    .section-7 .cont .header {
+      font-size: 25px;
+      text-align: center; }
+    .section-7 .cont .subheader {
+      font-size: 21px;
+      text-align: center;
+      padding-top: 10px; }
+    .section-7 .cont .success-message {
+      text-align: center;
+      font-size: 21px;
+      line-height: 1.45; }
+    .section-7 .cont .error-message {
+      text-align: center;
+      font-size: 21px;
+      color: #E31E24;
+      line-height: 1.45; }
+    .section-7 .cont .form-container {
+      padding-top: 45px;
+      text-align: center; }
+      .section-7 .cont .form-container .form-group {
+        display: inline-block;
+        vertical-align: middle;
+        *vertical-align: auto;
+        *zoom: 1;
+        *display: inline;
+        padding: 20px 12px; }
+        .section-7 .cont .form-container .form-group input[type=text] {
+          background: #EEF2F7;
+          -moz-border-radius: 2px;
+          -webkit-border-radius: 2px;
+          border-radius: 2px;
+          border: 1px solid #DDDFE0;
+          font-size: 17px;
+          color: #1A1A1A;
+          height: 49px;
+          width: 275px;
+          padding: 0 15px; }
+          .section-7 .cont .form-container .form-group input[type=text]:-moz-placeholder {
+            color: #1A1A1A; }
+          .section-7 .cont .form-container .form-group input[type=text]::-moz-placeholder {
+            color: #1A1A1A; }
+          .section-7 .cont .form-container .form-group input[type=text]:-ms-input-placeholder {
+            color: #1A1A1A; }
+          .section-7 .cont .form-container .form-group input[type=text]::-webkit-input-placeholder {
+            color: #1A1A1A; }
+        .section-7 .cont .form-container .form-group .help-block {
+          position: absolute;
+          font-size: 80%; }
+        .section-7 .cont .form-container .form-group .checkbox-label {
+          font-size: 11px;
+          position: relative;
+          cursor: pointer; }
+          .section-7 .cont .form-container .form-group .checkbox-label input[type=checkbox] {
+            display: none; }
+          .section-7 .cont .form-container .form-group .checkbox-label span {
+            display: inline-block;
+            vertical-align: middle;
+            *vertical-align: auto;
+            *zoom: 1;
+            *display: inline; }
+          .section-7 .cont .form-container .form-group .checkbox-label:before {
+            display: inline-block;
+            vertical-align: top;
+            *vertical-align: auto;
+            *zoom: 1;
+            *display: inline;
+            width: 17px;
+            height: 17px;
+            content: '';
+            border: 1px solid #C5C6C6;
+            margin-right: 5px; }
+          .section-7 .cont .form-container .form-group .checkbox-label.checked:after {
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            content: url("/uploads/images/ch.png"); }
+      .section-7 .cont .form-container button[type=submit] {
+        display: inline-block;
+        vertical-align: middle;
+        *vertical-align: auto;
+        *zoom: 1;
+        *display: inline;
+        margin: 20px 20px 0;
+        border: none;
+        background: #FFDD2D;
+        padding: 0 67px;
+        height: 57px;
+        cursor: pointer;
+        -moz-border-radius: 2px;
+        -webkit-border-radius: 2px;
+        border-radius: 2px;
+        font-size: 17px; }
+  .section-7 .cont .header, .section-7 .cont .subheader, .section-7 .cont .form-container {
+    text-align: left;
+    margin: 0 auto;
+    width: 390px; }
+  .section-7 .cont .subheader {
+    font-size: 17px;
+    color: #727271; }
+  .section-7 .cont .form-container .form-group {
+    padding: 0; }
+    .section-7 .cont .form-container .form-group input[type=text] {
+      width: 390px; }
+  .section-7 .cont .form-container button[type=submit] {
+    margin: 20px 0 0;
+    width: 100%; }
 
 /*# sourceMappingURL=page-calculator.css.map */

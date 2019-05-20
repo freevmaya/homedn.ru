@@ -32,7 +32,7 @@
         width: 168px;
         height: 1px;
         margin-left: -84px;
-        background: #ffffff; }
+        background: #FFFFFF; }
       .section-1 .section-list .section .head .header-2 {
         position: absolute;
         top: 134px;
@@ -106,7 +106,7 @@
               background: #C00027;
               text-align: center;
               font-size: 17px;
-              color: #ffffff;
+              color: #FFFFFF;
               font-family: "Roboto", sans-serif;
               font-weight: 100; }
               .section-1 .section-list .section .section-element-list ul li .image .review:after {
@@ -131,7 +131,7 @@
                 display: block;
                 height: 1px;
                 margin: 14px auto;
-                background: #ffffff; }
+                background: #FFFFFF; }
               .section-1 .section-list .section .section-element-list ul li .image .info .header-2 {
                 display: block;
                 font-size: 15px;
@@ -172,7 +172,7 @@
               padding-top: 9px; }
               .section-1 .section-list .section .section-element-list ul li .cta a:hover {
                 background: #B11635;
-                color: #ffffff; }
+                color: #FFFFFF; }
       .section-1 .section-list .section .section-element-list .more {
         padding: 0 0 33px;
         text-align: center; }
@@ -199,14 +199,14 @@
           padding-top: 9px; }
           .section-1 .section-list .section .section-element-list .more a:hover {
             background: #898989;
-            color: #ffffff; }
+            color: #FFFFFF; }
 
 .section-2 {
   padding: 113px 0;
   border-top: 1px solid #D9DADA;
   border-bottom: 1px solid #D9DADA; }
   .section-2 .cont {
-    background: #ffffff;
+    background: #FFFFFF;
     border: 1px solid #D9DADA;
     -moz-border-radius: 4px;
     -webkit-border-radius: 4px;

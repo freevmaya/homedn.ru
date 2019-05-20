@@ -60,7 +60,7 @@
       *display: inline;
       width: 302px;
       height: 252px;
-      background: #ffffff;
+      background: #FFFFFF;
       -moz-box-shadow: 2px 2px 12px #C5C6C6;
       -webkit-box-shadow: 2px 2px 12px #C5C6C6;
       box-shadow: 2px 2px 12px #C5C6C6;
@@ -89,7 +89,7 @@
           .section-3 .employee-list ul li .image .video a {
             text-decoration: none;
             font-size: 15.484px;
-            color: #ffffff; }
+            color: #FFFFFF; }
             .section-3 .employee-list ul li .image .video a img, .section-3 .employee-list ul li .image .video a span {
               display: inline-block;
               vertical-align: middle;
@@ -158,11 +158,11 @@
     .progress-gallery-set .progress-element:nth-child(2n+1) .year .over {
       background: #F1F1F1; }
   .progress-gallery-set .progress-element:nth-child(2n+2) {
-    background: #ffffff; }
+    background: #FFFFFF; }
     .progress-gallery-set .progress-element:nth-child(2n+2) .year .back {
       background: url("/uploads/images/back5.png") no-repeat center top; }
     .progress-gallery-set .progress-element:nth-child(2n+2) .year .over {
-      background: #ffffff; }
+      background: #FFFFFF; }
   .progress-gallery-set .progress-element .year {
     text-align: center;
     position: relative;
@@ -248,7 +248,7 @@
   border-top: 1px solid #D9DADA;
   border-bottom: 1px solid #D9DADA; }
   .section-6 .cont {
-    background: #ffffff;
+    background: #FFFFFF;
     border: 1px solid #D9DADA;
     -moz-border-radius: 4px;
     -webkit-border-radius: 4px;

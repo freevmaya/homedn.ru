@@ -13,6 +13,7 @@
 @import "mixin/block-middle";
 
 @import "section-calc";
+@import "section-foz";
 
 body {
     background: $color-solitude6;
@@ -93,7 +94,56 @@ header {
 }
 
 .section-4 {
-
+    padding: 43px 0;
+    .template-styles {
+        padding: 0 40px;
+        .header {
+            @include font-props(4);
+        }
+        .desc {
+            padding: 15px 0;
+            @include font-props(3, $color-black70);
+        }
+        .calc-collect-list {
+            overflow: hidden;
+            ul {
+                width: auto;
+                li {
+                    @include inline-block(top);
+                    width: 207px;
+                    margin-right: 10px;
+                    cursor: pointer;
+                    .name {
+                        display: block;
+                        @include font-props(3, $color-black70);
+                        padding-bottom: 5px;
+                    }
+                    .price {
+                        display: block;
+                        @include font-props(2.5, $color-black70);
+                        padding-bottom: 5px;
+                    }
+                    .image {
+                        display: block;
+                        height: 168px;
+                        overflow: hidden;
+                        border: 1px solid $color-white;
+                        img {
+                            width: 100%;
+                        }
+                    }
+                    &:hover {
+                        .name, .price {
+                            color: $color-nightrider;
+                        }
+                        .image {
+                            border-color: $color-black;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 .section-5 {
@@ -130,13 +180,16 @@ header {
         overflow: hidden;
         .tab-content {
             display: none;
-            min-height: 540px;
             .baseimage {
                 width: 64%;
                 @include inline-block(top);
+                position: relative;
                 img {
                     width: 100%;
                     display: block;
+                    &:not(:first-child) {
+                        @include stretch(0, 0, 0, 0);
+                    }
                 }
                 + .element-group-list {
                     width: 36%;
@@ -252,6 +305,124 @@ header {
             }
             &.active {
                 display: block;
+            }
+        }
+    }
+}
+
+.section-6 {
+    padding: 45px 0;
+    .complect-content-list {
+        .header {
+            @include font-props(4);
+            padding: 15px 28px;
+        }
+        ul {
+            padding: 15px 28px;
+            text-align: center;
+            @include display-flex;
+            @include flex-flow(row wrap);
+            li {
+                /*@include inline-block(top);*/
+                @include display-flex;
+                width: 46%;
+                margin: 1%;
+                background: $color-white;
+                border: 1px solid $color-black40;
+                cursor: pointer;
+                &.checked {
+                    border-color: $color-nightrider;
+                    .content {
+                        .check {
+                            display: block;
+                        }
+                    }
+                }
+                .image {
+                    @include inline-block(top);
+                    width: 32%;
+                    height: 100%;
+                    background: $color-gainsboro6;
+                    img {
+                        max-width: 100%;
+                    }
+                }
+                .content {
+                    @include inline-block(top);
+                    position: relative;
+                    width: 68%;
+                    padding: 10px 20px;
+                    text-align: left;
+                    .name {
+                        display: block;
+                        padding: 10px 0;
+                        @include font-props(3);
+                    }
+                    .desc {
+                        @include font-props(3.5, $color-black70);
+                        display: block;
+                        padding-bottom: 40px;
+                    }
+                    .mark {
+                        @include stretch(false, false, 20px, 20px);
+                        background: $color-whisper5;
+                        padding: 5px;
+                        @include font-props(2.5, $color-black80);
+                    }
+                    .check {
+                        display: none;
+                        @include stretch(false, 20px, 20px, false);
+                    }
+                    .countable {
+                        padding: 0 5px;
+                        .minus, .plus {
+                            width: 26px;
+                            height: 26px;
+                            border: 1px solid $color-black30;
+                            cursor: pointer;
+                            background: $color-white;
+                            @include font-props(2.5, $color-black70);
+                            vertical-align: top;
+                        }
+                        input[type=text] {
+                            width: 48px;
+                            height: 26px;
+                            text-align: center;
+                            @include font-props(2.75, $color-black);
+                        }
+                    }
+                    .price {
+                        display: block;
+                        padding: 10px 0;
+                        @include font-props(3);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.section-7 {
+    @include section-foz;
+    .cont {
+        .header, .subheader, .form-container {
+            text-align: left;
+            margin: 0 auto;
+            width: 390px;
+        }
+        .subheader {
+            @include font-props(4, $color-black70);
+        }
+        .form-container {
+            .form-group {
+                padding: 0;
+                input[type=text] {
+                    width: 390px;
+                }
+            }
+            button[type=submit] {
+                margin: 20px 0 0;
+                width: 100%;
             }
         }
     }
