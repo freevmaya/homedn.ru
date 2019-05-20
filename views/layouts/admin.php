@@ -63,6 +63,11 @@ AdminAsset::register($this);
                                     'data-toggle' => 'dropdown'
                                 ],
                             ],
+                            [ 'label' => 'Блог', 'items' => [
+                                    [ 'label' => 'Разделы', 'url' => [ '/page/index', 'page_type' => 'article-section' ] ],
+                                    [ 'label' => 'Статьи', 'url' => [ '/page/index', 'page_type' => 'article-element' ] ],
+                                ],
+                            ],
                         ],
                     ],
                     [

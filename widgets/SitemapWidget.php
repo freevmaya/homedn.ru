@@ -43,7 +43,7 @@ class SitemapWidget extends Widget
         if ($this->pageList) {
             $items = [];
             foreach ($this->pageList as $p) {
-                $items[] = Html::a($p->name, [ 'page/frontend', 'id' => $p->id ]) . self::letUl($p);
+                $items[] = Html::a($p->name, [ 'site/frontend', 'id' => $p->id ]) . self::letUl($p);
             }
             $items[] = Html::a('sitemap.xml', '/sitemap.xml');
             echo Html::ul($items, [ 'encode' => false ]);

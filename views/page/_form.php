@@ -164,6 +164,10 @@ use app\models\OptionType;
                     echo Html::a($option->name, $option->default_value, [ 'class' => 'btn btn-default', 'target' => '_blank' ]);
                     echo '<br>';
                     break;
+
+                case OptionType::FIELD_CHECKBOX:
+                    echo Html::label(Html::checkbox($option->code, isset($option->values[$model->id]) ? $option->values[$model->id] : 0, [ 'uncheck' => 0 ]) . ' ' . $option->name);
+                    break;
             }
             echo '<br>';
         }

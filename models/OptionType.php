@@ -25,6 +25,7 @@ class OptionType extends \yii\db\ActiveRecord
     const FIELD_WYSIWYG  = 'wysiwyg';
     const FIELD_FILE     = 'file';
     const FIELD_BUTTON   = 'button';
+    const FIELD_CHECKBOX = 'checkbox';
     const FIELD_TYPE     = [
         1 => self::FIELD_INPUT,
         2 => self::FIELD_TEXTAREA,
@@ -34,6 +35,7 @@ class OptionType extends \yii\db\ActiveRecord
         6 => self::FIELD_WYSIWYG,
         7 => self::FIELD_FILE,
         8 => self::FIELD_BUTTON,
+        9 => self::FIELD_CHECKBOX,
     ];
 
     /**

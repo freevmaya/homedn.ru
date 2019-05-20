@@ -1,0 +1,169 @@
+@charset "utf-8";
+
+@import "compass";
+@import "compass/layout/stretching";
+
+@import "variables/typography";
+@import "variables/colors";
+@import "variables/size";
+@import "variables/images";
+@import "mixin/font-props";
+@import "mixin/respond-to";
+@import "mixin/video-impulse";
+@import "mixin/block-middle";
+
+@import "section-foz";
+@import "section-socials-foz";
+
+.section-1 {
+    padding-bottom: 40px;
+    .header {
+        @include font-props(6);
+        padding: 40px 0;
+    }
+    .section-list {
+        width: 251px;
+        @include inline-block(top);
+        border: 1px solid $color-black10;
+        .h {
+            @include font-props(4);
+            padding: 10px;
+        }
+        ul {
+            li {
+                display: block;
+                a {
+                    display: block;
+                    padding: 10px;
+                    text-decoration: none;
+                    @include font-props(3.5, $color-black70);
+                    &:before {
+                        content: '';
+                        @include inline-block(middle);
+                        width: 6px ;
+                        height: 6px;
+                        background: $color-black30;
+                        @include border-radius(50%);
+                        margin: 0 3px;
+                    }
+                    &.active {
+                        background: $color-black5;
+                        border-left: 3px solid $color-poloblue;
+                        color: $color-black;
+                        padding-left: 7px;
+                        &:before {
+                            background: $color-poloblue;
+                        }
+                    }
+                    &:hover {
+                        color: $color-black;
+                        &:before {
+                            background: $color-poloblue;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .article-list {
+        @include inline-block(top);
+        width: 700px;
+        .list {
+            padding-left: 10px;
+            li {
+                @include inline-block(top);
+                width: 332px;
+                margin-left: 10px;
+                margin-bottom: 15px;
+                .image {
+                    display: block;
+                    height: 187px;
+                    position: relative;
+                    > img {
+                        width: 100%;
+                    }
+                    .content-icon {
+                        @include stretch(67px, false, false, 44px);
+                        width: 40px;
+                        text-align: center;
+                        img {
+                            max-width: 100%;
+                        }
+                    }
+                    .view-icon {
+                        @include stretch(124px, false, false, 44px);
+                        img {
+                            max-width: 40px;
+                            @include inline-block(middle);
+                        }
+                        span {
+                            @include inline-block(middle);
+                            @include font-props(4, $color-white);
+                            margin-left: 15px;
+                        }
+                    }
+                }
+                .name {
+                    display: block;
+                    padding: 30px 0;
+                    a {
+                        @include font-props(4, $color-black);
+                    }
+                }
+            }
+        }
+        .pagination {
+            width: 100%;
+            text-align: justify;
+            &:after {
+                content: '';
+                width: 100%;
+                @include inline-block;
+            }
+            li {
+                @include inline-block;
+                > a, > span {
+                    border: none;
+                    color: $color-grey2;
+                    @include border-radius(50%);
+                }
+                &.active {
+                    > a, > span {
+                        background: $color-whisper4;
+                        color: $color-black;
+                        @include border-radius(50%);
+                        &:hover, &:focus {
+                            background: $color-whisper4;
+                            color: $color-black;
+                        }
+                    }
+                }
+                &.next, &.prev {
+                    a {
+                        @include border-radius(6px);
+                    }
+                }
+            }
+        }
+        .all {
+            padding: 20px 0;
+            text-align: center;
+            a {
+                @include inline-block;
+                padding: 15px 35px;
+                background: $color-black20;
+                @include border-radius(6px);
+                @include font-props(4, $color-black);
+                text-decoration: none;
+                &:hover {
+                    background: $color-black40;
+                }
+            }
+        }
+    }
+}
+
+.section-2 {
+    @include section-foz;
+    @include section-socials-foz;
+}
