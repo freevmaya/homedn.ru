@@ -25,7 +25,8 @@
         "valekstepanov/yii2-flexslider": "~1.0.3",
         "rmrevin/yii2-fontawesome": "~3.3",
         "valekstepanov/yii2kladr": "~1.1.0",
-        "himiklab/yii2-sitemap-module": "*"
+        "himiklab/yii2-sitemap-module": "*",
+        "kartik-v/yii2-widget-colorinput": "*"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",

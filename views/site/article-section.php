@@ -9,6 +9,7 @@ use app\widgets\FormViewWidget;
 use app\widgets\PageSeoWidget;
 use yii\widgets\Breadcrumbs;
 use app\widgets\ArticleElementList;
+use app\widgets\SocialsWidget;
 
 TemplateAsset::register($this);
 
@@ -59,7 +60,7 @@ if ($model->page_id) {
             <div class="header-2"><?= nl2br(PageProperty::getValue($model->id, 'header15')) ?></div>
             <div class="socials">
                 <?=
-                app\widgets\SocialsWidget::widget([
+                SocialsWidget::widget([
                     'position' => 'foz',
                 ])
                 ?>

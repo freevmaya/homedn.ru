@@ -26,16 +26,18 @@ class OptionType extends \yii\db\ActiveRecord
     const FIELD_FILE     = 'file';
     const FIELD_BUTTON   = 'button';
     const FIELD_CHECKBOX = 'checkbox';
+    const FIELD_COLOR    = 'color';
     const FIELD_TYPE     = [
-        1 => self::FIELD_INPUT,
-        2 => self::FIELD_TEXTAREA,
-        3 => self::FIELD_PASSWORD,
-        4 => self::FIELD_IMAGE,
-        5 => self::FIELD_TEXT,
-        6 => self::FIELD_WYSIWYG,
-        7 => self::FIELD_FILE,
-        8 => self::FIELD_BUTTON,
-        9 => self::FIELD_CHECKBOX,
+        1  => self::FIELD_INPUT,
+        2  => self::FIELD_TEXTAREA,
+        3  => self::FIELD_PASSWORD,
+        4  => self::FIELD_IMAGE,
+        5  => self::FIELD_TEXT,
+        6  => self::FIELD_WYSIWYG,
+        7  => self::FIELD_FILE,
+        8  => self::FIELD_BUTTON,
+        9  => self::FIELD_CHECKBOX,
+        10 => self::FIELD_COLOR,
     ];
 
     /**

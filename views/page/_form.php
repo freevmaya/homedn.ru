@@ -7,6 +7,7 @@ use mihaildev\ckeditor\CKEditor;
 use mihaildev\elfinder\ElFinder;
 use mihaildev\elfinder\InputFile;
 use app\models\OptionType;
+use kartik\color\ColorInput;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Page */
@@ -167,6 +168,14 @@ use app\models\OptionType;
 
                 case OptionType::FIELD_CHECKBOX:
                     echo Html::label(Html::checkbox($option->code, isset($option->values[$model->id]) ? $option->values[$model->id] : 0, [ 'uncheck' => 0 ]) . ' ' . $option->name);
+                    break;
+
+                case OptionType::FIELD_COLOR:
+                    echo ColorInput::widget([
+                        'id'    => $option->code,
+                        'name'  => $option->code,
+                        'value' => isset($option->values[$model->id]) ? $option->values[$model->id] : '',
+                    ]);
                     break;
             }
             echo '<br>';

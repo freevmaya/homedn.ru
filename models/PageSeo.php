@@ -76,6 +76,12 @@ class PageSeo extends \yii\db\ActiveRecord
         if (parent::beforeSave($insert)) {
             if (!$this->url) {
                 $this->url = Transliteration::url($this->page->name);
+                $i         = 0;
+                while (Page::find()->alias('p')->joinWith('pageSeo ps', false, 'INNER JOIN')->where([ 'ps.url' => $this->url . ($i ? '-' . $i : ''), 'p.page_id' => $this->page ? $this->page->page_id : null ])->all()) {
+                    $i++;
+                }
+                if ($i)
+                    $this->url .= '-' . $i;
             }
             return true;
         }
