@@ -96,6 +96,24 @@
       display: block;
       width: auto;
       padding-top: 30px; } }
+  @media print, screen and (max-width: 767px) {
+    .section-1 .header {
+      font-size: 29px; }
+    .section-1 .map > ymaps {
+      width: 100% !important; }
+    .section-1 .connect {
+      padding-left: 0; }
+      .section-1 .connect .item .icon {
+        width: 40px; }
+      .section-1 .connect .item .cont {
+        width: 82%; }
+        .section-1 .connect .item .cont .val {
+          font-size: 17px; }
+          .section-1 .connect .item .cont .val a {
+            font-size: 17px; }
+          .section-1 .connect .item .cont .val.socials ul li a {
+            width: 40px;
+            height: 40px; } }
 
 .section-2 {
   padding: 45px 0; }
@@ -117,6 +135,11 @@
           width: 72%; }
       .section-2 .details table tr:hover {
         background: #ECF0F4; }
+  @media print, screen and (max-width: 767px) {
+    .section-2 .header {
+      font-size: 29px; }
+    .section-2 .details {
+      overflow: auto; } }
 
 .section-3 {
   padding: 113px 0;

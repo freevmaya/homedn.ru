@@ -43,10 +43,7 @@ class ArticleElementList extends Widget
             $this->elementList->andWhere([ 'page_id' => $this->sectionId ]);
         }
         $countQuery        = clone $this->elementList;
-        /**
-         * @todo Изменить количество элементов на странице перед переносом
-         */
-        $this->pages       = new Pagination([ 'totalCount' => $countQuery->count(), 'pageSize' => isset(Yii::$app->request->get()['per-page']) ? Yii::$app->request->get()['per-page'] : 2 ]);
+        $this->pages       = new Pagination([ 'totalCount' => $countQuery->count(), 'pageSize' => isset(Yii::$app->request->get()['per-page']) ? Yii::$app->request->get()['per-page'] : 20 ]);
         $this->elementList = $this->elementList
                 ->offset($this->pages->offset)
                 ->orderBy([ 'p.sort' => SORT_ASC ])
@@ -70,7 +67,7 @@ class ArticleElementList extends Widget
                         . Html::tag('span', Html::a(PageProperty::getValue($p->id, 'header58'), [ 'site/frontend', 'id' => $p->id ]), [ 'class' => 'name' ]);
             }
             echo Html::ul($ul, [ 'encode' => false, 'class' => 'list' ]);
-            if (!isset(Yii::$app->request->get()['per-page']))
+            if (!isset(Yii::$app->request->get()['per-page']) && $this->pages->limit < $this->pages->totalCount)
                 echo Html::tag('div', Html::a('Показать все статьи', $this->sectionId ? [ 'site/frontend', 'id' => $this->sectionId, 'per-page' => $this->pages->totalCount ] : [ 'site/frontend', 'id' => SiteProperty::getValue('blogpageid'), 'per-page' => $this->pages->totalCount ]), [ 'class' => 'all' ]);
             echo LinkPager::widget([
                 'pagination'               => $this->pages,

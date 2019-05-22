@@ -142,6 +142,12 @@
             display: block;
         }
     }
+    @include respond-to(small) {
+        .calc {
+            width: 100%;
+            padding: 10px;
+        }
+    }
 }
 
 .section-7 {

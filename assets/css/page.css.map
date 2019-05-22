@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAMA,gBAAiB;EACb,UAAU,ECEE,KAAK",
+"sources": ["../scss/page.scss","../scss/variables/_size.scss"],
+"names": [],
+"file": "page.css"
+}

@@ -281,6 +281,17 @@ section {
       font-style: italic; }
     .section-content .page-content img {
       max-width: 100%; }
+  @media print, screen and (max-width: 767px) {
+    .section-content h1 {
+      font-size: 25px; }
+    .section-content .page-content {
+      font-size: 15px; }
+      .section-content .page-content h2 {
+        font-size: 21px; }
+      .section-content .page-content h3 {
+        font-size: 19px; }
+      .section-content .page-content h4, .section-content .page-content h5, .section-content .page-content h6 {
+        font-size: 17px; } }
 
 #top {
   position: fixed;

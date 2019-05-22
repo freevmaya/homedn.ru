@@ -166,6 +166,36 @@
             display: none;
         }
     }
+    @include respond-to(small) {
+        .article-list {
+            width: 100%;
+            display: block;
+            .list {
+                padding-left: 0;
+                li {
+                    width: 100%;
+                    margin: 10px 0;
+                    .image {
+                        height: auto;
+                        .content-icon {
+                            top: 37px;
+                        }
+                        .view-icon {
+                            top: 84px;
+                        }
+                    }
+                }
+            }
+            .pagination {
+                text-align: center;
+                li {
+                    &.prev, &.next {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
 }
 
 .section-2 {

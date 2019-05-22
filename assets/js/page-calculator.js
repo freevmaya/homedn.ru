@@ -127,7 +127,7 @@ $(function () {
     });
 
     $(document).on('calc-paint', function () {
-        let html = '';
+        let html = [];
         $('.tab-content').each(function (i) {
             if ($(this).hasClass('active')) {
                 html = ['<img src="' + calcData.baseImage[i] + '">'];

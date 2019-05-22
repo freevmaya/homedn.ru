@@ -93,6 +93,25 @@
             }
         }
     }
+    @include respond-to(small) {
+        .relative-list {
+            .list {
+                li {
+                    width: 100%;
+                    margin: 10px 0;
+                    .image {
+                        height: auto;
+                        .content-icon {
+                            top: 37px;
+                        }
+                        .view-icon {
+                            top: 84px;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 .section-4 {

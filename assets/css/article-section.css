@@ -167,6 +167,25 @@
   @media print, screen and (max-width: 959px) {
     .section-1 .section-list {
       display: none; } }
+  @media print, screen and (max-width: 767px) {
+    .section-1 .article-list {
+      width: 100%;
+      display: block; }
+      .section-1 .article-list .list {
+        padding-left: 0; }
+        .section-1 .article-list .list li {
+          width: 100%;
+          margin: 10px 0; }
+          .section-1 .article-list .list li .image {
+            height: auto; }
+            .section-1 .article-list .list li .image .content-icon {
+              top: 37px; }
+            .section-1 .article-list .list li .image .view-icon {
+              top: 84px; }
+      .section-1 .article-list .pagination {
+        text-align: center; }
+        .section-1 .article-list .pagination li.prev, .section-1 .article-list .pagination li.next {
+          display: none; } }
 
 .section-2 {
   padding: 113px 0;

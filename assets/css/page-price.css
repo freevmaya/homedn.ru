@@ -371,7 +371,9 @@
       .section-3 .calc {
         width: auto; }
         .section-3 .calc form button[type=submit] {
-          width: 100%; } }
+          width: 100%; }
+        .section-3 .calc form .field-calcinputdataform-second label span {
+          max-width: 92%; } }
   .section-3 .calc {
     background: #FFFFFF;
     width: 370px;
@@ -382,6 +384,10 @@
     bottom: 0; }
     .section-3 .image img {
       display: block; }
+  @media print, screen and (max-width: 767px) {
+    .section-3 .calc {
+      width: 100%;
+      padding: 10px; } }
 
 .section-4 {
   padding: 63px 0; }

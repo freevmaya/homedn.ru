@@ -156,6 +156,23 @@
             max-width: 100%;
         }
     }
+    @include respond-to(small) {
+        h1 {
+            @include font-props(6);
+        }
+        .page-content {
+            @include font-props(3.5);
+            h2 {
+                @include font-props(5);
+            }
+            h3 {
+                @include font-props(4.5);
+            }
+            h4, h5, h6 {
+                @include font-props(4);
+            }
+        }
+    }
 }
 
 #top {

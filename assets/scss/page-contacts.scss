@@ -90,6 +90,43 @@
             padding-top: 30px;
         }
     }
+    @include respond-to(small) {
+        .header {
+            @include font-props(7);
+        }
+        .map {
+            > ymaps {
+                width: 100% !important;
+            }
+        }
+        .connect {
+            padding-left: 0;
+            .item {
+                .icon {
+                    width: 40px;
+                }
+                .cont {
+                    width: 82%;
+                    .val {
+                        @include font-props(4);
+                        a {
+                            @include font-props(4);
+                        }
+                        &.socials {
+                            ul {
+                                li {
+                                    a {
+                                        width: 40px;
+                                        height: 40px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 .section-2 {
@@ -118,6 +155,14 @@
                     background: $color-solitude6;
                 }
             }
+        }
+    }
+    @include respond-to(small) {
+        .header {
+            @include font-props(7);
+        }
+        .details {
+            overflow: auto;
         }
     }
 }

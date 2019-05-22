@@ -1816,7 +1816,9 @@
       .section-11 .calc {
         width: auto; }
         .section-11 .calc form button[type=submit] {
-          width: 100%; } }
+          width: 100%; }
+        .section-11 .calc form .field-calcinputdataform-second label span {
+          max-width: 92%; } }
 
 .section-12 {
   padding: 113px 0;

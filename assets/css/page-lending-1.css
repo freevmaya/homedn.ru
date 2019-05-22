@@ -823,7 +823,9 @@
       .section-6 .calc {
         width: auto; }
         .section-6 .calc form button[type=submit] {
-          width: 100%; } }
+          width: 100%; }
+        .section-6 .calc form .field-calcinputdataform-second label span {
+          max-width: 92%; } }
   .section-6 .calc {
     background: #FFFFFF;
     width: 370px;
@@ -834,6 +836,10 @@
     bottom: 0; }
     .section-6 .image img {
       display: block; }
+  @media print, screen and (max-width: 767px) {
+    .section-6 .calc {
+      width: 100%;
+      padding: 10px; } }
 
 .section-7 {
   padding: 45px 0; }

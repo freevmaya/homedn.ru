@@ -77,6 +77,16 @@
         .section-3 .relative-list .list li .name a {
           font-size: 17px;
           color: #000000; }
+  @media print, screen and (max-width: 767px) {
+    .section-3 .relative-list .list li {
+      width: 100%;
+      margin: 10px 0; }
+      .section-3 .relative-list .list li .image {
+        height: auto; }
+        .section-3 .relative-list .list li .image .content-icon {
+          top: 37px; }
+        .section-3 .relative-list .list li .image .view-icon {
+          top: 84px; } }
 
 .section-4 {
   padding: 113px 0;

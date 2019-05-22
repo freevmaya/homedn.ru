@@ -184,6 +184,13 @@
                 button[type=submit] {
                     width: 100%;
                 }
+                .field-calcinputdataform-second {
+                    label {
+                        span {
+                            max-width: 92%;
+                        }
+                    }
+                }
             }
         }
     }
