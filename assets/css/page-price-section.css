@@ -199,6 +199,15 @@
           height: 36px; }
     .section-3 .image {
       display: none; } }
+  @media print, screen and (max-width: 767px) {
+    .section-3 {
+      padding: 45px 0; }
+      .section-3 .header {
+        font-size: 29px; }
+      .section-3 .calc {
+        width: auto; }
+        .section-3 .calc form button[type=submit] {
+          width: 100%; } }
   .section-3 .calc {
     background: #FFFFFF;
     width: 370px;
@@ -316,6 +325,29 @@
         -webkit-border-radius: 2px;
         border-radius: 2px;
         font-size: 17px; }
+  @media print, screen and (max-width: 767px) {
+    .section-4 {
+      padding: 40px 0; }
+      .section-4 .cont {
+        padding: 20px 10px; }
+        .section-4 .cont .header {
+          font-size: 21px; }
+        .section-4 .cont .subheader {
+          font-size: 17px; }
+        .section-4 .cont .form-container .form-group {
+          display: block;
+          padding: 10px 0;
+          margin-bottom: 0; }
+          .section-4 .cont .form-container .form-group input[type=text] {
+            width: 100%; }
+          .section-4 .cont .form-container .form-group .checkbox-label {
+            text-align: left; }
+            .section-4 .cont .form-container .form-group .checkbox-label span {
+              max-width: 88%; }
+        .section-4 .cont .form-container button[type=submit] {
+          padding: 0;
+          width: 100%;
+          margin: 0; } }
   .section-4 .cont .header-1 {
     font-size: 25px;
     text-align: center; }

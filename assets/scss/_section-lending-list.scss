@@ -65,4 +65,15 @@
             }
         }
     }
+    @include respond-to(small) {
+        .header {
+            @include font-props(7);
+        }
+        .lending-list {
+            li {
+                margin: 10px 0;
+                width: 100%;
+            }
+        }
+    }
 }

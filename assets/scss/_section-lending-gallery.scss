@@ -51,4 +51,26 @@
             @include font-props(6, $color-dodgerblue3);
         }
     }
+    @include respond-to(small) {
+        .lending-gallery {
+            .slides {
+                li {
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+            .direction-nav {
+                a {
+                    margin-top: -48px;
+                }
+            }
+        }
+        .cta {
+            padding-top: 24px;
+            a {
+                @include font-props(4);
+            }
+        }
+    }
 }

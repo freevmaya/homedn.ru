@@ -43,7 +43,7 @@ $(function () {
         else
             $("#top").fadeOut();
     });
-    
+
     $(window).scroll(function () {
         let doit = 'absolute' !== $('header .himenu').css('position');
         if ($(this).scrollTop() > headerHeight / 2) {
@@ -78,7 +78,7 @@ $(function () {
         let active = $(this).find('li.active').first();
         let slider = $(this).find('li').last();
         $(slider).width($(active).width());
-        $(slider).css('left', $(active).position().left + 'px');
+        $(slider).css('left', $(active).position().left + 'px').css('top', $(active).position().top + 'px');
 //        $(slider).position().left = $(active).position().left/* - +$(this).position().left*/;
 //        $(slider).css({
 //            left: (+$(active).position.left - $(this).position.left) + 'px'
@@ -91,7 +91,7 @@ $(function () {
             $(this).parent().addClass('active');
             let slider = $(this).parents('ul').find('li').last();
             $(slider).width($(this).parent().width());
-            $(slider).css('left', $(this).parent().position().left + 'px');
+            $(slider).css('left', $(this).parent().position().left + 'px').css('top', $(this).parent().position().top + 'px');
             $('.caption-content').fadeOut('slow').removeClass('active');
             $($(this).attr('href')).fadeIn('fast').addClass('active');
         }

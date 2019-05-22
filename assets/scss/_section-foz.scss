@@ -90,4 +90,37 @@
             }
         }
     }
+    @include respond-to(small) {
+        padding: 40px 0;
+        .cont {
+            padding: 20px 10px;
+            .header {
+                @include font-props(5);
+            }
+            .subheader {
+                @include font-props(4);
+            }
+            .form-container {
+                .form-group {
+                    display: block;
+                    padding: 10px 0;
+                    margin-bottom: 0;
+                    input[type=text] {
+                        width: 100%;
+                    }
+                    .checkbox-label {
+                        text-align: left;
+                        span {
+                            max-width: 88%;
+                        }
+                    }
+                }
+                button[type=submit] {
+                    padding: 0;
+                    width: 100%;
+                    margin: 0;
+                }
+            }
+        }
+    }
 }

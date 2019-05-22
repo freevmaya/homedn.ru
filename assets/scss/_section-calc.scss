@@ -173,4 +173,18 @@
             display: none;
         }
     }
+    @include respond-to(small) {
+        padding: 45px 0;
+        .header {
+            @include font-props(7);
+        }
+        .calc {
+            width: auto;
+            form {
+                button[type=submit] {
+                    width: 100%;
+                }
+            }
+        }
+    }
 }

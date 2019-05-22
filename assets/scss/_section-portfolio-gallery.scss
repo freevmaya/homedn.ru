@@ -62,4 +62,33 @@
             @include font-props(6, $color-dodgerblue3);
         }
     }
+    @include respond-to(small) {
+        height: auto;
+        padding: 45px 0;
+        background-size: cover;
+        background-position: center center;
+        .header {
+            @include font-props(7);
+        }
+        .main-portfolio-gallery {
+            .slides {
+                li {
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+            .direction-nav {
+                a {
+                    margin-top: -48px;
+                }
+            }
+        }
+        .cta {
+            padding-top: 24px;
+            a {
+                @include font-props(4);
+            }
+        }
+    }
 }

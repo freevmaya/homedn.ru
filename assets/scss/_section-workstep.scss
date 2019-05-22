@@ -42,5 +42,14 @@
                 }
             }
         }
+    }    
+    @include respond-to(small) {
+        .workstep-element {
+            &.with-image {
+                .image, .workstep-content {
+                    width: 100%;
+                }
+            }
+        }
     }
 }

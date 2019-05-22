@@ -53,10 +53,10 @@
           top: 0;
           left: 0;
           mix-blend-mode: multiply;
-          -moz-transition: left 0.7s ease, width 0.7s ease;
-          -o-transition: left 0.7s ease, width 0.7s ease;
-          -webkit-transition: left 0.7s ease, width 0.7s ease;
-          transition: left 0.7s ease, width 0.7s ease; }
+          -moz-transition: left 0.7s ease, width 0.7s ease, top 0.7s ease;
+          -o-transition: left 0.7s ease, width 0.7s ease, top 0.7s ease;
+          -webkit-transition: left 0.7s ease, width 0.7s ease, top 0.7s ease;
+          transition: left 0.7s ease, width 0.7s ease, top 0.7s ease; }
   .section-2 .price-caption-contents .caption-content {
     display: none; }
     .section-2 .price-caption-contents .caption-content.active {
@@ -198,6 +198,16 @@
       padding-top: 17px; }
       .section-2 .price-caption-contents .caption-content {
         width: max-content; } }
+  @media print, screen and (max-width: 767px) {
+    .section-2 {
+      padding: 45px 0; }
+      .section-2 .header {
+        font-size: 29px; }
+      .section-2 .price-caption-line {
+        margin: 25px 0; }
+        .section-2 .price-caption-line ul {
+          background: none;
+          position: relative; } }
 
 .section-3 {
   padding: 117px 0;
@@ -353,6 +363,15 @@
           height: 36px; }
     .section-3 .image {
       display: none; } }
+  @media print, screen and (max-width: 767px) {
+    .section-3 {
+      padding: 45px 0; }
+      .section-3 .header {
+        font-size: 29px; }
+      .section-3 .calc {
+        width: auto; }
+        .section-3 .calc form button[type=submit] {
+          width: 100%; } }
   .section-3 .calc {
     background: #FFFFFF;
     width: 370px;
@@ -760,6 +779,29 @@
         -webkit-border-radius: 2px;
         border-radius: 2px;
         font-size: 17px; }
+  @media print, screen and (max-width: 767px) {
+    .section-6 {
+      padding: 40px 0; }
+      .section-6 .cont {
+        padding: 20px 10px; }
+        .section-6 .cont .header {
+          font-size: 21px; }
+        .section-6 .cont .subheader {
+          font-size: 17px; }
+        .section-6 .cont .form-container .form-group {
+          display: block;
+          padding: 10px 0;
+          margin-bottom: 0; }
+          .section-6 .cont .form-container .form-group input[type=text] {
+            width: 100%; }
+          .section-6 .cont .form-container .form-group .checkbox-label {
+            text-align: left; }
+            .section-6 .cont .form-container .form-group .checkbox-label span {
+              max-width: 88%; }
+        .section-6 .cont .form-container button[type=submit] {
+          padding: 0;
+          width: 100%;
+          margin: 0; } }
   .section-6 .cont .header-1 {
     font-size: 25px;
     text-align: center; }

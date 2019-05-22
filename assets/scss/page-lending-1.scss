@@ -55,6 +55,21 @@
             }
         }
     }
+    @include respond-to(small) {
+        .header-1 {
+            padding-top: 20px;
+            @include font-props(7);
+        }
+        .header-2 {
+            @include font-props(4);
+        }
+        .cta {
+            padding-top: 135px;
+            a {
+                width: auto;
+            }
+        }
+    }
 }
 
 .section-2 {
@@ -70,6 +85,19 @@
             @include video-impulse(132px, 168px, 'video3.png', 50%, $color-venetianred);
         }
     }
+    @include respond-to(middle) {
+        .video {
+            background-repeat: no-repeat;
+            background-size: contain;
+            padding-top: 56.25%;
+            height: auto;
+        }
+    }
+    @include respond-to(small) {
+        .header {
+            @include font-props(7);
+        }
+    }
 }
 
 .section-3 {
@@ -80,6 +108,11 @@
     }
     @include section-lending-gallery;
     @include section-workstep;
+    @include respond-to(small) {
+        .header {
+            @include font-props(7);
+        }
+    }
 }
 
 .section-4 {

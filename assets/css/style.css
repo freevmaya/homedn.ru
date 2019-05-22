@@ -223,6 +223,27 @@ section {
       -webkit-border-radius: 2px;
       border-radius: 2px;
       font-size: 17px; }
+  @media print, screen and (max-width: 767px) {
+    .popup-window {
+      padding: 20px; }
+      .popup-window .header {
+        font-size: 21px; }
+      .popup-window .subheader {
+        font-size: 17px; }
+      .popup-window .form-container .form-group {
+        display: block;
+        padding: 10px 0;
+        margin-bottom: 0; }
+        .popup-window .form-container .form-group input[type=text] {
+          width: 100%; }
+        .popup-window .form-container .form-group .checkbox-label {
+          text-align: left; }
+          .popup-window .form-container .form-group .checkbox-label span {
+            max-width: 88%; }
+      .popup-window .form-container button[type=submit] {
+        padding: 0;
+        width: 100%;
+        margin: 0; } }
 
 .section-content {
   padding: 86px 0;
@@ -455,6 +476,9 @@ footer {
     footer .top a {
       display: block;
       margin: 10px auto; }
+    footer .footer-menu .left, footer .footer-menu .center, footer .footer-menu .right {
+      width: 100%;
+      margin-top: 15px; }
     footer .footer-menu .menu > li {
       width: auto; }
     footer .bottom .left {

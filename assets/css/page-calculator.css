@@ -183,6 +183,15 @@ header {
           height: 36px; }
     .section-1 .image {
       display: none; } }
+  @media print, screen and (max-width: 767px) {
+    .section-1 {
+      padding: 45px 0; }
+      .section-1 .header {
+        font-size: 29px; }
+      .section-1 .calc {
+        width: auto; }
+        .section-1 .calc form button[type=submit] {
+          width: 100%; } }
   .section-1 .calc {
     background: #FFFFFF;
     width: 370px;
@@ -629,6 +638,29 @@ header {
         -webkit-border-radius: 2px;
         border-radius: 2px;
         font-size: 17px; }
+  @media print, screen and (max-width: 767px) {
+    .section-7 {
+      padding: 40px 0; }
+      .section-7 .cont {
+        padding: 20px 10px; }
+        .section-7 .cont .header {
+          font-size: 21px; }
+        .section-7 .cont .subheader {
+          font-size: 17px; }
+        .section-7 .cont .form-container .form-group {
+          display: block;
+          padding: 10px 0;
+          margin-bottom: 0; }
+          .section-7 .cont .form-container .form-group input[type=text] {
+            width: 100%; }
+          .section-7 .cont .form-container .form-group .checkbox-label {
+            text-align: left; }
+            .section-7 .cont .form-container .form-group .checkbox-label span {
+              max-width: 88%; }
+        .section-7 .cont .form-container button[type=submit] {
+          padding: 0;
+          width: 100%;
+          margin: 0; } }
   .section-7 .cont .header, .section-7 .cont .subheader, .section-7 .cont .form-container {
     text-align: left;
     margin: 0 auto;

@@ -34,7 +34,7 @@
                     height: 39px;
                     @include stretch(0, false, false, 0);
                     mix-blend-mode: multiply;
-                    @include transition(left 0.7s ease, width 0.7s ease);
+                    @include transition(left 0.7s ease, width 0.7s ease, top 0.7s ease);
                 }
             }
         }
@@ -163,6 +163,19 @@
             padding-top: 17px;
             .caption-content {
                 width: max-content;
+            }
+        }
+    }
+    @include respond-to(small) {
+        padding: 45px 0;
+        .header {
+            @include font-props(7);
+        }
+        .price-caption-line {
+            margin: 25px 0;
+            ul {
+                background: none;
+                position: relative;
             }
         }
     }
