@@ -153,4 +153,47 @@ header {
             }
         }
     }
+    @include respond-to(small) {
+        .top-fixed {
+            .himenu {
+                @include stretch(35%, 20px, false, false);
+                a {
+                    span {
+                        display: none;
+                    }
+                    img {
+                        width: 25px;
+                    }
+                }
+            }
+            .top-phone {
+                top: -70px;
+                left: 20px;
+            }
+        }
+        .top-hidden {
+            padding: 25px 0 70px;
+            .top-hidden-menu {
+                width: auto;
+                display: block;
+                > ul {
+                    > li {
+                        display: block;
+                        width: auto;
+                        > ul {
+                            padding-top: 5px;
+                            > li {
+                                padding-bottom: 5px;
+                            }
+                        }
+                    }
+                }
+            }
+            .socials {
+                width: auto;
+                display: block;
+                padding-top: 20px;
+            }
+        }
+    }
 }
