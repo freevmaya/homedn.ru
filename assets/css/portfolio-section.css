@@ -49,6 +49,11 @@
       .section-1 .section-menu ul li.active span {
         border-color: #AB0F2C;
         color: #AB0F2C; }
+  @media print, screen and (max-width: 959px) {
+    .section-1 .section-menu {
+      display: block;
+      width: auto;
+      padding-bottom: 40px; } }
 
 .section-2 .section-list .section {
   border-top: 1px solid #C5C6C6;
@@ -125,24 +130,25 @@
         margin: 44px 10px;
         border: 1px solid #B2B3B3;
         position: relative; }
-        .section-2 .section-list .section .section-element-list ul li:nth-child(odd) {
-          margin-left: 0; }
-          .section-2 .section-list .section .section-element-list ul li:nth-child(odd):after {
-            position: absolute;
-            bottom: -44px;
-            left: 0;
-            right: -24px; }
-        .section-2 .section-list .section .section-element-list ul li:nth-child(even) {
-          margin-right: 0; }
-          .section-2 .section-list .section .section-element-list ul li:nth-child(even):after {
-            position: absolute;
-            bottom: -44px;
-            left: -493px;
-            right: 0;
-            display: block;
-            height: 1px;
-            background: #C5C6C6;
-            content: ''; }
+        @media print, screen and (min-width: 960px) {
+          .section-2 .section-list .section .section-element-list ul li:nth-child(odd) {
+            margin-left: 0; }
+            .section-2 .section-list .section .section-element-list ul li:nth-child(odd):after {
+              position: absolute;
+              bottom: -44px;
+              left: 0;
+              right: -24px; }
+          .section-2 .section-list .section .section-element-list ul li:nth-child(even) {
+            margin-right: 0; }
+            .section-2 .section-list .section .section-element-list ul li:nth-child(even):after {
+              position: absolute;
+              bottom: -44px;
+              left: -493px;
+              right: 0;
+              display: block;
+              height: 1px;
+              background: #C5C6C6;
+              content: ''; } }
         .section-2 .section-list .section .section-element-list ul li .image {
           display: block;
           height: 310px;

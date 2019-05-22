@@ -88,6 +88,14 @@
                     -webkit-filter: none;
                     filter: none;
                     opacity: 1; }
+  @media print, screen and (max-width: 959px) {
+    .section-1 .map {
+      width: auto;
+      display: block; }
+    .section-1 .connect {
+      display: block;
+      width: auto;
+      padding-top: 30px; } }
 
 .section-2 {
   padding: 45px 0; }

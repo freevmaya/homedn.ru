@@ -96,6 +96,8 @@ AppAsset::register($this);
             </div>
         </footer>
 
+        <div id="top"><span class="image"><?= Html::img(Yii::$app->params['image_dir_url'] . 'top.png') ?></span></div>
+
         <div class="mfp-hide popup-window wrapper" id="foz-callback">
             <?=
             FormViewWidget::widget([

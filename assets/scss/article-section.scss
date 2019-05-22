@@ -161,6 +161,11 @@
             }
         }
     }
+    @include respond-to(middle) {
+        .section-list {
+            display: none;
+        }
+    }
 }
 
 .section-2 {

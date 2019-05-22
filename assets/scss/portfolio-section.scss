@@ -51,6 +51,13 @@
             }
         }
     }
+    @include respond-to(middle) {
+        .section-menu {
+            display: block;
+            width: auto;
+            padding-bottom: 40px;
+        }
+    }
 }
 
 .section-2 {
@@ -110,23 +117,22 @@
                         margin: 44px 10px;
                         border: 1px solid $color-black40;
                         position: relative;
-                        &:after {
-
-                        }
-                        &:nth-child(odd) {
-                            margin-left: 0;
-                            &:after {
-                                @include stretch(false, -24px, -44px, 0);
+                        @include respond-to(large) {
+                            &:nth-child(odd) {
+                                margin-left: 0;
+                                &:after {
+                                    @include stretch(false, -24px, -44px, 0);
+                                }
                             }
-                        }
-                        &:nth-child(even) {
-                            margin-right: 0;
-                            &:after {
-                                @include stretch(false, 0, -44px, -493px);
-                                display: block;                                
-                                height: 1px;
-                                background: $color-black30;
-                                content: '';
+                            &:nth-child(even) {
+                                margin-right: 0;
+                                &:after {
+                                    @include stretch(false, 0, -44px, -493px);
+                                    display: block;                                
+                                    height: 1px;
+                                    background: $color-black30;
+                                    content: '';
+                                }
                             }
                         }
                         .image {

@@ -347,6 +347,11 @@
     .section-3 .workstep-element .workstep-content .desc {
       font-size: 17px;
       color: #434242; }
+  @media print, screen and (max-width: 959px) {
+    .section-3 .workstep-element.with-image .image {
+      width: 30%; }
+    .section-3 .workstep-element.with-image .workstep-content {
+      width: 66%; } }
 
 .section-4 {
   background-repeat: no-repeat;
@@ -783,14 +788,15 @@
       margin: 16px 12px;
       position: relative;
       text-align: left; }
-      .section-7 .lending-list li:first-child, .section-7 .lending-list li:nth-child(3n+1) {
-        margin-left: 0; }
-      .section-7 .lending-list li:last-child, .section-7 .lending-list li:nth-child(3n+3) {
-        margin-right: 0; }
-      .section-7 .lending-list li:nth-child(-n+3) {
-        margin-top: 0; }
-      .section-7 .lending-list li:nth-last-child(-n+3) {
-        margin-bottom: 0; }
+      @media print, screen and (min-width: 960px) {
+        .section-7 .lending-list li:first-child, .section-7 .lending-list li:nth-child(3n+1) {
+          margin-left: 0; }
+        .section-7 .lending-list li:last-child, .section-7 .lending-list li:nth-child(3n+3) {
+          margin-right: 0; }
+        .section-7 .lending-list li:nth-child(-n+3) {
+          margin-top: 0; }
+        .section-7 .lending-list li:nth-last-child(-n+3) {
+          margin-bottom: 0; } }
       .section-7 .lending-list li .image {
         display: inline-block;
         vertical-align: middle;

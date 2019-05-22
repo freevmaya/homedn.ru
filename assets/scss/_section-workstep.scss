@@ -31,4 +31,16 @@
             }
         }
     }
+    @include respond-to(middle) {
+        .workstep-element {
+            &.with-image {
+                .image {
+                    width: 30%;
+                }
+                .workstep-content {
+                    width: 66%;
+                }
+            }
+        }
+    }
 }

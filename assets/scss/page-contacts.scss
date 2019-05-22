@@ -79,6 +79,17 @@
             }
         }
     }
+    @include respond-to(middle) {
+        .map {
+            width: auto;
+            display: block;
+        }
+        .connect {
+            display: block;
+            width: auto;
+            padding-top: 30px;
+        }
+    }
 }
 
 .section-2 {

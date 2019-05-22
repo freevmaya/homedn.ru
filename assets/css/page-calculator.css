@@ -225,48 +225,46 @@ header {
 
 .section-4 {
   padding: 43px 0; }
-  .section-4 .template-styles {
-    padding: 0 40px; }
-    .section-4 .template-styles .header {
-      font-size: 17px; }
-    .section-4 .template-styles .desc {
-      padding: 15px 0;
-      font-size: 13px;
-      color: #727271; }
-    .section-4 .template-styles .calc-collect-list {
-      overflow: hidden; }
-      .section-4 .template-styles .calc-collect-list ul {
-        width: auto; }
-        .section-4 .template-styles .calc-collect-list ul li {
-          display: inline-block;
-          vertical-align: top;
-          *vertical-align: auto;
-          *zoom: 1;
-          *display: inline;
-          width: 207px;
-          margin-right: 10px;
-          cursor: pointer; }
-          .section-4 .template-styles .calc-collect-list ul li .name {
-            display: block;
-            font-size: 13px;
-            color: #727271;
-            padding-bottom: 5px; }
-          .section-4 .template-styles .calc-collect-list ul li .price {
-            display: block;
-            font-size: 11px;
-            color: #727271;
-            padding-bottom: 5px; }
-          .section-4 .template-styles .calc-collect-list ul li .image {
-            display: block;
-            height: 168px;
-            overflow: hidden;
-            border: 1px solid #FFFFFF; }
-            .section-4 .template-styles .calc-collect-list ul li .image img {
-              width: 100%; }
-          .section-4 .template-styles .calc-collect-list ul li:hover .name, .section-4 .template-styles .calc-collect-list ul li:hover .price {
-            color: #333333; }
-          .section-4 .template-styles .calc-collect-list ul li:hover .image {
-            border-color: #000000; }
+  .section-4 .template-styles .header {
+    font-size: 17px; }
+  .section-4 .template-styles .desc {
+    padding: 15px 0;
+    font-size: 13px;
+    color: #727271; }
+  .section-4 .template-styles .calc-collect-list {
+    overflow: hidden; }
+    .section-4 .template-styles .calc-collect-list ul {
+      width: auto; }
+      .section-4 .template-styles .calc-collect-list ul li {
+        display: inline-block;
+        vertical-align: top;
+        *vertical-align: auto;
+        *zoom: 1;
+        *display: inline;
+        width: 207px;
+        margin-right: 10px;
+        cursor: pointer; }
+        .section-4 .template-styles .calc-collect-list ul li .name {
+          display: block;
+          font-size: 13px;
+          color: #727271;
+          padding-bottom: 5px; }
+        .section-4 .template-styles .calc-collect-list ul li .price {
+          display: block;
+          font-size: 11px;
+          color: #727271;
+          padding-bottom: 5px; }
+        .section-4 .template-styles .calc-collect-list ul li .image {
+          display: block;
+          height: 168px;
+          overflow: hidden;
+          border: 1px solid #FFFFFF; }
+          .section-4 .template-styles .calc-collect-list ul li .image img {
+            width: 100%; }
+        .section-4 .template-styles .calc-collect-list ul li:hover .name, .section-4 .template-styles .calc-collect-list ul li:hover .price {
+          color: #333333; }
+        .section-4 .template-styles .calc-collect-list ul li:hover .image {
+          border-color: #000000; }
 
 .section-5 {
   padding-top: 43px; }

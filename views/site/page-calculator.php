@@ -41,14 +41,16 @@ if (isset(Yii::$app->request->get()['k'])) {
     </section>
 
     <section class="section-4">
-        <div class="template-styles">
-            <div class="header"><?= nl2br(PageProperty::getValue($model->id, 'header54')) ?></div>
-            <div class="desc"><?= nl2br(PageProperty::getValue($model->id, 'text6desc')) ?></div>
-            <?=
-            CalcCollectWidget::widget([
-                'calcKey' => Yii::$app->request->get()['k'],
-            ])
-            ?>
+        <div class="wrapper">
+            <div class="template-styles">
+                <div class="header"><?= nl2br(PageProperty::getValue($model->id, 'header54')) ?></div>
+                <div class="desc"><?= nl2br(PageProperty::getValue($model->id, 'text6desc')) ?></div>
+                <?=
+                CalcCollectWidget::widget([
+                    'calcKey' => Yii::$app->request->get()['k'],
+                ])
+                ?>
+            </div>
         </div>
     </section>
 

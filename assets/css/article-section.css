@@ -164,6 +164,9 @@
         text-decoration: none; }
         .section-1 .article-list .all a:hover {
           background: #B2B3B3; }
+  @media print, screen and (max-width: 959px) {
+    .section-1 .section-list {
+      display: none; } }
 
 .section-2 {
   padding: 113px 0;

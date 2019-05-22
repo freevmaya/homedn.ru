@@ -107,11 +107,13 @@
             width: 300px;
             margin: 12px 12px 30px;
             text-align: left;
-            &:first-child, &:nth-child(3n+1) {
-                margin-left: 0;
-            }
-            &:last-child, &:nth-child(3n+3) {
-                margin-right: 0;
+            @include respond-to(large) {
+                &:first-child, &:nth-child(3n+1) {
+                    margin-left: 0;
+                }
+                &:last-child, &:nth-child(3n+3) {
+                    margin-right: 0;
+                }
             }
             .image {
                 display: block;
@@ -204,20 +206,22 @@
         li {
             width: 465px;
             margin: 10px;
-            &:nth-child(2n+2) {
-                margin: 10px;
-            }
-            &:nth-child(3n+3), &:nth-child(-n+3) {
-                margin: 10px;
-            }
-            &:nth-child(3n+1) {
-                margin: 10px;
-            }
-            &:first-child, &:nth-child(2n+3) {
-                margin-left: 0;
-            }
-            &:last-child, &:nth-child(2n+2) {
-                margin-right: 0;
+            @include respond-to(large) {
+                &:nth-child(2n+2) {
+                    margin: 10px;
+                }
+                &:nth-child(3n+3), &:nth-child(-n+3) {
+                    margin: 10px;
+                }
+                &:nth-child(3n+1) {
+                    margin: 10px;
+                }
+                &:first-child, &:nth-child(2n+3) {
+                    margin-left: 0;
+                }
+                &:last-child, &:nth-child(2n+2) {
+                    margin-right: 0;
+                }
             }
             .image {
                 background: $color-white;
@@ -288,4 +292,11 @@
 
 .section-12 {
     @include section-lending-list;
+    .lending-list {
+        li {
+            .image {
+                background: $color-white;
+            }
+        }
+    }
 }
