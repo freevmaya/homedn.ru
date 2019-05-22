@@ -657,6 +657,8 @@ header {
           text-decoration: underline; }
   @media print, screen and (max-width: 959px) {
     header .top-fixed .main-menu {
-      display: none; } }
+      display: none; }
+    header .top-fixed .top-phone {
+      right: 20px; } }
 
 /*# sourceMappingURL=style.css.map */

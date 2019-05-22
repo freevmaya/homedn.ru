@@ -149,6 +149,21 @@
             }
         }
     }
+    @include respond-to(middle) {
+        .employee-slider {
+            .direction-nav {
+                a {
+                    .flex-prev {
+                        margin-left: 20px;
+                    }
+                    .flex-next {
+                        margin-right: 0;
+                        right: 20px;
+                    }
+                }
+            }
+        }
+    }
 }
 
 .section-3 {
@@ -162,6 +177,14 @@
         position: relative;
         a {
             @include video-impulse(132px, 168px, 'video3.png', 50%, $color-venetianred);
+        }
+    }
+    @include respond-to(middle) {
+        .video {
+            background-repeat: no-repeat;
+            background-size: contain;
+            padding-top: 56.25%;
+            height: auto;
         }
     }
 }
@@ -203,6 +226,21 @@
     }
     .image {
         @include stretch(false, false, 0, 60%);
+    }
+    @include respond-to(middle) {
+        .list {
+            width: 60%;
+            ul {
+                li {
+                    span {
+                        max-width: 90%;
+                        br {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -266,6 +304,11 @@
             }
         }
     }
+    @include respond-to(middle) {
+        .right {
+            padding: 60px 0 0 50px;
+        }
+    }
 }
 
 .section-6 {
@@ -276,6 +319,7 @@
     }
     .work-progress {
         padding-top: 50px;
+        text-align: center;
         ul {
             li {
                 @include inline-block(top);
@@ -286,17 +330,20 @@
                 @include box-shadow(23px 23px 34px $color-frenchgrey);
                 margin: 16px 12px;
                 position: relative;
-                &:first-child, &:nth-child(3n+1) {
-                    margin-left: 0;
-                }
-                &:last-child, &:nth-child(3n+3) {
-                    margin-right: 0;
-                }
-                &:nth-child(-n+3) {
-                    margin-top: 0;
-                }
-                &:nth-last-child(-n+3) {
-                    margin-bottom: 0;
+                text-align: left;
+                @include respond-to(large) {
+                    &:first-child, &:nth-child(3n+1) {
+                        margin-left: 0;
+                    }
+                    &:last-child, &:nth-child(3n+3) {
+                        margin-right: 0;
+                    }
+                    &:nth-child(-n+3) {
+                        margin-top: 0;
+                    }
+                    &:nth-last-child(-n+3) {
+                        margin-bottom: 0;
+                    }
                 }
                 .image {
                     @include inline-block;
@@ -359,11 +406,13 @@
                 height: 417px;
                 position: relative;
                 border: 1px solid $color-black40;
-                &:first-child, &:nth-child(2n+1) {
-                    margin-left: 0;
-                }
-                &:nth-child(2n+2) {
-                    margin-right: 0;
+                @include respond-to(large) {
+                    &:first-child, &:nth-child(2n+1) {
+                        margin-left: 0;
+                    }
+                    &:nth-child(2n+2) {
+                        margin-right: 0;
+                    }
                 }
                 .video {
                     display: block;
@@ -424,6 +473,11 @@
             }
         }
     }
+    @include respond-to(middle) {
+        .portfolio-review-widget {
+            text-align: center;
+        }
+    }
 }
 
 .section-10 {
@@ -444,14 +498,16 @@
                     width: 635px;
                     margin: 0 20px 0 0;
                 }
-                &:nth-child(2), &:nth-child(3) {
-                    margin: 0 0 11px 0;
-                }
-                &:nth-child(4) {
-                    margin-left: 0;
-                }
-                &:last-child {
-                    margin-right: 0;
+                @include respond-to(large) {
+                    &:nth-child(2), &:nth-child(3) {
+                        margin: 0 0 11px 0;
+                    }
+                    &:nth-child(4) {
+                        margin-left: 0;
+                    }
+                    &:last-child {
+                        margin-right: 0;
+                    }
                 }
                 a {
                     display: block;
@@ -470,6 +526,19 @@
             @include font-props(6, $color-dodgerblue3);
             img {
                 vertical-align: middle;
+            }
+        }
+    }
+    @include respond-to(middle) {
+        .youtube-video {
+            text-align: center;
+            ul {
+                li {
+                    &:first-child {
+                        float: none;
+                        margin: 5px;
+                    }
+                }
             }
         }
     }

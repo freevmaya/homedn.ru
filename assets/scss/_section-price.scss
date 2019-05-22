@@ -157,4 +157,13 @@
             }
         }
     }
+    @include respond-to(middle) {
+        .price-caption-contents {
+            overflow: auto;
+            padding-top: 17px;
+            .caption-content {
+                width: max-content;
+            }
+        }
+    }
 }

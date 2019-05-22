@@ -156,10 +156,33 @@ header {
         vertical-align: middle; }
     .section-1 .calc form .help-block {
       font-size: 11px; }
-  .section-1 .image {
-    position: absolute;
-    bottom: -20px;
-    right: 0; }
+  @media print, screen and (min-width: 960px) {
+    .section-1 .image {
+      position: absolute;
+      bottom: -20px;
+      right: 0; } }
+  @media print, screen and (max-width: 959px) {
+    .section-1 .calc {
+      display: block;
+      width: auto; }
+      .section-1 .calc form .field-calcinputdataform-address input[type=text] {
+        height: 36px; }
+      .section-1 .calc form .roomcount-group, .section-1 .calc form .doorcount-group, .section-1 .calc form .toiletcount-group {
+        width: auto;
+        display: block;
+        padding-bottom: 10px; }
+        .section-1 .calc form .roomcount-group .spin-down, .section-1 .calc form .roomcount-group .spin-up, .section-1 .calc form .doorcount-group .spin-down, .section-1 .calc form .doorcount-group .spin-up, .section-1 .calc form .toiletcount-group .spin-down, .section-1 .calc form .toiletcount-group .spin-up {
+          height: 36px;
+          width: 36px;
+          font-size: 21px; }
+        .section-1 .calc form .roomcount-group input[type=text], .section-1 .calc form .doorcount-group input[type=text], .section-1 .calc form .toiletcount-group input[type=text] {
+          height: 36px; }
+      .section-1 .calc form .field-calcinputdataform-square, .section-1 .calc form .doorcount-group, .section-1 .calc form .toiletcount-group {
+        width: 200px; }
+        .section-1 .calc form .field-calcinputdataform-square input[type=text], .section-1 .calc form .doorcount-group input[type=text], .section-1 .calc form .toiletcount-group input[type=text] {
+          height: 36px; }
+    .section-1 .image {
+      display: none; } }
   .section-1 .calc {
     background: #FFFFFF;
     width: 370px;

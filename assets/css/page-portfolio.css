@@ -84,12 +84,13 @@
           margin: 12px 10px;
           border: 1px solid #B2B3B3;
           position: relative; }
-          .section-1 .section-list .section .section-element-list ul li:nth-child(odd) {
-            margin-left: 0; }
-          .section-1 .section-list .section .section-element-list ul li:nth-child(even) {
-            margin-right: 0; }
-          .section-1 .section-list .section .section-element-list ul li:nth-child(n+3) {
-            display: none; }
+          @media print, screen and (min-width: 960px) {
+            .section-1 .section-list .section .section-element-list ul li:nth-child(odd) {
+              margin-left: 0; }
+            .section-1 .section-list .section .section-element-list ul li:nth-child(even) {
+              margin-right: 0; }
+            .section-1 .section-list .section .section-element-list ul li:nth-child(n+3) {
+              display: none; } }
           .section-1 .section-list .section .section-element-list ul li .image {
             display: block;
             height: 310px;

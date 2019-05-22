@@ -133,7 +133,44 @@
             }
         }
     }
-    .image {
-        @include stretch(false, 0, -20px, false);
+    @include respond-to(large) {
+        .image {
+            @include stretch(false, 0, -20px, false);
+        }
+    }
+    @include respond-to(middle) {
+        .calc {
+            display: block;
+            width: auto;
+            form {
+                .field-calcinputdataform-address {
+                    input[type=text] {
+                        height: 36px;
+                    }
+                }
+                .roomcount-group, .doorcount-group, .toiletcount-group {
+                    width: auto;
+                    display: block;
+                    padding-bottom: 10px;
+                    .spin-down, .spin-up {
+                        height: 36px;
+                        width: 36px;
+                        @include font-props(5);
+                    }
+                    input[type=text] {
+                        height: 36px;
+                    }
+                }
+                .field-calcinputdataform-square, .doorcount-group, .toiletcount-group {
+                    width: 200px;
+                    input[type=text] {
+                        height: 36px;
+                    }
+                }
+            }
+        }
+        .image {
+            display: none;
+        }
     }
 }

@@ -354,6 +354,12 @@
           margin-left: 1142px; }
         .section-2 .employee-slider .direction-nav a:hover {
           opacity: 0.9; }
+  @media print, screen and (max-width: 959px) {
+    .section-2 .employee-slider .direction-nav a .flex-prev {
+      margin-left: 20px; }
+    .section-2 .employee-slider .direction-nav a .flex-next {
+      margin-right: 0;
+      right: 20px; } }
 
 .section-3 {
   padding: 90px 0; }
@@ -585,6 +591,13 @@
   100% {
     transform: rotate(0deg) scale(0.7) skew(1deg);
     opacity: .2; } }
+  @media print, screen and (max-width: 959px) {
+    .section-3 .video {
+      background-repeat: no-repeat;
+      background-size: contain;
+      padding-top: 56.25%;
+      height: auto; } }
+
 .section-4 {
   background: #F4F2F5;
   padding: 115px 0;
@@ -626,6 +639,13 @@
     position: absolute;
     bottom: 0;
     left: 60%; }
+  @media print, screen and (max-width: 959px) {
+    .section-4 .list {
+      width: 60%; }
+      .section-4 .list ul li span {
+        max-width: 90%; }
+        .section-4 .list ul li span br {
+          display: none; } }
 
 .section-5 {
   position: relative;
@@ -915,6 +935,9 @@
         .section-5 .right .cta a:hover {
           text-decoration: none;
           background: #FFD941; }
+  @media print, screen and (max-width: 959px) {
+    .section-5 .right {
+      padding: 60px 0 0 50px; } }
 
 .section-6 {
   background: #F4F2F5;
@@ -922,7 +945,8 @@
   .section-6 .header {
     font-size: 37px; }
   .section-6 .work-progress {
-    padding-top: 50px; }
+    padding-top: 50px;
+    text-align: center; }
     .section-6 .work-progress ul li {
       display: inline-block;
       vertical-align: top;
@@ -937,15 +961,17 @@
       -webkit-box-shadow: 23px 23px 34px #C9C8CA;
       box-shadow: 23px 23px 34px #C9C8CA;
       margin: 16px 12px;
-      position: relative; }
-      .section-6 .work-progress ul li:first-child, .section-6 .work-progress ul li:nth-child(3n+1) {
-        margin-left: 0; }
-      .section-6 .work-progress ul li:last-child, .section-6 .work-progress ul li:nth-child(3n+3) {
-        margin-right: 0; }
-      .section-6 .work-progress ul li:nth-child(-n+3) {
-        margin-top: 0; }
-      .section-6 .work-progress ul li:nth-last-child(-n+3) {
-        margin-bottom: 0; }
+      position: relative;
+      text-align: left; }
+      @media print, screen and (min-width: 960px) {
+        .section-6 .work-progress ul li:first-child, .section-6 .work-progress ul li:nth-child(3n+1) {
+          margin-left: 0; }
+        .section-6 .work-progress ul li:last-child, .section-6 .work-progress ul li:nth-child(3n+3) {
+          margin-right: 0; }
+        .section-6 .work-progress ul li:nth-child(-n+3) {
+          margin-top: 0; }
+        .section-6 .work-progress ul li:nth-last-child(-n+3) {
+          margin-bottom: 0; } }
       .section-6 .work-progress ul li .image {
         display: inline-block;
         vertical-align: middle;
@@ -1178,6 +1204,12 @@
           right: 59px;
           height: 3px;
           background: #E7EBF4; }
+  @media print, screen and (max-width: 959px) {
+    .section-7 .price-caption-contents {
+      overflow: auto;
+      padding-top: 17px; }
+      .section-7 .price-caption-contents .caption-content {
+        width: max-content; } }
 
 .section-8 {
   background-repeat: no-repeat;
@@ -1256,10 +1288,11 @@
       height: 417px;
       position: relative;
       border: 1px solid #B2B3B3; }
-      .section-9 .portfolio-review-widget .review-list li:first-child, .section-9 .portfolio-review-widget .review-list li:nth-child(2n+1) {
-        margin-left: 0; }
-      .section-9 .portfolio-review-widget .review-list li:nth-child(2n+2) {
-        margin-right: 0; }
+      @media print, screen and (min-width: 960px) {
+        .section-9 .portfolio-review-widget .review-list li:first-child, .section-9 .portfolio-review-widget .review-list li:nth-child(2n+1) {
+          margin-left: 0; }
+        .section-9 .portfolio-review-widget .review-list li:nth-child(2n+2) {
+          margin-right: 0; } }
       .section-9 .portfolio-review-widget .review-list li .video {
         display: block;
         position: relative; }
@@ -1546,6 +1579,9 @@
         padding-top: 11px; }
         .section-9 .portfolio-review-widget .more .more-review:hover {
           background: #898989; }
+  @media print, screen and (max-width: 959px) {
+    .section-9 .portfolio-review-widget {
+      text-align: center; } }
 
 .section-10 {
   background: #F4F2F5;
@@ -1566,12 +1602,13 @@
         float: left;
         width: 635px;
         margin: 0 20px 0 0; }
-      .section-10 .youtube-video ul li:nth-child(2), .section-10 .youtube-video ul li:nth-child(3) {
-        margin: 0 0 11px 0; }
-      .section-10 .youtube-video ul li:nth-child(4) {
-        margin-left: 0; }
-      .section-10 .youtube-video ul li:last-child {
-        margin-right: 0; }
+      @media print, screen and (min-width: 960px) {
+        .section-10 .youtube-video ul li:nth-child(2), .section-10 .youtube-video ul li:nth-child(3) {
+          margin: 0 0 11px 0; }
+        .section-10 .youtube-video ul li:nth-child(4) {
+          margin-left: 0; }
+        .section-10 .youtube-video ul li:last-child {
+          margin-right: 0; } }
       .section-10 .youtube-video ul li a {
         display: block;
         text-decoration: none; }
@@ -1585,6 +1622,12 @@
       color: #1071FF; }
       .section-10 .cta a img {
         vertical-align: middle; }
+  @media print, screen and (max-width: 959px) {
+    .section-10 .youtube-video {
+      text-align: center; }
+      .section-10 .youtube-video ul li:first-child {
+        float: none;
+        margin: 5px; } }
 
 .section-11 {
   padding: 117px 0; }
@@ -1712,10 +1755,33 @@
         vertical-align: middle; }
     .section-11 .calc form .help-block {
       font-size: 11px; }
-  .section-11 .image {
-    position: absolute;
-    bottom: -20px;
-    right: 0; }
+  @media print, screen and (min-width: 960px) {
+    .section-11 .image {
+      position: absolute;
+      bottom: -20px;
+      right: 0; } }
+  @media print, screen and (max-width: 959px) {
+    .section-11 .calc {
+      display: block;
+      width: auto; }
+      .section-11 .calc form .field-calcinputdataform-address input[type=text] {
+        height: 36px; }
+      .section-11 .calc form .roomcount-group, .section-11 .calc form .doorcount-group, .section-11 .calc form .toiletcount-group {
+        width: auto;
+        display: block;
+        padding-bottom: 10px; }
+        .section-11 .calc form .roomcount-group .spin-down, .section-11 .calc form .roomcount-group .spin-up, .section-11 .calc form .doorcount-group .spin-down, .section-11 .calc form .doorcount-group .spin-up, .section-11 .calc form .toiletcount-group .spin-down, .section-11 .calc form .toiletcount-group .spin-up {
+          height: 36px;
+          width: 36px;
+          font-size: 21px; }
+        .section-11 .calc form .roomcount-group input[type=text], .section-11 .calc form .doorcount-group input[type=text], .section-11 .calc form .toiletcount-group input[type=text] {
+          height: 36px; }
+      .section-11 .calc form .field-calcinputdataform-square, .section-11 .calc form .doorcount-group, .section-11 .calc form .toiletcount-group {
+        width: 200px; }
+        .section-11 .calc form .field-calcinputdataform-square input[type=text], .section-11 .calc form .doorcount-group input[type=text], .section-11 .calc form .toiletcount-group input[type=text] {
+          height: 36px; }
+    .section-11 .image {
+      display: none; } }
 
 .section-12 {
   padding: 113px 0;

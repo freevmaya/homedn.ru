@@ -76,14 +76,16 @@
                         margin: 12px 10px;
                         border: 1px solid $color-black40;
                         position: relative;
-                        &:nth-child(odd) {
-                            margin-left: 0;
-                        }
-                        &:nth-child(even) {
-                            margin-right: 0;
-                        }
-                        &:nth-child(n+3) {
-                            display: none;
+                        @include respond-to(large) {
+                            &:nth-child(odd) {
+                                margin-left: 0;
+                            }
+                            &:nth-child(even) {
+                                margin-right: 0;
+                            }
+                            &:nth-child(n+3) {
+                                display: none;
+                            }
                         }
                         .image {
                             display: block;
