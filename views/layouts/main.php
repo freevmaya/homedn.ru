@@ -35,6 +35,7 @@ AppAsset::register($this);
         <header>
             <div class="top-hidden">
                 <div class="wrapper">
+                    <div class="close">&times;</div>
                     <div class="top-hidden-menu">
                         <?=
                         MenuWidget::widget([

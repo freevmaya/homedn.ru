@@ -5,6 +5,10 @@ $(function () {
         return false;
     });
 
+    $('.top-hidden').on('click', '.close', function () {
+        $(this).parents('.top-hidden').slideUp('slow');
+    });
+
     $('.checkbox-label input[type=checkbox]').change(function () {
         $(this).parent().toggleClass('checked');
     });
@@ -39,14 +43,17 @@ $(function () {
         else
             $("#top").fadeOut();
     });
-
+    
     $(window).scroll(function () {
+        let doit = 'absolute' !== $('header .himenu').css('position');
         if ($(this).scrollTop() > headerHeight / 2) {
             $("header .top-fixed").css('height', (headerHeight / 3 * 2) + 'px');
-            $('.top-phone').css('top', '8px');
+            if (doit)
+                $('.top-phone').css('top', '8px');
         } else {
             $("header .top-fixed").css('height', headerHeight + 'px');
-            $('.top-phone').css('top', '45px');
+            if (doit)
+                $('.top-phone').css('top', '45px');
         }
     });
 

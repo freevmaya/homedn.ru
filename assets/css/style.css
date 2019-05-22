@@ -506,6 +506,8 @@ header {
     border-bottom: 1px solid #C5C6C6;
     padding: 55px 0;
     background: #F4F4F4; }
+    header .top-hidden .close {
+      display: none; }
     header .top-hidden .top-hidden-menu {
       display: inline-block;
       vertical-align: top;
@@ -661,32 +663,43 @@ header {
     header .top-fixed .top-phone {
       right: 20px; } }
   @media print, screen and (max-width: 767px) {
-    header .top-fixed .himenu {
-      position: absolute;
-      top: 35%;
-      right: 20px; }
-      header .top-fixed .himenu a span {
-        display: none; }
-      header .top-fixed .himenu a img {
-        width: 25px; }
-    header .top-fixed .top-phone {
-      top: -70px;
-      left: 20px; }
-    header .top-hidden {
-      padding: 25px 0 70px; }
-      header .top-hidden .top-hidden-menu {
-        width: auto;
-        display: block; }
-        header .top-hidden .top-hidden-menu > ul > li {
+    header {
+      overflow: auto;
+      max-height: 100%; }
+      header .top-fixed .himenu {
+        position: absolute;
+        top: 35%;
+        right: 20px; }
+        header .top-fixed .himenu a span {
+          display: none; }
+        header .top-fixed .himenu a img {
+          width: 25px; }
+      header .top-fixed .top-phone {
+        top: -70px;
+        left: 20px; }
+      header .top-hidden {
+        padding: 25px 0 70px; }
+        header .top-hidden .close {
           display: block;
-          width: auto; }
-          header .top-hidden .top-hidden-menu > ul > li > ul {
-            padding-top: 5px; }
-            header .top-hidden .top-hidden-menu > ul > li > ul > li {
-              padding-bottom: 5px; }
-      header .top-hidden .socials {
-        width: auto;
-        display: block;
-        padding-top: 20px; } }
+          position: absolute;
+          top: 0;
+          right: 20px;
+          font-size: 33px;
+          color: #5B5B5B;
+          cursor: pointer; }
+        header .top-hidden .top-hidden-menu {
+          width: auto;
+          display: block; }
+          header .top-hidden .top-hidden-menu > ul > li {
+            display: block;
+            width: auto; }
+            header .top-hidden .top-hidden-menu > ul > li > ul {
+              padding-top: 5px; }
+              header .top-hidden .top-hidden-menu > ul > li > ul > li {
+                padding-bottom: 5px; }
+        header .top-hidden .socials {
+          width: auto;
+          display: block;
+          padding-top: 20px; } }
 
 /*# sourceMappingURL=style.css.map */

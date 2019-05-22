@@ -19,6 +19,9 @@ header {
         border-bottom: 1px solid $color-black30;
         padding: 55px 0;
         background: $color-black5;
+        .close {
+            display: none;
+        }
         .top-hidden-menu {
             @include inline-block(top);
             width: 72%;
@@ -154,6 +157,8 @@ header {
         }
     }
     @include respond-to(small) {
+        overflow: auto;
+        max-height: 100%;
         .top-fixed {
             .himenu {
                 @include stretch(35%, 20px, false, false);
@@ -173,6 +178,12 @@ header {
         }
         .top-hidden {
             padding: 25px 0 70px;
+            .close {
+                display: block;
+                @include stretch(0, 20px, false, false);
+                @include font-props(8, $color-black80);
+                cursor: pointer;
+            }
             .top-hidden-menu {
                 width: auto;
                 display: block;
