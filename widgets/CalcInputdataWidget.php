@@ -90,6 +90,7 @@ class CalcInputdataWidget extends Widget
                 'options'     => [
                     'placeHolder' => $this->calcForm->getAttributePlaceholder('address'),
                     'class'       => 'address',
+//                    'onchange'    => new JsExpression("if($(this).data('kladr-id')===undefined){ $('#calcinputdataform-address').val($(this).val());rerurn false;}"),
                 ]
             ]);
 

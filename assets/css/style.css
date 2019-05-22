@@ -561,7 +561,11 @@ header {
   header .top-fixed {
     top: 0;
     height: 114px;
-    position: relative; }
+    position: relative;
+    -moz-transition: height 0.3s ease;
+    -o-transition: height 0.3s ease;
+    -webkit-transition: height 0.3s ease;
+    transition: height 0.3s ease; }
     header .top-fixed:after {
       display: inline-block;
       vertical-align: middle;
@@ -631,7 +635,11 @@ header {
     header .top-fixed .top-phone {
       position: absolute;
       top: 45px;
-      right: 0; }
+      right: 0;
+      -moz-transition: top 0.3s ease;
+      -o-transition: top 0.3s ease;
+      -webkit-transition: top 0.3s ease;
+      transition: top 0.3s ease; }
       header .top-fixed .top-phone .num {
         padding-bottom: 5px; }
         header .top-fixed .top-phone .num a {
@@ -647,5 +655,8 @@ header {
         text-decoration: none; }
         header .top-fixed .top-phone .foz a:hover {
           text-decoration: underline; }
+  @media print, screen and (max-width: 959px) {
+    header .top-fixed .main-menu {
+      display: none; } }
 
 /*# sourceMappingURL=style.css.map */

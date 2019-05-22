@@ -33,12 +33,17 @@ class CalcInputdataForm extends Model
     public function rules ()
     {
         return [
-            [ [ 'address' ], 'required', 'message' => 'Укажите адрес' ],
+            [ [ 'address_name' ], 'AddressNameValidate', 'message' => 'Укажите адрес' ],
             [ [ 'square' ], 'required', 'message' => 'Укажите площадь квартиры' ],
             [ [ 'key', 'address', 'square', 'address_name' ], 'string' ],
             [ [ 'roomcount', 'doorcount', 'toiletcount' ], 'integer' ],
             [ [ 'second', 'wall' ], 'integer' ],
         ];
+    }
+
+    public function AddressNameValidate ($attribute, $params)
+    {
+        return ($this->address != '') && ($this->address != null);
     }
 
     /**
@@ -52,7 +57,7 @@ class CalcInputdataForm extends Model
             'square'      => 'Площадь, м<sup>2</sup>',
             'doorcount'   => 'Количество дверей',
             'toiletcount' => 'Количество санузлов',
-            'second'      => 'Квартира вторичка,<br>нужен демонтаж',
+            'second'      => 'Квартира вторичка, нужен демонтаж',
             'wall'        => 'Нужно возвести стены',
         ];
     }

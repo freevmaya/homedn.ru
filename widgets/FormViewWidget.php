@@ -13,6 +13,7 @@ use yii\base\Widget;
 use yii\widgets\Pjax;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use yii\widgets\MaskedInput;
 
 /**
  * Description of WebinarFormWidget
@@ -74,10 +75,22 @@ class FormViewWidget extends Widget
                 }
 
                 foreach ($this->displayForm->fields() as $field) {
-                    echo $form->field($this->displayForm, $field)->textInput([
-                        'maxlength'   => true,
-                        'placeholder' => $this->displayForm->getAttributeLabel($field)
-                    ])->label(false);
+                    if ($field == 'phone') {
+                        echo $form->field($this->displayForm, $field)
+                                ->widget(MaskedInput::className(), [
+                                    'mask'    => '+7 (999) 999 99 99',
+                                    'options' => [
+                                        'id'          => 'inputmask-' . $this->id,
+                                        'placeholder' => $this->displayForm->getAttributeLabel($field),
+                                    ],
+                                ])
+                                ->label(false);
+                    } else {
+                        echo $form->field($this->displayForm, $field)->textInput([
+                            'maxlength'   => true,
+                            'placeholder' => $this->displayForm->getAttributeLabel($field)
+                        ])->label(false);
+                    }
                 }
 
                 echo '<br>';

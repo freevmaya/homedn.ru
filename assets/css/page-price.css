@@ -209,28 +209,29 @@
     *display: inline; }
     .section-3 .calc .calc-header {
       font-size: 21px;
-      padding: 13px 0; }
+      padding: 13px 0 0; }
     .section-3 .calc form .form-group {
       display: inline; }
     .section-3 .calc form label {
       display: block;
-      font-size: 11px;
-      color: #727271; }
+      font-size: 15px;
+      color: #727271;
+      padding-bottom: 2px; }
     .section-3 .calc form input[type=text] {
       border: 1px solid #C5C6C6;
-      font-size: 11px;
+      font-size: 14px;
       color: #727271; }
       .section-3 .calc form input[type=text]:-moz-placeholder {
-        font-size: 11px;
+        font-size: 14px;
         color: #727271; }
       .section-3 .calc form input[type=text]::-moz-placeholder {
-        font-size: 11px;
+        font-size: 14px;
         color: #727271; }
       .section-3 .calc form input[type=text]:-ms-input-placeholder {
-        font-size: 11px;
+        font-size: 14px;
         color: #727271; }
       .section-3 .calc form input[type=text]::-webkit-input-placeholder {
-        font-size: 11px;
+        font-size: 14px;
         color: #727271; }
     .section-3 .calc form .field-calcinputdataform-address input[type=text] {
       width: 256px;
@@ -259,11 +260,11 @@
       .section-3 .calc form .roomcount-group .help-block, .section-3 .calc form .doorcount-group .help-block, .section-3 .calc form .toiletcount-group .help-block {
         margin: 0; }
     .section-3 .calc form .doorcount-group {
-      width: 182px; }
+      width: 158px; }
       .section-3 .calc form .doorcount-group input[type=text] {
         width: 40px; }
     .section-3 .calc form .toiletcount-group {
-      width: 115px; }
+      width: 156px; }
       .section-3 .calc form .toiletcount-group input[type=text] {
         width: 40px; }
     .section-3 .calc form .field-calcinputdataform-square {
@@ -305,8 +306,8 @@
     .section-3 .calc form .field-calcinputdataform-second label {
       padding-top: 10px; }
     .section-3 .calc form button[type=submit] {
-      margin-top: 25px;
-      width: 275px;
+      margin-top: 6px;
+      width: 284px;
       height: 57px;
       background: #FFDD2D;
       border: none;
@@ -328,7 +329,7 @@
     width: 370px;
     padding: 0px 15px 14px; }
     .section-3 .calc form button[type=submit] {
-      margin-top: 15px; }
+      /*margin-top: 15px;*/ }
   .section-3 .image {
     bottom: 0; }
     .section-3 .image img {

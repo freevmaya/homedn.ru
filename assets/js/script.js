@@ -40,6 +40,16 @@ $(function () {
             $("#top").fadeOut();
     });
 
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > headerHeight / 2) {
+            $("header .top-fixed").css('height', (headerHeight / 3 * 2) + 'px');
+            $('.top-phone').css('top', '8px');
+        } else {
+            $("header .top-fixed").css('height', headerHeight + 'px');
+            $('.top-phone').css('top', '45px');
+        }
+    });
+
     $("#top").click(function () {
         $("body, html").animate({
             scrollTop: 0

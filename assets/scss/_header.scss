@@ -68,6 +68,7 @@ header {
         height: $header-height;
         position: relative;
         @include block-middle-inner();
+        @include transition(height 0.3s ease);
         .logo {
             @include inline-block(middle);
             a {
@@ -120,6 +121,7 @@ header {
         }
         .top-phone {
             @include stretch(45px, 0, false, false);
+            @include transition(top 0.3s ease);
             .num {
                 padding-bottom: 5px;
                 a {
@@ -138,6 +140,13 @@ header {
                         text-decoration: underline;
                     }
                 }
+            }
+        }
+    }
+    @include respond-to(middle) {
+        .top-fixed {
+            .main-menu {
+                display: none;
             }
         }
     }
