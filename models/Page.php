@@ -29,7 +29,13 @@ use yii\helpers\Url;
  * @property PageOption[] $pageOptions
  * @property PageSeo $pageSeo
  * @property PortfolioReview[] $portfolioReviews
- * @property PortfolioGalleries[] $portfolioGalleries 
+ * @property PortfolioGallery[] $portfolioGalleries 
+ * @property Workstep[] $worksteps 
+ * @property LendingList[] $lendingLists 
+ * @property LendingList[] $lendingList1s 
+ * @property LendingList[] $lendingList2s 
+ * @property LendingGallery $lendingGalleries 
+ * @property StyleList $styleLists 
  */
 class Page extends \yii\db\ActiveRecord
 {
@@ -181,6 +187,36 @@ class Page extends \yii\db\ActiveRecord
     public function getPortfolioGalleries ()
     {
         return $this->hasMany(PortfolioGallery::class, [ 'page_id' => 'id' ]);
+    }
+
+    public function getWorksteps ()
+    {
+        return $this->hasMany(Workstep::class, [ 'page_id' => 'id' ]);
+    }
+
+    public function getLendingLists ()
+    {
+        return $this->hasMany(LendingList::class, [ 'page_id' => 'id' ]);
+    }
+
+    public function getLendingList1s ()
+    {
+        return $this->hasMany(LendingList::class, [ 'page_id' => 'id' ])->andWhere([ 'list_number' => 1 ]);
+    }
+
+    public function getLendingList2s ()
+    {
+        return $this->hasMany(LendingList::class, [ 'page_id' => 'id' ])->andWhere([ 'list_number' => 2 ]);
+    }
+    
+    public function getLendingGalleries()
+    {
+        return $this->hasMany(LendingGallery::class, [ 'page_id' => 'id' ]);
+    }
+    
+    public function getStyleLists()
+    {
+        return $this->hasMany(StyleList::class, [ 'page_id' => 'id' ]);
     }
 
 }

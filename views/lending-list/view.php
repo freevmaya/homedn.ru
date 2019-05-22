@@ -4,14 +4,14 @@ use yii\helpers\Html;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\Employee */
+/* @var $model app\models\LendingList */
 
-$this->title                   = $model->fio;
-$this->params['breadcrumbs'][] = [ 'label' => 'Команда', 'url' => [ 'index' ] ];
+$this->title                   = $model->name;
+$this->params['breadcrumbs'][] = [ 'label' => 'Блоки описаний', 'url' => [ 'index' ] ];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
-<div class="employee-view">
+<div class="lending-list-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
@@ -33,14 +33,12 @@ $this->params['breadcrumbs'][] = $this->title;
         'model'      => $model,
         'attributes' => [
             'id',
-            'fio',
-            'place',
-            'photo1',
-            'photo2',
-            'video',
+            'page_id',
+            'image',
+            'name',
+            'desc',
+            'text',
             'sort',
-            'sort_slide',
-            'designer',
         ],
     ])
     ?>

@@ -1,0 +1,291 @@
+@charset "utf-8";
+
+@import "compass";
+@import "compass/layout/stretching";
+
+@import "variables/typography";
+@import "variables/colors";
+@import "variables/size";
+@import "variables/images";
+@import "mixin/font-props";
+@import "mixin/respond-to";
+@import "mixin/video-impulse";
+@import "mixin/block-middle";
+
+@import "section-price";
+@import "section-calc";
+@import "section-foz";
+@import "section-socials-foz";
+@import "section-employee-list";
+@import "section-lending-gallery";
+@import "section-workstep";
+@import "section-lending-list";
+
+.section-1 {
+    height: 536px;
+    margin-top: $header-height;
+    background-position: center top;
+    background-repeat: no-repeat;
+    .header-1 {
+        padding-top: 118px;
+        line-height: 1.4;
+        @include font-props(9);
+    }
+    .header-2 {
+        padding-top: 34px;
+        @include font-props(5);
+        line-height: 1.4;
+    }
+    .cta {
+        padding-top: 35px;
+        a {
+            display: block;
+            cursor: pointer;
+            height: 57px;
+            width: 300px;
+            background: $color-gorse;
+            padding: 18px 0;
+            text-align: center;
+            @include font-props(4, $color-black);
+            text-decoration: none;
+            @include border-radius(2px);
+            &:hover {
+                text-decoration: none;
+                background: $color-gorse2;
+            }
+        }
+    }
+}
+
+.section-2 {
+    padding: 90px 0;
+    .header {
+        @include font-props(9);
+        padding-bottom: 50px;
+    }
+    .video {
+        height: 540px;
+        position: relative;
+        a {
+            @include video-impulse(132px, 168px, 'video3.png', 50%, $color-venetianred);
+        }
+    }
+}
+
+.section-3 {
+    @include section-employee-list;
+}
+
+.section-4 {
+    background: $color-solitude6;
+    padding: 40px 0;
+    .header {
+        @include font-props(9);
+        padding: 20px 0;
+    }
+    @include section-lending-gallery;
+    .lending-gallery {
+        .direction-nav {
+            a {
+                color: $color-black90;
+            }
+        }
+    }
+}
+
+.section-5 {
+    padding: 45px 0;
+    .header {
+        @include font-props(9);
+        padding: 20px 0;
+    }
+    .style-list {
+        padding: 20px 0;
+        text-align: center;
+        .style-element {
+            @include inline-block(top);
+            width: 300px;
+            margin: 12px 12px 30px;
+            text-align: left;
+            &:first-child, &:nth-child(3n+1) {
+                margin-left: 0;
+            }
+            &:last-child, &:nth-child(3n+3) {
+                margin-right: 0;
+            }
+            .image {
+                display: block;
+                height: 270px;
+                img {
+                    width: 100%;
+                    display: block;
+                }
+            }
+            .name {
+                display: block;
+                @include font-props(5, $color-black90);
+                padding: 10px 0;
+            }
+            .desc {
+                display: block;
+                padding: 5px 0;
+                @include font-props(3, $color-black90);
+            }
+            .color-line {
+                padding: 5px 0;
+                margin-left: -5px;
+                li {
+                    @include inline-block(middle);
+                    border: 1px solid $color-white;
+                    padding: 4px;
+                    cursor: pointer;
+                    @include border-radius(50%);
+                    &.checked {
+                        border-color: $color-dodgerblue3;
+                    }
+                    .color {
+                        display: block;
+                        margin: 0 5px;
+                        width: 17px;
+                        height: 17px;
+                        @include border-radius(50%);
+                        border: 1px solid $color-black70;
+                        &:first-child {
+                            margin-left: 0;
+                        }
+                        &:last-child {
+                            margin-right: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.section-6 {
+    padding-top: 88px;
+    padding-bottom: 45px;
+    .header {
+        @include font-props(9);
+    }
+    @include section-lending-gallery;
+    @include section-workstep;
+}
+
+.section-7 {
+    @include section-price;
+}
+
+.section-8 {
+    @include section-calc;
+    background: $color-solitude6;
+    .calc {
+        background: $color-white;
+        width: 370px;
+        padding: 0px 15px 14px;
+        form {
+            button[type=submit] {
+                margin-top: 15px;
+            }
+        }
+    }
+    .image {
+        bottom: 0;
+        img {
+            display: block;
+        }
+    }
+}
+
+.section-9 {
+    @include section-lending-list;
+    .lending-list {
+        li {
+            width: 465px;
+            margin: 10px;
+            &:nth-child(2n+2) {
+                margin: 10px;
+            }
+            &:nth-child(3n+3), &:nth-child(-n+3) {
+                margin: 10px;
+            }
+            &:nth-child(3n+1) {
+                margin: 10px;
+            }
+            &:first-child, &:nth-child(2n+3) {
+                margin-left: 0;
+            }
+            &:last-child, &:nth-child(2n+2) {
+                margin-right: 0;
+            }
+            .image {
+                background: $color-white;
+            }
+        }
+    }
+}
+
+.section-10 {
+    @include section-foz;
+}
+
+.section-11 {
+    padding-top: 45px;
+    padding-bottom: 45px;
+    .header {
+        @include font-props(9);
+        padding-bottom: 45px;
+    }
+    p {
+        @include font-props(7);
+        padding: 39px 0;
+    }
+    table {
+        width: 100%;
+        thead {
+            background: $color-pictonblue2;
+            tr {
+                th {
+                    padding: 2px 15px;
+                    border: 1px solid $color-pictonblue2;
+                    @include font-props(4, $color-snow3);
+                    &:first-child {
+                        width: 72%;
+                    }
+                    &:nth-child(2) {
+                        width: 16%;
+                        text-align: center;
+                    }
+                    &:last-child {
+                        width: 12%;
+                    }
+                }
+            }
+        }
+        tbody {
+            tr {
+                height: 42px;
+                cursor: pointer;
+                &:hover {
+                    background: $color-solitude6;
+                }
+                td {
+                    border: 1px solid $color-silver2;
+                    padding: 0 15px;
+                    @include font-props(4.5);
+                }
+                &:nth-child(2) {
+                    text-align: center;
+                }
+                &:last-child {
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+
+.section-12 {
+    @include section-lending-list;
+}

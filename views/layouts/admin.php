@@ -75,6 +75,7 @@ AdminAsset::register($this);
                             [ 'label' => 'Заказ звонка', 'url' => [ '/callorder/index' ] ],
                             [ 'label' => 'Вызов замерщика', 'url' => [ '/measure/index' ] ],
                             [ 'label' => 'Вызов замерщика из калькулятора', 'url' => [ '/calc-request/index' ] ],
+                            [ 'label' => 'Заказ расчета стоимости', 'url' => [ '/style-project/index' ] ],
                         ],
                     ],
                     [

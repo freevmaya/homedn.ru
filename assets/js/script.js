@@ -54,7 +54,10 @@ $(function () {
     });
 
     $('.price-caption-line ul').each(function () {
-        $(this).find('li').first().addClass('active');
+        $(this).find('li').each(function () {
+            if ($(this).find('a').hasClass('active'))
+                $(this).addClass('active')
+        });
         let active = $(this).find('li.active').first();
         let slider = $(this).find('li').last();
         $(slider).width($(active).width());

@@ -12,6 +12,8 @@
 @import "mixin/video-impulse";
 @import "mixin/block-middle";
 
+@import "section-employee-list";
+
 .section-1 {
     margin-top: $header-height;
     height: 484px;
@@ -45,69 +47,7 @@
 }
 
 .section-3 {
-    .header-1 {
-        padding: 55px 0 0;
-        text-align: center;
-        @include font-props(9);
-    }
-    .header-2 {
-        padding: 15px 0;
-        text-align: center;
-        @include font-props(4);
-    }
-    .employee-list {
-        padding: 21px;
-        ul {
-            text-align: center;
-            li {
-                margin: 29px 16px;
-                @include inline-block(top);
-                width: 302px;
-                height: 252px;
-                background: $color-white;
-                @include box-shadow(2px 2px 12px $color-black30);
-                @include border-radius(10px);
-                overflow: hidden;
-                .image {
-                    display: block;
-                    height: 174px;
-                    position: relative;
-                    .shadow {
-                        background: url($path-image+"empshadow.png") no-repeat center bottom;
-                        @include stretch(0, 0, 0, 0);
-                    }
-                    .video {
-                        @include stretch(false, 0, 0, 0);
-                        padding: 10px 0;
-                        text-align: center;
-                        a {
-                            text-decoration: none;
-                            @include font-props(3.621, $color-white);
-                            img, span {
-                                @include inline-block(middle);
-                                margin: 0 5px;
-                            }
-                            &:hover {
-                                span {
-                                    text-decoration: underline;
-                                }
-                            }
-                        }
-                    }
-                }
-                .fio {
-                    display: block;
-                    padding: 15px 20px 0;
-                    @include font-props(4.527);
-                }
-                .place {
-                    display: block;
-                    padding: 2px 0;
-                    @include font-props(3.621, $color-black70);
-                }
-            }
-        }
-    }
+    @include section-employee-list;
 }
 
 .section-4 {

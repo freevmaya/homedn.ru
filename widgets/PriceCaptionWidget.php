@@ -24,6 +24,7 @@ class PriceCaptionWidget extends Widget
 
     public $underPrice;
     public $buttonText;
+    public $selectedType;
     protected $priceCaption;
 
     public function init ()
@@ -40,8 +41,8 @@ class PriceCaptionWidget extends Widget
             $ul                 = [];
             $elementDescription = [];
             foreach ($this->priceCaption as $k => $caption) {
-                $ul[] = Html::a($caption->name, '#caption-' . $caption->id, [ 'class' => 'caption-switch' . ($k == 0 ? ' active' : '') ]);
-                $html = Html::beginTag('div', [ 'class' => 'caption-content' . ($k == 0 ? ' active' : ''), 'id' => 'caption-' . $caption->id ]);
+                $ul[] = Html::a($caption->name, '#caption-' . $caption->id, [ 'class' => 'caption-switch' . (!$this->selectedType && $k == 0 || $this->selectedType == $k ? ' active' : '') ]);
+                $html = Html::beginTag('div', [ 'class' => 'caption-content' . (!$this->selectedType && $k == 0 || $this->selectedType == $k ? ' active' : ''), 'id' => 'caption-' . $caption->id ]);
                 $html .= Html::beginTag('div', [ 'class' => 'col-1' ]);
                 $html .= Html::tag('div', Html::tag('div', 'Цены', [ 'class' => 'header' ]) . Html::tag('div', $caption->description, [ 'class' => 'description' ]), [
                             'class' => 'thead' ]);

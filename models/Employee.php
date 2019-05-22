@@ -15,6 +15,7 @@ use Yii;
  * @property string $video
  * @property int $sort
  * @property int $sort_slide
+ * @property int $designer 
  */
 class Employee extends \yii\db\ActiveRecord
 {
@@ -33,7 +34,7 @@ class Employee extends \yii\db\ActiveRecord
     public function rules ()
     {
         return [
-            [ [ 'sort', 'sort_slide' ], 'integer' ],
+            [ [ 'sort', 'sort_slide', 'designer' ], 'integer' ],
             [ [ 'fio', 'place', 'photo1', 'photo2', 'video' ], 'string', 'max' => 255 ],
         ];
     }
@@ -52,6 +53,7 @@ class Employee extends \yii\db\ActiveRecord
             'video'      => 'Видео',
             'sort'       => 'Порядок',
             'sort_slide' => 'Порядок в слайдере',
+            'designer'   => 'Дизайнер',
         ];
     }
 

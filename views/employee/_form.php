@@ -75,6 +75,8 @@ use mihaildev\elfinder\InputFile;
 
     <?= $form->field($model, 'sort_slide')->textInput() ?>
 
+    <?= $form->field($model, 'designer')->checkbox([ 'uncheck' => 0 ]) ?>
+
     <div class="form-group">
         <?= Html::submitButton('Сохранить', [ 'class' => 'btn btn-success' ]) ?>
     </div>
