@@ -42,6 +42,8 @@ class AssetsPreloadComponent extends Component implements BootstrapInterface
                         foreach ($this->cssTags as $fileTag)
                             echo $fileTag;
                     });
+                    
+//                    $view->
                 }
             });
 //            $app->view->on(View::EVENT_END_BODY, function(Event $e)

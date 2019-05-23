@@ -10,7 +10,7 @@ $config = [
     'name'          => 'Home Remont',
     'language'      => 'ru',
     'basePath'      => dirname(__DIR__),
-    'bootstrap'     => [ 'assetsAutoCompress','assetsPreload',  /* 'assetManager', */ /*'log'*/ ],
+    'bootstrap'     => [ 'assetsAutoCompress', 'assetsPreload', /* 'assetManager', */ /* 'log' */ ],
     'aliases'       => [
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',
@@ -50,6 +50,7 @@ $config = [
         'urlManager'         => [
             'enablePrettyUrl' => true,
             'showScriptName'  => false,
+            'suffix'          => '/',
             'rules'           => [
                 /* [
                   'pattern' => 'yandex-market.yml',
