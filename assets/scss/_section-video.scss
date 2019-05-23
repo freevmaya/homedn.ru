@@ -20,4 +20,21 @@
             background-size: cover;
         }
     }
+    @include respond-to(middle) {
+        .video {
+            a {
+                background-repeat: no-repeat;
+                background-size: contain;
+                padding-top: 56.25%;
+                height: auto;
+                width: 100%;
+                position: relative;
+            }
+        }
+    }
+    @include respond-to(small) {
+        .header {
+            @include font-props(5);
+        }
+    }
 }

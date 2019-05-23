@@ -26,6 +26,11 @@
         padding: 43px 0;
         border-bottom: 1px solid $color-black30;
     }
+    @include respond-to(small) {
+        .header {
+            @include font-props(7);
+        }
+    }
 }
 
 .section-2 {
@@ -89,6 +94,11 @@
             }
         }
     }
+    @include respond-to(small) {
+        .header {
+            @include font-props(7);
+        }
+    }
 }
 
 .section-5 {
@@ -96,6 +106,11 @@
     .header {
         text-align: left;
         @include font-props(9, $color-black, $font-normal, normal);
+    }
+    @include respond-to(small) {
+        .header {
+            @include font-props(7);
+        }
     }
 }
 

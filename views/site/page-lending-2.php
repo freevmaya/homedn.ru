@@ -130,7 +130,7 @@ if ($h || ($v && $b)) {
     <section class="section-11">
         <div class="wrapper">
             <div class="header"><?= nl2br(PageProperty::getValue($model->id, 'header82')) ?></div>
-            <?= PageProperty::getValue($model->id, 'text7desc') ?>
+            <div class="price-list"><?= PageProperty::getValue($model->id, 'text7desc') ?></div>
         </div>
     </section>
 <? } ?>

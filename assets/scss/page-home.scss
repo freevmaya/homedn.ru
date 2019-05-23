@@ -65,6 +65,27 @@
             }
         }
     }
+    @include respond-to(small) {
+        .header-1 {
+            @include font-props(7);
+            padding-top: 68px;
+        }
+        .header-2 {
+            @include font-props(4);
+        }
+        .cta {
+            a {
+                width: 100%;
+            }
+        }
+        .video {
+            top: auto;
+            bottom: -200px;
+            right: auto;
+            left: 50%;
+            margin-left: -73px;
+        }
+    }
 }
 
 .section-2 {
@@ -153,12 +174,26 @@
         .employee-slider {
             .direction-nav {
                 a {
-                    .flex-prev {
+                    &.flex-prev {
                         margin-left: 20px;
                     }
-                    .flex-next {
+                    &.flex-next {
                         margin-right: 0;
                         right: 20px;
+                    }
+                }
+            }
+        }
+    }
+    @include respond-to(small) {
+        .employee-slider {
+            .direction-nav {
+                a {
+                    &.flex-prev {
+                        margin-left: 7px;
+                    }
+                    &.flex-next {
+                        right: 7px;
                     }
                 }
             }
@@ -185,6 +220,11 @@
             background-size: contain;
             padding-top: 56.25%;
             height: auto;
+        }
+    }
+    @include respond-to(small) {
+        .header {
+            @include font-props(7);
         }
     }
 }
@@ -240,6 +280,17 @@
                     }
                 }
             }
+        }
+    }
+    @include respond-to(small) {
+        .header {
+            @include font-props(7);
+        }
+        .list {
+            width: 100%;
+        }
+        .image {
+            display: none;
         }
     }
 }
@@ -309,6 +360,38 @@
             padding: 60px 0 0 50px;
         }
     }
+    @include respond-to(small) {
+        .image {
+            position: relative;
+            top: auto;
+            right: auto;
+            bottom: auto;
+            img {
+                width: 100%;
+            }
+        }
+        .video {
+            top: 25%;
+            left: 25%;
+            right: auto;
+        }
+        .right { 
+            margin: 0;
+            padding: 10px 0;
+            .header {
+                @include font-props(7);
+            }
+            .list {
+                ul {
+                    li {
+                        span {
+                            max-width: 90%;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 .section-6 {
@@ -374,6 +457,21 @@
                     height: 6px;
                     background: $color-kashmirblue;
                     @include border-radius(4px);
+                }
+            }
+        }
+    }
+    @include respond-to(small) {
+        .header {
+            @include font-props(7);
+        }
+        .work-progress {
+            ul {
+                li {
+                    margin: 10px 0;
+                    width: 100%;
+                    height: auto;
+                    padding-bottom: 50px;
                 }
             }
         }
@@ -478,6 +576,21 @@
             text-align: center;
         }
     }
+    @include respond-to(small) {
+        .header {
+            @include font-props(7);
+        }
+        .portfolio-review-widget {
+            .review-list {
+                li {
+                    width: 100%;
+                    height: auto;
+                    padding-bottom: 100px;
+                    margin: 10px 0;
+                }
+            }
+        }
+    }
 }
 
 .section-10 {
@@ -537,6 +650,23 @@
                     &:first-child {
                         float: none;
                         margin: 5px;
+                    }
+                }
+            }
+        }
+    }
+    @include respond-to(small) {
+        .header {
+            @include font-props(7);
+        }
+        .youtube-video {
+            ul {
+                li {
+                    width: 100%;
+                    margin: 10px 0;
+                    &:first-child {
+                        width: 100%;
+                        margin: 10px 0;
                     }
                 }
             }

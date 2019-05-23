@@ -26,6 +26,11 @@
         padding: 43px 0;
         border-bottom: 1px solid $color-black30;
     }
+    @include respond-to(small) {
+        .header {
+            @include font-props(7);
+        }
+    }
 }
 
 .section-2 {
@@ -73,6 +78,31 @@
                 }
                 &:last-child {
                     text-align: center;
+                }
+            }
+        }
+    }
+    @include respond-to(small) {
+        p {
+            @include font-props(5);
+        }
+        .price-list {
+            overflow: auto;
+            table {
+                thead {
+                    tr {
+                        th {
+                            &:first-child {
+                                min-width: 220px;
+                            }
+                            &:nth-child(2) {
+                                min-width: 50px;
+                            }
+                            &:last-child {
+                                min-width: 180px;
+                            }
+                        }
+                    }
                 }
             }
         }

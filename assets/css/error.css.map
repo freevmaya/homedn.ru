@@ -1,6 +1,6 @@
 {
 "version": 3,
-"mappings": "AACA,2HAA2H;AAI3H,sCAAsC;AACtC,6CAA6C;AAC7C,mCAAmC;ACYnC,UAAW;EACP,MAAM,EAAE,KAAK;EACb,UAAU,ECZE,KAAK;EDajB,aAAG;IACC,WAAW,EAAE,KAAK;IAClB,WAAW,EAAE,GAAG;IEjBhB,SAAS,EAAE,IAA0B",
+"mappings": "AACA,2HAA2H;AAG/F,yBAAyB;AACrD,sCAAsC;AACtC,6CAA6C;AAC7C,mCAAmC;ACYnC,UAAW;EACP,MAAM,EAAE,KAAK;EACb,UAAU,ECZE,KAAK;EDajB,aAAG;IACC,WAAW,EAAE,KAAK;IAClB,WAAW,EAAE,GAAG;IEjBhB,SAAS,EAAE,IAA0B",
 "sources": ["../scss/variables/_typography.scss","../scss/error.scss","../scss/variables/_size.scss","../scss/mixin/_font-size.scss"],
 "names": [],
 "file": "error.css"

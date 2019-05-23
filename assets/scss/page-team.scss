@@ -13,6 +13,7 @@
 @import "mixin/block-middle";
 
 @import "section-employee-list";
+@import "section-foz";
 
 .section-1 {
     margin-top: $header-height;
@@ -40,6 +41,16 @@
             content: '';
             padding-top: 10%;
             display: inline-block;
+        }
+    }
+    @include respond-to(small) {
+        .header {
+            @include font-props(7);
+        }
+        .video {
+            span {
+                @include font-props(3.5);
+            }
         }
     }
 }
@@ -111,6 +122,11 @@
             }
         }
     }
+    @include respond-to(small) {
+        .header {
+            @include font-props(7);
+        }
+    }
 }
 
 .section-5 {
@@ -119,6 +135,11 @@
     .header {
         text-align: center;
         @include font-props(9);
+    }
+    @include respond-to(small) {
+        .header {
+            @include font-props(7);
+        }
     }
 }
 
@@ -223,11 +244,39 @@
                             width: 100%;
                         }
                     }
-                    &:first-child, &:nth-child(3n+1) {
-                        margin-left: 0;
+                    @include respond-to(large) {
+                        &:first-child, &:nth-child(3n+1) {
+                            margin-left: 0;
+                        }
+                        &:nth-child(3n+3), &:last-child {
+                            margin-right: 0;
+                        }
                     }
-                    &:nth-child(3n+3), &:last-child {
-                        margin-right: 0;
+                }
+            }
+        }
+    }
+    @include respond-to(small) {
+        .progress-element {
+            .year {
+                .text {
+                    @include font-props(30);
+                }
+                .back {
+                    top: 23px;
+                }
+                .over {
+                    top: 66px;
+                }
+            }
+            .header {
+                @include font-props(7);
+            }
+            .media {
+                ul {
+                    li {
+                        width: 100%;
+                        margin: 10px 0;
                     }
                 }
             }
@@ -236,93 +285,5 @@
 }
 
 .section-6 {
-    padding: 113px 0;
-    border-top: 1px solid $color-black20;
-    border-bottom: 1px solid $color-black20;
-    .cont {
-        background: $color-white;
-        border: 1px solid $color-black20;
-        @include border-radius(4px);
-        @include box-shadow(21px 21px 45px $color-black20);
-        padding: 60px;
-        .header {
-            @include font-props(6);
-            text-align: center;
-        }
-        .subheader {
-            @include font-props(5);
-            text-align: center;
-            padding-top: 10px;
-        }
-        .success-message {
-            text-align: center;
-            @include font-props(5);
-            line-height: 1.45;
-        }
-        .error-message {
-            text-align: center;
-            @include font-props(5, $color-alizarin);
-            line-height: 1.45;
-        }
-        .form-container {
-            padding-top: 45px;
-            text-align: center;
-            .form-group {
-                @include inline-block(middle);
-                padding: 20px 12px;
-                input[type=text] {
-                    background: $color-solitude3;
-                    @include border-radius(2px);
-                    border: 1px solid $color-pattensblue;
-                    @include font-props(4, $color-nero2);
-                    height: 49px;
-                    width: 275px;
-                    padding: 0 15px;
-                    @include input-placeholder {
-                        color: $color-nero2;
-                    }
-                }
-                .help-block {
-                    @include stretch(false, false, false, false);
-                    font-size: 80%;
-                }
-                .checkbox-label {
-                    @include font-props(2.5);
-                    position: relative;
-                    cursor: pointer;
-                    input[type=checkbox] {
-                        display: none;
-                    }
-                    span {
-                        @include inline-block(middle);
-                    }
-                    &:before {
-                        @include inline-block(top);
-                        width: 17px;
-                        height: 17px;
-                        content: '';
-                        border: 1px solid $color-black30;
-                        margin-right: 5px;
-                    }
-                    &.checked {
-                        &:after {
-                            @include stretch(3px, false, false, 3px);
-                            content: url($path-image+"ch.png");
-                        }
-                    }
-                }
-            }
-            button[type=submit] {
-                @include inline-block();
-                margin: 20px 20px 0;
-                border: none;
-                background: $color-gorse;
-                padding: 0 67px;
-                height: 57px;
-                cursor: pointer;
-                @include border-radius(2px);
-                @include font-props(4);
-            }
-        }
-    }
+    @include section-foz;
 }

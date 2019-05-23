@@ -1,4 +1,5 @@
 /*@import url('//fonts.googleapis.com/css?family=Roboto+Condensed:400,700|Roboto:400,700|Exo+2:400,700&subset=cyrillic');*/
+/*'Roboto', sans-serif;*/
 /*$font-os: 'Open Sans', sans-serif;*/
 /*$font-cn: 'Roboto Condensed', sans-serif;*/
 /*$font-exo: 'Exo 2', sans-serif;*/
@@ -32,6 +33,11 @@
         content: '';
         padding-top: 10%;
         display: inline-block; } }
+  @media print, screen and (max-width: 767px) {
+    .section-1 .header {
+      font-size: 29px; }
+    .section-1 .video span {
+      font-size: 15px; } }
 
 .section-2 {
   background: #2D2D2D;
@@ -117,6 +123,23 @@
         padding: 2px 0;
         font-size: 15.484px;
         color: #727271; }
+@media print, screen and (max-width: 767px) {
+  .section-3 .header-1 {
+    font-size: 29px; }
+  .section-3 .header-2 {
+    font-size: 15px; }
+  .section-3 .employee-list ul li {
+    margin: 10px 0;
+    width: 100%;
+    height: auto;
+    padding-bottom: 20px; }
+    .section-3 .employee-list ul li .image {
+      background-size: contain;
+      height: auto;
+      padding-top: 58%;
+      background-repeat: no-repeat; }
+      .section-3 .employee-list ul li .image .shadow {
+        background-size: contain; } }
 
 .section-4 {
   padding: 58px 0; }
@@ -156,6 +179,9 @@
       margin: 5px auto; }
       .section-4 .office-gallery ul li:nth-child(-n+2) {
         display: block; } }
+  @media print, screen and (max-width: 767px) {
+    .section-4 .header {
+      font-size: 29px; } }
 
 .section-5 {
   background: #F1F1F1;
@@ -163,6 +189,9 @@
   .section-5 .header {
     text-align: center;
     font-size: 37px; }
+  @media print, screen and (max-width: 767px) {
+    .section-5 .header {
+      font-size: 29px; } }
 
 .progress-gallery-set .progress-element {
   padding: 112px 0; }
@@ -192,7 +221,7 @@
     .progress-gallery-set .progress-element .year .text {
       font-size: 145px;
       color: #1E66C9;
-      font-family: "Roboto", sans-serif;
+      font-family: "Helvetica", Arial, sans-serif;
       font-weight: bold;
       display: block;
       position: relative;
@@ -253,10 +282,23 @@
         cursor: pointer; }
         .progress-gallery-set .progress-element .media ul li a img {
           width: 100%; }
-      .progress-gallery-set .progress-element .media ul li:first-child, .progress-gallery-set .progress-element .media ul li:nth-child(3n+1) {
-        margin-left: 0; }
-      .progress-gallery-set .progress-element .media ul li:nth-child(3n+3), .progress-gallery-set .progress-element .media ul li:last-child {
-        margin-right: 0; }
+      @media print, screen and (min-width: 960px) {
+        .progress-gallery-set .progress-element .media ul li:first-child, .progress-gallery-set .progress-element .media ul li:nth-child(3n+1) {
+          margin-left: 0; }
+        .progress-gallery-set .progress-element .media ul li:nth-child(3n+3), .progress-gallery-set .progress-element .media ul li:last-child {
+          margin-right: 0; } }
+@media print, screen and (max-width: 767px) {
+  .progress-gallery-set .progress-element .year .text {
+    font-size: 121px; }
+  .progress-gallery-set .progress-element .year .back {
+    top: 23px; }
+  .progress-gallery-set .progress-element .year .over {
+    top: 66px; }
+  .progress-gallery-set .progress-element .header {
+    font-size: 29px; }
+  .progress-gallery-set .progress-element .media ul li {
+    width: 100%;
+    margin: 10px 0; } }
 
 .section-6 {
   padding: 113px 0;
@@ -364,5 +406,28 @@
         -webkit-border-radius: 2px;
         border-radius: 2px;
         font-size: 17px; }
+  @media print, screen and (max-width: 767px) {
+    .section-6 {
+      padding: 40px 0; }
+      .section-6 .cont {
+        padding: 20px 10px; }
+        .section-6 .cont .header {
+          font-size: 21px; }
+        .section-6 .cont .subheader {
+          font-size: 17px; }
+        .section-6 .cont .form-container .form-group {
+          display: block;
+          padding: 10px 0;
+          margin-bottom: 0; }
+          .section-6 .cont .form-container .form-group input[type=text] {
+            width: 100%; }
+          .section-6 .cont .form-container .form-group .checkbox-label {
+            text-align: left; }
+            .section-6 .cont .form-container .form-group .checkbox-label span {
+              max-width: 92%; }
+        .section-6 .cont .form-container button[type=submit] {
+          padding: 0;
+          width: 100%;
+          margin: 0; } }
 
 /*# sourceMappingURL=page-team.css.map */

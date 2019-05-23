@@ -55,6 +55,21 @@
             }
         }
     }
+    @include respond-to(small) {
+        .header-1 {
+            padding-top: 20px;
+            @include font-props(7);
+        }
+        .header-2 {
+            @include font-props(4);
+        }
+        .cta {
+            padding-top: 135px;
+            a {
+                width: auto;
+            }
+        }
+    }
 }
 
 .section-2 {
@@ -68,6 +83,19 @@
         position: relative;
         a {
             @include video-impulse(132px, 168px, 'video3.png', 50%, $color-venetianred);
+        }
+    }
+    @include respond-to(middle) {
+        .video {
+            background-repeat: no-repeat;
+            background-size: contain;
+            padding-top: 56.25%;
+            height: auto;
+        }
+    }
+    @include respond-to(small) {
+        .header {
+            @include font-props(7);
         }
     }
 }
@@ -89,6 +117,11 @@
             a {
                 color: $color-black90;
             }
+        }
+    }
+    @include respond-to(small) {
+        .header {
+            @include font-props(7);
         }
     }
 }
@@ -163,6 +196,20 @@
             }
         }
     }
+    @include respond-to(small) {
+        .header {
+            @include font-props(7);
+        }
+        .style-list {
+            .style-element {
+                width: 100%;
+                margin: 12px 0 30px;
+                .image {
+                    height: auto;
+                }
+            }
+        }
+    }
 }
 
 .section-6 {
@@ -173,6 +220,11 @@
     }
     @include section-lending-gallery;
     @include section-workstep;
+    @include respond-to(small) {
+        .header {
+            @include font-props(7);
+        }
+    }
 }
 
 .section-7 {
@@ -234,6 +286,19 @@
             }
         }
     }
+    @include respond-to(small) {
+        .lending-list {
+            li {
+                width: auto;
+                margin: 10px 0;
+                .image {
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
 }
 
 .section-10 {
@@ -290,6 +355,31 @@
                 }
                 &:last-child {
                     text-align: center;
+                }
+            }
+        }
+    }
+    @include respond-to(small) {
+        .header {
+            @include font-props(7);
+        }
+        .price-list {
+            overflow: auto;
+            table {
+                thead {
+                    tr {
+                        th {
+                            &:first-child {
+                                min-width: 220px;
+                            }
+                            &:nth-child(2) {
+                                min-width: 50px;
+                            }
+                            &:last-child {
+                                min-width: 180px;
+                            }
+                        }
+                    }
                 }
             }
         }

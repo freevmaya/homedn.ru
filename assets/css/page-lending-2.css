@@ -1,4 +1,5 @@
 /*@import url('//fonts.googleapis.com/css?family=Roboto+Condensed:400,700|Roboto:400,700|Exo+2:400,700&subset=cyrillic');*/
+/*'Roboto', sans-serif;*/
 /*$font-os: 'Open Sans', sans-serif;*/
 /*$font-cn: 'Roboto Condensed', sans-serif;*/
 /*$font-exo: 'Exo 2', sans-serif;*/
@@ -34,6 +35,16 @@
       .section-1 .cta a:hover {
         text-decoration: none;
         background: #FFD941; }
+  @media print, screen and (max-width: 767px) {
+    .section-1 .header-1 {
+      padding-top: 20px;
+      font-size: 29px; }
+    .section-1 .header-2 {
+      font-size: 17px; }
+    .section-1 .cta {
+      padding-top: 135px; }
+      .section-1 .cta a {
+        width: auto; } }
 
 .section-2 {
   padding: 90px 0; }
@@ -265,6 +276,16 @@
   100% {
     transform: rotate(0deg) scale(0.7) skew(1deg);
     opacity: .2; } }
+  @media print, screen and (max-width: 959px) {
+    .section-2 .video {
+      background-repeat: no-repeat;
+      background-size: contain;
+      padding-top: 56.25%;
+      height: auto; } }
+  @media print, screen and (max-width: 767px) {
+    .section-2 .header {
+      font-size: 29px; } }
+
 .section-3 .header-1 {
   padding: 55px 0 0;
   text-align: center;
@@ -334,6 +355,23 @@
         padding: 2px 0;
         font-size: 15.484px;
         color: #727271; }
+@media print, screen and (max-width: 767px) {
+  .section-3 .header-1 {
+    font-size: 29px; }
+  .section-3 .header-2 {
+    font-size: 15px; }
+  .section-3 .employee-list ul li {
+    margin: 10px 0;
+    width: 100%;
+    height: auto;
+    padding-bottom: 20px; }
+    .section-3 .employee-list ul li .image {
+      background-size: contain;
+      height: auto;
+      padding-top: 58%;
+      background-repeat: no-repeat; }
+      .section-3 .employee-list ul li .image .shadow {
+        background-size: contain; } }
 
 .section-4 {
   background: #ECF0F4;
@@ -398,6 +436,9 @@
         font-size: 17px; } }
   .section-4 .lending-gallery .direction-nav a {
     color: #434242; }
+  @media print, screen and (max-width: 767px) {
+    .section-4 .header {
+      font-size: 29px; } }
 
 .section-5 {
   padding: 45px 0; }
@@ -467,6 +508,14 @@
               margin-left: 0; }
             .section-5 .style-list .style-element .color-line li .color:last-child {
               margin-right: 0; }
+  @media print, screen and (max-width: 767px) {
+    .section-5 .header {
+      font-size: 29px; }
+    .section-5 .style-list .style-element {
+      width: 100%;
+      margin: 12px 0 30px; }
+      .section-5 .style-list .style-element .image {
+        height: auto; } }
 
 .section-6 {
   padding-top: 88px;
@@ -567,6 +616,9 @@
   @media print, screen and (max-width: 767px) {
     .section-6 .workstep-element.with-image .image, .section-6 .workstep-element.with-image .workstep-content {
       width: 100%; } }
+  @media print, screen and (max-width: 767px) {
+    .section-6 .header {
+      font-size: 29px; } }
 
 .section-7 {
   padding: 117px 0; }
@@ -1049,6 +1101,12 @@
         margin-right: 0; } }
     .section-9 .lending-list li .image {
       background: #FFFFFF; }
+  @media print, screen and (max-width: 767px) {
+    .section-9 .lending-list li {
+      width: auto;
+      margin: 10px 0; }
+      .section-9 .lending-list li .image img {
+        width: 100%; } }
 
 .section-10 {
   padding: 113px 0;
@@ -1174,7 +1232,7 @@
           .section-10 .cont .form-container .form-group .checkbox-label {
             text-align: left; }
             .section-10 .cont .form-container .form-group .checkbox-label span {
-              max-width: 88%; }
+              max-width: 92%; }
         .section-10 .cont .form-container button[type=submit] {
           padding: 0;
           width: 100%;
@@ -1218,6 +1276,17 @@
         text-align: center; }
       .section-11 table tbody tr:last-child {
         text-align: center; }
+  @media print, screen and (max-width: 767px) {
+    .section-11 .header {
+      font-size: 29px; }
+    .section-11 .price-list {
+      overflow: auto; }
+      .section-11 .price-list table thead tr th:first-child {
+        min-width: 220px; }
+      .section-11 .price-list table thead tr th:nth-child(2) {
+        min-width: 50px; }
+      .section-11 .price-list table thead tr th:last-child {
+        min-width: 180px; } }
 
 .section-12 {
   padding: 45px 0; }

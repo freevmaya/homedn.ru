@@ -64,4 +64,31 @@
             }
         }
     }
+    @include respond-to(small) {
+        .header-1 {
+            @include font-props(7);
+        }
+        .header-2 {
+            @include font-props(3.5);
+        }
+        .employee-list {
+            ul {
+                li {
+                    margin: 10px 0;
+                    width: 100%;
+                    height: auto;
+                    padding-bottom: 20px;
+                    .image {
+                        background-size: contain;
+                        height: auto;
+                        padding-top: 58%;
+                        background-repeat: no-repeat;
+                        .shadow {
+                            background-size: contain;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
