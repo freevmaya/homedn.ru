@@ -26,7 +26,8 @@
         "rmrevin/yii2-fontawesome": "~3.3",
         "valekstepanov/yii2kladr": "~1.1.0",
         "himiklab/yii2-sitemap-module": "*",
-        "kartik-v/yii2-widget-colorinput": "*"
+        "kartik-v/yii2-widget-colorinput": "*",
+        "iisns/yii2-assets-compress": "*"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",

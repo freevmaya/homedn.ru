@@ -10,34 +10,34 @@ $config = [
     'name'          => 'Home Remont',
     'language'      => 'ru',
     'basePath'      => dirname(__DIR__),
-    'bootstrap'     => [ 'assetManager', 'log' ],
+    'bootstrap'     => [ 'assetsPreload', 'assetsAutoCompress', /* 'assetManager', */ 'log' ],
     'aliases'       => [
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',
     ],
     'components'    => [
-        'request'      => [
+        'request'            => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => '7twvG-ujtcWffSQ7k8kbLEwiJ77ZEn9f',
         ],
-        'cache'        => [
+        'cache'              => [
             'class' => 'yii\caching\FileCache',
         ],
-        'user'         => [
+        'user'               => [
             'identityClass'   => 'app\models\User',
             'enableAutoLogin' => true,
         ],
-        'errorHandler' => [
+        'errorHandler'       => [
             'errorAction' => 'site/error',
         ],
-        'mailer'       => [
+        'mailer'             => [
             'class'            => 'yii\swiftmailer\Mailer',
             // send all mails to a file by default. You have to set
             // 'useFileTransport' to false and configure a transport
             // for the mailer to send real emails.
             'useFileTransport' => true,
         ],
-        'log'          => [
+        'log'                => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
             'targets'    => [
                 [
@@ -46,8 +46,8 @@ $config = [
                 ],
             ],
         ],
-        'db'           => $db,
-        'urlManager'   => [
+        'db'                 => $db,
+        'urlManager'         => [
             'enablePrettyUrl' => true,
             'showScriptName'  => false,
             'rules'           => [
@@ -72,7 +72,7 @@ $config = [
                 '<action>'                                                    => 'site/<action>',
             ],
         ],
-        'imageresize'  => [
+        'imageresize'        => [
             'class'        => 'noam148\imageresize\ImageResize',
             //path relative web folder. In case of multiple environments (frontend, backend) add more paths 
             'cachePath'    => [ 'assets/images' ],
@@ -82,9 +82,23 @@ $config = [
             'absoluteUrl'  => false,
             'imageQuality' => 90,
         ],
-        'assetManager' => [
+        'assetManager'       => [
             'linkAssets'      => true,
             'appendTimestamp' => true,
+        ],
+        'assetsAutoCompress' =>
+        [
+            'class'           => '\iisns\assets\AssetsCompressComponent',
+            'enabled'         => strpos($_SERVER['REQUEST_URI'], 'admin') ? false : true,
+            'jsCompress'      => strpos($_SERVER['REQUEST_URI'], 'admin') ? false : true,
+            'cssFileCompress' => strpos($_SERVER['REQUEST_URI'], 'admin') ? false : true,
+            'cssFileCompile'  => strpos($_SERVER['REQUEST_URI'], 'admin') ? false : true,
+            'jsFileCompile'   => strpos($_SERVER['REQUEST_URI'], 'admin') ? false : true,
+        ],
+        'assetsPreload'      =>
+        [
+            'class'   => 'app\components\AssetsPreloadComponent',
+            'enabled' => true,
         ],
     ],
     'modules'       => [
