@@ -17,6 +17,7 @@ $(function () {
         console.log(h);
         $('.tab-content.active').css('height', h + 'px');
         $(window).trigger('resize');
+        $(document).trigger('calc-paint');
         return false;
     });
 
