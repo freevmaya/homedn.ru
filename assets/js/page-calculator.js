@@ -141,7 +141,11 @@ $(function () {
             }
         });
         $('.tab-content.active').find('label[data-checked=1]').each(function () {
-            html[+$(this).data('sort')] = '<img src="' + $(this).data('image') + '">';
+            if (html[+$(this).data('sort')] === undefined) {
+                html[+$(this).data('sort')] = '<img src="' + $(this).data('image') + '">';
+            } else {
+                html[+$(this).data('sort') - 1] = '<img src="' + $(this).data('image') + '">';
+            }
         });
 //        console.log(html);
         $('.tab-content.active .baseimage').html(html.join(''));
