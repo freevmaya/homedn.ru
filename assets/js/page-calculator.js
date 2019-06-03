@@ -32,6 +32,9 @@ $(function () {
                 let w = $(this).find('.element-group-list').width();
                 $(this).find('.baseimage').css('width', (+$(this).width() - w) + 'px');
             }
+            if ($(window).width() < 768) {
+                $(this).find('.baseimage').css('width', '100%');
+            }
         });
     });
 
@@ -134,12 +137,13 @@ $(function () {
         let html = [];
         $('.tab-content').each(function (i) {
             if ($(this).hasClass('active')) {
-                html = ['<img src="' + calcData.baseImage[i] + '">'];
+                html[100] = '<img src="' + calcData.baseImage[i] + '">';
             }
         });
         $('.tab-content.active').find('label[data-checked=1]').each(function () {
             html[+$(this).data('sort')] = '<img src="' + $(this).data('image') + '">';
         });
+//        console.log(html);
         $('.tab-content.active .baseimage').html(html.join(''));
     });
 
