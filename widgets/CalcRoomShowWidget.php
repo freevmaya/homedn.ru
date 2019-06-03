@@ -36,8 +36,8 @@ class CalcRoomShowWidget extends Widget
     {
         $this->calcInputdata = ($c                   = CalcInputdata::find()->where([ 'key' => $this->calcKey ])->one()) ? json_decode($c->user_data, true) : false;
         if (Yii::$app->request->isPost && $this->calcInputdata && isset(Yii::$app->request->post()['data'])) {
-            $c->calc_data     = json_encode(Yii::$app->request->post()['data']);
-            $c->complect_data = json_encode(Yii::$app->request->post()['complect_data']);
+            $c->calc_data     = isset(Yii::$app->request->post()['data']) ? json_encode(Yii::$app->request->post()['data']) : '';
+            $c->complect_data = isset(Yii::$app->request->post()['complect_data']) ? json_encode(Yii::$app->request->post()['complect_data']) : '';
             $c->save();
             Yii::$app->end();
         }
