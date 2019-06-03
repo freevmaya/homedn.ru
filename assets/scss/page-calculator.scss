@@ -191,7 +191,7 @@ header {
         .tab-content {
             display: none;
             .baseimage {
-                width: 64%;
+                width: 63%;
                 @include inline-block(top);
                 position: relative;
                 img {
@@ -202,7 +202,7 @@ header {
                     }
                 }
                 + .element-group-list {
-                    width: 36%;
+                    width: 494px;
                 }
             }
             .element-group-list {
@@ -212,11 +212,6 @@ header {
                 overflow-y: auto;
                 .element-group {
                     border-bottom: 1px solid $color-whitesmoke8;
-                    &.simple {
-                        .name {
-                            display: none;
-                        }
-                    }
                     .name {
                         a {
                             display: block;
@@ -309,6 +304,15 @@ header {
                                     background-size: cover;
                                 }
                             }
+                        }
+                    }
+                    &.simple {
+                        height: 600px;
+                        .name {
+                            display: none;
+                        }
+                        .element-list {
+                            display: block;
                         }
                     }
                 }

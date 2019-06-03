@@ -13,6 +13,8 @@ $(function () {
         $('.tab-content').removeClass('active');
         $(this).addClass('active');
         $($(this).attr('href')).addClass('active');
+        let h = $('.tab-content.active').find('.baseimage').height();
+        $('.tab-content.active').css('height', h + 'px');
         return false;
     });
 
@@ -24,9 +26,11 @@ $(function () {
 
     $(window).resize(function () {
         $('.tab-container .tab-content').each(function () {
-            if ($(this).find('.baseimage').length > 0) {
+            if (($(this).find('.baseimage').length > 0) && ($(window).width() > 767)) {
                 let h = $(this).find('.baseimage').height();
                 $(this).css('height', h + 'px');
+                let w = $(this).find('.element-group-list').width();
+                $(this).find('.baseimage').css('width', (+$(this).width() - w) + 'px');
             }
         });
     });
@@ -86,7 +90,7 @@ $(function () {
     $(document).on('calc-full-price', function () {
         $('#sum-top, #sum-bottom').html(calcData.fullPrice.toFixed(0).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$& '));
     });
-    
+
     function saveCalcData() {
         let checkedElement = [];
         $('label[data-checked=1]').each(function () {

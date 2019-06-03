@@ -320,7 +320,7 @@ header {
     .section-5 .tab-container .tab-content {
       display: none; }
       .section-5 .tab-container .tab-content .baseimage {
-        width: 64%;
+        width: 63%;
         display: inline-block;
         vertical-align: top;
         *vertical-align: auto;
@@ -337,7 +337,7 @@ header {
             left: 0;
             right: 0; }
         .section-5 .tab-container .tab-content .baseimage + .element-group-list {
-          width: 36%; }
+          width: 494px; }
       .section-5 .tab-container .tab-content .element-group-list {
         width: 100%;
         display: inline-block;
@@ -349,8 +349,6 @@ header {
         overflow-y: auto; }
         .section-5 .tab-container .tab-content .element-group-list .element-group {
           border-bottom: 1px solid #F1F1F1; }
-          .section-5 .tab-container .tab-content .element-group-list .element-group.simple .name {
-            display: none; }
           .section-5 .tab-container .tab-content .element-group-list .element-group .name a {
             display: block;
             padding: 15px;
@@ -449,6 +447,12 @@ header {
                   height: 24px;
                   background: url("/uploads/images/selected-arrow.svg") no-repeat;
                   background-size: cover; }
+          .section-5 .tab-container .tab-content .element-group-list .element-group.simple {
+            height: 600px; }
+            .section-5 .tab-container .tab-content .element-group-list .element-group.simple .name {
+              display: none; }
+            .section-5 .tab-container .tab-content .element-group-list .element-group.simple .element-list {
+              display: block; }
       .section-5 .tab-container .tab-content.active {
         display: block; }
   @media print, screen and (max-width: 767px) {
