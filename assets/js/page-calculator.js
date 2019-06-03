@@ -14,7 +14,9 @@ $(function () {
         $(this).addClass('active');
         $($(this).attr('href')).addClass('active');
         let h = $('.tab-content.active').find('.baseimage').height();
+        console.log(h);
         $('.tab-content.active').css('height', h + 'px');
+        $(window).trigger('resize');
         return false;
     });
 
@@ -25,6 +27,7 @@ $(function () {
     });
 
     $(window).resize(function () {
+        console.log('resize');
         $('.tab-container .tab-content').each(function () {
             if (($(this).find('.baseimage').length > 0) && ($(window).width() > 767)) {
                 let h = $(this).find('.baseimage').height();
