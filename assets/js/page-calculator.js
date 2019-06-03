@@ -91,7 +91,7 @@ $(function () {
      * Полная стоимость
      */
     $(document).on('calc-full-price', function () {
-        $('#sum-top, #sum-bottom').html(calcData.fullPrice.toFixed(0).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$& '));
+        $('#sum-top, #sum-bottom, #sum-panel').html(calcData.fullPrice.toFixed(0).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$& '));
     });
 
     function saveCalcData() {
@@ -173,5 +173,12 @@ $(function () {
     $(document).trigger('calc-diff');
 
     calcSum();
+
+    $(window).scroll(function () {
+        if (($('.inputdata-container').offset().top <= $(window).scrollTop()) && ($('.section-7').offset().top >= ($(window).scrollTop() + $(window).height())))
+            $(".bottom-panel").fadeIn();
+        else
+            $(".bottom-panel").fadeOut();
+    });
 
 });

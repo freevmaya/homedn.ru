@@ -139,6 +139,12 @@ class CalcRoomShowWidget extends Widget
                     'image' => $baseImage,
                 ]
             ]);
+
+            echo Html::beginTag('div', [ 'class' => 'bottom-panel' ]);
+            echo Html::tag('div', Html::tag('span', 'Ссылка на этот конструктор', [ 'class' => 'panel-header' ])
+                    . Html::tag('span', Yii::$app->request->absoluteUrl, [ 'class' => 'link' ]), [ 'class' => 'left' ]);
+            echo Html::tag('div', 'Итого: ' . Html::tag('span', '', [ 'id' => 'sum-panel' ]) . ' руб.', [ 'class' => 'sum' ]);
+            echo Html::endTag('div');
         }
     }
 

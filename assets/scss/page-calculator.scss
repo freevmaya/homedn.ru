@@ -322,6 +322,33 @@ header {
             }
         }
     }
+    .bottom-panel {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: none;
+        height: 62px;
+        background: $color-nightrider;
+        z-index: 100;
+        .left {
+            @include stretch(20px, false, false, 20px);
+            .panel-header {
+                @include inline-block(middle);
+                @include font-props(3.5, $color-white);
+                margin-right: 15px;
+            }
+            .link {
+                @include inline-block(middle);
+                @include font-props(3.5, $color-white);
+                text-decoration: underline;
+            }
+        }
+        .sum {
+            @include stretch(15px, 20px, false, false);
+            @include font-props(5, $color-white);
+        }
+    }
     @include respond-to(small) {
         .tab-nav {
             margin: 0 10px;

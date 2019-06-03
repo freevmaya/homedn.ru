@@ -455,6 +455,43 @@ header {
               display: block; }
       .section-5 .tab-container .tab-content.active {
         display: block; }
+  .section-5 .bottom-panel {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+    height: 62px;
+    background: #333333;
+    z-index: 100; }
+    .section-5 .bottom-panel .left {
+      position: absolute;
+      top: 20px;
+      left: 20px; }
+      .section-5 .bottom-panel .left .panel-header {
+        display: inline-block;
+        vertical-align: middle;
+        *vertical-align: auto;
+        *zoom: 1;
+        *display: inline;
+        font-size: 15px;
+        color: #FFFFFF;
+        margin-right: 15px; }
+      .section-5 .bottom-panel .left .link {
+        display: inline-block;
+        vertical-align: middle;
+        *vertical-align: auto;
+        *zoom: 1;
+        *display: inline;
+        font-size: 15px;
+        color: #FFFFFF;
+        text-decoration: underline; }
+    .section-5 .bottom-panel .sum {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-size: 21px;
+      color: #FFFFFF; }
   @media print, screen and (max-width: 767px) {
     .section-5 .tab-nav {
       margin: 0 10px; }
@@ -525,7 +562,7 @@ header {
         .section-6 .complect-content-list ul li .content .name {
           display: block;
           padding: 10px 0;
-          font-size: 13px; }
+          font-size: 17px; }
         .section-6 .complect-content-list ul li .content .desc {
           font-size: 15px;
           color: #727271;
