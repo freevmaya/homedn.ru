@@ -453,6 +453,8 @@ header {
               display: none; }
             .section-5 .tab-container .tab-content .element-group-list .element-group.simple .element-list {
               display: block; }
+            .section-5 .tab-container .tab-content .element-group-list .element-group.simple .group-name {
+              padding: 15px 0; }
       .section-5 .tab-container .tab-content.active {
         display: block; }
   .section-5 .bottom-panel {
