@@ -411,7 +411,7 @@ header {
                     .name {
                         display: block;
                         padding: 10px 0;
-                        @include font-props(3);
+                        @include font-props(4);
                     }
                     .desc {
                         @include font-props(3.5, $color-black70);
