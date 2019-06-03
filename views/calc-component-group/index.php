@@ -22,10 +22,10 @@ $this->params['breadcrumbs'][] = $this->title;
         'dataProvider' => $dataProvider,
         'columns'      => [
             [ 'class' => 'yii\grid\SerialColumn' ],
-            'id',
+//            'id',
             'name',
 //            'sort',
-//            'image_order',
+            'image_order',
 //            'size_element',
             //'calc_room_id',
             [ 'class' => 'yii\grid\ActionColumn' ],
