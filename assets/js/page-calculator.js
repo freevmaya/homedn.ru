@@ -36,6 +36,7 @@ $(function () {
             let h = $('.tab-content.active').find('.baseimage img.base').first().height();
             console.log(h);
             $('.tab-content.active').css('height', h + 'px');
+            $('.tab-content.active .baseimage').css('height', h + 'px');
         }
         if ($(window).width() < 768) {
             $('.tab-content.active').find('.baseimage').css('width', '100%');

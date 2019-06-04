@@ -326,7 +326,8 @@ header {
         *vertical-align: auto;
         *zoom: 1;
         *display: inline;
-        position: relative; }
+        position: relative;
+        overflow: hidden; }
         .section-5 .tab-container .tab-content .baseimage img {
           width: 100%;
           display: block; }
