@@ -251,7 +251,7 @@ header {
     font-size: 13px;
     color: #727271; }
   .section-4 .template-styles .calc-collect-list {
-    overflow: hidden; }
+    overflow-x: auto; }
     .section-4 .template-styles .calc-collect-list ul {
       width: auto; }
       .section-4 .template-styles .calc-collect-list ul li {
@@ -372,9 +372,12 @@ header {
           .section-5 .tab-container .tab-content .element-group-list .element-group .element-list {
             display: none;
             padding: 10px;
-            background: #F1F1F1; }
+            background: #F1F1F1;
+            -webkit-flex-flow: row wrap;
+            flex-flow: row wrap; }
             .section-5 .tab-container .tab-content .element-group-list .element-group .element-list .local-group-name {
               margin: 10px 5px 5px;
+              width: 100%;
               font-size: 13px;
               color: #424242; }
             .section-5 .tab-container .tab-content .element-group-list .element-group .element-list label {
@@ -384,7 +387,7 @@ header {
               *zoom: 1;
               *display: inline;
               width: 142px;
-              height: 210px;
+              height: auto;
               position: relative;
               margin: 5px;
               cursor: pointer;
@@ -431,7 +434,7 @@ header {
                 color: #000000; }
               .section-5 .tab-container .tab-content .element-group-list .element-group .element-list label.big {
                 width: 217px;
-                height: 329px; }
+                height: auto; }
                 .section-5 .tab-container .tab-content .element-group-list .element-group .element-list label.big .icon {
                   height: 215px; }
               .section-5 .tab-container .tab-content .element-group-list .element-group .element-list label.checked {
@@ -513,7 +516,16 @@ header {
         width: 142px;
         height: 210px; }
         .section-5 .tab-container .tab-content .element-group-list .element-group .element-list label.big .icon {
-          height: 99px; } }
+          height: 99px; }
+    .section-5 .bottom-panel {
+      height: auto;
+      padding: 20px 10px; }
+      .section-5 .bottom-panel .left, .section-5 .bottom-panel .sum {
+        position: relative;
+        top: auto;
+        left: auto;
+        right: auto;
+        margin: 10px 0; } }
 
 .section-6 {
   padding: 45px 0; }

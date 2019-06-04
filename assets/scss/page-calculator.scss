@@ -115,7 +115,7 @@ header {
             @include font-props(3, $color-black70);
         }
         .calc-collect-list {
-            overflow: hidden;
+            overflow-x: auto;
             ul {
                 width: auto;
                 li {
@@ -232,14 +232,16 @@ header {
                         display: none;
                         padding: 10px;
                         background: $color-whitesmoke8;
+                        @include flex-flow(row wrap);
                         .local-group-name {
                             margin: 10px 5px 5px;
+                            width: 100%;
                             @include font-props(3, $color-charcoal);
                         }
                         label {
                             @include inline-block(top);
                             width: 142px;
-                            height: 210px;
+                            height: auto;
                             position: relative;
                             margin: 5px;
                             cursor: pointer;
@@ -288,7 +290,7 @@ header {
                             }
                             &.big {
                                 width: 217px;
-                                height: 329px;
+                                height: auto;
                                 .icon {
                                     height: 215px;
                                 }
@@ -390,6 +392,17 @@ header {
                         }
                     }
                 }
+            }
+        }
+        .bottom-panel {
+            height: auto;
+            padding: 20px 10px;
+            .left, .sum {
+                position: relative;
+                top: auto;
+                left: auto;
+                right: auto;
+                margin: 10px 0;
             }
         }
     }

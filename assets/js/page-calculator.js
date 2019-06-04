@@ -13,9 +13,9 @@ $(function () {
         $('.tab-content').removeClass('active');
         $(this).addClass('active');
         $($(this).attr('href')).addClass('active');
-        let h = $('.tab-content.active').find('.baseimage').height();
-        console.log(h);
-        $('.tab-content.active').css('height', h + 'px');
+//        let h = $('.tab-content.active').find('.baseimage').height();
+//        console.log(h);
+//        $('.tab-content.active').css('height', h + 'px');
         $(window).trigger('resize');
         $(document).trigger('calc-paint');
         return false;
@@ -23,26 +23,36 @@ $(function () {
 
     $('.group-name-toggle').click(function () {
         $(this).find('i').toggleClass('fa-angle-down').toggleClass('fa-angle-up');
-        $(this).parents('.element-group').find('.element-list').slideToggle();
+        $(this).parents('.element-group').find('.element-list').slideToggle().css('display', 'flex');
         return false;
     });
 
     $(window).resize(function () {
         console.log('resize');
-        $('.tab-container .tab-content').each(function () {
-            if (($(this).find('.baseimage').length > 0) && ($(window).width() > 767)) {
-                let h = $(this).find('.baseimage').height();
-                $(this).css('height', h + 'px');
-                let w = $(this).find('.element-group-list').width();
-                $(this).find('.baseimage').css('width', (+$(this).width() - w) + 'px');
-            }
-            if ($(window).width() < 768) {
-                $(this).find('.baseimage').css('width', '100%');
-            }
-        });
+        if (($('.tab-content.active').find('.baseimage').length > 0) && ($(window).width() > 767)) {
+            let w = $('.tab-content.active').find('.element-group-list').width();
+            console.log(w);
+            $('.tab-content.active').find('.baseimage').css('width', (+$('.tab-content.active').width() - w) + 'px');
+            let h = $('.tab-content.active').find('.baseimage img').first().height();
+            console.log(h);
+            $('.tab-content.active').css('height', h + 'px');
+        }
+        if ($(window).width() < 768) {
+            $('.tab-content.active').find('.baseimage').css('width', '100%');
+        }
+        /*$('.tab-container .tab-content').each(function () {
+         if (($(this).find('.baseimage').length > 0) && ($(window).width() > 767)) {
+         let w = $(this).find('.element-group-list').width();
+         $(this).find('.baseimage').css('width', (+$(this).width() - w) + 'px');
+         let h = $(this).find('.baseimage').height();
+         console.log(h);
+         $(this).css('height', h + 'px');
+         }
+         if ($(window).width() < 768) {
+         $(this).find('.baseimage').css('width', '100%');
+         }
+         });*/
     });
-
-    $(window).trigger('resize');
 
     $('label .countable').on('change', 'input[type=text]', function () {
         $(this).parents('label').data('count', $(this).val()).data('diff', +$(this).val() * +$(this).parents('label').data('price')).trigger('calc-element-diff');
@@ -50,10 +60,16 @@ $(function () {
         $(document).trigger('calc-diff');
     });
 
+    $('li .countable').each(function () {
+        let diff = (+$(this).val() * $(this).parents('li').data('price'));
+        $(this).parents('li').data('count', $(this).val()).find('.price').html((diff > 0 ? '+' : '') + diff.toFixed(0).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$& ') + ' руб.');
+    });
+
     $('li .countable').on('change', 'input[type=text]', function () {
         if (!$(this).parents('li').hasClass('checked'))
             $(this).parents('li').addClass('checked');
-        $(this).parents('li').data('count', $(this).val()).find('.price').html((+$(this).val() * $(this).parents('li').data('price')).toFixed(0).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$& ') + ' руб.');
+        let diff = (+$(this).val() * $(this).parents('li').data('price'));
+        $(this).parents('li').data('count', $(this).val()).find('.price').html((diff > 0 ? '+' : '') + diff.toFixed(0).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$& ') + ' руб.');
         calcSum();
         saveCalcData();
     });
@@ -76,7 +92,7 @@ $(function () {
      */
     $(document).on('calc-diff', function () {
         $('.element-group label').each(function () {
-            if ($(this).data('price') !== undefined && $(this).data('countable') == 0) {
+            if (($(this).data('price') !== undefined) && ($(this).data('countable') == 0)) {
                 cur = $('label[data-checked=1][data-group="' + $(this).data('group') + '"]');
                 $(this).data('diff', (+$(this).data('price') * $(this).data('count')) - (+$(cur).data('price') * $(cur).data('count'))).trigger('calc-element-diff');
             }
@@ -87,7 +103,7 @@ $(function () {
         if ($(this).data('diff') === 0) {
             $(this).find('.price').html('');
         } else {
-            $(this).find('.price').html($(this).data('diff') + ' руб.');
+            $(this).find('.price').html((+$(this).data('diff') > 0 ? '+' : '') + $(this).data('diff') + ' руб.');
         }
     });
 
@@ -153,6 +169,9 @@ $(function () {
         });
 //        console.log(html);
         $('.tab-content.active .baseimage').html(html.join(''));
+        setTimeout(function () {
+            $(window).trigger('resize');
+        }, 500);
     });
 
     $('#calc-collect li').each(function () {
@@ -160,7 +179,7 @@ $(function () {
         $.each($(this).data('collect'), function () {
             sum += +$('label[data-id=' + this.id + ']').data('price') * this.count;
         });
-        $(this).find('.price').html(sum.toFixed(0).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$& ') + ' руб.');
+        $(this).find('.price').html((sum.toFixed(0) > 0 ? '+' : '') + sum.toFixed(0).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$& ') + ' руб.');
     });
 
     $('#calc-collect').width($('#calc-collect li').length * (+$('#calc-collect li').first().width() + 15));
@@ -184,5 +203,9 @@ $(function () {
         else
             $(".bottom-panel").fadeOut();
     });
+
+    setTimeout(function () {
+        $(window).trigger('resize');
+    }, 500);
 
 });
