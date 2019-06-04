@@ -33,7 +33,7 @@ $(function () {
             let w = $('.tab-content.active').find('.element-group-list').width();
             console.log(w);
             $('.tab-content.active').find('.baseimage').css('width', (+$('.tab-content.active').width() - w) + 'px');
-            let h = $('.tab-content.active').find('.baseimage img').first().height();
+            let h = $('.tab-content.active').find('.baseimage img.base').first().height();
             console.log(h);
             $('.tab-content.active').css('height', h + 'px');
         }
@@ -157,7 +157,7 @@ $(function () {
         let html = [];
         $('.tab-content').each(function (i) {
             if ($(this).hasClass('active')) {
-                html[100] = '<img src="' + calcData.baseImage[i] + '">';
+                html[100] = '<img src="' + calcData.baseImage[i] + '" class="base">';
             }
         });
         $('.tab-content.active').find('label[data-checked=1]').each(function () {
