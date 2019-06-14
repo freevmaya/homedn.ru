@@ -9,15 +9,12 @@ use Yii;
  *
  * @property int $id
  * @property int $page_id
- * @property string $image
  * @property string $name
  * @property int $sort
  * @property string $desc
- * @property string $color1
- * @property string $color2
- * @property string $color3
  *
  * @property Page $page
+ * @property StyleListVariant[] $styleListVariants
  */
 class StyleList extends \yii\db\ActiveRecord
 {
@@ -37,7 +34,7 @@ class StyleList extends \yii\db\ActiveRecord
     {
         return [
             [ [ 'page_id', 'sort' ], 'integer' ],
-            [ [ 'image', 'name', 'desc', 'color1', 'color2', 'color3' ], 'string', 'max' => 255 ],
+            [ [ 'name', 'desc' ], 'string', 'max' => 255 ],
             [ [ 'page_id' ], 'exist', 'skipOnError' => true, 'targetClass' => Page::className(), 'targetAttribute' => [ 'page_id' => 'id' ] ],
         ];
     }
@@ -50,13 +47,9 @@ class StyleList extends \yii\db\ActiveRecord
         return [
             'id'      => 'ID',
             'page_id' => 'Страница',
-            'image'   => 'Изображение',
             'name'    => 'Название',
             'sort'    => 'Порядок',
             'desc'    => 'Описание',
-            'color1'  => 'Цвет1',
-            'color2'  => 'Цвет2',
-            'color3'  => 'Цвет3',
         ];
     }
 
@@ -66,6 +59,11 @@ class StyleList extends \yii\db\ActiveRecord
     public function getPage ()
     {
         return $this->hasOne(Page::className(), [ 'id' => 'page_id' ]);
+    }
+
+    public function getStyleListVariants ()
+    {
+        return $this->hasMany(StyleListVariant::class, [ 'style_list_id' => 'id' ])->orderBy(['sort'=>SORT_ASC]);
     }
 
 }

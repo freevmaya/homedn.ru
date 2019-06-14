@@ -13,8 +13,8 @@ class m190522_133746_update_data extends Migration
      */
     public function safeUp ()
     {
-        $sql = file_get_contents(__DIR__ . '/data.sql');
-        $this->execute($sql);
+//        $sql = file_get_contents(__DIR__ . '/data.sql');
+//        $this->execute($sql);
     }
 
     /**

@@ -4,14 +4,14 @@ use yii\helpers\Html;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\StyleList */
+/* @var $model app\models\StyleListVariant */
 
-$this->title                   = $model->name;
-$this->params['breadcrumbs'][] = [ 'label' => 'Стили', 'url' => [ 'index' ] ];
+$this->title                   = $model->id;
+$this->params['breadcrumbs'][] = [ 'label' => 'Варианты стиля', 'url' => [ 'index' ] ];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
-<div class="style-list-view">
+<div class="style-list-variant-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
@@ -33,10 +33,10 @@ $this->params['breadcrumbs'][] = $this->title;
         'model'      => $model,
         'attributes' => [
             'id',
-            'page_id',
-            'name',
+            'style_list_id',
+            'color',
+            'image',
             'sort',
-            'desc',
         ],
     ])
     ?>

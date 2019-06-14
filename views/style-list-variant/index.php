@@ -6,10 +6,10 @@ use yii\grid\GridView;
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title                   = 'Стили';
+$this->title                   = 'Варианты стиля';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="style-list-index">
+<div class="style-list-variant-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
@@ -22,11 +22,11 @@ $this->params['breadcrumbs'][] = $this->title;
         'dataProvider' => $dataProvider,
         'columns'      => [
             [ 'class' => 'yii\grid\SerialColumn' ],
-//            'id',
-            'page.name:text:Страница',
-            'name',
+            'id',
+            'styleList.name:text:Стиль',
+            'color',
+//            'image',
 //            'sort',
-            //'desc',
             [ 'class' => 'yii\grid\ActionColumn' ],
         ],
     ]);

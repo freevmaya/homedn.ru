@@ -36,14 +36,12 @@ class StyleListWidget extends Widget
             echo Html::beginTag('div', [ 'class' => 'style-list' ]);
             foreach ($this->styleList as $style) {
                 echo Html::beginTag('div', [ 'class' => 'style-element', 'data' => [ 'id' => $style->id ] ]);
-                echo Html::tag('span', Html::img($style->image), [ 'class' => 'image' ]);
+                echo Html::tag('span', Html::img(''), [ 'class' => 'image' ]);
                 echo Html::tag('div', $style->name, [ 'class' => 'name' ]);
                 echo Html::tag('div', nl2br($style->desc), [ 'class' => 'desc' ]);
                 $ul = [];
-                foreach ([ 1, 2, 3 ] as $i) {
-                    if ($style->{'color' . $i}) {
-                        $ul[] = Html::tag('span', '', [ 'class' => 'color', 'data' => [ 'color' => $style->{'color' . $i} ] ]);
-                    }
+                foreach ($style->styleListVariants as $variant) {
+                    $ul[] = Html::tag('span', '', [ 'class' => 'color', 'data' => [ 'color' => $variant->color, 'img' => $variant->image ] ]);
                 }
                 echo Html::ul($ul, [ 'encode' => false, 'class' => 'color-line' ]);
                 echo Html::tag('div', Html::a('Узнать стоимость проекта', '#foz-projectcost', [ 'class' => 'popup-inline' ]), [ 'class' => 'cta' ]);

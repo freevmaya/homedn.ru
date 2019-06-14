@@ -6,11 +6,14 @@ $(function () {
 
     $('.color-line').each(function () {
         $(this).find('li').first().addClass('checked');
+        var img = $(this).find('li').first().find('span').data('img');
+        $(this).parents('.style-element').find('.image img').attr('src', img);
     });
 
     $('.color-line li').click(function () {
         $(this).siblings('li').removeClass('checked');
         $(this).addClass('checked');
+        $(this).parents('.style-element').find('.image img').attr('src', $(this).find('span').data('img'));
     });
 
     $('.style-element .cta a').click(function () {
