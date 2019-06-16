@@ -711,10 +711,25 @@ header {
         header .top-fixed .himenu a img {
           width: 25px; }
       header .top-fixed .top-phone {
-        top: -70px;
-        left: 20px; }
+        top: 29%;
+        width: auto;
+        right: 98px; }
+        header .top-fixed .top-phone .num a {
+          background: url("/uploads/images/tbut.png") no-repeat;
+          background-size: contain;
+          width: 38px;
+          display: inline-block;
+          vertical-align: middle;
+          *vertical-align: auto;
+          *zoom: 1;
+          *display: inline;
+          height: 38px;
+          color: transparent;
+          overflow: hidden; }
+        header .top-fixed .top-phone .foz {
+          display: none; }
       header .top-hidden {
-        padding: 25px 0 70px; }
+        padding: 25px 0; }
         header .top-hidden .close {
           display: block;
           position: absolute;

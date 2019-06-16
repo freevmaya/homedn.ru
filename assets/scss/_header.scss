@@ -172,12 +172,27 @@ header {
                 }
             }
             .top-phone {
-                top: -70px;
-                left: 20px;
+                top: 29%;
+                width: auto;
+                right: 98px;
+                .num {
+                a {
+                    background: url($path-image+"tbut.png") no-repeat;
+                    background-size: contain;
+                    width: 38px;
+                    @include inline-block;
+                    height: 38px;
+                    color: transparent;
+                    overflow: hidden;
+                }
+                }
+                .foz {
+                    display: none;
+                }
             }
         }
         .top-hidden {
-            padding: 25px 0 70px;
+            padding: 25px 0;
             .close {
                 display: block;
                 @include stretch(0, 20px, false, false);
