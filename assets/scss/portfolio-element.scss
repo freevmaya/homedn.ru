@@ -104,10 +104,10 @@
         }
         &.fixed {
             position: fixed;
-            top: $header-height + 5px;
+            top: $header-height - 30px;
             width: $size-width-max;
             right: auto;
-            z-index: 100;
+            z-index: 50;
         }
     }
     @include respond-to(middle) {
@@ -198,6 +198,17 @@
                 }
                 &:nth-child(3n+3), &:last-child {
                     margin-right: 0;
+                }
+            }
+        }
+    }
+    @include respond-to(small) {
+        .portfolio-gallery {
+            li {
+                margin: 15px 0;
+                width: auto;
+                img {
+                    width: 100%;
                 }
             }
         }

@@ -12,6 +12,10 @@
             .slides {
                 li {
                     cursor: pointer;
+                    opacity: 0.7;
+                    &:hover {
+                        opacity: 1;
+                    }
                 }
             }
         }
@@ -20,11 +24,17 @@
                 @include stretch(50%, false, false, false);
                 @include font-props(18.25, $color-solitude4);
                 text-decoration: none;
+                width: 88px;
+                height: 88px;
+                opacity: 0.6;
                 &.flex-prev {
                     left: 0;
+                    background: url($path-image+"alb.png") no-repeat;
                 }
                 &.flex-next {
-                    right: 27px;
+                    right: 0;
+                    background: url($path-image+"arb.png") no-repeat right top;
+                    text-align: right;
                     span {
                         @include inline-block(top);
                         @include font-props(4, $color-amour);
@@ -40,6 +50,7 @@
                 }
                 &:hover {
                     text-decoration: none;
+                    opacity: 1;
                 }
             }
         }
@@ -62,8 +73,17 @@
             }
             .direction-nav {
                 a {
-                    margin-top: -48px;
+                    margin-top: -18px;
+                    &.flex-prev {
+                        left: 10px;
+                    }
+                    &.flex-next {
+                        right: 10px;
+                    }
                 }
+            }
+            #lending-gallery-carousel {
+                display: none;
             }
         }
         .cta {

@@ -397,13 +397,17 @@ header {
         }
         .bottom-panel {
             height: auto;
-            padding: 20px 10px;
+            padding: 0 10px;
             .left, .sum {
                 position: relative;
                 top: auto;
                 left: auto;
                 right: auto;
-                margin: 10px 0;
+                margin: 5px 0;
+                .panel-header, .link {
+                    @include font-props(3);
+                }
+                @include font-props(4);
             }
         }
     }

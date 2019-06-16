@@ -106,9 +106,7 @@
                 .name {
                     display: block;
                     padding: 30px 0;
-                    a {
-                        @include font-props(4, $color-black);
-                    }
+                    @include font-props(4, $color-black);
                 }
             }
         }

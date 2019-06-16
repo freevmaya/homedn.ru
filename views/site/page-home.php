@@ -117,8 +117,8 @@ if ($h || ($v && $b)) {
     </div>
 </section>
 
-<section class="section-8" data-back="<?= PageProperty::getValue($model->id, 'back3') ?>">
-    <div class="wrapper">
+<section class="section-8">
+    <!--<div class="wrapper">-->
         <div class="header">
             <?= PageProperty::getValue($model->id, 'header8') ?>
             <span class="count"><?= PageProperty::getValue($model->id, 'header9') ?></span>
@@ -127,7 +127,7 @@ if ($h || ($v && $b)) {
         <div class="cta">
             <a href="<?= PageProperty::getValue($model->id, 'cta3link') ?>" target="_blank"><?= PageProperty::getValue($model->id, 'cta3text') ?></a>
         </div>
-    </div>
+    <!--</div>-->
 </section>
 
 <section class="section-9">

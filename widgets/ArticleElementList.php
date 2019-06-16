@@ -58,13 +58,13 @@ class ArticleElementList extends Widget
             echo Html::beginTag('div', [ 'class' => 'article-list' ]);
             $ul = [];
             foreach ($this->elementList as $p) {
-                $ul[]  = Html::tag('span', Html::img(PageProperty::getValue($p->id, 'image12'))
+                $ul[]  = Html::a(Html::tag('span', Html::img(PageProperty::getValue($p->id, 'image12'))
                                 . Html::tag('span', Html::img(Yii::$app->params['image_dir_url']
                                                 . (PageProperty::getValue($p->id, 'video8') ? 'ae1.png' : 'ae2.png')), [ 'class' => 'content-icon' ])
                                 . (($count = PageProperty::getValue($p->id, 'count1')) && $count > 0 ? Html::tag('span', Html::img(Yii::$app->params['image_dir_url']
                                                 . 'ae3.png')
                                         . Html::tag('span', $count), [ 'class' => 'view-icon' ]) : ''), [ 'class' => 'image' ])
-                        . Html::tag('span', Html::a(PageProperty::getValue($p->id, 'header58'), [ 'site/frontend', 'id' => $p->id ]), [ 'class' => 'name' ]);
+                        . Html::tag('span', PageProperty::getValue($p->id, 'header58'), [ 'class' => 'name' ]), [ 'site/frontend', 'id' => $p->id ]);
             }
             echo Html::ul($ul, [ 'encode' => false, 'class' => 'list' ]);
             if (!isset(Yii::$app->request->get()['per-page']) && $this->pages->limit < $this->pages->totalCount)

@@ -106,10 +106,9 @@
               margin-left: 15px; }
         .section-1 .article-list .list li .name {
           display: block;
-          padding: 30px 0; }
-          .section-1 .article-list .list li .name a {
-            font-size: 17px;
-            color: #000000; }
+          padding: 30px 0;
+          font-size: 17px;
+          color: #000000; }
     .section-1 .article-list .pagination {
       width: 100%;
       text-align: justify; }

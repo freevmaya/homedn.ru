@@ -13,8 +13,6 @@ use yii\base\Widget;
 use app\models\MainPortfolioGallery;
 use yii\helpers\Html;
 use valekstepanov\flexslider\FlexSlider;
-use rmrevin\yii\fontawesome\FAS;
-use rmrevin\yii\fontawesome\CdnFreeAssetBundle;
 
 /**
  * Description of MainPortfolioGalleryWidget
@@ -34,14 +32,30 @@ class MainPortfolioGalleryWidget extends Widget
     public function run ()
     {
         if ($this->gallery) {
-            CdnFreeAssetBundle::register($this->view);
-            echo Html::beginTag('div', [ 'class' => 'main-portfolio-gallery' ]);
             $ul1 = [];
             $ul2 = [];
+            $ul3 = [];
             foreach ($this->gallery as $image) {
                 $ul1[] = Html::img(\Yii::$app->imageresize->getUrl('@webroot' . $image->image, 734, 489));
                 $ul2[] = Html::img(\Yii::$app->imageresize->getUrl('@webroot' . $image->image, 159, 106));
+                $ul3[] = Html::img(\Yii::$app->imageresize->getUrl('@webroot' . $image->image, 1600, 817, 'inset'));
             }
+            echo FlexSlider::widget([
+                'items'         => $ul3,
+                'pluginOptions' => [
+                    'animation'     => 'fade',
+                    'controlNav'    => false,
+                    'animationLoop' => true,
+                    'slideshow'     => false,
+                    'sync'          => '#main-portfolio-gallery-carousel',
+                    'directionNav'  => false,
+                ],
+                'options'       => [
+                    'id' => 'main-portfolio-gallery-back',
+                ],
+            ]);
+            echo Html::beginTag('div', [ 'class' => 'main-portfolio-gallery' ]);
+            echo Html::beginTag('div', [ 'class' => 'wrapper' ]);
             echo FlexSlider::widget([
                 'items'         => $ul1,
                 'pluginOptions' => [
@@ -65,15 +79,16 @@ class MainPortfolioGalleryWidget extends Widget
                     'slideshow'     => false,
                     'itemWidth'     => 159,
                     'itemMargin'    => 17,
-                    'asNavFor'      => '#main-portfolio-gallery-slider',
+                    'asNavFor'      => '#main-portfolio-gallery-slider, #main-portfolio-gallery-back',
                     'directionNav'  => false,
                 ],
                 'options'       => [
                     'id' => 'main-portfolio-gallery-carousel',
                 ],
             ]);
-            echo Html::tag('div', Html::a('&#12296;'/*FAS::i('angle-left')*/, '#', [ 'class' => 'flex-prev' ]) . Html::a('&#12297;'/*FAS::i('angle-right')*/ . Html::tag('span', '9+'), '#', [
+            echo Html::tag('div', Html::a('', '#', [ 'class' => 'flex-prev' ]) . Html::a('' . Html::tag('span', '9+'), '#', [
                         'class' => 'flex-next' ]), [ 'class' => 'direction-nav', 'id' => 'main-portfolio-gallery-direction-nav' ]);
+            echo Html::endTag('div');
             echo Html::endTag('div');
         }
     }

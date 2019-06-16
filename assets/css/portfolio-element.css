@@ -123,10 +123,10 @@
           color: #1071FF; }
     .section-1 .element-nav.fixed {
       position: fixed;
-      top: 119px;
+      top: 84px;
       width: 960px;
       right: auto;
-      z-index: 100; }
+      z-index: 50; }
   @media print, screen and (max-width: 959px) {
     .section-1 .element-nav {
       top: 0;
@@ -463,6 +463,12 @@
           margin-top: 0; }
         .section-gallery .portfolio-gallery li:nth-child(3n+3), .section-gallery .portfolio-gallery li:last-child {
           margin-right: 0; } }
+  @media print, screen and (max-width: 767px) {
+    .section-gallery .portfolio-gallery li {
+      margin: 15px 0;
+      width: auto; }
+      .section-gallery .portfolio-gallery li img {
+        width: 100%; } }
 
 .section-3 {
   padding: 113px 0;

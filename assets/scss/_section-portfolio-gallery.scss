@@ -5,11 +5,26 @@
     height: 817px;
     background-position: center top;
     padding-top: 88px;
+    position: relative;
     .header {
         @include font-props(9, $color-pictonblue2);
         text-align: center;
         .count {
             color: $color-black10;
+        }
+    }
+    #main-portfolio-gallery-back {
+        @include stretch(0, 0, 0, 0);
+        z-index: -1;
+        opacity: 0.5;
+        .slides {
+            li {
+                height: 817px;
+                img {
+                    min-width: 100%;
+                    height: 100%;
+                }
+            }
         }
     }
     .main-portfolio-gallery {
@@ -19,10 +34,13 @@
         #main-portfolio-gallery-carousel {
             margin: -89px auto 0;
             width: 689px;
-            opacity: 0.5;
             .slides {
                 li {
                     cursor: pointer;
+                    opacity: 0.7;
+                    &:hover {
+                        opacity: 1;
+                    }
                 }
             }
         }
@@ -31,11 +49,17 @@
                 @include stretch(50%, false, false, false);
                 @include font-props(18.25, $color-solitude4);
                 text-decoration: none;
+                width: 88px;
+                height: 88px;
+                opacity: 0.6;
                 &.flex-prev {
                     left: 0;
+                    background: url($path-image+"al.png") no-repeat;
                 }
                 &.flex-next {
-                    right: 27px;
+                    right: 0;
+                    background: url($path-image+"ar.png") no-repeat right top;
+                    text-align: right;
                     span {
                         @include inline-block(top);
                         @include font-props(4, $color-amour);
@@ -45,12 +69,12 @@
                         @include border-radius(50%);
                         text-align: center;
                         padding-top: 1px;
-                        margin-left: -70px;
-                        margin-top: 19px;
+                        margin-right: 16px;
                     }
                 }
                 &:hover {
                     text-decoration: none;
+                    opacity: 1;
                 }
             }
         }
@@ -68,9 +92,18 @@
         background-size: cover;
         background-position: center center;
         .header {
-            @include font-props(7);
+            @include font-props(7, $color-black);
+            .count {
+                color: $color-dodgerblue3;  
+            }
+        }
+        #main-portfolio-gallery-back {
+            display: none;
         }
         .main-portfolio-gallery {
+            .wrapper {
+                padding: 0;
+            }
             .slides {
                 li {
                     img {
@@ -81,7 +114,16 @@
             .direction-nav {
                 a {
                     margin-top: -48px;
+                    &.flex-prev {
+                        left: 10px;
+                    }
+                    &.flex-next {
+                        right: 10px;
+                    }
                 }
+            }
+            #main-portfolio-gallery-carousel {
+                display: none;
             }
         }
         .cta {

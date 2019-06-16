@@ -18,7 +18,7 @@ class SitemapWidget extends Widget
                 ->joinWith('pageType pt', false, 'INNER JOIN')
                 ->joinWith('pageSeo ps', false, 'INNER JOIN')
                 ->where([ 'status' => 1, 'ps.noindex' => 0, 'p.page_id' => null ])
-                ->orderBy([ 'pt.name' => SORT_ASC, 'p.sort' => SORT_ASC ])
+                ->orderBy([ 'pt.name' => SORT_ASC, 'p.name' => SORT_ASC, 'p.sort' => SORT_ASC ])
                 ->all();
     }
 

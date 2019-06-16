@@ -126,6 +126,16 @@
                 }
             }
         }
+        .wrapper {
+            @include flex-direction(column);
+            @include display-flex;
+            .map {
+                @include order(2);
+            }
+            .connect {
+                @include order(1);
+            }
+        }
     }
 }
 

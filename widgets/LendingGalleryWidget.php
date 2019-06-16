@@ -70,7 +70,7 @@ class LendingGalleryWidget extends Widget
                     'id' => 'lending-gallery-carousel',
                 ],
             ]);
-            echo Html::tag('div', Html::a('&#12296;', '#', [ 'class' => 'flex-prev' ]) . Html::a('&#12297;' . Html::tag('span', '9+'), '#', [ 'class' => 'flex-next' ]), [ 'class' => 'direction-nav', 'id' => 'lending-gallery-direction-nav' ]);
+            echo Html::tag('div', Html::a('', '#', [ 'class' => 'flex-prev' ]) . Html::a('' . Html::tag('span', '9+'), '#', [ 'class' => 'flex-next' ]), [ 'class' => 'direction-nav', 'id' => 'lending-gallery-direction-nav' ]);
             echo Html::endTag('div');
             if ($this->galleryLink) {
                 echo Html::tag('div', Html::a($this->galleryLink['label'], $this->galleryLink['url'], [ 'target' => '_blank' ]), [ 'class' => 'cta' ]);

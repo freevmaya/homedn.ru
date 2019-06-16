@@ -37,7 +37,11 @@
         vertical-align: middle;
         *vertical-align: auto;
         *zoom: 1;
-        *display: inline; }
+        *display: inline;
+        -moz-transition: color 0.3s linear;
+        -o-transition: color 0.3s linear;
+        -webkit-transition: color 0.3s linear;
+        transition: color 0.3s linear; }
         .section-2 .price-caption-line ul li a {
           font-size: 15px;
           color: #000000;
@@ -45,8 +49,11 @@
           /*@include transition(color 0.9s ease);*/ }
           .section-2 .price-caption-line ul li a:hover {
             text-decoration: none; }
-        .section-2 .price-caption-line ul li.active a {
-          /*color: $color-white;*/ }
+        .section-2 .price-caption-line ul li.active {
+          z-index: 10;
+          position: relative; }
+          .section-2 .price-caption-line ul li.active a {
+            color: #FFFFFF; }
         .section-2 .price-caption-line ul li:last-child {
           background: #4C9FDB;
           -moz-border-radius: 62px;
@@ -60,7 +67,8 @@
           -moz-transition: left 0.7s ease, width 0.7s ease, top 0.7s ease;
           -o-transition: left 0.7s ease, width 0.7s ease, top 0.7s ease;
           -webkit-transition: left 0.7s ease, width 0.7s ease, top 0.7s ease;
-          transition: left 0.7s ease, width 0.7s ease, top 0.7s ease; }
+          transition: left 0.7s ease, width 0.7s ease, top 0.7s ease;
+          z-index: 1; }
   .section-2 .price-caption-contents .caption-content {
     display: none; }
     .section-2 .price-caption-contents .caption-content.active {
@@ -301,7 +309,8 @@
         height: 27px;
         padding: 0 10px; }
       .section-3 .calc form .field-calcinputdataform-square .help-block {
-        margin: 0; }
+        margin: 0;
+        position: absolute; }
     .section-3 .calc form .field-calcinputdataform-second label input[type=checkbox], .section-3 .calc form .field-calcinputdataform-wall label input[type=checkbox] {
       display: none; }
     .section-3 .calc form .field-calcinputdataform-second label:before, .section-3 .calc form .field-calcinputdataform-wall label:before {
@@ -325,6 +334,8 @@
       background: url("/uploads/images/chw.png") no-repeat -1px center; }
     .section-3 .calc form .field-calcinputdataform-second label {
       padding-top: 10px; }
+    .section-3 .calc form .has-error input[type=text] {
+      border: 3px solid #BE1E2D; }
     .section-3 .calc form button[type=submit] {
       margin-top: 6px;
       width: 284px;

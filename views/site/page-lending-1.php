@@ -62,16 +62,14 @@ if ($h || ($v && $b)) {
 <? } ?>
 
 <? $mainPageId = SiteProperty::getValue('mainpageid') ?>
-<section class="section-4" data-back="<?= PageProperty::getValue($mainPageId, 'back3') ?>">
-    <div class="wrapper">
-        <div class="header">
-            <?= PageProperty::getValue($mainPageId, 'header8') ?>
-            <span class="count"><?= PageProperty::getValue($mainPageId, 'header9') ?></span>
-        </div>
-        <?= MainPortfolioGalleryWidget::widget() ?>
-        <div class="cta">
-            <a href="<?= PageProperty::getValue($mainPageId, 'cta3link') ?>" target="_blank"><?= PageProperty::getValue($mainPageId, 'cta3text') ?></a>
-        </div>
+<section class="section-4">
+    <div class="header">
+        <?= PageProperty::getValue($mainPageId, 'header8') ?>
+        <span class="count"><?= PageProperty::getValue($mainPageId, 'header9') ?></span>
+    </div>
+    <?= MainPortfolioGalleryWidget::widget() ?>
+    <div class="cta">
+        <a href="<?= PageProperty::getValue($mainPageId, 'cta3link') ?>" target="_blank"><?= PageProperty::getValue($mainPageId, 'cta3text') ?></a>
     </div>
 </section>
 

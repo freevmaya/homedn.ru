@@ -148,7 +148,8 @@
         height: 27px;
         padding: 0 10px; }
       .section-3 .calc form .field-calcinputdataform-square .help-block {
-        margin: 0; }
+        margin: 0;
+        position: absolute; }
     .section-3 .calc form .field-calcinputdataform-second label input[type=checkbox], .section-3 .calc form .field-calcinputdataform-wall label input[type=checkbox] {
       display: none; }
     .section-3 .calc form .field-calcinputdataform-second label:before, .section-3 .calc form .field-calcinputdataform-wall label:before {
@@ -172,6 +173,8 @@
       background: url("/uploads/images/chw.png") no-repeat -1px center; }
     .section-3 .calc form .field-calcinputdataform-second label {
       padding-top: 10px; }
+    .section-3 .calc form .has-error input[type=text] {
+      border: 3px solid #BE1E2D; }
     .section-3 .calc form button[type=submit] {
       margin-top: 6px;
       width: 284px;

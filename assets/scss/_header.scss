@@ -197,6 +197,15 @@ header {
                                 padding-bottom: 5px;
                             }
                         }
+                        &:first-child {
+                            > ul {
+                                > li {
+                                    a {
+                                        @include font-props(4);
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }

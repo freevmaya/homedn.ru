@@ -114,7 +114,18 @@
             font-size: 17px; }
           .section-1 .connect .item .cont .val.socials ul li a {
             width: 40px;
-            height: 40px; } }
+            height: 40px; }
+    .section-1 .wrapper {
+      -webkit-flex-direction: column;
+      flex-direction: column;
+      display: -webkit-flex;
+      display: flex; }
+      .section-1 .wrapper .map {
+        -webkit-order: 2;
+        order: 2; }
+      .section-1 .wrapper .connect {
+        -webkit-order: 1;
+        order: 1; } }
 
 .section-2 {
   padding: 45px 0; }

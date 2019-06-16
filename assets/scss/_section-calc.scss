@@ -85,6 +85,7 @@
                 }
                 .help-block {
                     margin: 0;
+                    position: absolute;
                 }
             }
             .field-calcinputdataform-second, .field-calcinputdataform-wall {
@@ -113,6 +114,11 @@
             .field-calcinputdataform-second {
                 label {
                     padding-top: 10px;
+                }
+            }
+            .has-error {
+                input[type=text] {
+                    border: 3px solid $color-cardinal;
                 }
             }
             button[type=submit] {
