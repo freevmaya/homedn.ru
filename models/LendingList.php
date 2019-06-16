@@ -15,6 +15,7 @@ use Yii;
  * @property string $text
  * @property int $sort
  * @property int $list_number 
+ * @property string $desclink 
  *
  * @property Page $page
  */
@@ -39,6 +40,7 @@ class LendingList extends \yii\db\ActiveRecord
             [ [ 'image', 'name', 'desc' ], 'string', 'max' => 255 ],
             [ [ 'text' ], 'string', 'max' => 2048 ],
             [ [ 'page_id' ], 'exist', 'skipOnError' => true, 'targetClass' => Page::className(), 'targetAttribute' => [ 'page_id' => 'id' ] ],
+            [ [ 'desclink' ], 'string', 'max' => 1024 ],
         ];
     }
 
@@ -56,6 +58,7 @@ class LendingList extends \yii\db\ActiveRecord
             'text'        => 'Описание',
             'sort'        => 'Порядок',
             'list_number' => 'Индекс списка',
+            'desclink'    => 'Ссылка на подробнее',
         ];
     }
 

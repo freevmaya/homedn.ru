@@ -47,7 +47,16 @@ use mihaildev\elfinder\ElFinder;
 
     <?= $form->field($model, 'name')->textInput([ 'maxlength' => true ]) ?>
 
-    <?= $form->field($model, 'desc')->textarea([ 'maxlength' => true ]) ?>
+    <?=
+    $form->field($model, 'desc')->widget(CKEditor::className(), [
+        'editorOptions' => ElFinder::ckeditorOptions('elfinder', [
+            'preset' => 'full',
+            'inline' => false,
+        ]),
+    ])
+    ?>
+
+    <?= $form->field($model, 'desclink')->textInput([ 'maxlength' => true ]) ?>
 
     <?=
     $form->field($model, 'text')->widget(CKEditor::className(), [

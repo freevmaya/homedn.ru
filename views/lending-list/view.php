@@ -39,6 +39,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'desc',
             'text',
             'sort',
+            'desclink'
         ],
     ])
     ?>

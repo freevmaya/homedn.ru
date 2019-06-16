@@ -1101,6 +1101,14 @@
         margin-right: 0; } }
     .section-9 .lending-list li .image {
       background: #FFFFFF; }
+    .section-9 .lending-list li .desc a {
+      display: inline-block;
+      vertical-align: top;
+      *vertical-align: auto;
+      *zoom: 1;
+      *display: inline;
+      margin-right: 10px;
+      color: #727271; }
   @media print, screen and (max-width: 767px) {
     .section-9 .lending-list li {
       width: auto;

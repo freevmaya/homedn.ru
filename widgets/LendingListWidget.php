@@ -39,8 +39,9 @@ class LendingListWidget extends Widget
                 $ul[]  = Html::tag('span', Html::img($element->image), [ 'class' => 'image' ])
                         . Html::tag('span', $element->name, [ 'class' => 'name' ])
                         . Html::tag('span', $element->desc, [ 'class' => 'desc' ])
-                        . Html::tag('span', Html::a('Подробнее', '#lending-list-' . $element->id, [ 'class' => 'popup-inline' ]), [ 'class' => 'link' ]);
-                $popup .= Html::tag('div', Html::tag('div', $element->text), [ 'class' => 'mfp-hide popup-window wrapper', 'id' => 'lending-list-' . $element->id ]);
+                        . Html::tag('span', Html::a('Подробнее', $element->desclink ?: '#lending-list-' . $element->id, [ 'class' => $element->desclink ? '' : 'popup-inline' ]), [ 'class' => 'link' ]);
+                if (!$element->desclink)
+                    $popup .= Html::tag('div', Html::tag('div', $element->text), [ 'class' => 'mfp-hide popup-window wrapper', 'id' => 'lending-list-' . $element->id ]);
             }
             echo Html::ul($ul, [ 'encode' => false, 'class' => 'lending-list' ]);
             echo $popup;

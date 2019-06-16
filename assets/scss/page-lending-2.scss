@@ -284,6 +284,13 @@
             .image {
                 background: $color-white;
             }
+            .desc {
+                a {
+                    @include inline-block(top);
+                    margin-right: 10px;
+                    @include font-props(false, $color-black70);
+                }
+            }
         }
     }
     @include respond-to(small) {
