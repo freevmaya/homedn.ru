@@ -1304,13 +1304,20 @@
     bottom: 0;
     left: 0;
     right: 0;
-    z-index: -1;
-    opacity: 0.5; }
+    z-index: -1; }
     .section-8 #main-portfolio-gallery-back .slides li {
       height: 817px; }
       .section-8 #main-portfolio-gallery-back .slides li img {
         min-width: 100%;
         height: 100%; }
+    .section-8 #main-portfolio-gallery-back:after {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 10; }
   .section-8 .main-portfolio-gallery {
     padding-top: 41px;
     text-align: center;
