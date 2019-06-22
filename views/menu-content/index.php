@@ -31,7 +31,13 @@ $this->params['breadcrumbs'][] = $this->title;
 //            'page_id',
             //'sort',
             //'menu_content_id',
-            [ 'class' => 'yii\grid\ActionColumn' ],
+            [
+                'class'      => 'yii\grid\ActionColumn',
+                'urlCreator' => function ($action, $model, $key, $index) use ($menu_id)
+                {
+                    return Url::to([ $action, 'id' => $key, 'menu_id' => $menu_id ], true);
+                },
+            ],
         ],
     ]);
     ?>
