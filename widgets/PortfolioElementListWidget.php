@@ -64,12 +64,12 @@ class PortfolioElementListWidget extends Widget
                 $ul = [];
                 foreach ($this->portfolioSection->pages as $element) {
                     if (PageProperty::getValue($element->id, 'image5')) {
-                        $ul[] = Html::tag('span', ($element->portfolioReviews ? Html::tag('span', 'Отзыв', [ 'class' => 'review' ]) : '')
-                                        . Html::tag('span', Html::tag('span', nl2br(PageProperty::getValue($element->id, 'header26')), [ 'class' => 'header-1' ])
-                                                . Html::tag('span', '', [ 'class' => 'line' ])
-                                                . Html::tag('span', nl2br(PageProperty::getValue($element->id, 'header27')), [ 'class' => 'header-2' ]), [ 'class' => 'info' ]), [ 'class' => 'image', 'data-back' => PageProperty::getValue($element->id, 'image5') ])
-                                . Html::tag('span', nl2br(PageProperty::getValue($element->id, 'text2desc')), [ 'class' => 'desc' ])
-                                . Html::tag('span', Html::a('Смотреть объект', [ 'site/frontend', 'id' => $element->id ]), [ 'class' => 'cta' ]);
+                        $ul[] = Html::a(Html::tag('span', ($element->portfolioReviews ? Html::tag('span', 'Отзыв', [ 'class' => 'review' ]) : '')
+                                                . Html::tag('span', Html::tag('span', nl2br(PageProperty::getValue($element->id, 'header26')), [ 'class' => 'header-1' ])
+                                                        . Html::tag('span', '', [ 'class' => 'line' ])
+                                                        . Html::tag('span', nl2br(PageProperty::getValue($element->id, 'header27')), [ 'class' => 'header-2' ]), [ 'class' => 'info' ]), [ 'class' => 'image', 'data-back' => PageProperty::getValue($element->id, 'image5') ])
+                                        . Html::tag('span', nl2br(PageProperty::getValue($element->id, 'text2desc')), [ 'class' => 'desc' ])
+                                        . Html::tag('span', Html::tag('span', 'Смотреть объект'), [ 'class' => 'cta' ]), [ 'site/frontend', 'id' => $element->id ]);
                     }
                 }
                 echo Html::ul($ul, [ 'encode' => false ]);

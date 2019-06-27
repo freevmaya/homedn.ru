@@ -139,89 +139,91 @@
             margin-right: 0; }
           .section-2 .section-list .section .section-element-list ul li:nth-child(n+3) {
             display: none; } }
-        .section-2 .section-list .section .section-element-list ul li .image {
-          display: block;
-          height: 310px;
-          position: relative; }
-          .section-2 .section-list .section .section-element-list ul li .image .review {
-            position: absolute;
-            top: 8px;
-            right: 8px;
-            width: 110px;
-            height: 110px;
-            -moz-border-radius: 50%;
-            -webkit-border-radius: 50%;
-            border-radius: 50%;
-            background: #C00027;
+        .section-2 .section-list .section .section-element-list ul li a {
+          text-decoration: none; }
+          .section-2 .section-list .section .section-element-list ul li a .image {
+            display: block;
+            height: 310px;
+            position: relative; }
+            .section-2 .section-list .section .section-element-list ul li a .image .review {
+              position: absolute;
+              top: 8px;
+              right: 8px;
+              width: 110px;
+              height: 110px;
+              -moz-border-radius: 50%;
+              -webkit-border-radius: 50%;
+              border-radius: 50%;
+              background: #C00027;
+              text-align: center;
+              font-size: 17px;
+              color: #FFFFFF;
+              font-family: "Helvetica", Arial, sans-serif;
+              font-weight: 100; }
+              .section-2 .section-list .section .section-element-list ul li a .image .review:after {
+                display: inline-block;
+                vertical-align: middle;
+                *vertical-align: auto;
+                *zoom: 1;
+                *display: inline;
+                height: 100%;
+                content: ''; }
+            .section-2 .section-list .section .section-element-list ul li a .image .info {
+              padding-top: 114px;
+              display: block; }
+              .section-2 .section-list .section .section-element-list ul li a .image .info .header-1 {
+                display: block;
+                font-size: 21px;
+                color: #FAFAFA;
+                font-family: "Helvetica", Arial, sans-serif;
+                font-weight: 100; }
+              .section-2 .section-list .section .section-element-list ul li a .image .info .line {
+                width: 98px;
+                display: block;
+                height: 1px;
+                margin: 14px auto;
+                background: #FFFFFF; }
+              .section-2 .section-list .section .section-element-list ul li a .image .info .header-2 {
+                display: block;
+                font-size: 15px;
+                color: #FAFAFA; }
+          .section-2 .section-list .section .section-element-list ul li a .desc {
+            display: block;
+            padding: 27px 0;
             text-align: center;
             font-size: 17px;
-            color: #FFFFFF;
+            color: #000000;
             font-family: "Helvetica", Arial, sans-serif;
             font-weight: 100; }
-            .section-2 .section-list .section .section-element-list ul li .image .review:after {
+          .section-2 .section-list .section .section-element-list ul li a .cta {
+            position: absolute;
+            bottom: 21px;
+            left: 0;
+            right: 0;
+            text-align: center; }
+            .section-2 .section-list .section .section-element-list ul li a .cta span {
               display: inline-block;
               vertical-align: middle;
               *vertical-align: auto;
               *zoom: 1;
               *display: inline;
-              height: 100%;
-              content: ''; }
-          .section-2 .section-list .section .section-element-list ul li .image .info {
-            padding-top: 114px;
-            display: block; }
-            .section-2 .section-list .section .section-element-list ul li .image .info .header-1 {
-              display: block;
-              font-size: 21px;
-              color: #FAFAFA;
-              font-family: "Helvetica", Arial, sans-serif;
-              font-weight: 100; }
-            .section-2 .section-list .section .section-element-list ul li .image .info .line {
-              width: 98px;
-              display: block;
-              height: 1px;
-              margin: 14px auto;
-              background: #FFFFFF; }
-            .section-2 .section-list .section .section-element-list ul li .image .info .header-2 {
-              display: block;
-              font-size: 15px;
-              color: #FAFAFA; }
-        .section-2 .section-list .section .section-element-list ul li .desc {
-          display: block;
-          padding: 27px 0;
-          text-align: center;
-          font-size: 17px;
-          color: #000000;
-          font-family: "Helvetica", Arial, sans-serif;
-          font-weight: 100; }
-        .section-2 .section-list .section .section-element-list ul li .cta {
-          position: absolute;
-          bottom: 21px;
-          left: 0;
-          right: 0;
-          text-align: center; }
-          .section-2 .section-list .section .section-element-list ul li .cta a {
-            display: inline-block;
-            vertical-align: middle;
-            *vertical-align: auto;
-            *zoom: 1;
-            *display: inline;
-            width: 199px;
-            height: 45px;
-            border: 1px solid #B11635;
-            -moz-border-radius: 30px;
-            -webkit-border-radius: 30px;
-            border-radius: 30px;
-            font-size: 17px;
-            color: #B11635;
-            text-decoration: none;
-            -moz-transition: all 0.3s ease;
-            -o-transition: all 0.3s ease;
-            -webkit-transition: all 0.3s ease;
-            transition: all 0.3s ease;
-            padding-top: 9px; }
-            .section-2 .section-list .section .section-element-list ul li .cta a:hover {
-              background: #B11635;
-              color: #FFFFFF; }
+              width: 199px;
+              height: 45px;
+              border: 1px solid #B11635;
+              -moz-border-radius: 30px;
+              -webkit-border-radius: 30px;
+              border-radius: 30px;
+              font-size: 17px;
+              color: #B11635;
+              text-decoration: none;
+              -moz-transition: all 0.3s ease;
+              -o-transition: all 0.3s ease;
+              -webkit-transition: all 0.3s ease;
+              transition: all 0.3s ease;
+              padding-top: 9px; }
+              .section-2 .section-list .section .section-element-list ul li a .cta span:hover {
+                background: #B11635;
+                color: #FFFFFF; }
     .section-2 .section-list .section .section-element-list .more {
       padding: 0 0 33px;
       text-align: center; }
