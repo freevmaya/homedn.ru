@@ -65,6 +65,19 @@
 
 .section-2 {
     @include section-portfolio-section-list;
+    .section-list {
+        .section {
+            .section-element-list {
+                ul {
+                    li {
+                        &:nth-child(n+3) {
+                            display: inline-block;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 .section-3 {

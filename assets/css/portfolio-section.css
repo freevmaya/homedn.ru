@@ -255,6 +255,8 @@
   .section-2 .section-list .section .section-element-list ul li {
     width: 100%;
     margin: 10px 0; } }
+.section-2 .section-list .section .section-element-list ul li:nth-child(n+3) {
+  display: inline-block; }
 
 .section-3 {
   padding: 113px 0;
