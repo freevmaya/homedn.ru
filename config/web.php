@@ -1,7 +1,5 @@
 <?php
 
-use himiklab\sitemap\behaviors\SitemapBehavior;
-
 $params = require __DIR__ . '/params.php';
 $db     = require __DIR__ . '/db.php';
 
@@ -10,7 +8,12 @@ $config = [
     'name'          => 'Home Remont',
     'language'      => 'ru',
     'basePath'      => dirname(__DIR__),
-    'bootstrap'     => [ 'assetsAutoCompress', 'assetsPreload', /* 'assetManager', */ /* 'log' */ ],
+    'bootstrap'     => [
+        'assetsAutoCompress',
+        'assetsPreload',
+//        'assetManager',
+        'log',
+    ],
     'aliases'       => [
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',
