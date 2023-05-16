@@ -42,9 +42,9 @@ AddOutputFilterByType DEFLATE text/html text/plain text/xml application/xml appl
     RewriteEngine On
     RewriteBase /
 
-#    RewriteCond %{HTTP_HOST} !^$ [NC]
-#    RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
-#    RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+    RewriteCond %{HTTP_HOST} !^$ [NC]
+    RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+    RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
 
 #    RewriteCond %{HTTP:X-Forwarded-Proto} !=https
 #    RewriteRule .* https://%{SERVER_NAME}%{REQUEST_URI} [R=301,L]

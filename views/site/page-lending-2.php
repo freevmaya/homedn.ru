@@ -19,6 +19,10 @@ use app\widgets\CalcInputdataWidget;
 use app\widgets\LendingListWidget;
 
 TemplateAsset::register($this);
+
+$this->title = $model->pageSeo->title;
+$this->registerMetaTag([ 'name' => 'keywords', 'content' => $model->pageSeo->keywords ]);
+$this->registerMetaTag([ 'name' => 'description', 'content' => $model->pageSeo->description ]);
 ?>
 
 <section class="section-1" data-back="<?= PageProperty::getValue($model->id, 'image15') ?>">
