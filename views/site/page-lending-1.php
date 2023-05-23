@@ -17,7 +17,7 @@ TemplateAsset::register($this);
 
 <section class="section-1" data-back="<?= PageProperty::getValue($model->id, 'image14') ?>">
     <div class="wrapper">
-        <div class="header-1"><?= nl2br(PageProperty::getValue($model->id, 'header61')) ?></div>
+        <div class="header-1"><h1><?= nl2br($model->pageSeo->h1) ?></h1></div>
         <div class="header-2"><?= nl2br(PageProperty::getValue($model->id, 'header62')) ?></div>
         <div class="cta">
             <a href="<?= PageProperty::getValue($model->id, 'cta14link') ?>" class="popup-inline"><?= PageProperty::getValue($model->id, 'cta14text') ?></a>
@@ -140,7 +140,7 @@ if ($h || ($v && $b)) {
         </div>
     </div>
 </section>
-
+<?$model->pageSeo->h1 = null;?>
 <?=
 PageSeoWidget::widget([
     'pageId'   => $model->id,

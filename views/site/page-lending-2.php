@@ -19,15 +19,11 @@ use app\widgets\CalcInputdataWidget;
 use app\widgets\LendingListWidget;
 
 TemplateAsset::register($this);
-
-$this->title = $model->pageSeo->title;
-$this->registerMetaTag([ 'name' => 'keywords', 'content' => $model->pageSeo->keywords ]);
-$this->registerMetaTag([ 'name' => 'description', 'content' => $model->pageSeo->description ]);
 ?>
 
 <section class="section-1" data-back="<?= PageProperty::getValue($model->id, 'image15') ?>">
     <div class="wrapper">
-        <div class="header-1"><?= nl2br(PageProperty::getValue($model->id, 'header63')) ?></div>
+        <div class="header-1"><h1><?= nl2br($model->pageSeo->h1) ?></h1></div>
         <div class="header-2"><?= nl2br(PageProperty::getValue($model->id, 'header64')) ?></div>
         <div class="cta">
             <a href="<?= PageProperty::getValue($model->id, 'cta15link') ?>" class="popup-inline"><?= PageProperty::getValue($model->id, 'cta15text') ?></a>
@@ -194,3 +190,11 @@ if ($h || ($v && $b)) {
         </div>
     </div>
 </section>
+<?$model->pageSeo->h1 = null;?>
+<?=
+PageSeoWidget::widget([
+    'pageId'   => $model->id,
+    'pageSeo'  => $model->pageSeo,
+    'pageView' => $this,
+])
+?>

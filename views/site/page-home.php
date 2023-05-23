@@ -21,7 +21,7 @@ TemplateAsset::register($this);
 
 <section class="section-1" data-back="<?= PageProperty::getValue($model->id, 'back1') ?>">
     <div class="wrapper">
-        <div class="header-1"><?= nl2br(PageProperty::getValue($model->id, 'header1')) ?></div>
+        <div class="header-1"><h1><?= nl2br($model->pageSeo->h1) ?></h1></div>
         <div class="header-2"><?= nl2br(PageProperty::getValue($model->id, 'header2')) ?></div>
         <? if ($ctalink = PageProperty::getValue($model->id, 'cta1link')) { ?>
             <div class="cta">
@@ -194,7 +194,7 @@ if ($h || ($v && $b)) {
         </div>
     </div>
 </section>
-
+<?$model->pageSeo->h1 = null;?>
 <?=
 PageSeoWidget::widget([
     'pageId'   => $model->id,

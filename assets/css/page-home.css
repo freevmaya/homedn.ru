@@ -679,7 +679,7 @@
 
 .section-5 {
   position: relative;
-  height: 599px; }
+}
   .section-5 .image {
     position: absolute;
     top: 0;
@@ -944,7 +944,9 @@
           *display: inline;
           line-height: 1.4; }
     .section-5 .right .cta {
-      padding-top: 35px; }
+      padding-top: 35px;
+      padding-bottom: 42px;
+    }
       .section-5 .right .cta a {
         display: inline-block;
         vertical-align: middle;
@@ -1731,26 +1733,55 @@
   .section-10 .header {
     font-size: 37px; }
   .section-10 .youtube-video {
-    padding: 48px 0; }
+    padding: 48px 0; 
+  }
+
     .section-10 .youtube-video ul li {
       display: inline-block;
-      vertical-align: top;
-      *vertical-align: auto;
-      *zoom: 1;
-      *display: inline;
-      width: 302px;
-      margin: 11px; }
-      .section-10 .youtube-video ul li:first-child {
-        float: left;
-        width: 635px;
-        margin: 0 20px 0 0; }
-      @media print, screen and (min-width: 960px) {
-        .section-10 .youtube-video ul li:nth-child(2), .section-10 .youtube-video ul li:nth-child(3) {
-          margin: 0 0 11px 0; }
-        .section-10 .youtube-video ul li:nth-child(4) {
-          margin-left: 0; }
-        .section-10 .youtube-video ul li:last-child {
-          margin-right: 0; } }
+      position: relative;
+      margin: 11px;
+    }
+
+    .section-10 .youtube-video ul li:before {
+      display: inline-block;
+      position: absolute;
+      content: "";
+
+      top: 50%;
+      left: 50%;
+      margin-left: -30px;
+      margin-top: -21px;
+      width: 60px;
+      height: 42px;
+
+      background-image: url(yout1.png);
+    }
+
+    .section-10 .youtube-video ul li:hover:before {
+      background-image: url(yout2.png);
+    }
+
+    @media print, screen and (min-width: 960px) { 
+
+
+    .section-10 .youtube-video ul li:first-child {
+      float: left;
+      width: 631px;
+        height: 368px;
+        margin-right: 15px;
+    }  
+    .section-10 .youtube-video ul li:first-child img {
+      height: 368px;
+
+    }
+      .section-10 .youtube-video-list {
+        width: 1000px;
+        margin-left: -11px;
+      }
+      .section-10 .youtube-video ul li:nth-child(3) {
+      }
+    }
+
       .section-10 .youtube-video ul li a {
         display: block;
         text-decoration: none; }
@@ -1766,10 +1797,14 @@
         vertical-align: middle; }
   @media print, screen and (max-width: 959px) {
     .section-10 .youtube-video {
-      text-align: center; }
+      text-align: center; 
+    }
       .section-10 .youtube-video ul li:first-child {
         float: none;
-        margin: 5px; } }
+        margin: 5px; 
+        width: 632px;
+      } 
+    }
   @media print, screen and (max-width: 767px) {
     .section-10 .header {
       font-size: 29px; }
