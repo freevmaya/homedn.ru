@@ -28,13 +28,10 @@ $(function () {
     });
 
     $(window).resize(function () {
-        console.log('resize');
         if (($('.tab-content.active').find('.baseimage').length > 0) && ($(window).width() > 767)) {
             let w = $('.tab-content.active').find('.element-group-list').width();
-            console.log(w);
             $('.tab-content.active').find('.baseimage').css('width', (+$('.tab-content.active').width() - w) + 'px');
             let h = $('.tab-content.active').find('.baseimage img.base').first().height();
-            console.log(h);
             $('.tab-content.active').css('height', h + 'px');
             $('.tab-content.active .baseimage').css('height', h + 'px');
         }
@@ -112,7 +109,13 @@ $(function () {
      * Полная стоимость
      */
     $(document).on('calc-full-price', function () {
-        $('#sum-top, #sum-bottom, #sum-panel').html(calcData.fullPrice.toFixed(0).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$& '));
+        let rg = /(\d)(?=(\d\d\d)+([^\d]|$))/g;
+
+        let totalPrice = (calcData.basePrice ? calcData.basePrice.toFixed(0).replace(rg, '$& ') + " р. (работы) + " : "") + 
+                        (calcData.fullPrice ? calcData.fullPrice.toFixed(0).replace(rg, '$& ') + " р. (материалы)" : "");
+
+        console.log(calcData.components);
+        $('#sum-top, #sum-bottom, #sum-panel').html(totalPrice);
     });
 
     function saveCalcData() {

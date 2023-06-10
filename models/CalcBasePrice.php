@@ -61,9 +61,9 @@ class CalcBasePrice extends \yii\db\ActiveRecord
             case 4:
                 return $this->price * intval($userdata['toiletcount']);
             case 5:
-                return $this->price * intval($userdata['second']);
+                return $this->price * intval($userdata['second']) * $userdata['square'];
             case 6:
-                return $this->price * intval($userdata['wall']);
+                return $this->price * intval($userdata['wall']) * $userdata['square'];
         }
         return $this->price;
     }

@@ -1,6 +1,6 @@
 <?php
 
-use Yii;
+//use Yii;
 use app\assets\TemplateAsset;
 use app\helpers\PageProperty;
 use app\helpers\SiteProperty;
@@ -77,7 +77,7 @@ if (isset(Yii::$app->request->get()['k'])) {
     <section class="section-7">
         <div class="wrapper">
             <div class="cont">
-                <div class="header">Итого: <span id="sum-bottom"></span> руб.</div>
+                <div class="header">Итого: <span id="sum-bottom"></span></div>
                 <div class="subheader"><?= PageProperty::getValue($model->id, 'cta13text') ?></div>
                 <?=
                 FormViewWidget::widget([

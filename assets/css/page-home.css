@@ -1746,6 +1746,7 @@
       display: inline-block;
       position: absolute;
       content: "";
+      pointer-events: none;
 
       top: 50%;
       left: 50%;

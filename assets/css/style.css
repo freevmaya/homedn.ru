@@ -627,7 +627,7 @@ header {
       *zoom: 1;
       *display: inline;
       margin-left: 64px;
-      margin-right: 22px; }
+      margin-right: 8px; }
       header .top-fixed .himenu a {
         font-size: 17px;
         color: #000000;
@@ -661,7 +661,7 @@ header {
         *display: inline; }
         header .top-fixed .main-menu ul li a {
           display: block;
-          padding: 10px 8px;
+          padding: 0px 8px;
           font-size: 17px;
           color: #000000;
           text-decoration: none; }

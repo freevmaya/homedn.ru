@@ -31,6 +31,7 @@ class CalcRoomShowWidget extends Widget
     public $calcRooms;
     public $basePrice;
     public $calcCheckedId;
+    public $components;
 
     public function init ()
     {
@@ -47,8 +48,12 @@ class CalcRoomShowWidget extends Widget
         $this->calcRooms = CalcRoom::find()->orderBy([ 'sort' => SORT_ASC ])->all();
         $basePrice       = CalcBasePrice::find()->all();
         $this->basePrice = 0;
+        $this->components = [];
         foreach ($basePrice as $base) {
-            $this->basePrice += $base->getCost($this->calcInputdata);
+            $price = $base->getCost($this->calcInputdata);
+            $this->basePrice += $price;
+            $this->components[$base->name] = $price;
+            //echo($base->name."=".$price."<br>");
         }
     }
 
@@ -143,7 +148,7 @@ class CalcRoomShowWidget extends Widget
             echo Html::beginTag('div', [ 'class' => 'bottom-panel' ]);
             echo Html::tag('div', Html::tag('span', 'Ссылка на этот конструктор', [ 'class' => 'panel-header' ])
                     . Html::tag('span', Yii::$app->request->absoluteUrl, [ 'class' => 'link' ]), [ 'class' => 'left' ]);
-            echo Html::tag('div', 'Итого: ' . Html::tag('span', '', [ 'id' => 'sum-panel' ]) . ' руб.', [ 'class' => 'sum' ]);
+            echo Html::tag('div', 'Итого: ' . Html::tag('span', '', [ 'id' => 'sum-panel' ]), [ 'class' => 'sum' ]);
             echo Html::endTag('div');
         }
     }

@@ -44,7 +44,7 @@ class CalcInputdataShowWidget extends Widget
             echo Html::tag('p', 'Количество дверей: ' . Html::tag('span', $this->calcInputdata['doorcount'], [ 'class' => 'val' ]));
             echo Html::tag('p', 'Демонтаж: ' . Html::tag('span', $this->calcInputdata['second'] ? 'нужен' : 'не нужен', [ 'class' => 'val' ]));
             echo Html::tag('p', 'Возведение стен: ' . Html::tag('span', $this->calcInputdata['wall'] ? 'нужно' : 'не нужно', [ 'class' => 'val' ]));
-            echo Html::tag('p', 'Стоимость ремонта: ' . Html::tag('span', Html::tag('span', number_format(CalcHelper::getSum($this->calcKey), 0, ',', ' '), [ 'id' => 'sum-top' ]) . ' руб.', [ 'class' => 'val' ]));
+            echo Html::tag('p', 'Стоимость ремонта: ' . Html::tag('span', Html::tag('span', number_format(CalcHelper::getSum($this->calcKey), 0, ',', ' '), [ 'id' => 'sum-top' ]), [ 'class' => 'val' ]));
             echo Html::endTag('div');
             echo Html::endTag('div');
         }

@@ -131,6 +131,25 @@ class CalcInputdataWidget extends Widget
                         'class'       => '',
             ]);
 
+            echo Html::beginTag('div', [ 'class' => 'toiletcount-group' ]);
+            echo $form->field($this->calcForm, 'toiletcount')->hiddenInput([
+                'id'       => 'toiletcount',
+                'onchange' => "$('input[name=\"toiletcount-string\"]').val($(this).val())",
+            ]);
+            echo Html::button('-', [
+                'class'   => 'spin-down',
+                'onclick' => "if($('#toiletcount').val()!=1) $('#toiletcount').val(+$('#toiletcount').val() - 1).change()",
+            ]);
+            echo Html::textInput('toiletcount-string', $this->calcForm->toiletcount, [
+                'readonly' => true,
+                'onchange' => "$('#toiletcount').val($(this).val())",
+            ]);
+            echo Html::button('+', [
+                'class'   => 'spin-up',
+                'onclick' => "if(+$('#toiletcount').val()<3)  $('#toiletcount').val(+$('#toiletcount').val() + 1).change()",
+            ]);
+            echo Html::endTag('div');
+
             echo Html::beginTag('div', [ 'class' => 'doorcount-group' ]);
             echo $form->field($this->calcForm, 'doorcount')->hiddenInput([
                 'id'       => 'doorcount',
@@ -150,28 +169,13 @@ class CalcInputdataWidget extends Widget
             ]);
             echo Html::endTag('div');
 
-            echo Html::beginTag('div', [ 'class' => 'toiletcount-group' ]);
-            echo $form->field($this->calcForm, 'toiletcount')->hiddenInput([
-                'id'       => 'toiletcount',
-                'onchange' => "$('input[name=\"toiletcount-string\"]').val($(this).val())",
-            ]);
-            echo Html::button('-', [
-                'class'   => 'spin-down',
-                'onclick' => "if($('#toiletcount').val()!=1) $('#toiletcount').val(+$('#toiletcount').val() - 1).change()",
-            ]);
-            echo Html::textInput('toiletcount-string', $this->calcForm->doorcount, [
-                'readonly' => true,
-                'onchange' => "$('#toiletcount').val($(this).val())",
-            ]);
-            echo Html::button('+', [
-                'class'   => 'spin-up',
-                'onclick' => "if(+$('#toiletcount').val()<3)  $('#toiletcount').val(+$('#toiletcount').val() + 1).change()",
-            ]);
-            echo Html::endTag('div');
+            echo Html::checkbox("CalcInputdataForm[second]", $this->calcForm->second, ["value"=>1, 'uncheck' => 0, 'label' => Html::tag('span', $this->calcForm->getAttributeLabel('second'))]);
 
-            echo $form->field($this->calcForm, 'second')->checkbox([ 'uncheck' => 0, 'label' => Html::tag('span', $this->calcForm->getAttributeLabel('second')) ])->label(false);
+            echo Html::checkbox("CalcInputdataForm[wall]", $this->calcForm->wall, ["value"=>1, 'uncheck' => 0, 'label' => Html::tag('span', $this->calcForm->getAttributeLabel('wall'))]);
 
-            echo $form->field($this->calcForm, 'wall')->checkbox([ 'uncheck' => 0, 'label' => Html::tag('span', $this->calcForm->getAttributeLabel('wall')) ])->label(false);
+            //echo $form->field($this->calcForm, 'second')->checkbox([ 'uncheck' => 0, 'label' => Html::tag('span', $this->calcForm->getAttributeLabel('second')) ])->label(false);
+
+            //echo $form->field($this->calcForm, 'wall')->checkbox(['uncheck' => 0, 'label' => Html::tag('span', $this->calcForm->getAttributeLabel('wall')) ])->label(false);
 
             echo Html::submitButton($this->submitButton . Html::img(Yii::$app->params['image_dir_url'] . 'arright.png'));
 
